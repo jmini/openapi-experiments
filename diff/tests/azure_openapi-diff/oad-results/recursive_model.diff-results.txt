@@ -1,0 +1,41 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1033",
+  "code": "RemovedProperty",
+  "message": "The new version is missing a property found in the old version. Was 'target' renamed or removed?",
+  "jsonref": "#/paths/~1api~1Operations/post/accountName/properties/error/properties",
+  "json-path": "#/paths/api/Operations/post/accountName/properties/error/properties",
+  "type": "Error"
+}
+{
+  "id": "1029",
+  "code": "ReadonlyPropertyChanged",
+  "message": "The read only property has changed from 'false' to 'true'.",
+  "jsonref": "#/paths/~1api~1Operations/post/default/properties/error/properties/message",
+  "json-path": "#/paths/api/Operations/post/default/properties/error/properties/message",
+  "type": "Error"
+}
+{
+  "id": "1029",
+  "code": "ReadonlyPropertyChanged",
+  "message": "The read only property has changed from 'false' to 'true'.",
+  "jsonref": "#/paths/~1api~1Operations/post/default/properties/error/properties/details/items/properties/message",
+  "json-path": "#/paths/api/Operations/post/default/properties/error/properties/details/items/properties/message",
+  "type": "Error"
+}
+{
+  "id": "1033",
+  "code": "RemovedProperty",
+  "message": "The new version is missing a property found in the old version. Was 'target' renamed or removed?",
+  "jsonref": "#/definitions/CreateParamBody/properties",
+  "json-path": "#/definitions/CreateParamBody/properties",
+  "type": "Error"
+}
+

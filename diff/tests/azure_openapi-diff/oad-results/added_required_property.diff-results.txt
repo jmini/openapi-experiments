@@ -1,0 +1,25 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1034",
+  "code": "AddedRequiredProperty",
+  "message": "The new version has new required property 'b' that was not found in the old version.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database",
+  "json-path": "#/paths/api/Parameters/put/database",
+  "type": "Error"
+}
+{
+  "id": "1034",
+  "code": "AddedRequiredProperty",
+  "message": "The new version has new required property 'b' that was not found in the old version.",
+  "jsonref": "#/definitions/Database",
+  "json-path": "#/definitions/Database",
+  "type": "Error"
+}
+

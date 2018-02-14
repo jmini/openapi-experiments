@@ -1,0 +1,33 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1025",
+  "code": "RequiredStatusChange",
+  "message": "The 'required' status changed from the old version('False') to the new version('True').",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/e",
+  "json-path": "#/paths/api/Parameters/{a}/get/e",
+  "type": "Error"
+}
+{
+  "id": "1009",
+  "code": "RemovedRequiredParameter",
+  "message": "The required parameter 'f' was removed in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/f",
+  "json-path": "#/paths/api/Parameters/{a}/get/f",
+  "type": "Error"
+}
+{
+  "id": "1010",
+  "code": "AddingRequiredParameter",
+  "message": "The required parameter 'g' was added in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/g",
+  "json-path": "#/paths/api/Parameters/{a}/get/g",
+  "type": "Error"
+}
+

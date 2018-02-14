@@ -1,0 +1,265 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'multipleOf' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/a/items",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maximum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/a/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/a/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maxItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/a",
+  "json-path": "#/paths/api/Responses/get/200/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/a",
+  "json-path": "#/paths/api/Responses/get/200/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1024",
+  "code": "ConstraintIsStronger",
+  "message": "The new version has a more constraining 'maxLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/b/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/b/items",
+  "type": "Error"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'pattern' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/200/properties/b/items",
+  "type": "Error"
+}
+{
+  "id": "1024",
+  "code": "ConstraintIsStronger",
+  "message": "The new version has a more constraining 'maxItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/b",
+  "json-path": "#/paths/api/Responses/get/200/properties/b",
+  "type": "Info"
+}
+{
+  "id": "1024",
+  "code": "ConstraintIsStronger",
+  "message": "The new version has a more constraining 'minItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/b",
+  "json-path": "#/paths/api/Responses/get/200/properties/b",
+  "type": "Info"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'multipleOf' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/c",
+  "json-path": "#/paths/api/Responses/get/200/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maximum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/c",
+  "json-path": "#/paths/api/Responses/get/200/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/c",
+  "json-path": "#/paths/api/Responses/get/200/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maxLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/d",
+  "json-path": "#/paths/api/Responses/get/200/properties/d",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/d",
+  "json-path": "#/paths/api/Responses/get/200/properties/d",
+  "type": "Info"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'pattern' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/properties/d",
+  "json-path": "#/paths/api/Responses/get/200/properties/d",
+  "type": "Error"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'multipleOf' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/a/items",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maximum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/a/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/a/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/a/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maxItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/a",
+  "json-path": "#/paths/api/Responses/get/201/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/a",
+  "json-path": "#/paths/api/Responses/get/201/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1024",
+  "code": "ConstraintIsStronger",
+  "message": "The new version has a more constraining 'maxLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/b/items",
+  "type": "Info"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/b/items",
+  "type": "Error"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'pattern' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/b/items",
+  "json-path": "#/paths/api/Responses/get/201/properties/b/items",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maxItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/b",
+  "json-path": "#/paths/api/Responses/get/201/properties/b",
+  "type": "Error"
+}
+{
+  "id": "1024",
+  "code": "ConstraintIsStronger",
+  "message": "The new version has a more constraining 'minItems' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/b",
+  "json-path": "#/paths/api/Responses/get/201/properties/b",
+  "type": "Info"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'multipleOf' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/c",
+  "json-path": "#/paths/api/Responses/get/201/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maximum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/c",
+  "json-path": "#/paths/api/Responses/get/201/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minimum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/c",
+  "json-path": "#/paths/api/Responses/get/201/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'maxLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/d",
+  "json-path": "#/paths/api/Responses/get/201/properties/d",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'minLength' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/d",
+  "json-path": "#/paths/api/Responses/get/201/properties/d",
+  "type": "Info"
+}
+{
+  "id": "1036",
+  "code": "ConstraintChanged",
+  "message": "The new version has a different 'pattern' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Responses/get/201/properties/d",
+  "json-path": "#/paths/api/Responses/get/201/properties/d",
+  "type": "Error"
+}
+

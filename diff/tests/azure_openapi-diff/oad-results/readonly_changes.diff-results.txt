@@ -1,0 +1,33 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1029",
+  "code": "ReadonlyPropertyChanged",
+  "message": "The read only property has changed from 'true' to 'false'.",
+  "jsonref": "#/paths/~1subscriptions~1{subscriptionId}~1providers~1Microsoft.Storage~1checkNameAvailability/post/200/properties/message",
+  "json-path": "#/paths/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability/post/200/properties/message",
+  "type": "Error"
+}
+{
+  "id": "1041",
+  "code": "AddedPropertyInResponse",
+  "message": "The new version has a new property 'customMessage' in response that was not found in the old version.",
+  "jsonref": "#/paths/~1subscriptions~1{subscriptionId}~1providers~1Microsoft.Storage~1checkNameAvailability/post/200/properties",
+  "json-path": "#/paths/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability/post/200/properties",
+  "type": "Error"
+}
+{
+  "id": "1040",
+  "code": "AddedReadOnlyPropertyInResponse",
+  "message": "The new version has a new read-only property 'customMessageReadOnly' in response that was not found in the old version.",
+  "jsonref": "#/paths/~1subscriptions~1{subscriptionId}~1providers~1Microsoft.Storage~1checkNameAvailability/post/200/properties",
+  "json-path": "#/paths/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability/post/200/properties",
+  "type": "Info"
+}
+

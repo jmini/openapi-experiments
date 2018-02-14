@@ -1,0 +1,9 @@
+{
+  "id": "1002",
+  "code": "ProtocolNoLongerSupported",
+  "message": "The new version does not support 'Https' as a protocol.",
+  "jsonref": "#/schemes",
+  "json-path": "#/schemes",
+  "type": "Warning"
+}
+

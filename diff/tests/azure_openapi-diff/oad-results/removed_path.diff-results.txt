@@ -1,0 +1,25 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1005",
+  "code": "RemovedPath",
+  "message": "The new version is missing a path that was found in the old version. Was path '/api/Parameters/{a}' removed or restructured?",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}",
+  "json-path": "#/paths/api/Parameters/{a}",
+  "type": "Error"
+}
+{
+  "id": "1005",
+  "code": "RemovedPath",
+  "message": "The new version is missing a path that was found in the old version. Was path '/api/Responses' removed or restructured?",
+  "jsonref": "#/paths/~1api~1Responses",
+  "json-path": "#/paths/api/Responses",
+  "type": "Error"
+}
+

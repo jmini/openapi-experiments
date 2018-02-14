@@ -1,0 +1,25 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1033",
+  "code": "RemovedProperty",
+  "message": "The new version is missing a property found in the old version. Was 'kind' renamed or removed?",
+  "jsonref": "#/paths/~1subscriptions~1{subscriptionId}~1resourceGroups~1{resourceGroupName}~1providers~1Microsoft.Storage~1storageAccounts~1{accountName}/put/parameters/properties",
+  "json-path": "#/paths/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/put/parameters/properties",
+  "type": "Error"
+}
+{
+  "id": "1033",
+  "code": "RemovedProperty",
+  "message": "The new version is missing a property found in the old version. Was 'kind' renamed or removed?",
+  "jsonref": "#/definitions/StorageAccountCreateParameters/properties",
+  "json-path": "#/definitions/StorageAccountCreateParameters/properties",
+  "type": "Error"
+}
+

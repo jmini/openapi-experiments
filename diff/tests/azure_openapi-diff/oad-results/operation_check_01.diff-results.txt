@@ -1,0 +1,137 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1005",
+  "code": "RemovedPath",
+  "message": "The new version is missing a path that was found in the old version. Was path '/api/Paths' removed or restructured?",
+  "jsonref": "#/paths/~1api~1Paths",
+  "json-path": "#/paths/api/Paths",
+  "type": "Error"
+}
+{
+  "id": "1035",
+  "code": "RemovedOperation",
+  "message": "The new version is missing an operation that was found in the old version. Was operationId 'Operations_Get' removed or restructured?",
+  "jsonref": "#/paths/~1api~1Operations",
+  "json-path": "#/paths/api/Operations",
+  "type": "Error"
+}
+{
+  "id": "1039",
+  "code": "AddedOperation",
+  "message": "The new version is adding an operation that was not found in the old version.",
+  "jsonref": "#/paths/~1api~1Operations/put",
+  "json-path": "#/paths/api/Operations/put",
+  "type": "Info"
+}
+{
+  "id": "1008",
+  "code": "ModifiedOperationId",
+  "message": "The operation id has been changed from 'Operations_Post' to 'Operations_Port'. This will impact generated code.",
+  "jsonref": "#/paths/~1api~1Operations/post",
+  "json-path": "#/paths/api/Operations/post",
+  "type": "Error"
+}
+{
+  "id": "1009",
+  "code": "RemovedRequiredParameter",
+  "message": "The required parameter 'a' was removed in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/a",
+  "json-path": "#/paths/api/Parameters/{a}/get/a",
+  "type": "Error"
+}
+{
+  "id": "1015",
+  "code": "ParameterInHasChanged",
+  "message": "How the parameter is passed has changed -- it used to be 'query', now it is 'path'.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/b",
+  "json-path": "#/paths/api/Parameters/{a}/get/b",
+  "type": "Error"
+}
+{
+  "id": "1025",
+  "code": "RequiredStatusChange",
+  "message": "The 'required' status changed from the old version('True') to the new version('False').",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/d",
+  "json-path": "#/paths/api/Parameters/{a}/get/d",
+  "type": "Info"
+}
+{
+  "id": "1025",
+  "code": "RequiredStatusChange",
+  "message": "The 'required' status changed from the old version('False') to the new version('True').",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/e",
+  "json-path": "#/paths/api/Parameters/{a}/get/e",
+  "type": "Error"
+}
+{
+  "id": "1037",
+  "code": "ConstraintIsWeaker",
+  "message": "The new version has a less constraining 'enum' value than the previous one.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/f",
+  "json-path": "#/paths/api/Parameters/{a}/get/f",
+  "type": "Info"
+}
+{
+  "id": "1016",
+  "code": "ConstantStatusHasChanged",
+  "message": "The 'constant' status changed from the old version to the new.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/f",
+  "json-path": "#/paths/api/Parameters/{a}/get/f",
+  "type": "Error"
+}
+{
+  "id": "1010",
+  "code": "AddingRequiredParameter",
+  "message": "The required parameter 'c' was added in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters~1{a}/get/c",
+  "json-path": "#/paths/api/Parameters/{a}/get/c",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'string' than the previous one 'integer'.",
+  "jsonref": "#/paths/~1api~1Responses/get/201",
+  "json-path": "#/paths/api/Responses/get/201",
+  "type": "Error"
+}
+{
+  "id": "1011",
+  "code": "AddingResponseCode",
+  "message": "The new version adds a response code '202'.",
+  "jsonref": "#/paths/~1api~1Responses/get/202",
+  "json-path": "#/paths/api/Responses/get/202",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/paths/~1api~1Responses/get/400/properties/id",
+  "json-path": "#/paths/api/Responses/get/400/properties/id",
+  "type": "Error"
+}
+{
+  "id": "1012",
+  "code": "RemovedResponseCode",
+  "message": "The new version removes the response code '200'",
+  "jsonref": "#/paths/~1api~1Responses/get/200",
+  "json-path": "#/paths/api/Responses/get/200",
+  "type": "Error"
+}
+{
+  "id": "1038",
+  "code": "AddedPath",
+  "message": "The new version is adding a path that was not found in the old version.",
+  "jsonref": "#/paths/~1api~1Path",
+  "json-path": "#/paths/api/Path",
+  "type": "Info"
+}
+

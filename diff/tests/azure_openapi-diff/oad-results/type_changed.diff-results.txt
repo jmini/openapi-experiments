@@ -1,0 +1,25 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database/properties/a",
+  "json-path": "#/paths/api/Parameters/put/database/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/definitions/Database/properties/a",
+  "json-path": "#/definitions/Database/properties/a",
+  "type": "Error"
+}
+

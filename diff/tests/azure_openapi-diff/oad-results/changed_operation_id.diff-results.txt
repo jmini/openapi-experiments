@@ -1,0 +1,25 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1008",
+  "code": "ModifiedOperationId",
+  "message": "The operation id has been changed from 'Paths_Get' to 'Paths_List'. This will impact generated code.",
+  "jsonref": "#/paths/~1api~1Paths/get",
+  "json-path": "#/paths/api/Paths/get",
+  "type": "Error"
+}
+{
+  "id": "1008",
+  "code": "ModifiedOperationId",
+  "message": "The operation id has been changed from 'Operations_Post' to 'Operations_Update'. This will impact generated code.",
+  "jsonref": "#/paths/~1api~1Operations/post",
+  "json-path": "#/paths/api/Operations/post",
+  "type": "Error"
+}
+

@@ -1,0 +1,17 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1006",
+  "code": "RemovedDefinition",
+  "message": "The new version is missing a definition that was found in the old version. Was 'DatabaseList' removed or renamed?",
+  "jsonref": "#/definitions",
+  "json-path": "#/definitions",
+  "type": "Error"
+}
+

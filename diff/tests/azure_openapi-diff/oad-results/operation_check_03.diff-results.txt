@@ -1,0 +1,65 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1009",
+  "code": "RemovedRequiredParameter",
+  "message": "The required parameter 'x-ar' was removed in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters/get/x-ar",
+  "json-path": "#/paths/api/Parameters/get/x-ar",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'string' than the previous one 'integer'.",
+  "jsonref": "#/paths/~1api~1Parameters/get/x-bo",
+  "json-path": "#/paths/api/Parameters/get/x-bo",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'string' than the previous one 'integer'.",
+  "jsonref": "#/paths/~1api~1Parameters/get/x-br",
+  "json-path": "#/paths/api/Parameters/get/x-br",
+  "type": "Error"
+}
+{
+  "id": "1010",
+  "code": "AddingRequiredParameter",
+  "message": "The required parameter 'x-cr' was added in the new version.",
+  "jsonref": "#/paths/~1api~1Parameters/get/x-cr",
+  "json-path": "#/paths/api/Parameters/get/x-cr",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'string' than the previous one 'integer'.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/x-b",
+  "json-path": "#/paths/api/Responses/get/200/x-b",
+  "type": "Error"
+}
+{
+  "id": "1013",
+  "code": "AddingHeader",
+  "message": "The new version adds a required header 'x-c'.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/x-c",
+  "json-path": "#/paths/api/Responses/get/200/x-c",
+  "type": "Info"
+}
+{
+  "id": "1014",
+  "code": "RemovingHeader",
+  "message": "The new version removs a required header 'x-a'.",
+  "jsonref": "#/paths/~1api~1Responses/get/200/x-a",
+  "json-path": "#/paths/api/Responses/get/200/x-a",
+  "type": "Error"
+}
+

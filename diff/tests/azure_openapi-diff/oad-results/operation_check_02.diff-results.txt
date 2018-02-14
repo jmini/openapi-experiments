@@ -1,0 +1,41 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/paths/~1api~1Parameters/post/registry/properties/b",
+  "json-path": "#/paths/api/Parameters/post/registry/properties/b",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/paths/~1api~1Responses/get/400/properties/id",
+  "json-path": "#/paths/api/Responses/get/400/properties/id",
+  "type": "Error"
+}
+{
+  "id": "1006",
+  "code": "RemovedDefinition",
+  "message": "The new version is missing a definition that was found in the old version. Was 'Database' removed or renamed?",
+  "jsonref": "#/definitions",
+  "json-path": "#/definitions",
+  "type": "Error"
+}
+{
+  "id": "1006",
+  "code": "RemovedDefinition",
+  "message": "The new version is missing a definition that was found in the old version. Was 'Registry' removed or renamed?",
+  "jsonref": "#/definitions",
+  "json-path": "#/definitions",
+  "type": "Error"
+}
+

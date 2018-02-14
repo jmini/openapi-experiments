@@ -1,0 +1,9 @@
+{
+  "id": "1000",
+  "code": "VersionsReversed",
+  "message": "The new version has a lower value than the old: 2.0 -> 1.0",
+  "jsonref": "#/info/version",
+  "json-path": "#/info/version",
+  "type": "Error"
+}
+

@@ -1,0 +1,89 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1029",
+  "code": "ReadonlyPropertyChanged",
+  "message": "The read only property has changed from 'true' to 'false'.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database/properties/a",
+  "json-path": "#/paths/api/Parameters/put/database/properties/a",
+  "type": "Error"
+}
+{
+  "id": "1027",
+  "code": "DefaultValueChanged",
+  "message": "The new version has a different default value than the previous one.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database/properties/b",
+  "json-path": "#/paths/api/Parameters/put/database/properties/b",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'array'.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database/properties/c",
+  "json-path": "#/paths/api/Parameters/put/database/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1023",
+  "code": "TypeFormatChanged",
+  "message": "The new version has a different format than the previous one.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database/properties/c",
+  "json-path": "#/paths/api/Parameters/put/database/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1034",
+  "code": "AddedRequiredProperty",
+  "message": "The new version has new required property 'id' that was not found in the old version.",
+  "jsonref": "#/paths/~1api~1Parameters/put/database",
+  "json-path": "#/paths/api/Parameters/put/database",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/paths/~1api~1Parameters/post/registry/properties/b",
+  "json-path": "#/paths/api/Parameters/post/registry/properties/b",
+  "type": "Error"
+}
+{
+  "id": "1023",
+  "code": "TypeFormatChanged",
+  "message": "The new version has a different format than the previous one.",
+  "jsonref": "#/paths/~1api~1Parameters/post/registry/properties/c",
+  "json-path": "#/paths/api/Parameters/post/registry/properties/c",
+  "type": "Error"
+}
+{
+  "id": "1006",
+  "code": "RemovedDefinition",
+  "message": "The new version is missing a definition that was found in the old version. Was 'DatabaseList' removed or renamed?",
+  "jsonref": "#/definitions",
+  "json-path": "#/definitions",
+  "type": "Error"
+}
+{
+  "id": "1026",
+  "code": "TypeChanged",
+  "message": "The new version has a different type 'integer' than the previous one 'string'.",
+  "jsonref": "#/definitions/Database/properties/b",
+  "json-path": "#/definitions/Database/properties/b",
+  "type": "Error"
+}
+{
+  "id": "1023",
+  "code": "TypeFormatChanged",
+  "message": "The new version has a different format than the previous one.",
+  "jsonref": "#/definitions/Database/properties/c",
+  "json-path": "#/definitions/Database/properties/c",
+  "type": "Error"
+}
+

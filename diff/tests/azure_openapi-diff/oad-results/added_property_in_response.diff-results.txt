@@ -1,0 +1,17 @@
+{
+  "id": "1001",
+  "code": "NoVersionChange",
+  "message": "The versions have not changed.",
+  "jsonref": "#",
+  "json-path": "#",
+  "type": "Info"
+}
+{
+  "id": "1041",
+  "code": "AddedPropertyInResponse",
+  "message": "The new version has a new property 'customMessage' in response that was not found in the old version.",
+  "jsonref": "#/paths/~1subscriptions~1{subscriptionId}~1providers~1Microsoft.Storage~1checkNameAvailability/post/200/properties",
+  "json-path": "#/paths/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability/post/200/properties",
+  "type": "Error"
+}
+

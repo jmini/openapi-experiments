@@ -1,0 +1,63 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "required_parameter",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters/{a}" : {
+      "get" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Get",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "b",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "d",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "e",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "g",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

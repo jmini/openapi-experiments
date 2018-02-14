@@ -1,0 +1,60 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "added_required_property",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters" : {
+      "put" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Put",
+        "requestBody" : {
+          "content" : {
+            "text/plain" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Database"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Database"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Database" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "type" : "string",
+            "description" : "Enum.",
+            "enum" : [ "a1", "a2", "a3" ]
+          },
+          "b" : {
+            "type" : "string",
+            "description" : "Enum.",
+            "enum" : [ "b1" ]
+          }
+        }
+      }
+    }
+  }
+}

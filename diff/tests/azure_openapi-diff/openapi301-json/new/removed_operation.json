@@ -1,0 +1,39 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "removed_operation",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Paths" : {
+      "get" : {
+        "tags" : [ "Paths" ],
+        "operationId" : "Paths_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Operations" : {
+      "get" : {
+        "tags" : [ "Operations" ],
+        "operationId" : "Operations_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

@@ -1,0 +1,113 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "recursive_model",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Operations" : {
+      "post" : {
+        "tags" : [ "Operations" ],
+        "operationId" : "Operations_Post",
+        "requestBody" : {
+          "description" : "Create Param.",
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CreateParam"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : { }
+          },
+          "default" : {
+            "description" : "BadRequest",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CloudError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "CreateParam" : {
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "$ref" : "#/components/schemas/CreateParamBody"
+          }
+        },
+        "description" : "Create Param a REST request.",
+        "x-ms-external" : true
+      },
+      "CloudErrorBody" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string",
+            "readOnly" : true
+          },
+          "target" : {
+            "type" : "string"
+          },
+          "details" : {
+            "type" : "array",
+            "description" : "Inner errors.",
+            "items" : {
+              "$ref" : "#/components/schemas/CloudErrorBody"
+            }
+          }
+        },
+        "description" : "Body of an error from a REST request."
+      },
+      "CloudError" : {
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "$ref" : "#/components/schemas/CloudErrorBody"
+          }
+        },
+        "description" : "Error from a REST request.",
+        "x-ms-external" : true
+      },
+      "CreateParamBody" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "details" : {
+            "type" : "array",
+            "description" : "Inner errors.",
+            "items" : {
+              "$ref" : "#/components/schemas/CreateParam"
+            }
+          }
+        },
+        "description" : "Create Param Body a REST request."
+      }
+    }
+  }
+}

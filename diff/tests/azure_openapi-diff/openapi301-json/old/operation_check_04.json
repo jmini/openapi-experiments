@@ -1,0 +1,136 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "operation_check_04",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters" : {
+      "get" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Get",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "header",
+          "schema" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "multipleOf" : 5,
+              "maximum" : 17,
+              "minimum" : 1,
+              "type" : "integer"
+            }
+          }
+        }, {
+          "name" : "b",
+          "in" : "header",
+          "schema" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "maxLength" : 17,
+              "minLength" : 1,
+              "pattern" : "[a-z][a-z0-9]*",
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "c",
+          "in" : "header",
+          "schema" : {
+            "multipleOf" : 5.0,
+            "maximum" : 17,
+            "minimum" : 1,
+            "type" : "integer"
+          }
+        }, {
+          "name" : "d",
+          "in" : "header",
+          "schema" : {
+            "maxLength" : 17,
+            "minLength" : 1,
+            "pattern" : "[a-z][a-z0-9]*",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Put",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/A"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "A" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "multipleOf" : 5,
+              "maximum" : 17,
+              "minimum" : 1,
+              "type" : "integer"
+            }
+          },
+          "b" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "maxLength" : 17,
+              "minLength" : 1,
+              "pattern" : "[a-z][a-z0-9]*",
+              "type" : "string"
+            }
+          },
+          "c" : {
+            "multipleOf" : 5,
+            "maximum" : 17,
+            "minimum" : 1,
+            "type" : "integer"
+          },
+          "d" : {
+            "maxLength" : 17,
+            "minLength" : 1,
+            "pattern" : "[a-z][a-z0-9]*",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

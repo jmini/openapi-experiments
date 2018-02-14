@@ -1,0 +1,14 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "version_check_03",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : { },
+  "components" : { }
+}

@@ -1,0 +1,180 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "operation_check_01",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters" : {
+      "put" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Put",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DatabaseRenamed"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Post",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Register"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Responses" : {
+      "get" : {
+        "tags" : [ "Responses" ],
+        "operationId" : "Responses_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "DatabaseRenamed" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "type" : "string",
+            "description" : "The user generated unique name for the database, a string that\n must not be more than 255 characters."
+          },
+          "b" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nThe resource id (_rid) is a unique identifier that is also hierarchical per the resource stack on the resource model. It is used internally for placement of and navigation to the database resource.",
+            "readOnly" : true
+          },
+          "c" : {
+            "type" : "integer",
+            "description" : "This is a system generated property.\nIt specifies the last updated timestamp of the resource. The value is a timestamp.",
+            "format" : "int32",
+            "readOnly" : true
+          },
+          "d" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt represents the resource etag required for optimistic concurrency control.",
+            "readOnly" : true
+          },
+          "e" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt specifies the addressable path of the collections resource.",
+            "readOnly" : true
+          },
+          "f" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt specifies the addressable path of the users resource.",
+            "readOnly" : true
+          }
+        }
+      },
+      "Register" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "type" : "string",
+            "description" : "The user generated unique name for the database, a string that\n must not be more than 255 characters."
+          },
+          "b" : {
+            "type" : "integer",
+            "description" : "This is a system generated property.\nThe resource id (_rid) is a unique identifier that is also hierarchical per the resource stack on the resource model. It is used internally for placement of and navigation to the database resource.",
+            "readOnly" : true
+          },
+          "c" : {
+            "type" : "integer",
+            "description" : "This is a system generated property.\nIt specifies the last updated timestamp of the resource. The value is a timestamp.",
+            "format" : "int32",
+            "readOnly" : true
+          },
+          "d" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt represents the resource etag required for optimistic concurrency control.",
+            "readOnly" : true
+          },
+          "e" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt specifies the addressable path of the collections resource.",
+            "readOnly" : true
+          },
+          "f" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nIt specifies the addressable path of the users resource.",
+            "readOnly" : true
+          }
+        }
+      },
+      "Error" : {
+        "required" : [ "id", "message" ],
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "integer"
+          }
+        }
+      }
+    }
+  }
+}

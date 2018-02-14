@@ -1,0 +1,60 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "removed_definition",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters" : {
+      "put" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Put",
+        "requestBody" : {
+          "content" : {
+            "text/plain" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Database"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Database"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Database" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "type" : "string",
+            "description" : "This is a system generated property.\nThe _rid value is empty for this operation.",
+            "readOnly" : true
+          },
+          "b" : {
+            "type" : "integer",
+            "description" : "This property shows the number of databases returned.",
+            "readOnly" : true
+          }
+        }
+      }
+    }
+  }
+}

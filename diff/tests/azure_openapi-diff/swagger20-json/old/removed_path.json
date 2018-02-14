@@ -1,0 +1,135 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "removed_path",
+    "version": "1.0"
+  },
+  "host": "localhost:8000",
+  "schemes": [ "http", "https" ],
+  "paths": {
+    "/api/Paths": {
+      "get": {
+        "tags": [ "Paths" ],
+        "operationId": "Paths_Get",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [],
+        "responses": {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      }
+    },
+    "/api/Operations": {
+      "get": {
+        "tags": [ "Operations" ],
+        "operationId": "Operations_Get",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [],
+        "responses": {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      },
+      "post": {
+        "tags": [ "Operations" ],
+        "operationId": "Operations_Post",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [],
+        "responses": {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      }
+    },
+    "/api/Parameters/{a}": {
+      "get": {
+        "tags": [ "Parameters" ],
+        "operationId": "Parameters_Get",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "b",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "d",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "e",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "f",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "enum": [ "theonlyvalue" ]
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      }
+    },
+    "/api/Responses": {
+      "get": {
+        "tags": [ "Responses" ],
+        "operationId": "Responses_Get",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description" : "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "201": {
+            "description" : "Created",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description" : "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": { "type": "string" },
+                "id": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

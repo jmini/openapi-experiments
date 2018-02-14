@@ -1,0 +1,143 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "removed_path",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Paths" : {
+      "get" : {
+        "tags" : [ "Paths" ],
+        "operationId" : "Paths_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Operations" : {
+      "get" : {
+        "tags" : [ "Operations" ],
+        "operationId" : "Operations_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Operations" ],
+        "operationId" : "Operations_Post",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Parameters/{a}" : {
+      "get" : {
+        "tags" : [ "Parameters" ],
+        "operationId" : "Parameters_Get",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "b",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "d",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "e",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "f",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "theonlyvalue" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Responses" : {
+      "get" : {
+        "tags" : [ "Responses" ],
+        "operationId" : "Responses_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

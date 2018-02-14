@@ -1,0 +1,3 @@
+## README
+
+The examples in this folder are copy-pasted from https://github.com/Azure/openapi-diff/tree/master/openapi-diff/src/modeler/AutoRest.Swagger.Tests/Resource/Swagger

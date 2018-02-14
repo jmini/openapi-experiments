@@ -1,0 +1,52 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "enum_values_changed",
+    "version": "1.0"
+  },
+  "host": "localhost:8000",
+  "schemes": [ "http", "https" ],
+  "consumes": [ "text/plain", "text/json" ],
+  "produces": [ "text/plain" ],
+  "paths": {
+    "/api/Parameters": {
+      "put": {
+        "tags": [ "Parameters" ],
+        "operationId": "Parameters_Put",
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "database",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Database" }
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description" : "Ok"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Database": {
+      "properties": {
+        "a": {
+          "type": "string",
+          "description": "Enum.",
+          "enum": [ "a1", "a2" ]
+
+        },
+        "b": {
+          "type": "string",
+          "description": "Enum.",
+          "enum": [ "b1", "b2", "b3" ]
+        }
+      }
+    }
+  }
+}

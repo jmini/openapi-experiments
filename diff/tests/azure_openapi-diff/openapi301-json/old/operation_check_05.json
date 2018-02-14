@@ -1,0 +1,121 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "operation_check_05",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Responses" : {
+      "get" : {
+        "tags" : [ "Responses" ],
+        "operationId" : "Responses_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "a" : {
+                      "maxItems" : 4711,
+                      "minItems" : 13,
+                      "type" : "array",
+                      "items" : {
+                        "multipleOf" : 5,
+                        "maximum" : 17,
+                        "minimum" : 1,
+                        "type" : "integer"
+                      }
+                    },
+                    "b" : {
+                      "maxItems" : 4711,
+                      "minItems" : 13,
+                      "type" : "array",
+                      "items" : {
+                        "maxLength" : 17,
+                        "minLength" : 1,
+                        "pattern" : "[a-z][a-z0-9]*",
+                        "type" : "string"
+                      }
+                    },
+                    "c" : {
+                      "multipleOf" : 5,
+                      "maximum" : 17,
+                      "minimum" : 1,
+                      "type" : "integer"
+                    },
+                    "d" : {
+                      "maxLength" : 17,
+                      "minLength" : 1,
+                      "pattern" : "[a-z][a-z0-9]*",
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/A"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "A" : {
+        "type" : "object",
+        "properties" : {
+          "a" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "multipleOf" : 5,
+              "maximum" : 17,
+              "minimum" : 1,
+              "type" : "integer"
+            }
+          },
+          "b" : {
+            "maxItems" : 4711,
+            "minItems" : 13,
+            "type" : "array",
+            "items" : {
+              "maxLength" : 17,
+              "minLength" : 1,
+              "pattern" : "[a-z][a-z0-9]*",
+              "type" : "string"
+            }
+          },
+          "c" : {
+            "multipleOf" : 5,
+            "maximum" : 17,
+            "minimum" : 1,
+            "type" : "integer"
+          },
+          "d" : {
+            "maxLength" : 17,
+            "minLength" : 1,
+            "pattern" : "[a-z][a-z0-9]*",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

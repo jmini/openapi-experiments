@@ -1,0 +1,78 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "operation_check_03",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8000/"
+  }, {
+    "url" : "https://localhost:8000/"
+  } ],
+  "paths" : {
+    "/api/Parameters" : {
+      "get" : {
+        "tags" : [ "Responses" ],
+        "operationId" : "Responses_Get",
+        "parameters" : [ {
+          "name" : "x-ao",
+          "in" : "header",
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "x-ar",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "x-bo",
+          "in" : "header",
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "x-br",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/Responses" : {
+      "get" : {
+        "tags" : [ "Responses" ],
+        "operationId" : "Responses_Get",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "headers" : {
+              "x-b" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "x-a" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

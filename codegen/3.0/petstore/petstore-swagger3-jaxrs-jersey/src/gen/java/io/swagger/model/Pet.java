@@ -37,7 +37,7 @@ import javax.validation.constraints.*;
 /**
  * Pet
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-02-25T12:07:35.492+01:00")
+
 public class Pet   {
   
     

@@ -33,7 +33,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the store API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-02-25T12:07:35.492+01:00")
+
 
 public class StoreApi  {
    private final StoreApiService delegate;
@@ -78,7 +78,7 @@ public class StoreApi  {
     @GET
     @Path("/inventory")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Returns pet inventories by status", notes = "Returns a map of status codes to quantities", response = Map.class, responseContainer = "Map", tags={ "store", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Map.class, responseContainer = "Map") })
@@ -90,7 +90,7 @@ public class StoreApi  {
     @GET
     @Path("/order/{orderId}")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Find purchase order by ID", notes = "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions", response = Order.class, tags={ "store", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Order.class),
@@ -106,8 +106,8 @@ public class StoreApi  {
 
     @POST
     @Path("/order")
-    
-    
+    @Consumes({ "*/*" })
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Place an order for a pet", notes = "", response = Order.class, tags={ "store", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Order.class),

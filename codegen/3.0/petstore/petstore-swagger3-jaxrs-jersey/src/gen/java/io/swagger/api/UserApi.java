@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the user API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-02-25T12:07:35.492+01:00")
+
 
 public class UserApi  {
    private final UserApiService delegate;
@@ -61,7 +61,7 @@ public class UserApi  {
 
     @POST
     
-    
+    @Consumes({ "*/*" })
     
     @io.swagger.annotations.ApiOperation(value = "Create user", notes = "This can only be done by the logged in user.", response = Void.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -74,7 +74,7 @@ public class UserApi  {
 
     @POST
     @Path("/createWithArray")
-    
+    @Consumes({ "*/*" })
     
     @io.swagger.annotations.ApiOperation(value = "Creates list of users with given input array", notes = "", response = Void.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -87,7 +87,7 @@ public class UserApi  {
 
     @POST
     @Path("/createWithList")
-    
+    @Consumes({ "*/*" })
     
     @io.swagger.annotations.ApiOperation(value = "Creates list of users with given input array", notes = "", response = Void.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -116,7 +116,7 @@ public class UserApi  {
     @GET
     @Path("/{username}")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Get user by user name", notes = "", response = User.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = User.class),
@@ -133,7 +133,7 @@ public class UserApi  {
     @GET
     @Path("/login")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Logs user into the system", notes = "", response = String.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = String.class),
@@ -160,7 +160,7 @@ public class UserApi  {
 
     @PUT
     @Path("/{username}")
-    
+    @Consumes({ "*/*" })
     
     @io.swagger.annotations.ApiOperation(value = "Updated user", notes = "This can only be done by the logged in user.", response = Void.class, tags={ "user", })
     @io.swagger.annotations.ApiResponses(value = { 

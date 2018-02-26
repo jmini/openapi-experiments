@@ -34,7 +34,7 @@ import javax.validation.constraints.*;
 
 
 @io.swagger.annotations.Api(description = "the pet API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaJerseyServerCodegen", date = "2018-02-25T12:07:35.492+01:00")
+
 
 public class PetApi  {
    private final PetApiService delegate;
@@ -63,7 +63,7 @@ public class PetApi  {
 
     @POST
     
-    
+    @Consumes({ "application/json", "application/xml" })
     
     @io.swagger.annotations.ApiOperation(value = "Add a new pet to the store", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -91,7 +91,7 @@ public class PetApi  {
     @GET
     @Path("/findByStatus")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Finds Pets by status", notes = "Multiple status values can be provided with comma separated strings", response = Pet.class, responseContainer = "List", tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
@@ -106,7 +106,7 @@ public class PetApi  {
     @GET
     @Path("/findByTags")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "List", tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
@@ -121,7 +121,7 @@ public class PetApi  {
     @GET
     @Path("/{petId}")
     
-    
+    @Produces({ "application/json", "application/xml" })
     @io.swagger.annotations.ApiOperation(value = "Find pet by ID", notes = "Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions", response = Pet.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class),
@@ -137,7 +137,7 @@ public class PetApi  {
 
     @PUT
     
-    
+    @Consumes({ "application/json", "application/xml" })
     
     @io.swagger.annotations.ApiOperation(value = "Update an existing pet", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -154,7 +154,7 @@ public class PetApi  {
 
     @POST
     @Path("/{petId}")
-    
+    @Consumes({ "application/x-www-form-urlencoded" })
     
     @io.swagger.annotations.ApiOperation(value = "Updates a pet in the store with form data", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
@@ -168,7 +168,7 @@ public class PetApi  {
 
     @POST
     @Path("/{petId}/uploadImage")
-    
+    @Consumes({ "multipart/form-data" })
     
     @io.swagger.annotations.ApiOperation(value = "uploads an image", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 

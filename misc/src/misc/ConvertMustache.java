@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.function.Function;
 
 public class ConvertMustache {
 
@@ -162,68 +163,127 @@ public class ConvertMustache {
         String result = content;
         int index = 0;
         while (index != Integer.MAX_VALUE) {
-            int nextIndex = Integer.MAX_VALUE;
-            Replacement replacementToDo = null;
-            for (Replacement r : repacements) {
-                int i = result.indexOf(r.getOpenTag(), index);
-                if (i > -1 && i < nextIndex) {
-                    replacementToDo = r;
-                    nextIndex = i;
-                }
-            }
-            index = nextIndex;
-            if (replacementToDo != null) {
-                int searchIndex = index + replacementToDo.getOpenTag()
-                        .length();
-
-                int closeIndex = result.indexOf(replacementToDo.getCloseTag(), searchIndex);
-                if (closeIndex == -1) {
-                    throw new IllegalStateException("CloseTag not found after index " + index + " for " + replacementToDo);
-                }
+            TagPairIndex<Replacement> indexToDo = searchTagPair(repacements, Replacement::getTagPair, result, index);
+            index = indexToDo.openTagStartIndex;
+            if (indexToDo.object != null) {
                 for (Replacement r : repacements) {
-                    int i = result.indexOf(r.getOpenTag(), searchIndex);
-                    if (i > -1 && i < closeIndex) {
-                        throw new IllegalStateException("Found nested replacement " + r + " in " + replacementToDo);
+                    int i = result.indexOf(r.getOpenTag(), indexToDo.openTagEndIndex);
+                    if (i > -1 && i < indexToDo.closeTagStartIndex) {
+                        throw new IllegalStateException("Found nested replacement " + r + " in " + indexToDo.object);
                     }
                 }
-                result = result.substring(0, index) + replacementToDo.getOpenTagReplacement() + result.substring(index + replacementToDo.getOpenTag()
-                        .length(), closeIndex) + replacementToDo.getCloseTagReplacement() + result.substring(closeIndex + replacementToDo.getCloseTag()
-                                .length());
+                result = result.substring(0, indexToDo.openTagStartIndex)
+                        + indexToDo.object.getOpenTagReplacement()
+                        + result.substring(indexToDo.openTagEndIndex, indexToDo.closeTagStartIndex)
+                        + indexToDo.object.getCloseTagReplacement()
+                        + result.substring(indexToDo.closeTagEndIndex);
             }
         }
         return result;
     }
 
-    public static class Replacement {
-        private String openTag;
-        private String openTagReplacement;
-        private String closeTag;
-        private String closeTagReplacement;
+    private static <O> TagPairIndex<O> searchTagPair(Collection<O> collection, Function<O, TagPair> tagPairProvider, String content, int fromIndex) {
+        TagPairIndex<O> result = TagPairIndex.maxValue();
+        for (O item : collection) {
+            TagPairIndex<O> match = indexOfTagPair(item, tagPairProvider.apply(item), content, fromIndex);
+            if (match.isMatch && match.openTagStartIndex < result.openTagStartIndex) {
+                result = match;
+            }
+        }
+        return result;
+    }
 
-        public Replacement(String openTag, String openTagReplacement,
-                String closeTag, String closeTagReplacement) {
+    private static <O> TagPairIndex<O> indexOfTagPair(O object, TagPair tagPair, String content, int fromIndex) {
+        int openTagStartIndex = content.indexOf(tagPair.getOpenTag(), fromIndex);
+        if (openTagStartIndex == -1) {
+            return TagPairIndex.maxValue();
+        }
+        int openTagEndIndex = openTagStartIndex + tagPair.getOpenTag()
+                .length();
+
+        int closeTagStartIndex = content.indexOf(tagPair.getCloseTag(), openTagEndIndex);
+        if (closeTagStartIndex == -1) {
+            throw new IllegalStateException("CloseTag not found after index " + openTagEndIndex + " for " + tagPair);
+        }
+        int closeTagEndIndex = closeTagStartIndex + tagPair.getCloseTag()
+                .length();
+        return TagPairIndex.newMatch(object, openTagStartIndex, openTagEndIndex, closeTagStartIndex, closeTagEndIndex);
+    }
+
+    public static class Replacement {
+        private final TagPair tagPair;
+        private final TagPair tagPairReplacement;
+
+        public Replacement(String openTag, String openTagReplacement, String closeTag, String closeTagReplacement) {
+            super();
+            this.tagPair = new TagPair(openTag, closeTag);
+            this.tagPairReplacement = new TagPair(openTagReplacement, closeTagReplacement);
+        }
+
+        public TagPair getTagPair() {
+            return tagPair;
+        }
+
+        public String getOpenTag() {
+            return tagPair.getOpenTag();
+        }
+
+        public String getOpenTagReplacement() {
+            return tagPairReplacement.getOpenTag();
+        }
+
+        public String getCloseTag() {
+            return tagPair.getCloseTag();
+        }
+
+        public String getCloseTagReplacement() {
+            return tagPairReplacement.getCloseTag();
+        }
+    }
+
+    public static class TagPair {
+        private final String openTag;
+        private final String closeTag;
+
+        public TagPair(String openTag, String closeTag) {
             super();
             this.openTag = openTag;
-            this.openTagReplacement = openTagReplacement;
             this.closeTag = closeTag;
-            this.closeTagReplacement = closeTagReplacement;
         }
 
         public String getOpenTag() {
             return openTag;
         }
 
-        public String getOpenTagReplacement() {
-            return openTagReplacement;
-        }
-
         public String getCloseTag() {
             return closeTag;
         }
+    }
 
-        public String getCloseTagReplacement() {
-            return closeTagReplacement;
+    private static class TagPairIndex<T> {
+        private final T object;
+        private final boolean isMatch;
+        private final int openTagStartIndex;
+        private final int openTagEndIndex;
+        private final int closeTagStartIndex;
+        private final int closeTagEndIndex;
+
+        private TagPairIndex(T object, boolean isMatch, int openTagStartIndex, int openTagEndIndex, int closeTagStartIndex, int closeTagEndIndex) {
+            super();
+            this.object = object;
+            this.isMatch = isMatch;
+            this.openTagStartIndex = openTagStartIndex;
+            this.openTagEndIndex = openTagEndIndex;
+            this.closeTagStartIndex = closeTagStartIndex;
+            this.closeTagEndIndex = closeTagEndIndex;
         }
 
+        private static <O> TagPairIndex<O> newMatch(O object, int openTagStartIndex, int openTagEndIndex, int closeTagStartIndex, int closeTagEndIndex) {
+            return new TagPairIndex<O>(object, true, openTagStartIndex, openTagEndIndex, closeTagStartIndex, closeTagEndIndex);
+        }
+
+        private static <O> TagPairIndex<O> maxValue() {
+            return new TagPairIndex<O>(null, false, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE);
+        }
     }
 }

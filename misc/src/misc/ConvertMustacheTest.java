@@ -21,7 +21,6 @@ public class ConvertMustacheTest {
         Assert.assertEquals("tx", ConvertMustache.replaceInContent("tx", Collections.emptyList()));
         Assert.assertEquals("tx", ConvertMustache.replaceInContent("tx", null));
         Assert.assertEquals(null, ConvertMustache.replaceInContent(null, Collections.emptyList()));
-
     }
 
     @Test

@@ -44,9 +44,28 @@ public class Swagger3ConverterMain {
         input.setConfig(config);
 
         new DefaultGenerator().opts(input).generate();
+
+        removeGeneratedAnnotationInJavaFiles(Paths.get(outputDir));
     }
 
     private static String toArtifactId(String inputSpecName, CodegenConfig config) {
         return inputSpecName + "-swagger3-" + config.getName();
+    }
+
+    private static void removeGeneratedAnnotationInJavaFiles(final Path folder) throws IOException {
+        Files.walk(folder)
+            .filter(f -> f.toFile().isFile() && f.toFile().getName().endsWith("java"))
+            .forEach(Swagger3ConverterMain::removeGeneratedAnnotation);
+    }
+
+    private static void removeGeneratedAnnotation(final Path file) {
+        try {
+            String content = new String(Files.readAllBytes(file));
+            content = content.replaceAll("@javax.annotation.Generated\\([^\\)]+\\)", "");
+            Files.write(file, content.getBytes());
+        }
+        catch (final IOException e) {
+            e.printStackTrace();
+        }
     }
 }

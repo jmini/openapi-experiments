@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import misc.ConvertMustache.Replacement;
+import misc.ConvertMustache.TagPair;
 
 public class ConvertMustacheTest {
 
@@ -15,6 +16,7 @@ public class ConvertMustacheTest {
     private static final Replacement REPLACEMENT_BB = new Replacement("bb", "BB", "yy", "YY");
     private static final List<Replacement> REPACEMENTS_A = Collections.singletonList(REPLACEMENT_AAA);
     private static final List<Replacement> REPACEMENTS_AB = Arrays.asList(REPLACEMENT_AAA, REPLACEMENT_BB);
+    private static final TagPair BRACKETS = new TagPair("((", "))");
 
     @Test
     public void testEmpty() {
@@ -53,6 +55,15 @@ public class ConvertMustacheTest {
         Assert.assertEquals("AAAZZZBBYY", ConvertMustache.replaceInContent("aaazzzbbyy", REPACEMENTS_AB));
         Assert.assertEquals("...BB---YY...yy", ConvertMustache.replaceInContent("...bb---yy...yy", REPACEMENTS_AB));
         Assert.assertEquals("...BB---YY...zzz...yy...AAA---ZZZ..", ConvertMustache.replaceInContent("...bb---yy...zzz...yy...aaa---zzz..", REPACEMENTS_AB));
+    }
+
+    @Test
+    public void testInside() {
+        Assert.assertEquals("...aaa.....zzz......", ConvertMustache.replaceInContentInside("...aaa.....zzz......", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("...aaa.....zzz...((...AAA.....ZZZ...))...aaa.....zzz...", ConvertMustache.replaceInContentInside("...aaa.....zzz...((...aaa.....zzz...))...aaa.....zzz...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("((...AAA.....ZZZ...))", ConvertMustache.replaceInContentInside("((...aaa.....zzz...))", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("..((...AAA.....ZZZ...AAA.....ZZZ....))..", ConvertMustache.replaceInContentInside("..((...aaa.....zzz...aaa.....zzz....))..", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals(".((...AAA.....ZZZ...)).....((AAA.....ZZZ))...", ConvertMustache.replaceInContentInside(".((...aaa.....zzz...)).....((aaa.....zzz))...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
     }
 
     @Test(expected = IllegalStateException.class)

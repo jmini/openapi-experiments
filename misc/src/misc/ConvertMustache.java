@@ -137,13 +137,26 @@ public class ConvertMustache {
                 new Replacement("{{^isNotContainer}}", "{{#is this 'container'}}", "{{/isNotContainer}}", "{{/is}}"),
                 new Replacement("{{#isNotContainer}}", "{{#isNot this 'container'}}", "{{/isNotContainer}}", "{{/isNot}}")));
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentInside(result, Arrays.asList(
                 new Replacement("{{#hasMore}}", "{{#has this 'more'}}", "{{/hasMore}}", "{{/has}}"),
-                new Replacement("{{^hasMore}}", "{{#hasNot this 'more'}}", "{{/hasMore}}", "{{/hasNot}}")));
+                new Replacement("{{^hasMore}}", "{{#hasNot this 'more'}}", "{{/hasMore}}", "{{/hasNot}}")),
+                Arrays.asList(
+                        new TagPair("{{#responses}}", "{{/responses}}"),
+                        new TagPair("{{#vars}}", "{{/vars}}")));
 
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#hasVars}}", "{{#has this 'vars'}}", "{{/hasVars}}", "{{/has}}"),
                 new Replacement("{{^hasVars}}", "{{#hasNot this 'vars'}}", "{{/hasVars}}", "{{/hasNot}}")));
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#hasConsumes}}", "{{#has this 'consumes'}}", "{{/hasConsumes}}", "{{/has}}"),
+                new Replacement("{{^hasConsumes}}", "{{#hasNot this 'consumes'}}", "{{/hasConsumes}}", "{{/hasNot}}")),
+                Collections.singletonList(new TagPair("{{#operation}}", "{{/operation}}")));
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#hasProduces}}", "{{#has this 'produces'}}", "{{/hasProduces}}", "{{/has}}"),
+                new Replacement("{{^hasProduces}}", "{{#hasNot this 'produces'}}", "{{/hasProduces}}", "{{/hasNot}}")),
+                Collections.singletonList(new TagPair("{{#operation}}", "{{/operation}}")));
 
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#items.isEnum}}", "{{#is items 'enum'}}", "{{/items.isEnum}}", "{{/is}}"),
@@ -153,6 +166,26 @@ public class ConvertMustache {
         result = result.replace("import io.swagger.inflector.models.RequestContext;", "import io.swagger.oas.inflector.models.RequestContext;");
         result = result.replace("import io.swagger.inflector.models.ResponseContext;", "import io.swagger.oas.inflector.models.ResponseContext;");
         result = result.replace("{{{swagger-yaml}}}", "{{{openapi3-yaml}}}");
+        return result;
+    }
+
+    static String replaceInContentInside(String content, Collection<Replacement> repacements, Collection<TagPair> inside) {
+        if (content == null || repacements == null || repacements.isEmpty()) {
+            return content;
+        }
+        String result = content;
+        int fromIndex = 0;
+        while (fromIndex != Integer.MAX_VALUE) {
+            TagPairIndex<TagPair> pair = searchTagPair(inside, Function.identity(), result, fromIndex);
+            fromIndex = pair.openTagEndIndex;
+            if (pair.isMatch) {
+                String subContent = result.substring(pair.openTagEndIndex, pair.closeTagStartIndex);
+                subContent = replaceInContent(subContent, repacements);
+                result = result.substring(0, pair.openTagEndIndex)
+                        + subContent
+                        + result.substring(pair.closeTagStartIndex);
+            }
+        }
         return result;
     }
 

@@ -17,6 +17,8 @@ public class ConvertMustacheTest {
     private static final List<Replacement> REPACEMENTS_A = Collections.singletonList(REPLACEMENT_AAA);
     private static final List<Replacement> REPACEMENTS_AB = Arrays.asList(REPLACEMENT_AAA, REPLACEMENT_BB);
     private static final TagPair BRACKETS = new TagPair("((", "))");
+    private static final TagPair TAG1 = new TagPair("<1>", "</1>");
+    private static final TagPair TAG2 = new TagPair("<2>", "</2>");
 
     @Test
     public void testEmpty() {
@@ -64,6 +66,19 @@ public class ConvertMustacheTest {
         Assert.assertEquals("((...AAA.....ZZZ...))", ConvertMustache.replaceInContentInside("((...aaa.....zzz...))", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals("..((...AAA.....ZZZ...AAA.....ZZZ....))..", ConvertMustache.replaceInContentInside("..((...aaa.....zzz...aaa.....zzz....))..", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals(".((...AAA.....ZZZ...)).....((AAA.....ZZZ))...", ConvertMustache.replaceInContentInside(".((...aaa.....zzz...)).....((aaa.....zzz))...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("...aaa...<1>...AAA...ZZZ...</1>..aaa...<2>..zzz...AAA.....ZZZ..</2>.zzz..", ConvertMustache.replaceInContentInside("...aaa...<1>...aaa...zzz...</1>..aaa...<2>..zzz...aaa.....zzz..</2>.zzz..", REPACEMENTS_AB,
+                Arrays.asList(TAG1, TAG2)));
+    }
+
+    @Test
+    public void testOutside() {
+        Assert.assertEquals("...AAA.....ZZZ......", ConvertMustache.replaceInContentOutside("...aaa.....zzz......", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("...AAA.....ZZZ...((...aaa.....zzz...))...AAA.....ZZZ...", ConvertMustache.replaceInContentOutside("...aaa.....zzz...((...aaa.....zzz...))...aaa.....zzz...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("((...aaa.....zzz...))", ConvertMustache.replaceInContentOutside("((...aaa.....zzz...))", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("..((...aaa.....zzz...aaa.....zzz....))..", ConvertMustache.replaceInContentOutside("..((...aaa.....zzz...aaa.....zzz....))..", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals(".((...aaa.....zzz...)).....((aaa.....zzz))...", ConvertMustache.replaceInContentOutside(".((...aaa.....zzz...)).....((aaa.....zzz))...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals(".<1>...aaa.....zzz...</1>..AAA.....ZZZ...<2>aaa.....zzz</2>...", ConvertMustache.replaceInContentOutside(".<1>...aaa.....zzz...</1>..aaa.....zzz...<2>aaa.....zzz</2>...", REPACEMENTS_AB,
+                Arrays.asList(TAG1, TAG2)));
     }
 
     @Test(expected = IllegalStateException.class)
@@ -79,6 +94,16 @@ public class ConvertMustacheTest {
     @Test(expected = IllegalStateException.class)
     public void testNested2() {
         ConvertMustache.replaceInContent("....aaa...aaa---zzz...", REPACEMENTS_A);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testNested3() {
+        ConvertMustache.replaceInContentOutside("....aaa...((...zzz...))...", REPACEMENTS_A, Collections.singletonList(BRACKETS));
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testNested4() {
+        ConvertMustache.replaceInContentOutside("....aaa...<1>......</1> zzz...", REPACEMENTS_A, Collections.singletonList(TAG1));
     }
 
 }

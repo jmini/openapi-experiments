@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.function.Function;
 
 public class ConvertMustache {
-
     public static void convertAllMustacheFiles(Path inputDir, Path outputDir) throws IOException {
         Files.walk(inputDir)
                 .filter(f -> f.toFile()
@@ -44,6 +43,8 @@ public class ConvertMustache {
         }
     }
 
+    private static final Collection<TagPair> ENUM_VARS = Collections.singletonList(new TagPair("{{#enumVars}}", "{{/enumVars}}"));
+
     /**
      * @param content
      * @return
@@ -61,25 +62,30 @@ public class ConvertMustache {
                 new Replacement("{{#gson}}", "{{#if gson}}", "{{/gson}}", "{{/if}}"),
                 new Replacement("{{^gson}}", "{{#unless gson}}", "{{/gson}}", "{{/unless}}")));
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentOutside(result, Arrays.asList(
                 new Replacement("{{#isInteger}}", "{{#is this 'integer'}}", "{{/isInteger}}", "{{/is}}"),
-                new Replacement("{{^isInteger}}", "{{#isNot this 'integer'}}", "{{/isInteger}}", "{{/isNot}}")));
+                new Replacement("{{^isInteger}}", "{{#isNot this 'integer'}}", "{{/isInteger}}", "{{/isNot}}")),
+                ENUM_VARS);
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentOutside(result, Arrays.asList(
                 new Replacement("{{#isDouble}}", "{{#is this 'double'}}", "{{/isDouble}}", "{{/is}}"),
-                new Replacement("{{^isDouble}}", "{{#isNot this 'double'}}", "{{/isDouble}}", "{{/isNot}}")));
+                new Replacement("{{^isDouble}}", "{{#isNot this 'double'}}", "{{/isDouble}}", "{{/isNot}}")),
+                ENUM_VARS);
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentOutside(result, Arrays.asList(
                 new Replacement("{{#isLong}}", "{{#is this 'long'}}", "{{/isLong}}", "{{/is}}"),
-                new Replacement("{{^isLong}}", "{{#isNot this 'long'}}", "{{/isLong}}", "{{/isNot}}")));
+                new Replacement("{{^isLong}}", "{{#isNot this 'long'}}", "{{/isLong}}", "{{/isNot}}")),
+                ENUM_VARS);
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentOutside(result, Arrays.asList(
                 new Replacement("{{#isFloat}}", "{{#is this 'float'}}", "{{/isFloat}}", "{{/is}}"),
-                new Replacement("{{^isFloat}}", "{{#isNot this 'float'}}", "{{/isFloat}}", "{{/isNot}}")));
+                new Replacement("{{^isFloat}}", "{{#isNot this 'float'}}", "{{/isFloat}}", "{{/isNot}}")),
+                ENUM_VARS);
 
-        result = replaceInContent(result, Arrays.asList(
+        result = replaceInContentOutside(result, Arrays.asList(
                 new Replacement("{{#isBoolean}}", "{{#is this 'boolean'}}", "{{/isBoolean}}", "{{/is}}"),
-                new Replacement("{{^isBoolean}}", "{{#isNot this 'boolean'}}", "{{/isBoolean}}", "{{/isNot}}")));
+                new Replacement("{{^isBoolean}}", "{{#isNot this 'boolean'}}", "{{/isBoolean}}", "{{/isNot}}")),
+                ENUM_VARS);
 
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#isFormParam}}", "{{#is this 'form-param'}}", "{{/isFormParam}}", "{{/is}}"),
@@ -190,26 +196,41 @@ public class ConvertMustache {
     }
 
     static String replaceInContent(String content, Collection<Replacement> repacements) {
+        return replaceInContentOutside(content, repacements, Collections.emptyList());
+    }
+
+    static String replaceInContentOutside(String content, Collection<Replacement> repacements, Collection<TagPair> excludes) {
         if (content == null || repacements == null || repacements.isEmpty()) {
             return content;
         }
         String result = content;
-        int index = 0;
-        while (index != Integer.MAX_VALUE) {
-            TagPairIndex<Replacement> indexToDo = searchTagPair(repacements, Replacement::getTagPair, result, index);
-            index = indexToDo.openTagStartIndex;
-            if (indexToDo.object != null) {
-                for (Replacement r : repacements) {
-                    int i = result.indexOf(r.getOpenTag(), indexToDo.openTagEndIndex);
-                    if (i > -1 && i < indexToDo.closeTagStartIndex) {
-                        throw new IllegalStateException("Found nested replacement " + r + " in " + indexToDo.object);
+        int fromIndex = 0;
+        while (fromIndex != Integer.MAX_VALUE) {
+            TagPairIndex<TagPair> exclude = searchTagPair(excludes, Function.identity(), result, fromIndex);
+            TagPairIndex<Replacement> replacement = searchTagPair(repacements, Replacement::getTagPair, result, fromIndex);
+            if (exclude.openTagStartIndex < replacement.openTagStartIndex) {
+                fromIndex = exclude.closeTagEndIndex;
+            } else {
+                fromIndex = replacement.openTagEndIndex;
+                if (replacement.isMatch) {
+                    for (Replacement r : repacements) {
+                        int i = result.indexOf(r.getOpenTag(), fromIndex);
+                        if (i > -1 && i < replacement.closeTagStartIndex) {
+                            throw new IllegalStateException("Found nested replacement " + r + " in " + replacement.object);
+                        }
                     }
+                    for (TagPair r : excludes) {
+                        int i = result.indexOf(r.getOpenTag(), fromIndex);
+                        if (i > -1 && i < replacement.closeTagStartIndex) {
+                            throw new IllegalStateException("Found nested exclude " + r + " in " + replacement.object);
+                        }
+                    }
+                    result = result.substring(0, replacement.openTagStartIndex)
+                            + replacement.object.getOpenTagReplacement()
+                            + result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex)
+                            + replacement.object.getCloseTagReplacement()
+                            + result.substring(replacement.closeTagEndIndex);
                 }
-                result = result.substring(0, indexToDo.openTagStartIndex)
-                        + indexToDo.object.getOpenTagReplacement()
-                        + result.substring(indexToDo.openTagEndIndex, indexToDo.closeTagStartIndex)
-                        + indexToDo.object.getCloseTagReplacement()
-                        + result.substring(indexToDo.closeTagEndIndex);
             }
         }
         return result;

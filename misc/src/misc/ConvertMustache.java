@@ -148,7 +148,8 @@ public class ConvertMustache {
                 new Replacement("{{^hasMore}}", "{{#hasNot this 'more'}}", "{{/hasMore}}", "{{/hasNot}}")),
                 Arrays.asList(
                         new TagPair("{{#responses}}", "{{/responses}}"),
-                        new TagPair("{{#vars}}", "{{/vars}}")));
+                        new TagPair("{{#vars}}", "{{/vars}}"),
+                        new TagPair("{{#allParams}}", "{{/allParams}}")));
 
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#hasVars}}", "{{#has this 'vars'}}", "{{/hasVars}}", "{{/has}}"),

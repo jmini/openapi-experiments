@@ -5,6 +5,7 @@ import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
 import io.swagger.codegen.config.CodegenConfigurator;
 import io.swagger.codegen.languages.java.AbstractJavaCodegen;
+import io.swagger.codegen.languages.java.JavaClientCodegen;
 import io.swagger.codegen.languages.java.JavaCXFServerCodegen;
 import io.swagger.codegen.languages.java.JavaJAXRSCXFCDIServerCodegen;
 import io.swagger.codegen.languages.java.JavaJAXRSSpecServerCodegen;
@@ -20,12 +21,18 @@ import java.nio.file.Paths;
 public class Swagger3ConverterMain {
 
     public static void main(String[] args) throws IOException {
+        convertJava("petstore");
         convertJaxrs("petstore");
         convertJaxrsCxf("petstore");
         convertJaxrsCxfCdi("petstore");
         convertJaxrsResteasy("petstore");
         convertJaxrsResteasyEap("petstore");
         convertJaxrsSpec("petstore");
+    }
+
+    private static void convertJava(String inputSpecName) throws IOException {
+        JavaClientCodegen config = new io.swagger.codegen.languages.java.JavaClientCodegen();
+        convertAbstractJava(inputSpecName, config);
     }
 
     private static void convertJaxrs(String inputSpecName) throws IOException {

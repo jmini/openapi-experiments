@@ -3,6 +3,7 @@ package misc;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -17,6 +18,22 @@ public class ConvertMustache {
                                 .getName()
                                 .endsWith("mustache"))
                 .forEach(f -> convert(f, inputDir, outputDir));
+    }
+
+    public static void copyAssets(Path inputDir, Path outputDir) throws IOException {
+        Files.walk(inputDir)
+                .filter(f -> f.toFile()
+                        .isFile() &&
+                        (f.toFile()
+                                .getName()
+                                .endsWith("css"))
+                        || f.toFile()
+                                .getName()
+                                .endsWith("png")
+                        || f.toFile()
+                                .getName()
+                                .endsWith("js"))
+                .forEach(f -> copy(f, inputDir, outputDir));
     }
 
     private static void convert(Path file, Path inputDir, Path outputDir) {
@@ -43,6 +60,19 @@ public class ConvertMustache {
         }
     }
 
+    private static void copy(Path file, Path inputDir, Path outputDir) {
+        Path subPath = inputDir.relativize(file);
+        Path outPath = outputDir.resolve(subPath);
+        System.out.println(outPath.toFile()
+                .getAbsolutePath());
+        try {
+            Files.createDirectories(outPath.getParent());
+            Files.copy(file, outPath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            throw new IllegalStateException("Could not write file: " + outPath, e);
+        }
+    }
+
     private static final Collection<TagPair> ENUM_VARS = Collections.singletonList(new TagPair("{{#enumVars}}", "{{/enumVars}}"));
 
     /**
@@ -55,8 +85,14 @@ public class ConvertMustache {
         result = replaceInContent(result, Collections.singletonList(new Replacement("{{#isBodyParam}}", "{{#is this 'body-param'}}", "{{/isBodyParam}}", "{{/is}}")));
         // result = replaceInContent(result, Collections.singletonList(new Replacement("{{#allowableValues}}", "{{#if allowableValues}}", "{{/allowableValues}}", "{{/if}}")));
         // result = replaceInContent(result, Collections.singletonList(new Replacement("{{#enumVars}}", "{{#if allowableValues.enumVars}}", "{{/enumVars}}", "{{/if}}")));
-        result = replaceInContent(result, Collections.singletonList(new Replacement("{{^-last}}", "{{^@last}}", "{{/-last}}", "{{/@last}}")));
-        result = replaceInContent(result, Collections.singletonList(new Replacement("{{#-last}}", "{{#@last}}", "{{/-last}}", "{{/@last}}")));
+
+        result = replaceInContent(result, Arrays.asList(
+                new Replacement("{{^-first}}", "{{^@first}}", "{{/-first}}", "{{/@first}}"),
+                new Replacement("{{#-first}}", "{{#@first}}", "{{/-first}}", "{{/@first}}")));
+
+        result = replaceInContent(result, Arrays.asList(
+                new Replacement("{{^-last}}", "{{^@last}}", "{{/-last}}", "{{/@last}}"),
+                new Replacement("{{#-last}}", "{{#@last}}", "{{/-last}}", "{{/@last}}")));
 
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#gson}}", "{{#if gson}}", "{{/gson}}", "{{/if}}"),

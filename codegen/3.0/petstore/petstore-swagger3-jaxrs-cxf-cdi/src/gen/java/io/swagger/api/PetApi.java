@@ -48,7 +48,7 @@ public class PetApi  {
     @ApiOperation(value = "Add a new pet to the store", notes = "", response = Void.class, tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addPet(@ApiParam(value = "" ) Pet pet) {
+    public Response addPet(@ApiParam(value = "Pet object that needs to be added to the store" ) Pet pet) {
         return delegate.addPet(pet, securityContext);
     }
 
@@ -114,7 +114,7 @@ public class PetApi  {
         @ApiResponse(code = 400, message = "Invalid ID supplied", response = Void.class),
         @ApiResponse(code = 404, message = "Pet not found", response = Void.class),
         @ApiResponse(code = 405, message = "Validation exception", response = Void.class) })
-    public Response updatePet(@ApiParam(value = "" ) Pet pet) {
+    public Response updatePet(@ApiParam(value = "Pet object that needs to be added to the store" ) Pet pet) {
         return delegate.updatePet(pet, securityContext);
     }
 

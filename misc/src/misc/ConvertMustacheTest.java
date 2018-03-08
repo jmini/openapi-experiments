@@ -62,12 +62,21 @@ public class ConvertMustacheTest {
     @Test
     public void testInside() {
         Assert.assertEquals("...aaa.....zzz......", ConvertMustache.replaceInContentInside("...aaa.....zzz......", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
-        Assert.assertEquals("...aaa.....zzz...((...AAA.....ZZZ...))...aaa.....zzz...", ConvertMustache.replaceInContentInside("...aaa.....zzz...((...aaa.....zzz...))...aaa.....zzz...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("...aaa.....zzz...((...AAA.....ZZZ...))...aaa.....zzz...", ConvertMustache.replaceInContentInside("...aaa.....zzz...((...aaa.....zzz...))...aaa.....zzz...", REPACEMENTS_AB,
+                Collections.singletonList(BRACKETS)));
         Assert.assertEquals("((...AAA.....ZZZ...))", ConvertMustache.replaceInContentInside("((...aaa.....zzz...))", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals("..((...AAA.....ZZZ...AAA.....ZZZ....))..", ConvertMustache.replaceInContentInside("..((...aaa.....zzz...aaa.....zzz....))..", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals(".((...AAA.....ZZZ...)).....((AAA.....ZZZ))...", ConvertMustache.replaceInContentInside(".((...aaa.....zzz...)).....((aaa.....zzz))...", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals("...aaa...<1>...AAA...ZZZ...</1>..aaa...<2>..zzz...AAA.....ZZZ..</2>.zzz..", ConvertMustache.replaceInContentInside("...aaa...<1>...aaa...zzz...</1>..aaa...<2>..zzz...aaa.....zzz..</2>.zzz..", REPACEMENTS_AB,
                 Arrays.asList(TAG1, TAG2)));
+
+        Assert.assertEquals("...((..<xx>...))......", ConvertMustache.replaceInContentInside("...((..(xx)...))......", Collections.singletonList(new Replacement("(", "<", ")", ">")), Collections.singletonList(BRACKETS)));
+        Assert.assertEquals("...{{=< >=}}[xxxx]<={{ }}=>...", ConvertMustache.replaceInContentInside("...{{=< >=}}{xxxx}<={{ }}=>...", Arrays.asList(
+                new Replacement("{", "[", "}", "]")),
+                Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>"))));
+        Assert.assertEquals("...{{=< >=}}{{{xxxx}}}<={{ }}=>...", ConvertMustache.replaceInContentInside("...{{=< >=}}{xxxx}<={{ }}=>...", Arrays.asList(
+                new Replacement("{", "{{{", "}", "}}}")),
+                Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>"))));
     }
 
     @Test
@@ -105,5 +114,4 @@ public class ConvertMustacheTest {
     public void testNested4() {
         ConvertMustache.replaceInContentOutside("....aaa...<1>......</1> zzz...", REPACEMENTS_A, Collections.singletonList(TAG1));
     }
-
 }

@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.function.Function;
 
 public class ConvertMustache {
+
     public static void convertAllMustacheFiles(Path inputDir, Path outputDir) throws IOException {
         Files.walk(inputDir)
                 .filter(f -> f.toFile()
@@ -75,11 +76,14 @@ public class ConvertMustache {
 
     private static final Collection<TagPair> ENUM_VARS = Collections.singletonList(new TagPair("{{#enumVars}}", "{{/enumVars}}"));
 
+    // private static final String TEMP_MARKER_OPEN = "!!#OPEN_TEMP_BRACKET$!!";
+    // private static final String TEMP_MARKER_CLOSE = "!!#CLOSE_TEMP_BRACKET$!!";
+
     /**
      * @param content
      * @return
      */
-    private static String convertContent(String content) {
+    static String convertContent(String content) {
         String result = content;
 
         result = replaceInContent(result, Collections.singletonList(new Replacement("{{#isBodyParam}}", "{{#is this 'body-param'}}", "{{/isBodyParam}}", "{{/is}}")));
@@ -205,9 +209,26 @@ public class ConvertMustache {
                 new Replacement("{{#items.isEnum}}", "{{#is items 'enum'}}", "{{/items.isEnum}}", "{{/is}}"),
                 new Replacement("{{^items.isEnum}}", "{{#isNot items 'enum'}}", "{{/items.isEnum}}", "{{/isNot}}")));
 
+        // custom delimiters, see https://github.com/swagger-api/swagger-codegen-generators/issues/33
+        // if (result.contains(TEMP_MARKER_OPEN)) {
+        // throw new IllegalStateException("text can not contains '" + TEMP_MARKER_OPEN + "'");
+        // }
+        // if (result.contains(TEMP_MARKER_CLOSE)) {
+        // throw new IllegalStateException("text can not contains '" + TEMP_MARKER_CLOSE + "'");
+        // }
+        // result = replaceInContentInside(result, Arrays.asList(
+        // new Replacement("{", TEMP_MARKER_OPEN, "}", TEMP_MARKER_CLOSE)),
+        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        // result = replaceInContentInside(result, Arrays.asList(
+        // new Replacement(TEMP_MARKER_OPEN, "{{\"{\"}}", TEMP_MARKER_CLOSE, "{{\"}\"}}")),
+        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        // result = replaceInContentInside(result, Arrays.asList(
+        // new Replacement("<", "{{", ">", "}}")),
+        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        // result = replaceInContent(result, Collections.singletonList(new Replacement("{{=< >=}}", "", "<={{ }}=>", "")));
+
         result = result.replace("swaggerUrl: ./src/main/swagger/swagger.yaml", "swaggerUrl: ./src/main/resources/openapi3.yaml");
-        result = result.replace("import io.swagger.inflector.models.RequestContext;", "import io.swagger.oas.inflector.models.RequestContext;");
-        result = result.replace("import io.swagger.inflector.models.ResponseContext;", "import io.swagger.oas.inflector.models.ResponseContext;");
+
         result = result.replace("{{{swagger-yaml}}}", "{{{openapi3-yaml}}}");
         return result;
     }
@@ -253,7 +274,7 @@ public class ConvertMustache {
                     for (Replacement r : repacements) {
                         int i = result.indexOf(r.getOpenTag(), fromIndex);
                         if (i > -1 && i < replacement.closeTagStartIndex) {
-                            throw new IllegalStateException("Found nested replacement " + r + " in " + replacement.object);
+                            throw new IllegalStateException("Found nested replacement " + r + " in '" + result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex) + "'");
                         }
                     }
                     for (TagPair r : excludes) {
@@ -267,6 +288,9 @@ public class ConvertMustache {
                             + result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex)
                             + replacement.object.getCloseTagReplacement()
                             + result.substring(replacement.closeTagEndIndex);
+                    fromIndex = fromIndex + replacement.object.getOpenTagReplacement()
+                            .length() - replacement.object.getOpenTag()
+                                    .length();
                 }
             }
         }
@@ -294,7 +318,7 @@ public class ConvertMustache {
 
         int closeTagStartIndex = content.indexOf(tagPair.getCloseTag(), openTagEndIndex);
         if (closeTagStartIndex == -1) {
-            throw new IllegalStateException("CloseTag not found after index " + openTagEndIndex + " for " + tagPair);
+            throw new IllegalStateException("CloseTag '" + tagPair.getCloseTag() + "' not found after index " + openTagEndIndex + " for " + tagPair);
         }
         int closeTagEndIndex = closeTagStartIndex + tagPair.getCloseTag()
                 .length();
@@ -330,6 +354,11 @@ public class ConvertMustache {
         public String getCloseTagReplacement() {
             return tagPairReplacement.getCloseTag();
         }
+
+        @Override
+        public String toString() {
+            return "Replacement [search=" + tagPair + ", replacement=" + tagPairReplacement + "]";
+        }
     }
 
     public static class TagPair {
@@ -349,6 +378,12 @@ public class ConvertMustache {
         public String getCloseTag() {
             return closeTag;
         }
+
+        @Override
+        public String toString() {
+            return "'" + openTag + "..." + closeTag + "'";
+        }
+
     }
 
     private static class TagPairIndex<T> {

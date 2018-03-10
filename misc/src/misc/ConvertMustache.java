@@ -7,7 +7,10 @@ import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConvertMustache {
 
@@ -25,6 +28,8 @@ public class ConvertMustache {
         Files.walk(inputDir)
                 .filter(f -> f.toFile()
                         .isFile() &&
+                        !f.toFile()
+                                .isDirectory() &&
                         (f.toFile()
                                 .getName()
                                 .endsWith("css"))
@@ -209,6 +214,10 @@ public class ConvertMustache {
                 new Replacement("{{#items.isEnum}}", "{{#is items 'enum'}}", "{{/items.isEnum}}", "{{/is}}"),
                 new Replacement("{{^items.isEnum}}", "{{#isNot items 'enum'}}", "{{/items.isEnum}}", "{{/isNot}}")));
 
+        result = replaceInContent(result, Arrays.asList(
+                new Replacement("{{#parent}}", "{{#parentModel}}", "{{/parent}}", "{{/parentModel}}")),
+                ConvertMustache::containsAVendorExtendable);
+
         // custom delimiters, see https://github.com/swagger-api/swagger-codegen-generators/issues/33
         // if (result.contains(TEMP_MARKER_OPEN)) {
         // throw new IllegalStateException("text can not contains '" + TEMP_MARKER_OPEN + "'");
@@ -233,6 +242,12 @@ public class ConvertMustache {
         return result;
     }
 
+    static Boolean containsAVendorExtendable(String s) {
+        Pattern pattern = Pattern.compile("\\{\\{[^\\}]+ this '[^\\}]+'\\}\\}");
+        Matcher matcher = pattern.matcher(s);
+        return matcher.find();
+    }
+
     static String replaceInContentInside(String content, Collection<Replacement> repacements, Collection<TagPair> inside) {
         if (content == null || repacements == null || repacements.isEmpty()) {
             return content;
@@ -254,10 +269,18 @@ public class ConvertMustache {
     }
 
     static String replaceInContent(String content, Collection<Replacement> repacements) {
-        return replaceInContentOutside(content, repacements, Collections.emptyList());
+        return replaceInContentOutside(content, repacements, Collections.emptyList(), s -> Boolean.TRUE);
+    }
+
+    static String replaceInContent(String content, List<Replacement> repacements, Function<String, Boolean> condition) {
+        return replaceInContentOutside(content, repacements, Collections.emptyList(), condition);
     }
 
     static String replaceInContentOutside(String content, Collection<Replacement> repacements, Collection<TagPair> excludes) {
+        return replaceInContentOutside(content, repacements, excludes, s -> Boolean.TRUE);
+    }
+
+    static String replaceInContentOutside(String content, Collection<Replacement> repacements, Collection<TagPair> excludes, Function<String, Boolean> condition) {
         if (content == null || repacements == null || repacements.isEmpty()) {
             return content;
         }
@@ -271,10 +294,11 @@ public class ConvertMustache {
             } else {
                 fromIndex = replacement.openTagEndIndex;
                 if (replacement.isMatch) {
+                    String textInTags = result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex);
                     for (Replacement r : repacements) {
                         int i = result.indexOf(r.getOpenTag(), fromIndex);
                         if (i > -1 && i < replacement.closeTagStartIndex) {
-                            throw new IllegalStateException("Found nested replacement " + r + " in '" + result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex) + "'");
+                            throw new IllegalStateException("Found nested replacement " + r + " in '" + textInTags + "'");
                         }
                     }
                     for (TagPair r : excludes) {
@@ -283,14 +307,19 @@ public class ConvertMustache {
                             throw new IllegalStateException("Found nested exclude " + r + " in " + replacement.object);
                         }
                     }
-                    result = result.substring(0, replacement.openTagStartIndex)
-                            + replacement.object.getOpenTagReplacement()
-                            + result.substring(replacement.openTagEndIndex, replacement.closeTagStartIndex)
-                            + replacement.object.getCloseTagReplacement()
-                            + result.substring(replacement.closeTagEndIndex);
-                    fromIndex = fromIndex + replacement.object.getOpenTagReplacement()
-                            .length() - replacement.object.getOpenTag()
-                                    .length();
+                    if (condition.apply(textInTags)) {
+                        result = result.substring(0, replacement.openTagStartIndex)
+                                + replacement.object.getOpenTagReplacement()
+                                + textInTags
+                                + replacement.object.getCloseTagReplacement()
+                                + result.substring(replacement.closeTagEndIndex);
+                        fromIndex = fromIndex + replacement.object.getOpenTagReplacement()
+                                .length() - replacement.object.getOpenTag()
+                                        .length();
+                    } else {
+                        fromIndex = fromIndex + replacement.object.getOpenTag()
+                                .length();
+                    }
                 }
             }
         }

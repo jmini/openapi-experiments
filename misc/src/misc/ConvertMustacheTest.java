@@ -60,6 +60,11 @@ public class ConvertMustacheTest {
     }
 
     @Test
+    public void testWithCondition() {
+        Assert.assertEquals("...AAA____ZZZ....aaa...zzz.", ConvertMustache.replaceInContent("...aaa____zzz....aaa...zzz.", REPACEMENTS_A, s -> s.contains("_")));
+    }
+
+    @Test
     public void testInside() {
         Assert.assertEquals("...aaa.....zzz......", ConvertMustache.replaceInContentInside("...aaa.....zzz......", REPACEMENTS_AB, Collections.singletonList(BRACKETS)));
         Assert.assertEquals("...aaa.....zzz...((...AAA.....ZZZ...))...aaa.....zzz...", ConvertMustache.replaceInContentInside("...aaa.....zzz...((...aaa.....zzz...))...aaa.....zzz...", REPACEMENTS_AB,
@@ -113,5 +118,13 @@ public class ConvertMustacheTest {
     @Test(expected = IllegalStateException.class)
     public void testNested4() {
         ConvertMustache.replaceInContentOutside("....aaa...<1>......</1> zzz...", REPACEMENTS_A, Collections.singletonList(TAG1));
+    }
+
+    @Test
+    public void testContainsAVendorExtendable() throws Exception {
+        Assert.assertFalse(ConvertMustache.containsAVendorExtendable("xxxxx"));
+        Assert.assertFalse(ConvertMustache.containsAVendorExtendable("{{#has}}, {{/has}}super.hashCode()"));
+        Assert.assertTrue(ConvertMustache.containsAVendorExtendable("{{#has this 'vars'}}, {{/has}}super.hashCode()"));
+        Assert.assertTrue(ConvertMustache.containsAVendorExtendable("xxxx {{#is this 'vars'}} xxx {{/is}} xxx"));
     }
 }

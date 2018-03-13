@@ -157,6 +157,14 @@ public class ConvertMustache {
                 new Replacement("{{^isContainer}}", "{{#isNot this 'container'}}", "{{/isContainer}}", "{{/isNot}}")));
 
         result = replaceInContent(result, Arrays.asList(
+                new Replacement("{{#isListContainer}}", "{{#is this 'list-container'}}", "{{/isListContainer}}", "{{/is}}"),
+                new Replacement("{{^isListContainer}}", "{{#isNot this 'list-container'}}", "{{/isListContainer}}", "{{/isNot}}")));
+
+        result = replaceInContent(result, Arrays.asList(
+                new Replacement("{{#isMapContainer}}", "{{#is this 'map-container'}}", "{{/isMapContainer}}", "{{/is}}"),
+                new Replacement("{{^isMapContainer}}", "{{#isNot this 'map-container'}}", "{{/isMapContainer}}", "{{/isNot}}")));
+
+        result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#isQueryParam}}", "{{#is this 'query-param'}}", "{{/isQueryParam}}", "{{/is}}"),
                 new Replacement("{{^isQueryParam}}", "{{#isNot this 'query-param'}}", "{{/isQueryParam}}", "{{/isNot}}")));
 

@@ -127,4 +127,10 @@ public class ConvertMustacheTest {
         Assert.assertTrue(ConvertMustache.containsAVendorExtendable("{{#has this 'vars'}}, {{/has}}super.hashCode()"));
         Assert.assertTrue(ConvertMustache.containsAVendorExtendable("xxxx {{#is this 'vars'}} xxx {{/is}} xxx"));
     }
+
+    @Test
+    public void testChangeDelimiter() {
+        String content = ConvertMustache.convertContent("bla {{=< >=}}{<&dataType>}<={{ }}=> bla");
+        Assert.assertEquals("bla {{braces \"left\"}}{{&dataType}}{{braces \"right\"}} bla", content);
+    }
 }

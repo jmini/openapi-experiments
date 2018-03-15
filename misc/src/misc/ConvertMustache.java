@@ -81,8 +81,8 @@ public class ConvertMustache {
 
     private static final Collection<TagPair> ENUM_VARS = Collections.singletonList(new TagPair("{{#enumVars}}", "{{/enumVars}}"));
 
-    // private static final String TEMP_MARKER_OPEN = "!!#OPEN_TEMP_BRACKET$!!";
-    // private static final String TEMP_MARKER_CLOSE = "!!#CLOSE_TEMP_BRACKET$!!";
+    private static final String TEMP_MARKER_OPEN = "!!#OPEN_TEMP_BRACKET$!!";
+    private static final String TEMP_MARKER_CLOSE = "!!#CLOSE_TEMP_BRACKET$!!";
 
     /**
      * @param content
@@ -252,23 +252,23 @@ public class ConvertMustache {
                 new Replacement("{{#parent}}", "{{#parentModel}}", "{{/parent}}", "{{/parentModel}}")),
                 ConvertMustache::containsAVendorExtendable);
 
-        // custom delimiters, see https://github.com/swagger-api/swagger-codegen-generators/issues/33
-        // if (result.contains(TEMP_MARKER_OPEN)) {
-        // throw new IllegalStateException("text can not contains '" + TEMP_MARKER_OPEN + "'");
-        // }
-        // if (result.contains(TEMP_MARKER_CLOSE)) {
-        // throw new IllegalStateException("text can not contains '" + TEMP_MARKER_CLOSE + "'");
-        // }
-        // result = replaceInContentInside(result, Arrays.asList(
-        // new Replacement("{", TEMP_MARKER_OPEN, "}", TEMP_MARKER_CLOSE)),
-        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
-        // result = replaceInContentInside(result, Arrays.asList(
-        // new Replacement(TEMP_MARKER_OPEN, "{{\"{\"}}", TEMP_MARKER_CLOSE, "{{\"}\"}}")),
-        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
-        // result = replaceInContentInside(result, Arrays.asList(
-        // new Replacement("<", "{{", ">", "}}")),
-        // Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
-        // result = replaceInContent(result, Collections.singletonList(new Replacement("{{=< >=}}", "", "<={{ }}=>", "")));
+        // custom delimiters
+        if (result.contains(TEMP_MARKER_OPEN)) {
+            throw new IllegalStateException("text can not contains '" + TEMP_MARKER_OPEN + "'");
+        }
+        if (result.contains(TEMP_MARKER_CLOSE)) {
+            throw new IllegalStateException("text can not contains '" + TEMP_MARKER_CLOSE + "'");
+        }
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{", TEMP_MARKER_OPEN, "}", TEMP_MARKER_CLOSE)),
+                Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement(TEMP_MARKER_OPEN, "{{braces \"left\"}}", TEMP_MARKER_CLOSE, "{{braces \"right\"}}")),
+                Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("<", "{{", ">", "}}")),
+                Collections.singletonList(new TagPair("{{=< >=}}", "<={{ }}=>")));
+        result = replaceInContent(result, Collections.singletonList(new Replacement("{{=< >=}}", "", "<={{ }}=>", "")));
 
         result = result.replace("swaggerUrl: ./src/main/swagger/swagger.yaml", "swaggerUrl: ./src/main/resources/openapi3.yaml");
 

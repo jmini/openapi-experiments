@@ -132,6 +132,32 @@ public class ConvertMustache {
                 new Replacement("{{^isBoolean}}", "{{#isNot this 'boolean'}}", "{{/isBoolean}}", "{{/isNot}}")),
                 ENUM_VARS);
 
+        // Inside {{#enumVars}}..{{/enumVars}}, 'this' is a HashMap, CodegenModel is '../../this':
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#isInteger}}", "{{#is ../../this 'integer'}}", "{{/isInteger}}", "{{/is}}"),
+                new Replacement("{{^isInteger}}", "{{#isNot ../../this 'integer'}}", "{{/isInteger}}", "{{/isNot}}")),
+                ENUM_VARS);
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#isDouble}}", "{{#is ../../this 'double'}}", "{{/isDouble}}", "{{/is}}"),
+                new Replacement("{{^isDouble}}", "{{#isNot ../../this 'double'}}", "{{/isDouble}}", "{{/isNot}}")),
+                ENUM_VARS);
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#isLong}}", "{{#is ../../this 'long'}}", "{{/isLong}}", "{{/is}}"),
+                new Replacement("{{^isLong}}", "{{#isNot ../../this 'long'}}", "{{/isLong}}", "{{/isNot}}")),
+                ENUM_VARS);
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#isFloat}}", "{{#is ../../this 'float'}}", "{{/isFloat}}", "{{/is}}"),
+                new Replacement("{{^isFloat}}", "{{#isNot ../../this 'float'}}", "{{/isFloat}}", "{{/isNot}}")),
+                ENUM_VARS);
+
+        result = replaceInContentInside(result, Arrays.asList(
+                new Replacement("{{#isBoolean}}", "{{#is ../../this 'boolean'}}", "{{/isBoolean}}", "{{/is}}"),
+                new Replacement("{{^isBoolean}}", "{{#isNot ../../this 'boolean'}}", "{{/isBoolean}}", "{{/isNot}}")),
+                ENUM_VARS);
+
         result = replaceInContent(result, Arrays.asList(
                 new Replacement("{{#isFormParam}}", "{{#is this 'form-param'}}", "{{/isFormParam}}", "{{/is}}"),
                 new Replacement("{{^isFormParam}}", "{{#isNot this 'form-param'}}", "{{/isFormParam}}", "{{/isNot}}")));
@@ -334,7 +360,7 @@ public class ConvertMustache {
         return result;
     }
 
-    private static <O> TagPairIndex<O> searchTagPair(Collection<O> collection, Function<O, TagPair> tagPairProvider, String content, int fromIndex) {
+    static <O> TagPairIndex<O> searchTagPair(Collection<O> collection, Function<O, TagPair> tagPairProvider, String content, int fromIndex) {
         TagPairIndex<O> result = TagPairIndex.maxValue();
         for (O item : collection) {
             TagPairIndex<O> match = indexOfTagPair(item, tagPairProvider.apply(item), content, fromIndex);
@@ -423,13 +449,13 @@ public class ConvertMustache {
 
     }
 
-    private static class TagPairIndex<T> {
-        private final T object;
-        private final boolean isMatch;
-        private final int openTagStartIndex;
-        private final int openTagEndIndex;
-        private final int closeTagStartIndex;
-        private final int closeTagEndIndex;
+    static class TagPairIndex<T> {
+        final T object;
+        final boolean isMatch;
+        final int openTagStartIndex;
+        final int openTagEndIndex;
+        final int closeTagStartIndex;
+        final int closeTagEndIndex;
 
         private TagPairIndex(T object, boolean isMatch, int openTagStartIndex, int openTagEndIndex, int closeTagStartIndex, int closeTagEndIndex) {
             super();

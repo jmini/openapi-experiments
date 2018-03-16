@@ -133,6 +133,7 @@ public class ConvertMustache {
                 ENUM_VARS);
 
         // Inside {{#enumVars}}..{{/enumVars}}, 'this' is a HashMap, CodegenModel is '../../this':
+        // see: https://github.com/swagger-api/swagger-codegen/wiki/Swagger-Codegen-migration-from-Mustache-and-Handlebars-templates.#evaluate-a-path-against-its-parent-context
         result = replaceInContentInside(result, Arrays.asList(
                 new Replacement("{{#isInteger}}", "{{#is ../../this 'integer'}}", "{{/isInteger}}", "{{/is}}"),
                 new Replacement("{{^isInteger}}", "{{#isNot ../../this 'integer'}}", "{{/isInteger}}", "{{/isNot}}")),
@@ -253,6 +254,7 @@ public class ConvertMustache {
                 ConvertMustache::containsAVendorExtendable);
 
         // custom delimiters
+        // see: https://github.com/swagger-api/swagger-codegen/wiki/Swagger-Codegen-migration-from-Mustache-and-Handlebars-templates.#custom-delimiters
         if (result.contains(TEMP_MARKER_OPEN)) {
             throw new IllegalStateException("text can not contains '" + TEMP_MARKER_OPEN + "'");
         }

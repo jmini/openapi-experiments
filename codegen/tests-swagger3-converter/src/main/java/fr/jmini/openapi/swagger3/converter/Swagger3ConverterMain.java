@@ -4,6 +4,9 @@ import io.swagger.codegen.ClientOptInput;
 import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
 import io.swagger.codegen.config.CodegenConfigurator;
+import io.swagger.codegen.languages.html.StaticDocCodegen;
+import io.swagger.codegen.languages.html.StaticHtml2Codegen;
+import io.swagger.codegen.languages.html.StaticHtmlCodegen;
 import io.swagger.codegen.languages.java.AbstractJavaCodegen;
 import io.swagger.codegen.languages.java.JavaCXFServerCodegen;
 import io.swagger.codegen.languages.java.JavaClientCodegen;
@@ -28,6 +31,9 @@ public class Swagger3ConverterMain {
         convertJaxrsResteasy("petstore");
         convertJaxrsResteasyEap("petstore");
         convertJaxrsSpec("petstore");
+        convertStaticHtml("petstore");
+        convertStaticHtml2("petstore");
+        convertStaticDoc("petstore");
     }
 
     private static void convertJava(String inputSpecName) throws IOException {
@@ -63,6 +69,21 @@ public class Swagger3ConverterMain {
     private static void convertJaxrsSpec(String inputSpecName) throws IOException {
         JavaJAXRSSpecServerCodegen config = new io.swagger.codegen.languages.java.JavaJAXRSSpecServerCodegen();
         convertAbstractJava(inputSpecName, config);
+    }
+
+    private static void convertStaticHtml(String inputSpecName) throws IOException {
+        StaticHtmlCodegen config = new io.swagger.codegen.languages.html.StaticHtmlCodegen();
+        convert(inputSpecName, config);
+    }
+
+    private static void convertStaticHtml2(String inputSpecName) throws IOException {
+        StaticHtml2Codegen config = new io.swagger.codegen.languages.html.StaticHtml2Codegen();
+        convert(inputSpecName, config);
+    }
+    
+    private static void convertStaticDoc(String inputSpecName) throws IOException {
+        StaticDocCodegen config = new io.swagger.codegen.languages.html.StaticDocCodegen();
+        convert(inputSpecName, config);
     }
 
     private static void convertAbstractJava(String inputSpecName, AbstractJavaCodegen config) throws IOException {

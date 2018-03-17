@@ -271,6 +271,13 @@ public class Pet   {
     return this;
   }
   
+
+  public Pet addPhotoUrlsItem(String photoUrlsItem) {
+    
+    this.photoUrls.add(photoUrlsItem);
+    return this;
+  }
+  
   
 
   
@@ -305,6 +312,17 @@ public class Pet   {
   
   public Pet tags(List<Tag> tags) {
     this.tags = tags;
+    return this;
+  }
+  
+
+  public Pet addTagsItem(Tag tagsItem) {
+    
+    if (this.tags == null) {
+      this.tags = new ArrayList<Tag>();
+    }
+    
+    this.tags.add(tagsItem);
     return this;
   }
   

@@ -12,6 +12,9 @@ import io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen;
 import io.swagger.codegen.languages.JavaJerseyServerCodegen;
 import io.swagger.codegen.languages.JavaResteasyEapServerCodegen;
 import io.swagger.codegen.languages.JavaResteasyServerCodegen;
+import io.swagger.codegen.languages.StaticDocCodegen;
+import io.swagger.codegen.languages.StaticHtml2Generator;
+import io.swagger.codegen.languages.StaticHtmlGenerator;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,6 +31,9 @@ public class Swagger2ConverterMain {
         convertJaxrsResteasy("petstore");
         convertJaxrsResteasyEap("petstore");
         convertJaxrsSpec("petstore");
+        convertStaticHtml("petstore");
+        convertStaticHtml2("petstore");
+        convertStaticDoc("petstore");
     }
 
     private static void convertJava(String inputSpecName) throws IOException {
@@ -63,6 +69,21 @@ public class Swagger2ConverterMain {
     private static void convertJaxrsSpec(String inputSpecName) throws IOException {
         JavaJAXRSSpecServerCodegen config = new io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen();
         convertAbstractJava(inputSpecName, config);
+    }
+
+    private static void convertStaticHtml(String inputSpecName) throws IOException {
+        StaticHtmlGenerator config = new io.swagger.codegen.languages.StaticHtmlGenerator();
+        convert(inputSpecName, config);
+    }
+
+    private static void convertStaticHtml2(String inputSpecName) throws IOException {
+        StaticHtml2Generator config = new io.swagger.codegen.languages.StaticHtml2Generator();
+        convert(inputSpecName, config);
+    }
+    
+    private static void convertStaticDoc(String inputSpecName) throws IOException {
+        StaticDocCodegen config = new io.swagger.codegen.languages.StaticDocCodegen();
+        convert(inputSpecName, config);
     }
 
     private static void convertAbstractJava(String inputSpecName, AbstractJavaCodegen config) throws IOException {

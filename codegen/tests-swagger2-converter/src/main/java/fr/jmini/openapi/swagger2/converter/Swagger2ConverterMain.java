@@ -5,6 +5,7 @@ import io.swagger.codegen.ClientOpts;
 import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
 import io.swagger.codegen.languages.AbstractJavaCodegen;
+import io.swagger.codegen.languages.JavaCXFClientCodegen;
 import io.swagger.codegen.languages.JavaCXFServerCodegen;
 import io.swagger.codegen.languages.JavaClientCodegen;
 import io.swagger.codegen.languages.JavaJAXRSCXFCDIServerCodegen;
@@ -29,7 +30,8 @@ public class Swagger2ConverterMain {
     public static void main(String[] args) throws IOException {
         convertJava("petstore");
         convertJaxrs("petstore");
-        convertJaxrsCxf("petstore");
+        convertJaxrsCxfClient("petstore");
+        convertJaxrsCxfServer("petstore");
         convertJaxrsCxfCdi("petstore");
         convertJaxrsResteasy("petstore");
         convertJaxrsResteasyEap("petstore");
@@ -49,7 +51,12 @@ public class Swagger2ConverterMain {
         convertAbstractJava(inputSpecName, config);
     }
 
-    private static void convertJaxrsCxf(String inputSpecName) throws IOException {
+    private static void convertJaxrsCxfClient(String inputSpecName) throws IOException {
+        JavaCXFClientCodegen config = new io.swagger.codegen.languages.JavaCXFClientCodegen();
+        convertAbstractJava(inputSpecName, config);
+    }
+
+    private static void convertJaxrsCxfServer(String inputSpecName) throws IOException {
         JavaCXFServerCodegen config = new io.swagger.codegen.languages.JavaCXFServerCodegen();
         convertAbstractJava(inputSpecName, config);
     }

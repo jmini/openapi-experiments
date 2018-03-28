@@ -1,9 +1,9 @@
 package fr.jmini.openapi.swagger2.converter;
 
 import io.swagger.codegen.ClientOptInput;
+import io.swagger.codegen.ClientOpts;
 import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
-import io.swagger.codegen.config.CodegenConfigurator;
 import io.swagger.codegen.languages.AbstractJavaCodegen;
 import io.swagger.codegen.languages.JavaCXFServerCodegen;
 import io.swagger.codegen.languages.JavaClientCodegen;
@@ -15,6 +15,9 @@ import io.swagger.codegen.languages.JavaResteasyServerCodegen;
 import io.swagger.codegen.languages.StaticDocCodegen;
 import io.swagger.codegen.languages.StaticHtml2Generator;
 import io.swagger.codegen.languages.StaticHtmlGenerator;
+import io.swagger.models.Swagger;
+import io.swagger.parser.SwaggerParser;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -107,14 +110,16 @@ public class Swagger2ConverterMain {
                 .forEach(File::delete);
         }
 
-        CodegenConfigurator configurator = new CodegenConfigurator();
-        configurator.setLang(config.getName()); 
-        configurator.setInputSpec(folder + "/" + inputSpecName + ".json");
-        final ClientOptInput input = configurator.toClientOptInput();
         config.setOutputDir(outputDir);
-        input.setConfig(config);
 
-        new DefaultGenerator().opts(input).generate();
+        final SwaggerParser swaggerParser = new SwaggerParser();
+        Swagger swagger = swaggerParser.read(folder + "/" + inputSpecName + ".json", null, true);
+
+        final ClientOptInput opts = new ClientOptInput();
+        opts.setConfig(config);
+        opts.setSwagger(swagger);
+        opts.setOpts(new ClientOpts());
+        new DefaultGenerator().opts(opts).generate();
 
         removeGeneratedAnnotationInJavaFiles(outputDirPath);
     }

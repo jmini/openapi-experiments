@@ -1,9 +1,9 @@
 package fr.jmini.openapi.swagger3.converter;
 
 import io.swagger.codegen.ClientOptInput;
+import io.swagger.codegen.ClientOpts;
 import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
-import io.swagger.codegen.config.CodegenConfigurator;
 import io.swagger.codegen.languages.html.StaticDocCodegen;
 import io.swagger.codegen.languages.html.StaticHtml2Codegen;
 import io.swagger.codegen.languages.html.StaticHtmlCodegen;
@@ -15,6 +15,10 @@ import io.swagger.codegen.languages.java.JavaJAXRSSpecServerCodegen;
 import io.swagger.codegen.languages.java.JavaJerseyServerCodegen;
 import io.swagger.codegen.languages.java.JavaResteasyEapServerCodegen;
 import io.swagger.codegen.languages.java.JavaResteasyServerCodegen;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.parser.OpenAPIV3Parser;
+import io.swagger.v3.parser.core.models.ParseOptions;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -107,14 +111,17 @@ public class Swagger3ConverterMain {
                 .forEach(File::delete);
         }
 
-        CodegenConfigurator configurator = new CodegenConfigurator();
-        configurator.setLang(config.getName()); 
-        configurator.setInputSpec(folder + "/" + inputSpecName + ".json");
-        final ClientOptInput input = configurator.toClientOptInput();
         config.setOutputDir(outputDir);
-        input.setConfig(config);
 
-        new DefaultGenerator().opts(input).generate();
+        final OpenAPIV3Parser openApiParser = new OpenAPIV3Parser();
+        final ParseOptions options = new ParseOptions();
+        final OpenAPI openAPI = openApiParser.read(folder + "/" + inputSpecName + ".json", null, options);
+
+        final ClientOptInput opts = new ClientOptInput();
+        opts.setConfig(config);
+        opts.setOpenAPI(openAPI);
+        opts.setOpts(new ClientOpts());
+        new DefaultGenerator().opts(opts).generate();
 
         removeGeneratedAnnotationInJavaFiles(outputDirPath);
     }

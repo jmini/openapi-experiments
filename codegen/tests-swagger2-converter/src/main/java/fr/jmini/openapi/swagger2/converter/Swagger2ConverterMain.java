@@ -83,7 +83,7 @@ public class Swagger2ConverterMain {
         StaticHtml2Generator config = new io.swagger.codegen.languages.StaticHtml2Generator();
         convert(inputSpecName, config);
     }
-    
+
     private static void convertStaticDoc(String inputSpecName) throws IOException {
         StaticDocCodegen config = new io.swagger.codegen.languages.StaticDocCodegen();
         convert(inputSpecName, config);
@@ -102,12 +102,13 @@ public class Swagger2ConverterMain {
         final String outputDir = folder + "/" + subFolder;
         Path outputDirPath = Paths.get(outputDir);
 
-        if(Files.exists(outputDirPath)) {
-            Files.walk(outputDirPath)
-                .filter(Files::isRegularFile)
-                .filter(p -> !".project".equals(p.getFileName().toString()) && !".classpath".equals(p.getFileName().toString()) && !p.getFileName().toString().endsWith(".prefs"))
-                .map(Path::toFile)
-                .forEach(File::delete);
+        if (Files.exists(outputDirPath)) { //
+            Files.walk(outputDirPath) //
+                    .filter(Files::isRegularFile) //
+                    .filter(p -> !".project".equals(p.getFileName().toString()) //
+                            && !".classpath".equals(p.getFileName().toString()) //
+                            && !p.getFileName().toString().endsWith(".prefs")) //
+                    .map(Path::toFile).forEach(File::delete);
         }
 
         config.setOutputDir(outputDir);
@@ -129,9 +130,9 @@ public class Swagger2ConverterMain {
     }
 
     private static void removeGeneratedAnnotationInJavaFiles(final Path folder) throws IOException {
-        Files.walk(folder)
-            .filter(f -> f.toFile().isFile() && f.toFile().getName().endsWith("java"))
-            .forEach(Swagger2ConverterMain::removeGeneratedAnnotation);
+        Files.walk(folder) //
+                .filter(f -> f.toFile().isFile() && f.toFile().getName().endsWith("java")) //
+                .forEach(Swagger2ConverterMain::removeGeneratedAnnotation);
     }
 
     private static void removeGeneratedAnnotation(final Path file) {

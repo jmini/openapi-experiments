@@ -1,0 +1,20 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.jmini.openapi</groupId>
+    <artifactId>swagger2-build-root</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>petstore-swagger2-java</module>
+        <module>petstore-swagger2-jaxrs-cxf</module>
+        <module>petstore-swagger2-jaxrs-cxf-cdi</module>
+        <!-- TODO uncomment when https://github.com/swagger-api/swagger-codegen/pull/7886 is fixed: -->
+        <!-- <module>petstore-swagger2-jaxrs-cxf-client</module> -->
+        <module>petstore-swagger2-jaxrs</module>
+        <module>petstore-swagger2-jaxrs-resteasy</module>
+        <module>petstore-swagger2-jaxrs-resteasy-eap</module>
+        <module>petstore-swagger2-jaxrs-spec</module>
+    </modules>
+</project>
+

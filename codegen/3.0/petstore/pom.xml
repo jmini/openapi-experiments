@@ -1,0 +1,19 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.jmini.openapi</groupId>
+    <artifactId>swagger3-build-root</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>petstore-swagger3-java</module>
+        <module>petstore-swagger3-jaxrs-cxf</module>
+        <module>petstore-swagger3-jaxrs-cxf-cdi</module>
+        <module>petstore-swagger3-jaxrs-cxf-client</module>
+        <module>petstore-swagger3-jaxrs-jersey</module>
+        <module>petstore-swagger3-jaxrs-resteasy</module>
+        <module>petstore-swagger3-jaxrs-resteasy-eap</module>
+        <module>petstore-swagger3-jaxrs-spec</module>
+    </modules>
+</project>
+

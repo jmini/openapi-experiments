@@ -1,7 +1,5 @@
 package io.swagger.api;
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -184,7 +182,7 @@ public interface PetApi  {
     @ApiOperation(value = "Updates a pet in the store with form data", tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 405, message = "Invalid input") })
-    public void updatePetWithForm(@PathParam("petId") String petId, @Valid Body body);
+    public void updatePetWithForm(@PathParam("petId") String petId, @Valid Object body);
 
 
     
@@ -203,7 +201,7 @@ public interface PetApi  {
     @ApiOperation(value = "uploads an image", tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation") })
-    public void uploadFile(@PathParam("petId") Long petId, @Valid Body1 body1);
+    public void uploadFile(@PathParam("petId") Long petId, @Valid Object body);
 
 }
 

@@ -328,7 +328,7 @@ PetApi apiInstance = new PetApi();
 
 String petId = Arrays.asList("petId_example"); // String | ID of pet that needs to be updated
 
-Body body = ; // Body | 
+Object body = ; // Object | 
 
 try {
     apiInstance.updatePetWithForm(petId, body);
@@ -343,7 +343,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **petId** | **String**| ID of pet that needs to be updated |
- **body** | [**Body**](.md)|  | [optional]
+ **body** | [**Object**](Object.md)|  | [optional]
 
 
 ### Return type
@@ -362,7 +362,7 @@ null (empty response body)
 
 <a name="uploadFile"></a>
 # **uploadFile**
-> uploadFile(petId, body1)
+> uploadFile(petId, body)
 
 uploads an image
 
@@ -378,10 +378,10 @@ PetApi apiInstance = new PetApi();
 
 Long petId = Arrays.asList(789L); // Long | ID of pet to update
 
-Body1 body1 = ; // Body1 | 
+Object body = ; // Object | 
 
 try {
-    apiInstance.uploadFile(petId, body1);
+    apiInstance.uploadFile(petId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling PetApi#uploadFile");
     e.printStackTrace();
@@ -393,7 +393,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **petId** | **Long**| ID of pet to update |
- **body1** | [**Body1**](.md)|  | [optional]
+ **body** | [**Object**](Object.md)|  | [optional]
 
 
 ### Return type

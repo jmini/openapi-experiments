@@ -4,8 +4,6 @@ import io.swagger.api.*;
 import io.swagger.model.*;
 
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -39,10 +37,10 @@ public interface PetApiService {
       Response updatePet(Pet pet,SecurityContext securityContext)
       throws NotFoundException;
   
-      Response updatePetWithForm(String petId,Body body,SecurityContext securityContext)
+      Response updatePetWithForm(String petId,Object body,SecurityContext securityContext)
       throws NotFoundException;
   
-      Response uploadFile(Long petId,Body1 body1,SecurityContext securityContext)
+      Response uploadFile(Long petId,Object body,SecurityContext securityContext)
       throws NotFoundException;
   
 }

@@ -1,8 +1,6 @@
 package io.swagger.api.impl;
 
 import io.swagger.api.*;
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -135,7 +133,7 @@ public class PetApiServiceImpl implements PetApi {
      
      */
     
-    public void updatePetWithForm(String petId, Body body) {
+    public void updatePetWithForm(String petId, Object body) {
         // TODO: Implement...
         
         
@@ -149,7 +147,7 @@ public class PetApiServiceImpl implements PetApi {
      
      */
     
-    public void uploadFile(Long petId, Body1 body1) {
+    public void uploadFile(Long petId, Object body) {
         // TODO: Implement...
         
         

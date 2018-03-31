@@ -1,7 +1,5 @@
 package io.swagger.api;
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -99,7 +97,7 @@ public class PetApi {
     @ApiResponses(value = { 
         @ApiResponse(code = 405, message = "Invalid input", response = Void.class)
     })
-    public Response updatePetWithForm(@PathParam("petId") @ApiParam("ID of pet that needs to be updated") String petId,@Valid Body body) {
+    public Response updatePetWithForm(@PathParam("petId") @ApiParam("ID of pet that needs to be updated") String petId,@Valid Object body) {
         return Response.ok().entity("magic!").build();
     }
 
@@ -110,7 +108,7 @@ public class PetApi {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Void.class)
     })
-    public Response uploadFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId,@Valid Body1 body1) {
+    public Response uploadFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId,@Valid Object body) {
         return Response.ok().entity("magic!").build();
     }
 

@@ -14,8 +14,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.Body;
-import io.swagger.client.model.Body1;
 import io.swagger.client.model.Pet;
 
 import org.junit.Test;
@@ -160,7 +158,7 @@ public class PetApiTest {
         
         String petId = null;
         
-        Body body = null;
+        Object body = null;
         
         api.updatePetWithForm(petId, body);
 
@@ -180,9 +178,9 @@ public class PetApiTest {
         
         Long petId = null;
         
-        Body1 body1 = null;
+        Object body = null;
         
-        api.uploadFile(petId, body1);
+        api.uploadFile(petId, body);
 
         // TODO: test validations
     }

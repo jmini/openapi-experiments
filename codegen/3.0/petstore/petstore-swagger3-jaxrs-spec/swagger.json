@@ -269,7 +269,16 @@
           "content" : {
             "application/x-www-form-urlencoded" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body"
+                "properties" : {
+                  "name" : {
+                    "type" : "string",
+                    "description" : "Updated name of the pet"
+                  },
+                  "status" : {
+                    "type" : "string",
+                    "description" : "Updated status of the pet"
+                  }
+                }
               }
             }
           }
@@ -341,7 +350,17 @@
           "content" : {
             "multipart/form-data" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body_1"
+                "properties" : {
+                  "additionalMetadata" : {
+                    "type" : "string",
+                    "description" : "Additional data to pass to server"
+                  },
+                  "file" : {
+                    "type" : "string",
+                    "description" : "file to upload",
+                    "format" : "binary"
+                  }
+                }
               }
             }
           }
@@ -895,31 +914,6 @@
         },
         "xml" : {
           "name" : "Pet"
-        }
-      },
-      "body" : {
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "Updated name of the pet"
-          },
-          "status" : {
-            "type" : "string",
-            "description" : "Updated status of the pet"
-          }
-        }
-      },
-      "body_1" : {
-        "properties" : {
-          "additionalMetadata" : {
-            "type" : "string",
-            "description" : "Additional data to pass to server"
-          },
-          "file" : {
-            "type" : "string",
-            "description" : "file to upload",
-            "format" : "binary"
-          }
         }
       }
     },

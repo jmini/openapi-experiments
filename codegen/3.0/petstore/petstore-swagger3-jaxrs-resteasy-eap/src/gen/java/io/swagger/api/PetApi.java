@@ -5,8 +5,6 @@ import io.swagger.model.*;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -105,7 +103,7 @@ public interface PetApi  {
     @io.swagger.annotations.ApiOperation(value = "Updates a pet in the store with form data", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response updatePetWithForm( @PathParam("petId") String petId,@ApiParam(value = "" ) Body body,@Context SecurityContext securityContext);
+    public Response updatePetWithForm( @PathParam("petId") String petId,@ApiParam(value = "" ) Object body,@Context SecurityContext securityContext);
 
     @POST
     @Path("/{petId}/uploadImage")
@@ -114,7 +112,7 @@ public interface PetApi  {
     @io.swagger.annotations.ApiOperation(value = "uploads an image", notes = "", response = Void.class, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Void.class) })
-    public Response uploadFile( @PathParam("petId") Long petId,@ApiParam(value = "" ) Body1 body1,@Context SecurityContext securityContext);
+    public Response uploadFile( @PathParam("petId") Long petId,@ApiParam(value = "" ) Object body,@Context SecurityContext securityContext);
 
 }
 

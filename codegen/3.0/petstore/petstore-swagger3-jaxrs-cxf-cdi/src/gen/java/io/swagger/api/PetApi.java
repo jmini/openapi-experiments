@@ -1,7 +1,5 @@
 package io.swagger.api;
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 import io.swagger.api.PetApiService;
@@ -126,7 +124,7 @@ public class PetApi  {
     @ApiOperation(value = "Updates a pet in the store with form data", notes = "", response = Void.class, tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response updatePetWithForm(@ApiParam(value = "ID of pet that needs to be updated",required=true) @PathParam("petId") String petId, @ApiParam(value = "" ) Body body) {
+    public Response updatePetWithForm(@ApiParam(value = "ID of pet that needs to be updated",required=true) @PathParam("petId") String petId, @ApiParam(value = "" ) Object body) {
         return delegate.updatePetWithForm(petId, body, securityContext);
     }
 
@@ -138,8 +136,8 @@ public class PetApi  {
     @ApiOperation(value = "uploads an image", notes = "", response = Void.class, tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Void.class) })
-    public Response uploadFile(@ApiParam(value = "ID of pet to update",required=true) @PathParam("petId") Long petId, @ApiParam(value = "" ) Body1 body1) {
-        return delegate.uploadFile(petId, body1, securityContext);
+    public Response uploadFile(@ApiParam(value = "ID of pet to update",required=true) @PathParam("petId") Long petId, @ApiParam(value = "" ) Object body) {
+        return delegate.uploadFile(petId, body, securityContext);
     }
 
 }

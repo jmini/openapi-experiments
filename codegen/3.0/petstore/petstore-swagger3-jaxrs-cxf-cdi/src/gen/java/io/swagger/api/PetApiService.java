@@ -6,8 +6,6 @@ import io.swagger.model.*;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -34,9 +32,9 @@ public interface PetApiService {
   
       public Response updatePet(Pet pet, SecurityContext securityContext);
   
-      public Response updatePetWithForm(String petId, Body body, SecurityContext securityContext);
+      public Response updatePetWithForm(String petId, Object body, SecurityContext securityContext);
   
-      public Response uploadFile(Long petId, Body1 body1, SecurityContext securityContext);
+      public Response uploadFile(Long petId, Object body, SecurityContext securityContext);
   
 }
 

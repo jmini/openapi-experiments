@@ -698,37 +698,6 @@ margin-bottom: 20px;
     var defs = {}
         
         
-            defs.body = {
-  "properties" : {
-    "name" : {
-      "type" : "string",
-      "description" : "Updated name of the pet"
-    },
-    "status" : {
-      "type" : "string",
-      "description" : "Updated status of the pet"
-    }
-  }
-};
-        
-    
-        
-            defs.body_1 = {
-  "properties" : {
-    "additionalMetadata" : {
-      "type" : "string",
-      "description" : "Additional data to pass to server"
-    },
-    "file" : {
-      "type" : "string",
-      "description" : "file to upload",
-      "format" : "binary"
-    }
-  }
-};
-        
-    
-        
             defs.Category = {
   "type" : "object",
   "properties" : {
@@ -3365,7 +3334,7 @@ public class PetApiExample {
         
         String petId = petId_example; // String | ID of pet that needs to be updated
         
-        Body body = ; // Body | 
+         body = ; //  | 
         
         try {
             apiInstance.updatePetWithForm(petId, body);
@@ -3387,7 +3356,7 @@ public class PetApiExample {
         
         String petId = petId_example; // String | ID of pet that needs to be updated
         
-        Body body = ; // Body | 
+         body = ; //  | 
         
         try {
             apiInstance.updatePetWithForm(petId, body);
@@ -3411,7 +3380,7 @@ Configuration *apiConfig = [Configuration sharedConfig];
 
 
 String *petId = petId_example; // ID of pet that needs to be updated
-Body *body = ; //  (optional)
+ *body = ; //  (optional)
 
 
 PetApi *apiInstance = [[PetApi alloc] init];
@@ -3483,7 +3452,7 @@ namespace Example
             
             
             
-            var body = new Body(); // Body |  (optional) 
+            var body = new (); //  |  (optional) 
             
             
 
@@ -3514,7 +3483,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api{{classname}}();
 $petId = petId_example; // String | ID of pet that needs to be updated
-$body = ; // Body | 
+$body = ; //  | 
 
 
 try {
@@ -3536,7 +3505,7 @@ $WWW::SwaggerClient::Configuration::access_token = 'YOUR_ACCESS_TOKEN';
 
 my $api_instance = WWW::SwaggerClient::PetApi->new();
 my $petId = [petId_example]; # String | ID of pet that needs to be updated
-my $body = WWW::SwaggerClient::Object::Body->new(); # Body | 
+my $body = WWW::SwaggerClient::Object::->new(); #  | 
 
 
 eval { 
@@ -3561,7 +3530,7 @@ swagger_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = swagger_client.PetApi()
 petId = petId_example # String | ID of pet that needs to be updated
-body =  # Body |  (optional)
+body =  #  |  (optional)
 
 
 try: 
@@ -3739,10 +3708,10 @@ public class PetApiExample {
         
         Long petId = 789; // Long | ID of pet to update
         
-        Body_1 body_1 = ; // Body_1 | 
+         body = ; //  | 
         
         try {
-            apiInstance.uploadFile(petId, body_1);
+            apiInstance.uploadFile(petId, body);
         } catch (ApiException e) {
             System.err.println("Exception when calling PetApi#uploadFile");
             e.printStackTrace();
@@ -3761,10 +3730,10 @@ public class PetApiExample {
         
         Long petId = 789; // Long | ID of pet to update
         
-        Body_1 body_1 = ; // Body_1 | 
+         body = ; //  | 
         
         try {
-            apiInstance.uploadFile(petId, body_1);
+            apiInstance.uploadFile(petId, body);
         } catch (ApiException e) {
             System.err.println("Exception when calling PetApi#uploadFile");
             e.printStackTrace();
@@ -3785,14 +3754,14 @@ Configuration *apiConfig = [Configuration sharedConfig];
 
 
 Long *petId = 789; // ID of pet to update
-Body_1 *body_1 = ; //  (optional)
+ *body = ; //  (optional)
 
 
 PetApi *apiInstance = [[PetApi alloc] init];
 
 // uploads an image
 [apiInstance uploadFileWithCompletionHandler: :petId
-    body_1:body_1
+    body:body
               ^(NSError* error) {
 
                             if (error) {
@@ -3857,7 +3826,7 @@ namespace Example
             
             
             
-            var body_1 = new Body_1(); // Body_1 |  (optional) 
+            var body = new (); //  |  (optional) 
             
             
 
@@ -3866,7 +3835,7 @@ namespace Example
                 
                 // uploads an image
                 
-                apiInstance.uploadFile(petId, body_1);
+                apiInstance.uploadFile(petId, body);
             }
             catch (Exception e)
             {
@@ -3888,11 +3857,11 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_AC
 
 $api_instance = new Swagger\Client\Api{{classname}}();
 $petId = 789; // Long | ID of pet to update
-$body_1 = ; // Body_1 | 
+$body = ; //  | 
 
 
 try {
-    $api_instance->uploadFile($petId, $body_1);
+    $api_instance->uploadFile($petId, $body);
 } catch (Exception $e) {
     echo 'Exception when calling PetApi->uploadFile: ', $e->getMessage(), PHP_EOL;
 }
@@ -3910,11 +3879,11 @@ $WWW::SwaggerClient::Configuration::access_token = 'YOUR_ACCESS_TOKEN';
 
 my $api_instance = WWW::SwaggerClient::PetApi->new();
 my $petId = [789]; # Long | ID of pet to update
-my $body_1 = WWW::SwaggerClient::Object::Body_1->new(); # Body_1 | 
+my $body = WWW::SwaggerClient::Object::->new(); #  | 
 
 
 eval { 
-    $api_instance->uploadFile(petId => $petId, body_1 => $body_1);
+    $api_instance->uploadFile(petId => $petId, body => $body);
 };
 if ($@) {
     warn "Exception when calling PetApi->uploadFile: $@\n";
@@ -3935,12 +3904,12 @@ swagger_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = swagger_client.PetApi()
 petId = 789 # Long | ID of pet to update
-body_1 =  # Body_1 |  (optional)
+body =  #  |  (optional)
 
 
 try: 
     # uploads an image
-    api_instance.upload_file(petId, body_1=body_1)
+    api_instance.upload_file(petId, body=body)
 except ApiException as e:
     print("Exception when calling PetApi->uploadFile: %s\n" % e)</code></pre>
                             </div>
@@ -4005,7 +3974,7 @@ except ApiException as e:
                                 <th>Description</th>
                               </tr>
                               
-                                <tr><td style="width:150px;">body_1 </td>
+                                <tr><td style="width:150px;">body </td>
 <td>
 
 
@@ -4023,12 +3992,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_uploadFile_body_1');
+  var result = $('#d2e199_uploadFile_body');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_uploadFile_body_1"></div>
+<div id="d2e199_uploadFile_body"></div>
 </td>
 </tr>
 

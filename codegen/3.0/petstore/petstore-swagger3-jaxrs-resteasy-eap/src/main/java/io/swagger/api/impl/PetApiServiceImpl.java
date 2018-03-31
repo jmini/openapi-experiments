@@ -4,8 +4,6 @@ import io.swagger.api.*;
 import io.swagger.model.*;
 
 
-import io.swagger.model.Body;
-import io.swagger.model.Body1;
 import io.swagger.model.Pet;
 
 
@@ -50,12 +48,12 @@ public class PetApiServiceImpl implements PetApi {
       return Response.ok().build();
   }
   
-      public Response updatePetWithForm(String petId,Body body,SecurityContext securityContext) {
+      public Response updatePetWithForm(String petId,Object body,SecurityContext securityContext) {
       // do some magic!
       return Response.ok().build();
   }
   
-      public Response uploadFile(Long petId,Body1 body1,SecurityContext securityContext) {
+      public Response uploadFile(Long petId,Object body,SecurityContext securityContext) {
       // do some magic!
       return Response.ok().build();
   }

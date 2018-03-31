@@ -1,0 +1,147 @@
+package io.swagger.api;
+
+import io.swagger.model.User;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
+import java.util.Map;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.MediaType;
+import org.apache.cxf.jaxrs.ext.multipart.*;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.jaxrs.PATCH;
+
+/**
+ * Swagger Petstore
+ *
+ * <p>This is a sample server Petstore server.  You can find out more about Swagger at <a href=\"http://swagger.io\">http://swagger.io</a> or on irc.freenode.net, #swagger.  For this sample, you can use the api key \"special-key\" to test the authorization filters
+ *
+ */
+@Path("/")
+@Api(value = "/", description = "")
+public interface UserApi  {
+
+    /**
+     * Create user
+     *
+     * This can only be done by the logged in user.
+     *
+     */
+    @POST
+    @Path("/user")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Create user", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 0, message = "successful operation", response = .class) })
+    public void createUser(User body);
+
+    /**
+     * Creates list of users with given input array
+     *
+     * 
+     *
+     */
+    @POST
+    @Path("/user/createWithArray")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Creates list of users with given input array", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 0, message = "successful operation", response = .class) })
+    public void createUsersWithArrayInput(List<User> body);
+
+    /**
+     * Creates list of users with given input array
+     *
+     * 
+     *
+     */
+    @POST
+    @Path("/user/createWithList")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Creates list of users with given input array", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 0, message = "successful operation", response = .class) })
+    public void createUsersWithListInput(List<User> body);
+
+    /**
+     * Delete user
+     *
+     * This can only be done by the logged in user.
+     *
+     */
+    @DELETE
+    @Path("/user/{username}")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Delete user", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 400, message = "Invalid username supplied", response = .class),
+        @ApiResponse(code = 404, message = "User not found", response = .class) })
+    public void deleteUser(@PathParam("username") String username);
+
+    /**
+     * Get user by user name
+     *
+     * 
+     *
+     */
+    @GET
+    @Path("/user/{username}")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Get user by user name", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = User.class),
+        @ApiResponse(code = 400, message = "Invalid username supplied", response = .class),
+        @ApiResponse(code = 404, message = "User not found", response = .class) })
+    public User getUserByName(@PathParam("username") String username);
+
+    /**
+     * Logs user into the system
+     *
+     * 
+     *
+     */
+    @GET
+    @Path("/user/login")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Logs user into the system", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = String.class),
+        @ApiResponse(code = 400, message = "Invalid username/password supplied", response = .class) })
+    public String loginUser(@QueryParam("username")String username, @QueryParam("password")String password);
+
+    /**
+     * Logs out current logged in user session
+     *
+     * 
+     *
+     */
+    @GET
+    @Path("/user/logout")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Logs out current logged in user session", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 0, message = "successful operation", response = .class) })
+    public void logoutUser();
+
+    /**
+     * Updated user
+     *
+     * This can only be done by the logged in user.
+     *
+     */
+    @PUT
+    @Path("/user/{username}")
+    @Produces({ "application/json", "application/xml" })
+    @ApiOperation(value = "Updated user", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 400, message = "Invalid user supplied", response = .class),
+        @ApiResponse(code = 404, message = "User not found", response = .class) })
+    public void updateUser(@PathParam("username") String username, User body);
+}
+

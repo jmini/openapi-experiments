@@ -119,6 +119,7 @@ public class Swagger2ConverterMain {
         }
 
         config.setOutputDir(outputDir);
+        config.setHideGenerationTimestamp(true);
 
         final SwaggerParser swaggerParser = new SwaggerParser();
         Swagger swagger = swaggerParser.read(folder + "/" + inputSpecName + ".json", null, true);

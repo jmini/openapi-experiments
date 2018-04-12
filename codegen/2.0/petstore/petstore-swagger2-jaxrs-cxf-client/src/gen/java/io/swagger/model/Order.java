@@ -61,7 +61,7 @@ public enum StatusEnum {
 
   @ApiModelProperty(value = "Order Status")
  /**
-   * Order Status  
+   * Order Status
   **/
   private StatusEnum status = null;
 

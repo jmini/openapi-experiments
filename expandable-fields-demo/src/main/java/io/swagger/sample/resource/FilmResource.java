@@ -3,12 +3,12 @@ package io.swagger.sample.resource;
 import io.swagger.sample.data.ActorData;
 import io.swagger.sample.data.CategoryData;
 import io.swagger.sample.data.DataStore;
-import io.swagger.sample.data.ExpandableEntity;
 import io.swagger.sample.data.FilmData;
 import io.swagger.sample.data.FilmId;
 import io.swagger.sample.model.Actor;
 import io.swagger.sample.model.Category;
 import io.swagger.sample.model.ExpandableField;
+import io.swagger.sample.model.ExpandableFields;
 import io.swagger.sample.model.Film;
 import io.swagger.sample.model.HasId;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,7 +41,7 @@ public class FilmResource {
             } //
     ) //
     public Film getPetById(@QueryParam("filmId") String filmId, @QueryParam("expand") String expandParam) throws io.swagger.sample.exception.NotFoundException {
-        List<ExpandableEntity> expandQuery;
+        List<ExpandableFields> expandQuery;
         if (expandParam == null) {
             expandQuery = Collections.emptyList();
         }
@@ -49,7 +49,7 @@ public class FilmResource {
             expandQuery = new ArrayList<>();
             for (String s : expandParam.split(",")) {
                 try {
-                    ExpandableEntity t = ExpandableEntity.valueOf(s.toUpperCase());
+                    ExpandableFields t = ExpandableFields.fromValue(s.toUpperCase());
                     expandQuery.add(t);
                 }
                 catch (IllegalArgumentException e) {
@@ -66,7 +66,7 @@ public class FilmResource {
         }
     }
 
-    private static Actor mapActor(ActorData data, List<ExpandableEntity> expandQuery) {
+    private static Actor mapActor(ActorData data, List<ExpandableFields> expandQuery) {
         Actor actor = new Actor();
         actor.setId(data.getId().id);
         actor.setFirstName(data.getFirstName());
@@ -74,26 +74,26 @@ public class FilmResource {
         return actor;
     }
 
-    private static Category mapCategory(CategoryData data, List<ExpandableEntity> expandQuery) {
+    private static Category mapCategory(CategoryData data, List<ExpandableFields> expandQuery) {
         Category category = new Category();
         category.setId(data.getId().id);
         category.setName(data.getName());
         return category;
     }
 
-    private static Film mapFilm(FilmData data, List<ExpandableEntity> expandQuery) {
+    private static Film mapFilm(FilmData data, List<ExpandableFields> expandQuery) {
         Film film = new Film();
         film.setId(data.getId().id);
         film.setTitle(data.getTitle());
         film.setDescription(data.getDescription());
         Category category = mapCategory(data.getCategory(), expandQuery);
-        film.setCategory(createExpandableField(ExpandableEntity.CATEGORY, category, expandQuery));
+        film.setCategory(createExpandableField(ExpandableFields.FILM_CATEGORY, category, expandQuery));
         List<Actor> actors = data.getActors().stream().map(a -> mapActor(a, expandQuery)).collect(Collectors.toList());
-        film.setActors(createExpandableFields(ExpandableEntity.ACTOR, actors, expandQuery));
+        film.setActors(createExpandableFields(ExpandableFields.FILM_ACTORS, actors, expandQuery));
         return film;
     }
 
-    private static <T extends HasId> ExpandableField<T> createExpandableField(ExpandableEntity entity, T item, List<ExpandableEntity> expandQuery) {
+    private static <T extends HasId> ExpandableField<T> createExpandableField(ExpandableFields entity, T item, List<ExpandableFields> expandQuery) {
         if (expandQuery != null && expandQuery.contains(entity)) {
             return new ExpandableField<T>(item.getId(), item);
         }
@@ -102,7 +102,7 @@ public class FilmResource {
         }
     }
 
-    private static <T extends HasId> List<ExpandableField<T>> createExpandableFields(ExpandableEntity entity, List<T> items, List<ExpandableEntity> expandQuery) {
+    private static <T extends HasId> List<ExpandableField<T>> createExpandableFields(ExpandableFields entity, List<T> items, List<ExpandableFields> expandQuery) {
         List<ExpandableField<T>> result = new ArrayList<>();
         for (T i : items) {
             result.add(createExpandableField(entity, i, expandQuery));

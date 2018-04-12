@@ -9,13 +9,20 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 
 @XmlSeeAlso({ Actor.class, Category.class, Film.class, ExpandableField.class, ExpandableFieldTypeAdapter.class })
 public class Film implements HasId {
+
+    static final String FIELD_NAME_ID = "id";
+    static final String FIELD_NAME_FILM_CATEGORY = "filmCategory";
+    static final String FIELD_NAME_FILM_TITLE = "title";
+    static final String FIELD_NAME_FILM_DESCRIPTION = "description";
+    static final String FIELD_NAME_ACTORS = "actors";
+
     private String id;
     private ExpandableField<Category> category;
     private String title;
     private String description;
     private List<ExpandableField<Actor>> actors = new ArrayList<>();
 
-    @XmlElement(name = "id")
+    @XmlElement(name = FIELD_NAME_ID)
     public String getId() {
         return id;
     }
@@ -24,7 +31,7 @@ public class Film implements HasId {
         this.id = id;
     }
 
-    @XmlElement(name = "category")
+    @XmlElement(name = FIELD_NAME_FILM_CATEGORY)
     public ExpandableField<Category> getCategory() {
         return category;
     }
@@ -33,7 +40,7 @@ public class Film implements HasId {
         this.category = category;
     }
 
-    @XmlElement(name = "title")
+    @XmlElement(name = FIELD_NAME_FILM_TITLE)
     public String getTitle() {
         return title;
     }
@@ -42,7 +49,7 @@ public class Film implements HasId {
         this.title = title;
     }
 
-    @XmlElement(name = "description")
+    @XmlElement(name = FIELD_NAME_FILM_DESCRIPTION)
     public String getDescription() {
         return description;
     }
@@ -51,8 +58,8 @@ public class Film implements HasId {
         this.description = description;
     }
 
-    @XmlElementWrapper(name = "actors")
-    // @XmlElement(name = "actor")
+    @XmlElementWrapper(name = FIELD_NAME_ACTORS)
+    // @XmlElement(name = FIELD_NAME_ACTORS)
     public List<ExpandableField<Actor>> getActors() {
         return actors;
     }

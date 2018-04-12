@@ -9,8 +9,7 @@
         <module>petstore-swagger2-java</module>
         <module>petstore-swagger2-jaxrs-cxf</module>
         <module>petstore-swagger2-jaxrs-cxf-cdi</module>
-        <!-- TODO uncomment when https://github.com/swagger-api/swagger-codegen/pull/7886 is fixed: -->
-        <!-- <module>petstore-swagger2-jaxrs-cxf-client</module> -->
+        <module>petstore-swagger2-jaxrs-cxf-client</module>
         <module>petstore-swagger2-jaxrs</module>
         <module>petstore-swagger2-jaxrs-resteasy</module>
         <module>petstore-swagger2-jaxrs-resteasy-eap</module>

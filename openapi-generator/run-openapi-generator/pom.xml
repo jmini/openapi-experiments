@@ -31,4 +31,30 @@
       </exclusions>
     </dependency>
   </dependencies>
+
+  <profiles>  
+   <profile>  
+    <id>run</id>  
+    <build>  
+     <plugins>  
+      <plugin>  
+       <groupId>org.codehaus.mojo</groupId>  
+       <artifactId>exec-maven-plugin</artifactId>  
+       <version>1.1.1</version>  
+       <executions>  
+        <execution>  
+         <phase>test</phase>  
+         <goals>  
+          <goal>java</goal>  
+         </goals>  
+         <configuration>  
+          <mainClass>fr.jmini.openapi.openapitools.generator.RunOpenapitoolsCodegenMain</mainClass>  
+         </configuration>  
+        </execution>  
+       </executions>  
+      </plugin>  
+     </plugins>  
+    </build>  
+   </profile>  
+  </profiles>  
 </project>

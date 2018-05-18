@@ -5,6 +5,7 @@ import org.openapitools.model.*;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
+import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
 
@@ -42,4 +43,12 @@ public interface DefaultApi  {
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = LongModel.class) })
     public Response issue7754(@Context SecurityContext securityContext);
+    @GET
+    
+    @Consumes({ "application/json" })
+    
+    @io.swagger.annotations.ApiOperation(value = "", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiResponses(value = { 
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = Void.class) })
+    public Response pull66(@ApiParam(value = "" ) EnumInArrayOfArray enumInArrayOfArray,@Context SecurityContext securityContext);
 }

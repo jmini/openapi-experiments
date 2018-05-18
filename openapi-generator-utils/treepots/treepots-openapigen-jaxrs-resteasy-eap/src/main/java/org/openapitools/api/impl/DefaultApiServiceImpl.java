@@ -4,6 +4,7 @@ import org.openapitools.api.*;
 import org.openapitools.model.*;
 
 
+import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
 
@@ -21,6 +22,10 @@ public class DefaultApiServiceImpl implements DefaultApi {
       return Response.ok().build();
   }
       public Response issue7754(SecurityContext securityContext) {
+      // do some magic!
+      return Response.ok().build();
+  }
+      public Response pull66(EnumInArrayOfArray enumInArrayOfArray,SecurityContext securityContext) {
       // do some magic!
       return Response.ok().build();
   }

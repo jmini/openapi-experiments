@@ -198,6 +198,7 @@ font-style: italic;
   <ul>
   <li><a href="#getCase1"><code><span class="http-method">get</span> /case1</code></a></li>
   <li><a href="#issue7754"><code><span class="http-method">get</span> /issue7754</code></a></li>
+  <li><a href="#pull66"><code><span class="http-method">get</span> /pull66</code></a></li>
   </ul>
 
   <h1><a name="Default">Default</a></h1>
@@ -283,16 +284,68 @@ font-style: italic;
         <a href="#LongModel">LongModel</a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="pull66"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pull66</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pull66</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">EnumInArrayOfArray <a href="#EnumInArrayOfArray">EnumInArrayOfArray</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Ok
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
 
   <h2><a name="__Models">Models</a></h2>
   [ Jump to <a href="#__Methods">Methods</a> ]
 
   <h3>Table of Contents</h3>
   <ol>
+    <li><a href="#EnumInArrayOfArray"><code>EnumInArrayOfArray</code> - </a></li>
     <li><a href="#ItemWithBoolean"><code>ItemWithBoolean</code> - </a></li>
     <li><a href="#LongModel"><code>LongModel</code> - </a></li>
   </ol>
 
+  <div class="model">
+    <h3><a name="EnumInArrayOfArray"><code>EnumInArrayOfArray</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">p1 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        
+<div class="param">p2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#array">array[array[String]]</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        
+<div class="param">p3 (optional)</div><div class="param-desc"><span class="param-type"><a href="#array">array[array[array[String]]]</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3><a name="ItemWithBoolean"><code>ItemWithBoolean</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>

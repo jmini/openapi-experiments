@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCase1**](DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
 [**issue7754**](DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
+[**pull66**](DefaultApi.md#pull66) | **GET** /pull66 | 
 
 
 <a name="getCase1"></a>
@@ -85,4 +86,46 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+<a name="pull66"></a>
+# **pull66**
+> pull66(enumInArrayOfArray)
+
+
+
+### Example
+```java
+// Import classes:
+//import org.openapitools.client.ApiException;
+//import org.openapitools.client.api.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+EnumInArrayOfArray enumInArrayOfArray = new EnumInArrayOfArray(); // EnumInArrayOfArray | 
+try {
+    apiInstance.pull66(enumInArrayOfArray);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#pull66");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enumInArrayOfArray** | [**EnumInArrayOfArray**](EnumInArrayOfArray.md)|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 

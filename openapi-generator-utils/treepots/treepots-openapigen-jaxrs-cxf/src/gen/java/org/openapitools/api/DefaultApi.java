@@ -1,5 +1,6 @@
 package org.openapitools.api;
 
+import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
 
@@ -53,5 +54,13 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = LongModel.class) })
     public LongModel issue7754();
+
+    @GET
+    @Path("/pull66")
+    @Consumes({ "application/json" })
+    @ApiOperation(value = "", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Ok") })
+    public void pull66(@Valid EnumInArrayOfArray enumInArrayOfArray);
 }
 

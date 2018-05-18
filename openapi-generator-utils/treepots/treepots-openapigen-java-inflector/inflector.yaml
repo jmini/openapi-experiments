@@ -4,7 +4,8 @@ swaggerUrl: ./src/main/swagger/swagger.yaml
 modelMappings:
   # to enable explicit mappings, use this syntax:
   DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
-  ItemWithBoolean : org.openapitools.model.ItemWithBoolean
+  EnumInArrayOfArray : org.openapitools.model.EnumInArrayOfArray
+ItemWithBoolean : org.openapitools.model.ItemWithBoolean
 LongModel : org.openapitools.model.LongModel
 
 entityProcessors:

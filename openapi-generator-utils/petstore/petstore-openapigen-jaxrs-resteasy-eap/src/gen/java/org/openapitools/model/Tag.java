@@ -11,7 +11,9 @@ import io.swagger.annotations.*;
 
 public class Tag   {
   
+
   private Long id = null;
+
   private String name = null;
 
   /**

@@ -25,6 +25,7 @@
 
 package org.openapitools.api;
 
+import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
 import org.junit.Test;
@@ -97,6 +98,20 @@ public class DefaultApiTest {
     public void issue7754Test() {
         //LongModel response = api.issue7754();
         //assertNotNull(response);
+        // TODO: test validations
+        
+        
+    }
+    
+    /**
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void pull66Test() {
+        EnumInArrayOfArray enumInArrayOfArray = null;
+        //api.pull66(enumInArrayOfArray);
+        
         // TODO: test validations
         
         

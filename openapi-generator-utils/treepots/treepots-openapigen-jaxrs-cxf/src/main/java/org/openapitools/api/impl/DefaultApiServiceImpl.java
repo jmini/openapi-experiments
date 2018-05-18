@@ -1,6 +1,7 @@
 package org.openapitools.api.impl;
 
 import org.openapitools.api.*;
+import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
 
@@ -42,6 +43,12 @@ public class DefaultApiServiceImpl implements DefaultApi {
         // TODO: Implement...
         
         return null;
+    }
+    
+    public void pull66(EnumInArrayOfArray enumInArrayOfArray) {
+        // TODO: Implement...
+        
+        
     }
     
 }

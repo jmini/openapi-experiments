@@ -11,7 +11,9 @@ import io.swagger.annotations.*;
 
 public class LongModel   {
   
+
   private Long long1 = null;
+
   private Long long2 = null;
 
   /**

@@ -104,10 +104,12 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**getCase1**](docs/DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *DefaultApi* | [**issue7754**](docs/DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
+*DefaultApi* | [**pull66**](docs/DefaultApi.md#pull66) | **GET** /pull66 | 
 
 
 ## Documentation for Models
 
+ - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
  - [LongModel](docs/LongModel.md)
 

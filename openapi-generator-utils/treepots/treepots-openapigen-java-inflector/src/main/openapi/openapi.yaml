@@ -30,6 +30,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/LongModel'
       x-accepts: application/json
+  /pull66:
+    get:
+      operationId: pull66
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnumInArrayOfArray'
+      responses:
+        200:
+          description: Ok
+      x-accepts: application/json
+      x-contentType: application/json
 components:
   schemas:
     ItemWithBoolean:
@@ -59,3 +72,53 @@ components:
     LongProperty:
       type: integer
       format: int64
+    EnumInArrayOfArray:
+      type: object
+      properties:
+        p1:
+          type: array
+          items:
+            type: string
+            enum:
+            - valA
+            - valB
+            - valC
+        p2:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+              enum:
+              - val1
+              - val2
+              - val3
+        p3:
+          type: array
+          items:
+            type: array
+            items:
+              type: array
+              items:
+                type: string
+                enum:
+                - lorem
+                - ipsum
+      example:
+        p1:
+        - valA
+        - valA
+        p2:
+        - - val1
+          - val1
+        - - val1
+          - val1
+        p3:
+        - - - lorem
+            - lorem
+          - - lorem
+            - lorem
+        - - - lorem
+            - lorem
+          - - lorem
+            - lorem

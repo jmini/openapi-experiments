@@ -11,8 +11,11 @@ import io.swagger.annotations.*;
 
 public class ItemWithBoolean   {
   
+
   private Integer id = null;
+
   private Boolean active = null;
+
   private String name = null;
 
   /**

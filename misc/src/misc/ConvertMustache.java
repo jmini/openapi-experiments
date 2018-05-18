@@ -21,6 +21,9 @@ public class ConvertMustache {
                         && f.toFile()
                                 .getName()
                                 .endsWith("mustache"))
+                .filter(f -> !f.toFile()
+                        .getName()
+                        .equals("README.mustache"))
                 .forEach(f -> convert(f, inputDir, outputDir));
     }
 
@@ -42,7 +45,7 @@ public class ConvertMustache {
                 .forEach(f -> copy(f, inputDir, outputDir));
     }
 
-    private static void convert(Path file, Path inputDir, Path outputDir) {
+    public static void convert(Path file, Path inputDir, Path outputDir) {
         Path subPath = inputDir.relativize(file);
 
         String content;

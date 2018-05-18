@@ -27,18 +27,22 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Order
  */
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaClientCodegen", date = "2018-04-05T07:59:48.463+02:00[Europe/Zurich]")
 public class Order {
-@SerializedName("id")
+
+  @SerializedName("id")
   private Long id = null;
+  
   @SerializedName("petId")
   private Long petId = null;
+  
   @SerializedName("quantity")
   private Integer quantity = null;
+  
   @SerializedName("shipDate")
   private OffsetDateTime shipDate = null;
   
-    /**
+  /**
    * Order Status
    */
   @JsonAdapter(StatusEnum.Adapter.class)
@@ -88,6 +92,7 @@ public class Order {
   
   @SerializedName("status")
   private StatusEnum status = null;
+  
   @SerializedName("complete")
   private Boolean complete = null;
   

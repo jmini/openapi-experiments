@@ -15,6 +15,16 @@ public class CheckVersion {
      * In the <code>Entry<String, String>></code> item of the list, the key correspond to the relative-path of the output folder, the value to the version.
      */
     public static Map<Status, List<Entry<String, String>>> projectsByVersion(Path inputDir, String expectedVersion) throws IOException {
+        // Files.walk(inputDir)
+        // .filter(f -> f.toFile()
+        // .isFile()
+        // && f.toFile()
+        // .getName()
+        // .equals("VERSION"))
+        // .forEach(f -> System.out.println(inputDir.relativize(f)
+        // .getParent()
+        // .getParent()
+        // .toString()));
         Map<String, String> map = Files.walk(inputDir)
                 .filter(f -> f.toFile()
                         .isFile()

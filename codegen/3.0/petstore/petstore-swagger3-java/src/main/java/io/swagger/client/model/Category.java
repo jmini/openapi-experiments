@@ -26,10 +26,12 @@ import java.io.IOException;
 /**
  * Category
  */
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaClientCodegen", date = "2018-04-05T07:59:48.463+02:00[Europe/Zurich]")
 public class Category {
-@SerializedName("id")
+
+  @SerializedName("id")
   private Long id = null;
+  
   @SerializedName("name")
   private String name = null;
   

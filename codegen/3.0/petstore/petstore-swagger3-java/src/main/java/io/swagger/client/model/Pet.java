@@ -30,20 +30,25 @@ import java.util.List;
 /**
  * Pet
  */
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaClientCodegen", date = "2018-04-05T07:59:48.463+02:00[Europe/Zurich]")
 public class Pet {
-@SerializedName("id")
+
+  @SerializedName("id")
   private Long id = null;
+  
   @SerializedName("category")
   private Category category = null;
+  
   @SerializedName("name")
   private String name = null;
+  
   @SerializedName("photoUrls")
   private List<String> photoUrls = new ArrayList<String>();
+  
   @SerializedName("tags")
   private List<Tag> tags = null;
   
-    /**
+  /**
    * pet status in the store
    */
   @JsonAdapter(StatusEnum.Adapter.class)

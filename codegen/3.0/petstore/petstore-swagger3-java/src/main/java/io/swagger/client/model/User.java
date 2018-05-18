@@ -26,22 +26,30 @@ import java.io.IOException;
 /**
  * User
  */
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.java.JavaClientCodegen", date = "2018-04-05T07:59:48.463+02:00[Europe/Zurich]")
 public class User {
-@SerializedName("id")
+
+  @SerializedName("id")
   private Long id = null;
+  
   @SerializedName("username")
   private String username = null;
+  
   @SerializedName("firstName")
   private String firstName = null;
+  
   @SerializedName("lastName")
   private String lastName = null;
+  
   @SerializedName("email")
   private String email = null;
+  
   @SerializedName("password")
   private String password = null;
+  
   @SerializedName("phone")
   private String phone = null;
+  
   @SerializedName("userStatus")
   private Integer userStatus = null;
   

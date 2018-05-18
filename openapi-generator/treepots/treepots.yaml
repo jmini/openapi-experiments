@@ -28,6 +28,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LongModel'
+  /some:
+    get:
+      operationId: op
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjWithEnums'
 components:
   schemas:
     ItemWithBoolean:
@@ -53,3 +63,43 @@ components:
     LongProperty:
       type: integer
       format: int64
+
+    ObjWithEnums:
+      type: object
+      properties:
+        IProp:
+            $ref: "#/components/schemas/IntEnum"
+        LProp:
+            $ref: "#/components/schemas/LongEnum"
+        SProp:
+            $ref: "#/components/schemas/StringEnum"
+
+    IntEnum:
+      type: integer
+      format: int32
+      enum:
+        - 1
+        - 2
+        - 3
+
+    LongEnum:
+      type: integer
+      format: int64
+      enum:
+        - 20
+        - 30
+        - 40
+        
+    StringEnum:
+      type: string
+      enum:
+        - "c"
+        - "b"
+        - "a"
+
+#    BoleanEnum:
+#      type: boolean
+#      enum:
+#        - true
+#        - false
+      

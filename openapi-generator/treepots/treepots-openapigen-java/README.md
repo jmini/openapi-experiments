@@ -104,12 +104,17 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**getCase1**](docs/DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *DefaultApi* | [**issue7754**](docs/DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
+*DefaultApi* | [**op**](docs/DefaultApi.md#op) | **GET** /some | 
 
 
 ## Documentation for Models
 
+ - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
+ - [LongEnum](docs/LongEnum.md)
  - [LongModel](docs/LongModel.md)
+ - [ObjWithEnums](docs/ObjWithEnums.md)
+ - [StringEnum](docs/StringEnum.md)
 
 
 ## Documentation for Authorization

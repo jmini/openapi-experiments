@@ -24,8 +24,8 @@ public class CommentJavaInScripts {
             throw new IllegalStateException("Could not read file: " + file, e);
         }
 
-        if (!content.contains("-l java ") && !content.contains("-l inflector ")) {
-            content = content.replace("java ", "# java ");
+        if (content.contains("-l html ") || content.contains("-l dynamic-html ")) {
+            content = content.replace("# java ", "java ");
             System.out.println(file);
             try {
                 Files.write(file, content.getBytes());
@@ -54,8 +54,8 @@ public class CommentJavaInScripts {
             throw new IllegalStateException("Could not read file: " + file, e);
         }
 
-        if (!content.contains("-l java ") && !content.contains("-l inflector ")) {
-            content = content.replace("java ", "REM java ");
+        if (content.contains("-l html ") || content.contains("-l dynamic-html ")) {
+            content = content.replace("REM java ", "java ");
             System.out.println(file);
             try {
                 Files.write(file, content.getBytes());

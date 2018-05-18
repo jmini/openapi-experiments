@@ -29,6 +29,7 @@ public class Swagger2ConverterMain {
 
     public static void main(String[] args) throws IOException {
         convertJava("petstore");
+        // convertInflector("petstore");
         convertJaxrs("petstore");
         convertJaxrsCxfClient("petstore");
         convertJaxrsCxfServer("petstore");
@@ -45,6 +46,13 @@ public class Swagger2ConverterMain {
         JavaClientCodegen config = new io.swagger.codegen.languages.JavaClientCodegen();
         convertAbstractJava(inputSpecName, config);
     }
+
+    // private static void convertInflector(String inputSpecName) throws
+    // IOException {
+    // JavaInflectorServerCodegen config = new
+    // io.swagger.codegen.languages.JavaInflectorServerCodegen();
+    // convertAbstractJava(inputSpecName, config);
+    // }
 
     private static void convertJaxrs(String inputSpecName) throws IOException {
         JavaJerseyServerCodegen config = new io.swagger.codegen.languages.JavaJerseyServerCodegen();

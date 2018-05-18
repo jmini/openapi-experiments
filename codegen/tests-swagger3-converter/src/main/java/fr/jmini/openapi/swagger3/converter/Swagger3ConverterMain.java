@@ -4,18 +4,18 @@ import io.swagger.codegen.ClientOptInput;
 import io.swagger.codegen.ClientOpts;
 import io.swagger.codegen.CodegenConfig;
 import io.swagger.codegen.DefaultGenerator;
-import io.swagger.codegen.languages.html.StaticDocCodegen;
+import io.swagger.codegen.languages.JavaCXFClientCodegen;
+import io.swagger.codegen.languages.JavaCXFServerCodegen;
+import io.swagger.codegen.languages.JavaJAXRSCXFCDIServerCodegen;
+import io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen;
+import io.swagger.codegen.languages.JavaJerseyServerCodegen;
+import io.swagger.codegen.languages.JavaResteasyEapServerCodegen;
+import io.swagger.codegen.languages.JavaResteasyServerCodegen;
+import io.swagger.codegen.languages.StaticDocCodegen;
 import io.swagger.codegen.languages.html.StaticHtml2Codegen;
 import io.swagger.codegen.languages.html.StaticHtmlCodegen;
 import io.swagger.codegen.languages.java.AbstractJavaCodegen;
-import io.swagger.codegen.languages.java.JavaCXFClientCodegen;
-import io.swagger.codegen.languages.java.JavaCXFServerCodegen;
 import io.swagger.codegen.languages.java.JavaClientCodegen;
-import io.swagger.codegen.languages.java.JavaJAXRSCXFCDIServerCodegen;
-import io.swagger.codegen.languages.java.JavaJAXRSSpecServerCodegen;
-import io.swagger.codegen.languages.java.JavaJerseyServerCodegen;
-import io.swagger.codegen.languages.java.JavaResteasyEapServerCodegen;
-import io.swagger.codegen.languages.java.JavaResteasyServerCodegen;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.parser.OpenAPIV3Parser;
 import io.swagger.v3.parser.core.models.ParseOptions;
@@ -30,22 +30,32 @@ public class Swagger3ConverterMain {
 
     public static void main(String[] args) throws IOException {
         convertJava("petstore");
-        convertJaxrs("petstore");
-        convertJaxrsCxfClient("petstore");
-        convertJaxrsCxfServer("petstore");
-        convertJaxrsCxfCdi("petstore");
-        convertJaxrsResteasy("petstore");
-        convertJaxrsResteasyEap("petstore");
-        convertJaxrsSpec("petstore");
-        convertStaticHtml("petstore");
-        convertStaticHtml2("petstore");
-        convertStaticDoc("petstore");
+        // convertInflector("petstore");
+        // convertJaxrs("petstore");
+        // convertJaxrsCxfClient("petstore");
+        // convertJaxrsCxfServer("petstore");
+        // convertJaxrsCxfCdi("petstore");
+        // convertJaxrsResteasy("petstore");
+        // convertJaxrsResteasyEap("petstore");
+        // convertJaxrsSpec("petstore");
+        // convertStaticHtml("petstore");
+        // convertStaticHtml2("petstore");
+        // convertStaticDoc("petstore");
+        // convertKotlinClient("petstore");
+        // convertKotlinServer("petstore");
     }
 
     private static void convertJava(String inputSpecName) throws IOException {
         JavaClientCodegen config = new io.swagger.codegen.languages.java.JavaClientCodegen();
         convertAbstractJava(inputSpecName, config);
     }
+    //
+    // private static void convertInflector(String inputSpecName) throws
+    // IOException {
+    // JavaInflectorServerCodegen config = new
+    // io.swagger.codegen.languages.java.JavaInflectorServerCodegen();
+    // convertAbstractJava(inputSpecName, config);
+    // }
 
     private static void convertJaxrs(String inputSpecName) throws IOException {
         JavaJerseyServerCodegen config = new io.swagger.codegen.languages.java.JavaJerseyServerCodegen();
@@ -96,6 +106,23 @@ public class Swagger3ConverterMain {
         StaticDocCodegen config = new io.swagger.codegen.languages.html.StaticDocCodegen();
         convert(inputSpecName, config);
     }
+
+    // private static void convertKotlinClient(String inputSpecName) throws
+    // IOException {
+    // KotlinClientCodegen config = new
+    // io.swagger.codegen.languages.kotlin.KotlinClientCodegen();
+    // config.setArtifactId(toArtifactId(inputSpecName, config));
+    // convert(inputSpecName, config);
+    // }
+    // private static void convertKotlinServer(String inputSpecName) throws
+    // IOException {
+    // KotlinServerCodegen config = new
+    // io.swagger.codegen.languages.kotlin.KotlinServerCodegen();
+    // config.setArtifactId(toArtifactId(inputSpecName, config));
+    // config.additionalProperties().put(CodegenConstants.LIBRARY,
+    // KotlinServerCodegen.DEFAULT_LIBRARY);
+    // convert(inputSpecName, config);
+    // }
 
     private static void convertAbstractJava(String inputSpecName, AbstractJavaCodegen config) throws IOException {
         final String artifactId = toArtifactId(inputSpecName, config);

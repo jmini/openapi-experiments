@@ -32,6 +32,18 @@ public class RunOpenapitoolsCodegenMain {
 
 	public static void main(String[] args) throws IOException {
 		convertJava("treepots.yaml");
+		convertInflector("treepots.yaml");
+		convertJaxrs("treepots.yaml");
+		convertJaxrsCxfClient("treepots.yaml");
+		convertJaxrsCxfServer("treepots.yaml");
+		convertJaxrsCxfCdi("treepots.yaml");
+		convertJaxrsResteasy("treepots.yaml");
+		convertJaxrsResteasyEap("treepots.yaml");
+		convertJaxrsSpec("treepots.yaml");
+		convertStaticHtml("treepots.yaml");
+		convertStaticHtml2("treepots.yaml");
+		convertStaticDoc("treepots.yaml");
+
 		convertJava("petstore.json");
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");

@@ -7,6 +7,14 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>treepots-openapigen-java</module>
+        <module>treepots-openapigen-java-inflector</module>
+        <module>treepots-openapigen-jaxrs-cxf</module>
+        <module>treepots-openapigen-jaxrs-cxf-cdi</module>
+        <module>treepots-openapigen-jaxrs-cxf-client</module>
+        <module>treepots-openapigen-jaxrs-jersey</module>
+        <module>treepots-openapigen-jaxrs-resteasy</module>
+        <module>treepots-openapigen-jaxrs-resteasy-eap</module>
+        <module>treepots-openapigen-jaxrs-spec</module>
     </modules>
 </project>
 

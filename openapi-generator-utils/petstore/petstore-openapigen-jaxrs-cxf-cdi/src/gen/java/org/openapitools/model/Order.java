@@ -15,9 +15,13 @@ import javax.xml.bind.annotation.*;
 public class Order   {
   
   private Long id = null;
+
   private Long petId = null;
+
   private Integer quantity = null;
+
   private java.util.Date shipDate = null;
+
 
 @XmlType(name="StatusEnum")
 @XmlEnum(String.class)
@@ -52,7 +56,9 @@ public enum StatusEnum {
 }
 
   private StatusEnum status = null;
+
   private Boolean complete = null;
+
 
   /**
    **/
@@ -71,6 +77,7 @@ public enum StatusEnum {
     this.id = id;
   }
 
+
   /**
    **/
   public Order petId(Long petId) {
@@ -87,6 +94,7 @@ public enum StatusEnum {
   public void setPetId(Long petId) {
     this.petId = petId;
   }
+
 
   /**
    **/
@@ -105,6 +113,7 @@ public enum StatusEnum {
     this.quantity = quantity;
   }
 
+
   /**
    **/
   public Order shipDate(java.util.Date shipDate) {
@@ -121,6 +130,7 @@ public enum StatusEnum {
   public void setShipDate(java.util.Date shipDate) {
     this.shipDate = shipDate;
   }
+
 
   /**
    * Order Status
@@ -140,6 +150,7 @@ public enum StatusEnum {
     this.status = status;
   }
 
+
   /**
    **/
   public Order complete(Boolean complete) {
@@ -156,6 +167,7 @@ public enum StatusEnum {
   public void setComplete(Boolean complete) {
     this.complete = complete;
   }
+
 
 
   @Override

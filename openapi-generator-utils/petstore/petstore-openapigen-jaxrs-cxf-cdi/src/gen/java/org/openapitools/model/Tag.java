@@ -15,7 +15,9 @@ import javax.xml.bind.annotation.*;
 public class Tag   {
   
   private Long id = null;
+
   private String name = null;
+
 
   /**
    **/
@@ -34,6 +36,7 @@ public class Tag   {
     this.id = id;
   }
 
+
   /**
    **/
   public Tag name(String name) {
@@ -50,6 +53,7 @@ public class Tag   {
   public void setName(String name) {
     this.name = name;
   }
+
 
 
   @Override

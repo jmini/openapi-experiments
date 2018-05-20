@@ -295,7 +295,7 @@ public class PetApi {
     }
     /**
      * Build call for findPetsByStatus
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList<String>())
+     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -356,7 +356,7 @@ public class PetApi {
     /**
      * Finds Pets by status
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList<String>())
+     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
      * @return List&lt;Pet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -368,7 +368,7 @@ public class PetApi {
     /**
      * Finds Pets by status
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList<String>())
+     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
      * @return ApiResponse&lt;List&lt;Pet&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -381,7 +381,7 @@ public class PetApi {
     /**
      * Finds Pets by status (asynchronously)
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList<String>())
+     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

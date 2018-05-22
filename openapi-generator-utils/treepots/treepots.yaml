@@ -39,6 +39,16 @@ paths:
       responses:
         '200':
           description: Ok
+  /pull75:
+    get:
+      operationId: op
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjWithEnums'
 components:
   schemas:
     ItemWithBoolean:
@@ -97,3 +107,16 @@ components:
                 enum:
                   - lorem
                   - ipsum
+
+    ObjWithEnums:
+      type: object
+      properties:
+        SProp:
+            $ref: "#/components/schemas/StringEnum"
+
+    StringEnum:
+      type: string
+      enum:
+        - "c"
+        - "b"
+        - "a"

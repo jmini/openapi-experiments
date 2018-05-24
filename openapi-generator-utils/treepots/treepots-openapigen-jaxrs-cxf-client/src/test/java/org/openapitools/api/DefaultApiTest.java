@@ -28,6 +28,7 @@ package org.openapitools.api;
 import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
+import org.openapitools.model.ObjWithEnums;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
@@ -97,6 +98,19 @@ public class DefaultApiTest {
     @Test
     public void issue7754Test() {
         //LongModel response = api.issue7754();
+        //assertNotNull(response);
+        // TODO: test validations
+        
+        
+    }
+    
+    /**
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void opTest() {
+        //ObjWithEnums response = api.op();
         //assertNotNull(response);
         // TODO: test validations
         

@@ -4,6 +4,7 @@ import org.openapitools.api.*;
 import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
+import org.openapitools.model.ObjWithEnums;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -40,6 +41,12 @@ public class DefaultApiServiceImpl implements DefaultApi {
      *
      */
     public LongModel issue7754() {
+        // TODO: Implement...
+        
+        return null;
+    }
+    
+    public ObjWithEnums op() {
         // TODO: Implement...
         
         return null;

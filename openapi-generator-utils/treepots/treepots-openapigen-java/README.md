@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**getCase1**](docs/DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *DefaultApi* | [**issue7754**](docs/DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
+*DefaultApi* | [**op**](docs/DefaultApi.md#op) | **GET** /pull75 | 
 *DefaultApi* | [**pull66**](docs/DefaultApi.md#pull66) | **GET** /pull66 | 
 
 
@@ -112,6 +113,8 @@ Class | Method | HTTP request | Description
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
  - [LongModel](docs/LongModel.md)
+ - [ObjWithEnums](docs/ObjWithEnums.md)
+ - [StringEnum](docs/StringEnum.md)
 
 
 ## Documentation for Authorization

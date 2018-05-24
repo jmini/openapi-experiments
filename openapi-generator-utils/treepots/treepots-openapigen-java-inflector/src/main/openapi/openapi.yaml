@@ -43,6 +43,17 @@ paths:
           description: Ok
       x-accepts: application/json
       x-contentType: application/json
+  /pull75:
+    get:
+      operationId: op
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjWithEnums'
+      x-accepts: application/json
 components:
   schemas:
     ItemWithBoolean:
@@ -122,3 +133,15 @@ components:
             - lorem
           - - lorem
             - lorem
+    ObjWithEnums:
+      type: object
+      properties:
+        SProp:
+          $ref: '#/components/schemas/StringEnum'
+      example: {}
+    StringEnum:
+      type: string
+      enum:
+      - c
+      - b
+      - a

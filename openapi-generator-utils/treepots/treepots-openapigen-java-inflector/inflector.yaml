@@ -7,6 +7,8 @@ modelMappings:
   EnumInArrayOfArray : org.openapitools.model.EnumInArrayOfArray
 ItemWithBoolean : org.openapitools.model.ItemWithBoolean
 LongModel : org.openapitools.model.LongModel
+ObjWithEnums : org.openapitools.model.ObjWithEnums
+StringEnum : org.openapitools.model.StringEnum
 
 entityProcessors:
   - json

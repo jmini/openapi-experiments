@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCase1**](DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
 [**issue7754**](DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
+[**op**](DefaultApi.md#op) | **GET** /pull75 | 
 [**pull66**](DefaultApi.md#pull66) | **GET** /pull66 | 
 
 
@@ -77,6 +78,45 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**LongModel**](LongModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="op"></a>
+# **op**
+> ObjWithEnums op()
+
+
+
+### Example
+```java
+// Import classes:
+//import org.openapitools.client.ApiException;
+//import org.openapitools.client.api.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+try {
+    ObjWithEnums result = apiInstance.op();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#op");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ObjWithEnums**](ObjWithEnums.md)
 
 ### Authorization
 

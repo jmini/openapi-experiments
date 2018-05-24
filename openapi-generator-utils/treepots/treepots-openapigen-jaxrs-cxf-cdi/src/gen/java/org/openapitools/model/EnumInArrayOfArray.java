@@ -26,7 +26,7 @@ public enum P1Enum {
 
     private String value;
 
-    P1Enum (String v) {
+    P1Enum(String v) {
         value = v;
     }
 
@@ -61,7 +61,7 @@ public enum P2Enum {
 
     private String value;
 
-    P2Enum (String v) {
+    P2Enum(String v) {
         value = v;
     }
 
@@ -96,7 +96,7 @@ public enum P3Enum {
 
     private String value;
 
-    P3Enum (String v) {
+    P3Enum(String v) {
         value = v;
     }
 

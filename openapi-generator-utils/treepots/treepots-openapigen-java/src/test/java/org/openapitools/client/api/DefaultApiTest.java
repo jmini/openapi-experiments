@@ -17,6 +17,7 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.model.EnumInArrayOfArray;
 import org.openapitools.client.model.ItemWithBoolean;
 import org.openapitools.client.model.LongModel;
+import org.openapitools.client.model.ObjWithEnums;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -60,6 +61,21 @@ public class DefaultApiTest {
     @Test
     public void issue7754Test() throws ApiException {
         LongModel response = api.issue7754();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void opTest() throws ApiException {
+        ObjWithEnums response = api.op();
 
         // TODO: test validations
     }

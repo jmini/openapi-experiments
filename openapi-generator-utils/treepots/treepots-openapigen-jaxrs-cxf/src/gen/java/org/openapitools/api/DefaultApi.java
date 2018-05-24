@@ -3,6 +3,7 @@ package org.openapitools.api;
 import org.openapitools.model.EnumInArrayOfArray;
 import org.openapitools.model.ItemWithBoolean;
 import org.openapitools.model.LongModel;
+import org.openapitools.model.ObjWithEnums;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -54,6 +55,14 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = LongModel.class) })
     public LongModel issue7754();
+
+    @GET
+    @Path("/pull75")
+    @Produces({ "application/json" })
+    @ApiOperation(value = "", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
+    public ObjWithEnums op();
 
     @GET
     @Path("/pull66")

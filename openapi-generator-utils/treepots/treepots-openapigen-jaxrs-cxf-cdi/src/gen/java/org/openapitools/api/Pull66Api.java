@@ -38,7 +38,7 @@ public class Pull66Api  {
     
     @Consumes({ "application/json" })
     
-    @ApiOperation(value = "", notes = "", response = Void.class, tags={  })
+    @ApiOperation(value = "", notes = "", response = Void.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = Void.class) })
     public Response pull66(@ApiParam(value = "" ) EnumInArrayOfArray enumInArrayOfArray) {

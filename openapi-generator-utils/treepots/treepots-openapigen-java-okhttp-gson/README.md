@@ -74,21 +74,21 @@ Please follow the [installation](#installation) instruction and execute the foll
 import org.openapitools.client.*;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.model.*;
-import org.openapitools.client.api.DefaultApi;
+import org.openapitools.client.api.LoremApi;
 
 import java.io.File;
 import java.util.*;
 
-public class DefaultApiExample {
+public class LoremApiExample {
 
     public static void main(String[] args) {
         
-        DefaultApi apiInstance = new DefaultApi();
+        LoremApi apiInstance = new LoremApi();
         try {
             ItemWithBoolean result = apiInstance.getCase1();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCase1");
+            System.err.println("Exception when calling LoremApi#getCase1");
             e.printStackTrace();
         }
     }
@@ -102,10 +102,10 @@ All URIs are relative to *http://api.company.xyz/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**getCase1**](docs/DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
-*DefaultApi* | [**issue7754**](docs/DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
-*DefaultApi* | [**op**](docs/DefaultApi.md#op) | **GET** /pull75 | 
-*DefaultApi* | [**pull66**](docs/DefaultApi.md#pull66) | **GET** /pull66 | 
+*LoremApi* | [**getCase1**](docs/LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
+*LoremApi* | [**issue7754**](docs/LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
+*LoremApi* | [**op**](docs/LoremApi.md#op) | **GET** /pull75 | 
+*LoremApi* | [**pull66**](docs/LoremApi.md#pull66) | **GET** /pull66 | 
 
 
 ## Documentation for Models

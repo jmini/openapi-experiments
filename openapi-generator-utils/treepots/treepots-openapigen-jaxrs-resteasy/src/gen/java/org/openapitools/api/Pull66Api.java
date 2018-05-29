@@ -35,7 +35,7 @@ public class Pull66Api  {
     
     @Consumes({ "application/json" })
     
-    @io.swagger.annotations.ApiOperation(value = "", notes = "", response = Void.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "", notes = "", response = Void.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = Void.class) })
     public Response pull66(@ApiParam(value = "" ) EnumInArrayOfArray enumInArrayOfArray,@Context SecurityContext securityContext)

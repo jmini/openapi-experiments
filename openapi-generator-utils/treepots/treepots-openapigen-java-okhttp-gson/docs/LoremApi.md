@@ -1,13 +1,13 @@
-# DefaultApi
+# LoremApi
 
 All URIs are relative to *http://api.company.xyz/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCase1**](DefaultApi.md#getCase1) | **GET** /case1 | Update an existing pet
-[**issue7754**](DefaultApi.md#issue7754) | **GET** /issue7754 | Codegen
-[**op**](DefaultApi.md#op) | **GET** /pull75 | 
-[**pull66**](DefaultApi.md#pull66) | **GET** /pull66 | 
+[**getCase1**](LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
+[**issue7754**](LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
+[**op**](LoremApi.md#op) | **GET** /pull75 | 
+[**pull66**](LoremApi.md#pull66) | **GET** /pull66 | 
 
 
 <a name="getCase1"></a>
@@ -20,15 +20,15 @@ Update an existing pet
 ```java
 // Import classes:
 //import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.DefaultApi;
+//import org.openapitools.client.api.LoremApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+LoremApi apiInstance = new LoremApi();
 try {
     ItemWithBoolean result = apiInstance.getCase1();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#getCase1");
+    System.err.println("Exception when calling LoremApi#getCase1");
     e.printStackTrace();
 }
 ```
@@ -59,15 +59,15 @@ Codegen
 ```java
 // Import classes:
 //import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.DefaultApi;
+//import org.openapitools.client.api.LoremApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+LoremApi apiInstance = new LoremApi();
 try {
     LongModel result = apiInstance.issue7754();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#issue7754");
+    System.err.println("Exception when calling LoremApi#issue7754");
     e.printStackTrace();
 }
 ```
@@ -98,15 +98,15 @@ No authorization required
 ```java
 // Import classes:
 //import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.DefaultApi;
+//import org.openapitools.client.api.LoremApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+LoremApi apiInstance = new LoremApi();
 try {
     ObjWithEnums result = apiInstance.op();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#op");
+    System.err.println("Exception when calling LoremApi#op");
     e.printStackTrace();
 }
 ```
@@ -137,15 +137,15 @@ No authorization required
 ```java
 // Import classes:
 //import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.DefaultApi;
+//import org.openapitools.client.api.LoremApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+LoremApi apiInstance = new LoremApi();
 EnumInArrayOfArray enumInArrayOfArray = new EnumInArrayOfArray(); // EnumInArrayOfArray | 
 try {
     apiInstance.pull66(enumInArrayOfArray);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#pull66");
+    System.err.println("Exception when calling LoremApi#pull66");
     e.printStackTrace();
 }
 ```

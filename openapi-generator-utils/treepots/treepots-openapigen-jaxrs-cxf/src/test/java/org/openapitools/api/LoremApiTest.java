@@ -54,12 +54,12 @@ import java.util.Map;
  *
  * <p>Example spec
  *
- * API tests for DefaultApi 
+ * API tests for LoremApi 
  */
-public class DefaultApiTest {
+public class LoremApiTest {
 
 
-    private DefaultApi api;
+    private LoremApi api;
     
     @Before
     public void setup() {
@@ -67,7 +67,7 @@ public class DefaultApiTest {
         List providers = new ArrayList();
         providers.add(provider);
         
-        api = JAXRSClientFactory.create("http://api.company.xyz/v2", DefaultApi.class, providers);
+        api = JAXRSClientFactory.create("http://api.company.xyz/v2", LoremApi.class, providers);
         org.apache.cxf.jaxrs.client.Client client = WebClient.client(api);
         
         ClientConfiguration config = WebClient.getConfig(client); 

@@ -25,7 +25,7 @@ import io.swagger.annotations.Api;
  * <p>Example spec
  *
  */
-public class DefaultApiServiceImpl implements DefaultApi {
+public class LoremApiServiceImpl implements LoremApi {
     /**
      * Update an existing pet
      *

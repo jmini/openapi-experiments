@@ -18,7 +18,7 @@ public class Pull75Api {
 
     @GET
     @Produces({ "application/json" })
-    @ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={  })
+    @ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class)
     })

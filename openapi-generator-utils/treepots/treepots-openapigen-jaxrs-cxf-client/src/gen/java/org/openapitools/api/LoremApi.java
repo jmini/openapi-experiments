@@ -28,7 +28,7 @@ import io.swagger.jaxrs.PATCH;
  */
 @Path("/")
 @Api(value = "/", description = "")
-public interface DefaultApi  {
+public interface LoremApi  {
 
     /**
      * Update an existing pet

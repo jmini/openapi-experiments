@@ -29,7 +29,7 @@ public interface Pull75Api  {
     
     
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
     public Response op(@Context SecurityContext securityContext);

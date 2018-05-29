@@ -8,6 +8,8 @@ servers:
 paths:
   /case1:
     get:
+      tags:
+      - lorem
       summary: Update an existing pet
       operationId: getCase1
       responses:
@@ -20,6 +22,8 @@ paths:
       x-accepts: application/json
   /issue7754:
     get:
+      tags:
+      - lorem
       summary: Codegen
       operationId: issue7754
       responses:
@@ -32,6 +36,8 @@ paths:
       x-accepts: application/json
   /pull66:
     get:
+      tags:
+      - lorem
       operationId: pull66
       requestBody:
         content:
@@ -45,6 +51,8 @@ paths:
       x-contentType: application/json
   /pull75:
     get:
+      tags:
+      - lorem
       operationId: op
       responses:
         200:

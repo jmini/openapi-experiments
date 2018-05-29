@@ -18,7 +18,7 @@ public class Issue7754Api {
 
     @GET
     @Produces({ "application/json" })
-    @ApiOperation(value = "Codegen", notes = "", response = LongModel.class, tags={  })
+    @ApiOperation(value = "Codegen", notes = "", response = LongModel.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = LongModel.class)
     })

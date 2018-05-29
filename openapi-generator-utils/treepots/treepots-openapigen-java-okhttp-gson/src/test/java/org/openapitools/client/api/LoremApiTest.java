@@ -27,12 +27,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for DefaultApi
+ * API tests for LoremApi
  */
 @Ignore
-public class DefaultApiTest {
+public class LoremApiTest {
 
-    private final DefaultApi api = new DefaultApi();
+    private final LoremApi api = new LoremApi();
 
     
     /**

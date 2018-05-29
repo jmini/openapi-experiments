@@ -29,7 +29,7 @@ public interface Issue7754Api  {
     
     
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Codegen", notes = "", response = LongModel.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "Codegen", notes = "", response = LongModel.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = LongModel.class) })
     public Response issue7754(@Context SecurityContext securityContext);

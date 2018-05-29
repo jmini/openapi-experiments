@@ -38,14 +38,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultApi {
+public class LoremApi {
     private ApiClient apiClient;
 
-    public DefaultApi() {
+    public LoremApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public DefaultApi(ApiClient apiClient) {
+    public LoremApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

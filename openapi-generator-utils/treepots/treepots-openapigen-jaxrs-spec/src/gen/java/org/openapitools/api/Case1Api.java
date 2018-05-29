@@ -18,7 +18,7 @@ public class Case1Api {
 
     @GET
     @Produces({ "application/json" })
-    @ApiOperation(value = "Update an existing pet", notes = "", response = ItemWithBoolean.class, tags={  })
+    @ApiOperation(value = "Update an existing pet", notes = "", response = ItemWithBoolean.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ItemWithBoolean.class)
     })

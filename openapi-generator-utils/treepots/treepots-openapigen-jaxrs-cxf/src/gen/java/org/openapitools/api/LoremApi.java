@@ -30,7 +30,7 @@ import javax.validation.Valid;
  */
 @Path("/")
 @Api(value = "/", description = "")
-public interface DefaultApi  {
+public interface LoremApi  {
 
     /**
      * Update an existing pet
@@ -39,7 +39,7 @@ public interface DefaultApi  {
     @GET
     @Path("/case1")
     @Produces({ "application/json" })
-    @ApiOperation(value = "Update an existing pet", tags={  })
+    @ApiOperation(value = "Update an existing pet", tags={ "lorem",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ItemWithBoolean.class) })
     public ItemWithBoolean getCase1();
@@ -51,7 +51,7 @@ public interface DefaultApi  {
     @GET
     @Path("/issue7754")
     @Produces({ "application/json" })
-    @ApiOperation(value = "Codegen", tags={  })
+    @ApiOperation(value = "Codegen", tags={ "lorem",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = LongModel.class) })
     public LongModel issue7754();
@@ -59,7 +59,7 @@ public interface DefaultApi  {
     @GET
     @Path("/pull75")
     @Produces({ "application/json" })
-    @ApiOperation(value = "", tags={  })
+    @ApiOperation(value = "", tags={ "lorem",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
     public ObjWithEnums op();
@@ -67,7 +67,7 @@ public interface DefaultApi  {
     @GET
     @Path("/pull66")
     @Consumes({ "application/json" })
-    @ApiOperation(value = "", tags={  })
+    @ApiOperation(value = "", tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok") })
     public void pull66(@Valid EnumInArrayOfArray enumInArrayOfArray);

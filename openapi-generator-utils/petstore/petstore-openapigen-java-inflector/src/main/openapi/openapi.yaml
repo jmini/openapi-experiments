@@ -223,13 +223,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              properties:
-                name:
-                  type: string
-                  description: Updated name of the pet
-                status:
-                  type: string
-                  description: Updated status of the pet
+              $ref: '#/components/schemas/body'
       responses:
         405:
           description: Invalid input
@@ -291,14 +285,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              properties:
-                additionalMetadata:
-                  type: string
-                  description: Additional data to pass to server
-                file:
-                  type: string
-                  description: file to upload
-                  format: binary
+              $ref: '#/components/schemas/body_1'
       responses:
         default:
           description: successful operation
@@ -763,6 +750,23 @@ components:
         status: available
       xml:
         name: Pet
+    body:
+      properties:
+        name:
+          type: string
+          description: Updated name of the pet
+        status:
+          type: string
+          description: Updated status of the pet
+    body_1:
+      properties:
+        additionalMetadata:
+          type: string
+          description: Additional data to pass to server
+        file:
+          type: string
+          description: file to upload
+          format: binary
   securitySchemes:
     petstore_auth:
       type: oauth2

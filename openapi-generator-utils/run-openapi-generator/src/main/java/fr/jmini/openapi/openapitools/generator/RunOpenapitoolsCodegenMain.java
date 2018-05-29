@@ -33,6 +33,7 @@ public class RunOpenapitoolsCodegenMain {
 
 	public static void main(String[] args) throws IOException {
 		convertJava("treepots.yaml", OKHTTP_GSON);
+		convertJava("treepots.yaml", JavaClientCodegen.REST_ASSURED);
 		convertInflector("treepots.yaml");
 		convertJaxrs("treepots.yaml");
 		convertJaxrsCxfClient("treepots.yaml");
@@ -46,6 +47,7 @@ public class RunOpenapitoolsCodegenMain {
 		convertStaticDoc("treepots.yaml");
 
 		convertJava("petstore.json", OKHTTP_GSON);
+		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED);
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");
 		convertJaxrsCxfClient("petstore.json");

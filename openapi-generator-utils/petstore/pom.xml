@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>petstore-openapigen-java</module>
+        <module>petstore-openapigen-java-okhttp-gson</module>
         <module>petstore-openapigen-java-inflector</module>
         <module>petstore-openapigen-jaxrs-cxf</module>
         <module>petstore-openapigen-jaxrs-cxf-cdi</module>

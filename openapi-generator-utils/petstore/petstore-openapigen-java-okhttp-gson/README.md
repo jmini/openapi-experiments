@@ -1,4 +1,4 @@
-# petstore-openapigen-java
+# petstore-openapigen-java-okhttp-gson
 
 Swagger Petstore
 - API version: 1.0.0
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>org.openapitools</groupId>
-  <artifactId>petstore-openapigen-java</artifactId>
+  <artifactId>petstore-openapigen-java-okhttp-gson</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
 </dependency>
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:petstore-openapigen-java:1.0.0"
+compile "org.openapitools:petstore-openapigen-java-okhttp-gson:1.0.0"
 ```
 
 ### Others
@@ -62,7 +62,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/petstore-openapigen-java-1.0.0.jar`
+* `target/petstore-openapigen-java-okhttp-gson-1.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

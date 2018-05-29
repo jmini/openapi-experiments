@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>treepots-openapigen-java</module>
+        <module>treepots-openapigen-java-okhttp-gson</module>
         <module>treepots-openapigen-java-inflector</module>
         <module>treepots-openapigen-jaxrs-cxf</module>
         <module>treepots-openapigen-jaxrs-cxf-cdi</module>

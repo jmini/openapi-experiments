@@ -83,7 +83,7 @@ if(hasProperty('target') && target == 'android') {
 
     install {
         repositories.mavenInstaller {
-            pom.artifactId = 'petstore-openapigen-java'
+            pom.artifactId = 'treepots-openapigen-java-okhttp-gson'
         }
     }
 

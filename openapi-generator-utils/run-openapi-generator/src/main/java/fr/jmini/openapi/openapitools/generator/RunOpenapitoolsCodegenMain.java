@@ -150,6 +150,8 @@ public class RunOpenapitoolsCodegenMain {
 
 		final OpenAPIV3Parser openApiParser = new OpenAPIV3Parser();
 		final ParseOptions options = new ParseOptions();
+		options.setFlatten(true);
+		options.setResolve(true);
 		final OpenAPI openAPI = openApiParser.read(folder + "/" + inputSpecName, null, options);
 
 		final ClientOptInput opts = new ClientOptInput();

@@ -10,6 +10,8 @@ paths:
     get:
       summary: Update an existing pet
       operationId: getCase1
+      tags:
+        - lorem
       responses:
         '200':
           description: Ok
@@ -21,6 +23,8 @@ paths:
     get:
       summary: Codegen
       operationId: issue7754
+      tags:
+        - lorem
       responses:
         '200':
           description: Ok
@@ -31,6 +35,8 @@ paths:
   /pull66:
     get:
       operationId: pull66
+      tags:
+        - lorem
       requestBody:
           content:
             application/json:
@@ -42,6 +48,8 @@ paths:
   /pull75:
     get:
       operationId: op
+      tags:
+        - lorem
       responses:
         '200':
           description: Ok

@@ -1,5 +1,7 @@
 package org.openapitools.model;
 
+import org.openapitools.model.IntEnum;
+import org.openapitools.model.LongEnum;
 import org.openapitools.model.StringEnum;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
@@ -18,7 +20,51 @@ public class ObjWithEnums  {
   
   @ApiModelProperty(value = "")
   @Valid
+  private IntEnum iprop = null;
+
+  @ApiModelProperty(value = "")
+  @Valid
+  private LongEnum lprop = null;
+
+  @ApiModelProperty(value = "")
+  @Valid
   private StringEnum sprop = null;
+ /**
+   * Get iprop
+   * @return iprop
+  **/
+  @JsonProperty("IProp")
+  public IntEnum getIprop() {
+    return iprop;
+  }
+
+  public void setIprop(IntEnum iprop) {
+    this.iprop = iprop;
+  }
+
+  public ObjWithEnums iprop(IntEnum iprop) {
+    this.iprop = iprop;
+    return this;
+  }
+
+ /**
+   * Get lprop
+   * @return lprop
+  **/
+  @JsonProperty("LProp")
+  public LongEnum getLprop() {
+    return lprop;
+  }
+
+  public void setLprop(LongEnum lprop) {
+    this.lprop = lprop;
+  }
+
+  public ObjWithEnums lprop(LongEnum lprop) {
+    this.lprop = lprop;
+    return this;
+  }
+
  /**
    * Get sprop
    * @return sprop
@@ -43,6 +89,8 @@ public class ObjWithEnums  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjWithEnums {\n");
     
+    sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
+    sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -23,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.IntEnum;
+import org.openapitools.client.model.LongEnum;
 import org.openapitools.client.model.StringEnum;
 
 /**
@@ -30,9 +32,53 @@ import org.openapitools.client.model.StringEnum;
  */
 
 public class ObjWithEnums {
+  public static final String SERIALIZED_NAME_IPROP = "IProp";
+  @SerializedName(SERIALIZED_NAME_IPROP)
+  private IntEnum iprop = null;
+
+  public static final String SERIALIZED_NAME_LPROP = "LProp";
+  @SerializedName(SERIALIZED_NAME_LPROP)
+  private LongEnum lprop = null;
+
   public static final String SERIALIZED_NAME_SPROP = "SProp";
   @SerializedName(SERIALIZED_NAME_SPROP)
   private StringEnum sprop = null;
+
+  public ObjWithEnums iprop(IntEnum iprop) {
+    this.iprop = iprop;
+    return this;
+  }
+
+   /**
+   * Get iprop
+   * @return iprop
+  **/
+  @ApiModelProperty(value = "")
+  public IntEnum getIprop() {
+    return iprop;
+  }
+
+  public void setIprop(IntEnum iprop) {
+    this.iprop = iprop;
+  }
+
+  public ObjWithEnums lprop(LongEnum lprop) {
+    this.lprop = lprop;
+    return this;
+  }
+
+   /**
+   * Get lprop
+   * @return lprop
+  **/
+  @ApiModelProperty(value = "")
+  public LongEnum getLprop() {
+    return lprop;
+  }
+
+  public void setLprop(LongEnum lprop) {
+    this.lprop = lprop;
+  }
 
   public ObjWithEnums sprop(StringEnum sprop) {
     this.sprop = sprop;
@@ -62,12 +108,14 @@ public class ObjWithEnums {
       return false;
     }
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
-    return Objects.equals(this.sprop, objWithEnums.sprop);
+    return Objects.equals(this.iprop, objWithEnums.iprop) &&
+        Objects.equals(this.lprop, objWithEnums.lprop) &&
+        Objects.equals(this.sprop, objWithEnums.sprop);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sprop);
+    return Objects.hash(iprop, lprop, sprop);
   }
 
 
@@ -76,6 +124,8 @@ public class ObjWithEnums {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjWithEnums {\n");
     
+    sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
+    sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import org.openapitools.model.IntEnum;
+import org.openapitools.model.LongEnum;
 import org.openapitools.model.StringEnum;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
@@ -12,7 +14,33 @@ import io.swagger.annotations.*;
 
 public class ObjWithEnums   {
   
+  private IntEnum iprop = null;
+  private LongEnum lprop = null;
   private StringEnum sprop = null;
+
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
+  @JsonProperty("IProp")
+  public IntEnum getIprop() {
+    return iprop;
+  }
+  public void setIprop(IntEnum iprop) {
+    this.iprop = iprop;
+  }
+
+  /**
+   **/
+  
+  @ApiModelProperty(value = "")
+  @JsonProperty("LProp")
+  public LongEnum getLprop() {
+    return lprop;
+  }
+  public void setLprop(LongEnum lprop) {
+    this.lprop = lprop;
+  }
 
   /**
    **/
@@ -36,12 +64,14 @@ public class ObjWithEnums   {
       return false;
     }
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
-    return Objects.equals(sprop, objWithEnums.sprop);
+    return Objects.equals(iprop, objWithEnums.iprop) &&
+        Objects.equals(lprop, objWithEnums.lprop) &&
+        Objects.equals(sprop, objWithEnums.sprop);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sprop);
+    return Objects.hash(iprop, lprop, sprop);
   }
 
   @Override
@@ -49,6 +79,8 @@ public class ObjWithEnums   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjWithEnums {\n");
     
+    sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
+    sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -111,7 +111,9 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
+ - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
+ - [LongEnum](docs/LongEnum.md)
  - [LongModel](docs/LongModel.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
  - [StringEnum](docs/StringEnum.md)

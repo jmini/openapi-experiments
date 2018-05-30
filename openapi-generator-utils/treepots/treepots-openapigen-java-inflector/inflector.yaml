@@ -5,7 +5,9 @@ modelMappings:
   # to enable explicit mappings, use this syntax:
   DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
   EnumInArrayOfArray : org.openapitools.model.EnumInArrayOfArray
+IntEnum : org.openapitools.model.IntEnum
 ItemWithBoolean : org.openapitools.model.ItemWithBoolean
+LongEnum : org.openapitools.model.LongEnum
 LongModel : org.openapitools.model.LongModel
 ObjWithEnums : org.openapitools.model.ObjWithEnums
 StringEnum : org.openapitools.model.StringEnum

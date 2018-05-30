@@ -731,6 +731,11 @@ margin-bottom: 20px;
     }
   }
 };
+            defs.IntEnum = {
+  "type" : "integer",
+  "format" : "int32",
+  "enum" : [ 1, 2, 3 ]
+};
             defs.ItemWithBoolean = {
   "type" : "object",
   "properties" : {
@@ -745,6 +750,11 @@ margin-bottom: 20px;
       "type" : "string"
     }
   }
+};
+            defs.LongEnum = {
+  "type" : "integer",
+  "format" : "int64",
+  "enum" : [ 20, 30, 40 ]
 };
             defs.LongModel = {
   "type" : "object",
@@ -761,6 +771,12 @@ margin-bottom: 20px;
             defs.ObjWithEnums = {
   "type" : "object",
   "properties" : {
+    "IProp" : {
+      "$ref" : "#/components/schemas/IntEnum"
+    },
+    "LProp" : {
+      "$ref" : "#/components/schemas/LongEnum"
+    },
     "SProp" : {
       "$ref" : "#/components/schemas/StringEnum"
     }

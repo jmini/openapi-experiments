@@ -65,7 +65,7 @@ public class LoremApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call getCase1Call(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/case1";
@@ -178,7 +178,7 @@ public class LoremApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call issue7754Call(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/issue7754";
@@ -291,7 +291,7 @@ public class LoremApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call opCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pull75";

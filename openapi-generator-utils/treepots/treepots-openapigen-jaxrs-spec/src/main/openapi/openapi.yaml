@@ -1,0 +1,158 @@
+openapi: 3.0.1
+info:
+  description: Example spec
+  title: OpenAPI Tree Pots
+  version: 1.0.0
+servers:
+- url: http://api.company.xyz/v2
+paths:
+  /case1:
+    get:
+      operationId: getCase1
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemWithBoolean'
+          description: Ok
+      summary: Update an existing pet
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
+  /issue7754:
+    get:
+      operationId: issue7754
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LongModel'
+          description: Ok
+      summary: Codegen
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
+  /pull66:
+    get:
+      operationId: pull66
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnumInArrayOfArray'
+      responses:
+        200:
+          description: Ok
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
+  /pull75:
+    get:
+      operationId: op
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjWithEnums'
+          description: Ok
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
+components:
+  schemas:
+    ItemWithBoolean:
+      example:
+        name: name
+        active: true
+        id: 0
+      properties:
+        id:
+          format: int32
+          type: integer
+        active:
+          type: boolean
+        name:
+          type: string
+      type: object
+    LongModel:
+      example:
+        Long2: 0
+      properties:
+        Long1:
+          $ref: '#/components/schemas/LongProperty'
+        Long2:
+          format: int64
+          type: integer
+      type: object
+    LongProperty:
+      format: int64
+      type: integer
+    EnumInArrayOfArray:
+      example:
+        p1:
+        - valA
+        - valA
+        p2:
+        - - val1
+          - val1
+        - - val1
+          - val1
+        p3:
+        - - - lorem
+            - lorem
+          - - lorem
+            - lorem
+        - - - lorem
+            - lorem
+          - - lorem
+            - lorem
+      properties:
+        p1:
+          items:
+            enum:
+            - valA
+            - valB
+            - valC
+            type: string
+          type: array
+        p2:
+          items:
+            items:
+              enum:
+              - val1
+              - val2
+              - val3
+              type: string
+            type: array
+          type: array
+        p3:
+          items:
+            items:
+              items:
+                enum:
+                - lorem
+                - ipsum
+                type: string
+              type: array
+            type: array
+          type: array
+      type: object
+    ObjWithEnums:
+      example: {}
+      properties:
+        SProp:
+          $ref: '#/components/schemas/StringEnum'
+      type: object
+    StringEnum:
+      enum:
+      - c
+      - b
+      - a
+      type: string

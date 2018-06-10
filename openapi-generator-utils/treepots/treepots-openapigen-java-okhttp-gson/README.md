@@ -74,21 +74,21 @@ Please follow the [installation](#installation) instruction and execute the foll
 import org.openapitools.client.*;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.model.*;
-import org.openapitools.client.api.LoremApi;
+import org.openapitools.client.api.IpsumApi;
 
 import java.io.File;
 import java.util.*;
 
-public class LoremApiExample {
+public class IpsumApiExample {
 
     public static void main(String[] args) {
         
-        LoremApi apiInstance = new LoremApi();
+        IpsumApi apiInstance = new IpsumApi();
         try {
-            ItemWithBoolean result = apiInstance.getCase1();
+            SomeObject result = apiInstance.op();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LoremApi#getCase1");
+            System.err.println("Exception when calling IpsumApi#op");
             e.printStackTrace();
         }
     }
@@ -102,6 +102,7 @@ All URIs are relative to *http://api.company.xyz/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IpsumApi* | [**op**](docs/IpsumApi.md#op) | **GET** /ipsum/issue199 | 
 *LoremApi* | [**getCase1**](docs/LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *LoremApi* | [**issue7754**](docs/LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
 *LoremApi* | [**op**](docs/LoremApi.md#op) | **GET** /pull75 | 
@@ -111,9 +112,11 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
+ - [ErrorModel](docs/ErrorModel.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
  - [LongModel](docs/LongModel.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
+ - [SomeObject](docs/SomeObject.md)
  - [StringEnum](docs/StringEnum.md)
 
 

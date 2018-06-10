@@ -40,6 +40,9 @@ public class ApiClient {
         return new ApiClient(config);
     }
 
+    public IpsumApi ipsum() {
+        return IpsumApi.ipsum(config.baseReqSpec.get());
+    }
     public LoremApi lorem() {
         return LoremApi.lorem(config.baseReqSpec.get());
     }

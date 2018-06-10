@@ -62,6 +62,25 @@ paths:
       tags:
       - lorem
       x-accepts: application/json
+  /ipsum/issue199:
+    get:
+      operationId: op
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SomeObject'
+          description: a pet to be returned
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+          description: Unexpected error
+      tags:
+      - ipsum
+      x-accepts: application/json
 components:
   schemas:
     ItemWithBoolean:
@@ -153,3 +172,30 @@ components:
       - b
       - a
       type: string
+    SomeObject:
+      example:
+        firstName: firstName
+        lastName: lastName
+        id: 0
+      properties:
+        id:
+          format: int32
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+      type: object
+    ErrorModel:
+      properties:
+        statusCode:
+          description: http status code
+          format: int32
+          type: integer
+        statusDescription:
+          description: http status reason phrase
+          type: string
+        errorMessage:
+          description: error description
+          type: string
+      type: object

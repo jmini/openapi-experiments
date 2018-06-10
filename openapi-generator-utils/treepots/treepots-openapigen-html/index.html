@@ -194,6 +194,10 @@ font-style: italic;
 
   <h3>Table of Contents </h3>
   <div class="method-summary"></div>
+  <h4><a href="#Ipsum">Ipsum</a></h4>
+  <ul>
+  <li><a href="#op"><code><span class="http-method">get</span> /ipsum/issue199</code></a></li>
+  </ul>
   <h4><a href="#Lorem">Lorem</a></h4>
   <ul>
   <li><a href="#getCase1"><code><span class="http-method">get</span> /case1</code></a></li>
@@ -202,6 +206,52 @@ font-style: italic;
   <li><a href="#pull66"><code><span class="http-method">get</span> /pull66</code></a></li>
   </ul>
 
+  <h1><a name="Ipsum">Ipsum</a></h1>
+  <div class="method"><a name="op"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /ipsum/issue199</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">op</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SomeObject">SomeObject</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "firstName" : "firstName",
+  "lastName" : "lastName",
+  "id" : 0
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    a pet to be returned
+        <a href="#SomeObject">SomeObject</a>
+    <h4 class="field-label">default</h4>
+    Unexpected error
+        <a href="#ErrorModel">ErrorModel</a>
+  </div> <!-- method -->
+  <hr/>
   <h1><a name="Lorem">Lorem</a></h1>
   <div class="method"><a name="getCase1"/>
     <div class="method-path">
@@ -366,9 +416,11 @@ font-style: italic;
   <h3>Table of Contents</h3>
   <ol>
     <li><a href="#EnumInArrayOfArray"><code>EnumInArrayOfArray</code> - </a></li>
+    <li><a href="#ErrorModel"><code>ErrorModel</code> - </a></li>
     <li><a href="#ItemWithBoolean"><code>ItemWithBoolean</code> - </a></li>
     <li><a href="#LongModel"><code>LongModel</code> - </a></li>
     <li><a href="#ObjWithEnums"><code>ObjWithEnums</code> - </a></li>
+    <li><a href="#SomeObject"><code>SomeObject</code> - </a></li>
     <li><a href="#StringEnum"><code>StringEnum</code> - </a></li>
   </ol>
 
@@ -385,6 +437,15 @@ font-style: italic;
 <div class="param">p3 (optional)</div><div class="param-desc"><span class="param-type"><a href="#array">array[array[array[String]]]</a></span>  </div>
         <div class="param-enum-header">Enum:</div>
         
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ErrorModel"><code>ErrorModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">statusCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> http status code format: int32</div>
+<div class="param">statusDescription (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> http status reason phrase </div>
+<div class="param">errorMessage (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> error description </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -409,6 +470,15 @@ font-style: italic;
     <div class='model-description'></div>
     <div class="field-items">
       <div class="param">SProp (optional)</div><div class="param-desc"><span class="param-type"><a href="#StringEnum">StringEnum</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="SomeObject"><code>SomeObject</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">firstName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">lastName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

@@ -57,6 +57,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjWithEnums'
+  /ipsum/issue199:
+    get:
+      operationId: op
+      tags:
+        - ipsum
+      responses:
+        '200':
+          description: a pet to be returned
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SomeObject'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
 components:
   schemas:
     ItemWithBoolean:
@@ -128,3 +146,28 @@ components:
         - "c"
         - "b"
         - "a"
+
+    SomeObject:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        firstName:
+          type: string
+        lastName:
+          type: string
+
+    ErrorModel:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: http status code
+          format: int32
+        statusDescription:
+          type: string
+          description: http status reason phrase
+        errorMessage:
+          type: string
+          description: error description

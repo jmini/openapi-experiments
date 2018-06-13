@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.jmini.openapi</groupId>
+  <artifactId>run-openapi-generator-maven-plugin</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <!-- Uncomment the next section in order to fetch the plugin from the sonatype releases repository -->
+  <!--
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype-stage</id>
+      <url>https://oss.sonatype.org/content/repositories/releases/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>generate-client-code</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>/Users/jbr/Git/openapi-experiments/openapi-generator-utils/petstore/petstore.json</inputSpec>
+              <generatorName>java</generatorName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

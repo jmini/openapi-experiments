@@ -14,6 +14,7 @@ public class JettyServerMain {
 		server.setConnectors(new Connector[] { connector });
 
 		ServletHandler servletHandler = new ServletHandler();
+		servletHandler.addServletWithMapping(OpenApiServlet.class, "/openapi.json");
 		servletHandler.addServletWithMapping(DefaultServlet.class, "/*");
 		server.setHandler(servletHandler);
 		server.start();

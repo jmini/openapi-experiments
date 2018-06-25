@@ -178,7 +178,7 @@ public class PetApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call deletePetCall(Long petId, String apiKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/{petId}"
@@ -302,7 +302,7 @@ public class PetApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call findPetsByStatusCall(List<String> status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/findByStatus";
@@ -423,7 +423,7 @@ public class PetApi {
      */
     @Deprecated
     public com.squareup.okhttp.Call findPetsByTagsCall(List<String> tags, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/findByTags";
@@ -549,7 +549,7 @@ public class PetApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call getPetByIdCall(Long petId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/{petId}"
@@ -787,7 +787,7 @@ public class PetApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call updatePetWithFormCall(String petId, String name, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/{petId}"
@@ -918,7 +918,7 @@ public class PetApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call uploadFileCall(Long petId, String additionalMetadata, File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+        Object localVarPostBody = new Object();
 
         // create path and map variables
         String localVarPath = "/pet/{petId}/uploadImage"

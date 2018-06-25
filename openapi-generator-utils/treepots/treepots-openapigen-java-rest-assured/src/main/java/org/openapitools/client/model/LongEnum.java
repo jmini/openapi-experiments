@@ -67,7 +67,7 @@ public enum LongEnum {
 
     @Override
     public LongEnum read(final JsonReader jsonReader) throws IOException {
-      Long value = jsonReader.nextInt();
+      Long value = jsonReader.nextLong();
       return LongEnum.fromValue(String.valueOf(value));
     }
   }

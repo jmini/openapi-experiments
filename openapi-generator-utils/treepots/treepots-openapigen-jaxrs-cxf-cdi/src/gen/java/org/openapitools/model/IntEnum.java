@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlEnumValue;
 @XmlEnum(Integer.class)
 public enum IntEnum {
 
-    @XmlEnumValue(1) NUMBER_1(Integer.valueOf(1)), @XmlEnumValue(2) NUMBER_2(Integer.valueOf(2)), @XmlEnumValue(3) NUMBER_3(Integer.valueOf(3));
+    @XmlEnumValue("1") NUMBER_1(Integer.valueOf(1)), @XmlEnumValue("2") NUMBER_2(Integer.valueOf(2)), @XmlEnumValue("3") NUMBER_3(Integer.valueOf(3));
 
 
     private Integer value;
@@ -19,7 +19,7 @@ public enum IntEnum {
         value = v;
     }
 
-    public String value() {
+    public Integer value() {
         return value;
     }
 

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlEnumValue;
 @XmlEnum(Long.class)
 public enum LongEnum {
 
-    @XmlEnumValue(20l) NUMBER_20(Long.valueOf(20l)), @XmlEnumValue(30l) NUMBER_30(Long.valueOf(30l)), @XmlEnumValue(40l) NUMBER_40(Long.valueOf(40l));
+    @XmlEnumValue("20l") NUMBER_20(Long.valueOf(20l)), @XmlEnumValue("30l") NUMBER_30(Long.valueOf(30l)), @XmlEnumValue("40l") NUMBER_40(Long.valueOf(40l));
 
 
     private Long value;
@@ -19,7 +19,7 @@ public enum LongEnum {
         value = v;
     }
 
-    public String value() {
+    public Long value() {
         return value;
     }
 

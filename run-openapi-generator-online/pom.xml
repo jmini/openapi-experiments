@@ -7,8 +7,18 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <!-- Uncomment the next section in order to fetch the plugin from the sonatype releases repository -->
+  <!--
+  <repositories>
+    <repository>
+      <id>sonatype-stage</id>
+      <url>https://oss.sonatype.org/content/repositories/releases/</url>
+    </repository>
+  </repositories>
+  -->
+
   <properties>
-    <openapiGeneratorVersion>3.0.3</openapiGeneratorVersion>
+    <openapiGeneratorVersion>3.1.0</openapiGeneratorVersion>
   </properties>
   <build>
     <plugins>

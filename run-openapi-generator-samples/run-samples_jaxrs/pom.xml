@@ -1,0 +1,31 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>tmp</groupId>
+    <artifactId>tmp-build-root</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-datelib-j8/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-cxf-annotated-base-path/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-cxf-cdi/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-cxf-non-spring-app/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-cxf/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-resteasy/default/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-resteasy/eap-java8/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-resteasy/eap-joda/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-resteasy/eap/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-resteasy/joda/</module>
+
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-spec/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-spec-interface/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs-spec-interface-response/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs/jersey1-useTags/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs/jersey1/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs/jersey2-useTags/</module>
+        <module>../../../openapi-generator/samples/server/petstore/jaxrs/jersey2/</module>
+
+    </modules>
+</project>
+

@@ -30,7 +30,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <inputSpec>/Users/jbr/Git/openapi-experiments/openapi-generator-utils/petstore/petstore.json</inputSpec>
+              <inputSpec>${project.basedir}/../openapi-generator-utils/petstore/petstore.json</inputSpec>
               <generatorName>java</generatorName>
             </configuration>
           </execution>

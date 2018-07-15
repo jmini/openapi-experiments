@@ -1,6 +1,7 @@
 package fr.jmini.openapi.server;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -46,8 +47,19 @@ public class DefaultServlet extends HttpServlet {
 	}
 
 	private void doRequest(String method, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		printRequest(method, request);
 		response.setContentType("application/json");
 		response.setStatus(HttpServletResponse.SC_OK);
 		response.getWriter().println("{ \"status\": \"ok\"}");
+	}
+
+	private void printRequest(String method, HttpServletRequest request) {
+		System.out.println("[" + method + "] " + request.getRequestURI());
+		Enumeration<String> headerNames = request.getHeaderNames();
+		System.out.println("Headers:");
+		while (headerNames.hasMoreElements()) {
+			String headerName = headerNames.nextElement();
+			System.out.println(" - " + headerName + ": " + request.getHeader(headerName));
+		}
 	}
 }

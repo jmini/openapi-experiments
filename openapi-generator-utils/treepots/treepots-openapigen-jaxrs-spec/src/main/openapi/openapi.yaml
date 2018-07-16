@@ -167,11 +167,41 @@ components:
           type: array
       type: object
     ObjWithEnums:
-      example: {}
+      example:
+        IProp: 0
+        LProp: 6
       properties:
+        IProp:
+          enum:
+          - 1
+          - 2
+          - 3
+          format: int32
+          type: integer
+        LProp:
+          enum:
+          - 20
+          - 30
+          - 40
+          format: int64
+          type: integer
         SProp:
           $ref: '#/components/schemas/StringEnum'
       type: object
+    IntEnum:
+      enum:
+      - 1
+      - 2
+      - 3
+      format: int32
+      type: integer
+    LongEnum:
+      enum:
+      - 20
+      - 30
+      - 40
+      format: int64
+      type: integer
     StringEnum:
       enum:
       - c

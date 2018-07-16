@@ -16,6 +16,7 @@ package org.openapitools.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.model.StringEnum;
@@ -26,8 +27,118 @@ import javax.validation.constraints.*;
  */
 
 public class ObjWithEnums   {
+  /**
+   * Gets or Sets iprop
+   */
+  public enum IpropEnum {
+    NUMBER_1(1),
+    
+    NUMBER_2(2),
+    
+    NUMBER_3(3);
+
+    private Integer value;
+
+    IpropEnum(Integer value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static IpropEnum fromValue(String text) {
+      for (IpropEnum b : IpropEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("IProp")
+  private IpropEnum iprop = null;
+
+  /**
+   * Gets or Sets lprop
+   */
+  public enum LpropEnum {
+    NUMBER_20(20l),
+    
+    NUMBER_30(30l),
+    
+    NUMBER_40(40l);
+
+    private Long value;
+
+    LpropEnum(Long value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static LpropEnum fromValue(String text) {
+      for (LpropEnum b : LpropEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("LProp")
+  private LpropEnum lprop = null;
+
   @JsonProperty("SProp")
   private StringEnum sprop = null;
+
+  public ObjWithEnums iprop(IpropEnum iprop) {
+    this.iprop = iprop;
+    return this;
+  }
+
+  /**
+   * Get iprop
+   * @return iprop
+   **/
+  @JsonProperty("IProp")
+  @ApiModelProperty(value = "")
+  public IpropEnum getIprop() {
+    return iprop;
+  }
+
+  public void setIprop(IpropEnum iprop) {
+    this.iprop = iprop;
+  }
+
+  public ObjWithEnums lprop(LpropEnum lprop) {
+    this.lprop = lprop;
+    return this;
+  }
+
+  /**
+   * Get lprop
+   * @return lprop
+   **/
+  @JsonProperty("LProp")
+  @ApiModelProperty(value = "")
+  public LpropEnum getLprop() {
+    return lprop;
+  }
+
+  public void setLprop(LpropEnum lprop) {
+    this.lprop = lprop;
+  }
 
   public ObjWithEnums sprop(StringEnum sprop) {
     this.sprop = sprop;
@@ -58,12 +169,14 @@ public class ObjWithEnums   {
       return false;
     }
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
-    return Objects.equals(this.sprop, objWithEnums.sprop);
+    return Objects.equals(this.iprop, objWithEnums.iprop) &&
+        Objects.equals(this.lprop, objWithEnums.lprop) &&
+        Objects.equals(this.sprop, objWithEnums.sprop);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sprop);
+    return Objects.hash(iprop, lprop, sprop);
   }
 
 
@@ -72,6 +185,8 @@ public class ObjWithEnums   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjWithEnums {\n");
     
+    sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
+    sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
     sb.append("}");
     return sb.toString();

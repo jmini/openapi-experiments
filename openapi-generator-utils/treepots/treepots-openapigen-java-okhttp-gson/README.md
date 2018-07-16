@@ -113,7 +113,9 @@ Class | Method | HTTP request | Description
 
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
  - [ErrorModel](docs/ErrorModel.md)
+ - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
+ - [LongEnum](docs/LongEnum.md)
  - [LongModel](docs/LongModel.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
  - [SomeObject](docs/SomeObject.md)

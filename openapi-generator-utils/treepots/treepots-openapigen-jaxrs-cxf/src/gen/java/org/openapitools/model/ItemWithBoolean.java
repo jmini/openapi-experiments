@@ -46,7 +46,7 @@ public class ItemWithBoolean  {
    * @return active
   **/
   @JsonProperty("active")
-  public Boolean isActive() {
+  public Boolean getActive() {
     return active;
   }
 

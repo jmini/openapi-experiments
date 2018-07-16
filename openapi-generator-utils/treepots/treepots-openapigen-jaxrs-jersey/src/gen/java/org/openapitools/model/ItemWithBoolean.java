@@ -64,7 +64,7 @@ public class ItemWithBoolean   {
    **/
   @JsonProperty("active")
   @ApiModelProperty(value = "")
-  public Boolean isActive() {
+  public Boolean getActive() {
     return active;
   }
 

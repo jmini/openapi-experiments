@@ -109,7 +109,7 @@ public class Order   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("complete")
-  public Boolean isComplete() {
+  public Boolean getComplete() {
     return complete;
   }
   public void setComplete(Boolean complete) {

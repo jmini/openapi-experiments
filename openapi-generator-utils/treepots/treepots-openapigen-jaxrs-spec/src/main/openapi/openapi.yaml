@@ -103,10 +103,12 @@ components:
       type: object
     LongModel:
       example:
-        Long2: 0
+        Long2: 6
+        Long1: 0
       properties:
         Long1:
-          $ref: '#/components/schemas/LongProperty'
+          format: int64
+          type: integer
         Long2:
           format: int64
           type: integer

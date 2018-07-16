@@ -32,7 +32,7 @@ public class ItemWithBoolean   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("active")
-  public Boolean isActive() {
+  public Boolean getActive() {
     return active;
   }
   public void setActive(Boolean active) {

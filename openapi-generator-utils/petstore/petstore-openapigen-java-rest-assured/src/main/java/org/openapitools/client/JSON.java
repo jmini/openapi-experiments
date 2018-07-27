@@ -51,6 +51,7 @@ public class JSON {
 
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
+        
         ;
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;

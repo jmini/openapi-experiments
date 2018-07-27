@@ -44,7 +44,7 @@ public class EnumInArrayOfArray   {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
   }
 
@@ -80,7 +80,7 @@ public class EnumInArrayOfArray   {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
   }
 
@@ -114,7 +114,7 @@ public class EnumInArrayOfArray   {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
   }
 

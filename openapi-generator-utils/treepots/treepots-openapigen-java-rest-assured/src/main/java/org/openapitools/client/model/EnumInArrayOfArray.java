@@ -63,7 +63,7 @@ public class EnumInArrayOfArray {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
 
     public static class Adapter extends TypeAdapter<P1Enum> {
@@ -116,7 +116,7 @@ public class EnumInArrayOfArray {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
 
     public static class Adapter extends TypeAdapter<P2Enum> {
@@ -167,7 +167,7 @@ public class EnumInArrayOfArray {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
     }
 
     public static class Adapter extends TypeAdapter<P3Enum> {

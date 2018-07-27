@@ -44,7 +44,7 @@ public enum IpropEnum {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
     }
 }
 
@@ -79,7 +79,7 @@ public enum LpropEnum {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
     }
 }
 

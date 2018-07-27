@@ -36,7 +36,7 @@ public enum StringEnum {
         return b;
       }
     }
-    return null;
+    throw new IllegalArgumentException("Unexpected value '" + text + "'");
   }
   
 }

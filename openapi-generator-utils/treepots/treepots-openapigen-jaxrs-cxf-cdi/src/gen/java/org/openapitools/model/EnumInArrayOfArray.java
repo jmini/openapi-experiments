@@ -45,7 +45,7 @@ public enum P1Enum {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
     }
 }
 
@@ -80,7 +80,7 @@ public enum P2Enum {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
     }
 }
 
@@ -115,7 +115,7 @@ public enum P3Enum {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
     }
 }
 

@@ -1,0 +1,232 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI Ice Spell Mint API
+  description: Test Spec for a "Simple Client"
+  version: 1.0.0
+  license:
+    name: Apache-2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: 'http://localhost:8090/'
+paths:
+  /lorem/getEmpty:
+    get:
+      tags:
+        - lorem
+      operationId: emptyGet
+      responses:
+        '201':
+          description: OK
+  /lorem/postEmpty:
+    post:
+      tags:
+        - lorem
+      operationId: emptyPost
+      responses:
+        '201':
+          description: OK
+  /lorem/putEmpty:
+    put:
+      tags:
+        - lorem
+      operationId: emptyPut
+      responses:
+        '201':
+          description: OK
+  /lorem/deleteEmpty:
+    delete:
+      tags:
+        - lorem
+      operationId: emptyDelete
+      responses:
+        '201':
+          description: OK
+  /lorem/optionsEmpty:
+    options:
+      tags:
+        - lorem
+      operationId: emptyOptions
+      responses:
+        '201':
+          description: OK
+  /lorem/headEmpty:
+    head:
+      tags:
+        - lorem
+      operationId: emptyHead
+      responses:
+        '201':
+          description: OK
+  /lorem/patchEmpty:
+    patch:
+      tags:
+        - lorem
+      operationId: emptyPatch
+      responses:
+        '201':
+          description: OK
+  /lorem/traceEmpty:
+    trace:
+      tags:
+        - lorem
+      operationId: emptyTrace
+      responses:
+        '201':
+          description: OK
+  /ipsum/ping:
+    parameters:
+      - name: custom
+        in: query
+        schema:
+          type: string
+    get:
+      tags:
+        - ipsum
+      operationId: pingGet
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+        - ipsum
+      operationId: pingPost
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+        - ipsum
+      operationId: pingPut
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+        - ipsum
+      operationId: pingDelete
+      responses:
+        '200':
+          description: OK
+    options:
+      tags:
+        - ipsum
+      operationId: pingOptions
+      responses:
+        '200':
+          description: OK
+    head:
+      tags:
+        - ipsum
+      operationId: pingHead
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - ipsum
+      operationId: pingPatch
+      responses:
+        '200':
+          description: OK
+    trace:
+      tags:
+        - ipsum
+      operationId: pingTrace
+      responses:
+        '200':
+          description: OK
+  /ipsum/jsonPing:
+    post:
+      tags:
+        - ipsum
+      operationId: jsonPingPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+        - ipsum
+      operationId: jsonPingPut
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+        - ipsum
+      operationId: jsonPingDelete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    options:
+      tags:
+        - ipsum
+      operationId: jsonPingOptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    head:
+      tags:
+        - ipsum
+      operationId: jsonPingHead
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - ipsum
+      operationId: jsonPingPatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+    trace:
+      tags:
+        - ipsum
+      operationId: jsonPingTrace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SomeObj'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    SomeObj:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string

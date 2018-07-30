@@ -60,6 +60,15 @@ public class RunOpenapitoolsCodegenMain {
 		convertStaticHtml("petstore.json");
 		convertStaticHtml2("petstore.json");
 		convertStaticDoc("petstore.json");
+
+		convertJava("icespellmint.yaml", JavaClientCodegen.FEIGN);
+		convertJava("icespellmint.yaml", JavaClientCodegen.GOOGLE_API_CLIENT);
+		convertJava("icespellmint.yaml", JavaClientCodegen.JERSEY2);
+		convertJava("icespellmint.yaml", JavaClientCodegen.OKHTTP_GSON);
+		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED);
+		convertJava("icespellmint.yaml", JavaClientCodegen.RESTEASY);
+		convertJava("icespellmint.yaml", JavaClientCodegen.RESTTEMPLATE);
+		convertJava("icespellmint.yaml", JavaClientCodegen.WEBCLIENT);
 	}
 
 	private static void convertJava(String inputSpecName, String library) throws IOException {

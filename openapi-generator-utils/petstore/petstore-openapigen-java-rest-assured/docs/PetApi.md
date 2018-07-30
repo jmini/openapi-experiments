@@ -23,7 +23,7 @@ Add a new pet to the store
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -62,7 +62,7 @@ Deletes a pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -105,7 +105,7 @@ Multiple status values can be provided with comma separated strings
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -146,7 +146,7 @@ Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -187,7 +187,7 @@ Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API erro
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -227,7 +227,7 @@ Update an existing pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -266,7 +266,7 @@ Updates a pet in the store with form data
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -308,7 +308,7 @@ uploads an image
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 

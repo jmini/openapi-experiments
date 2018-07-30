@@ -23,11 +23,11 @@ Add a new pet to the store
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -73,11 +73,11 @@ Deletes a pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -127,11 +127,11 @@ Multiple status values can be provided with comma separated strings
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -180,11 +180,11 @@ Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -233,11 +233,11 @@ Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API erro
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -290,11 +290,11 @@ Update an existing pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -340,11 +340,11 @@ Updates a pet in the store with form data
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -394,11 +394,11 @@ uploads an image
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.PetApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

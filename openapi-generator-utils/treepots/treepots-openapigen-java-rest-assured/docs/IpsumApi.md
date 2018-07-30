@@ -16,7 +16,7 @@ Method | HTTP request | Description
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 

@@ -21,8 +21,8 @@ For valid response try integer IDs with value &lt; 1000. Anything above 1000 or 
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.StoreApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.StoreApi;
 
 
 StoreApi apiInstance = new StoreApi();
@@ -65,11 +65,11 @@ Returns a map of status codes to quantities
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.Configuration;
-//import org.openapitools.client.auth.*;
-//import org.openapitools.client.api.StoreApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+//import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.StoreApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -116,8 +116,8 @@ For valid response try integer IDs with value &lt;&#x3D; 5 or &gt; 10. Other val
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.StoreApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.StoreApi;
 
 
 StoreApi apiInstance = new StoreApi();
@@ -159,8 +159,8 @@ Place an order for a pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.StoreApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.StoreApi;
 
 
 StoreApi apiInstance = new StoreApi();

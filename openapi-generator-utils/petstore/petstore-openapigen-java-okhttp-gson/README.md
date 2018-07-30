@@ -71,10 +71,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.*;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.model.*;
-import org.openapitools.client.api.PetApi;
+import fr.jmini.openapi.openapitools.okhttpgson.*;
+import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
+import fr.jmini.openapi.openapitools.okhttpgson.model.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
 import java.io.File;
 import java.util.*;

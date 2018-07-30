@@ -16,8 +16,8 @@ Method | HTTP request | Description
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.IpsumApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.IpsumApi;
 
 
 IpsumApi apiInstance = new IpsumApi();

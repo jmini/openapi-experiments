@@ -19,8 +19,8 @@ Update an existing pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.LoremApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
 
 LoremApi apiInstance = new LoremApi();
@@ -58,8 +58,8 @@ Codegen
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.LoremApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
 
 LoremApi apiInstance = new LoremApi();
@@ -97,8 +97,8 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.LoremApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
 
 LoremApi apiInstance = new LoremApi();
@@ -136,8 +136,8 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiException;
-//import org.openapitools.client.api.LoremApi;
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
 
 LoremApi apiInstance = new LoremApi();

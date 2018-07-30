@@ -19,7 +19,7 @@ Update an existing pet
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -55,7 +55,7 @@ Codegen
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -91,7 +91,7 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 
@@ -127,7 +127,7 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import org.openapitools.client.ApiClient;
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
 //import io.restassured.builder.RequestSpecBuilder;
 //import io.restassured.filter.log.ErrorLoggingFilter;
 

@@ -29,10 +29,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class RunOpenapitoolsCodegenMain {
-	public static final String OKHTTP_GSON = "okhttp-gson";
+
+	private static final String PACKAGE_ROOT = "fr.jmini.openapi.openapitools";
 
 	public static void main(String[] args) throws IOException {
-		convertJava("treepots.yaml", OKHTTP_GSON);
+		convertJava("treepots.yaml", JavaClientCodegen.OKHTTP_GSON);
 		convertJava("treepots.yaml", JavaClientCodegen.REST_ASSURED);
 		convertInflector("treepots.yaml");
 		convertJaxrs("treepots.yaml");
@@ -46,7 +47,7 @@ public class RunOpenapitoolsCodegenMain {
 		convertStaticHtml2("treepots.yaml");
 		convertStaticDoc("treepots.yaml");
 
-		convertJava("petstore.json", OKHTTP_GSON);
+		convertJava("petstore.json", JavaClientCodegen.OKHTTP_GSON);
 		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED);
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");
@@ -127,6 +128,15 @@ public class RunOpenapitoolsCodegenMain {
 		config.setArtifactId(artifactId);
 		config.setJava8Mode(true);
 		config.setLibrary(library);
+		String packageName;
+		if (library != null) {
+			packageName = PACKAGE_ROOT + "." + library.replace("-", "");
+		} else {
+			packageName = PACKAGE_ROOT;
+		}
+		config.setInvokerPackage(packageName);
+		config.setApiPackage(packageName + ".api");
+		config.setModelPackage(packageName + ".model");
 		convert(inputSpecName, config, library);
 	}
 

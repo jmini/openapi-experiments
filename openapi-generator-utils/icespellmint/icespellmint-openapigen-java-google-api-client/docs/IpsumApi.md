@@ -1,6 +1,6 @@
 # IpsumApi
 
-All URIs are relative to *http://localhost:8090/*
+All URIs are relative to *http://localhost:8090*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

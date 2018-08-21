@@ -22,7 +22,7 @@ public class ApiClient {
     private final HttpRequestFactory httpRequestFactory;
     private final ObjectMapper objectMapper;
 
-    private static final String defaultBasePath = "http://localhost:8090/";
+    private static final String defaultBasePath = "http://localhost:8090";
 
     // A reasonable default object mapper. Client can pass in a chosen ObjectMapper anyway, this is just for reasonable defaults.
     private static ObjectMapper createDefaultObjectMapper() {

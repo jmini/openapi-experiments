@@ -23,7 +23,9 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
+import io.swagger.annotations.*;
 
 import java.lang.reflect.Type;
 import java.util.function.Consumer;
@@ -33,6 +35,7 @@ import fr.jmini.openapi.openapitools.restassured.JSON;
 
 import static io.restassured.http.Method.*;
 
+@Api(value = "Lorem")
 public class LoremApi {
 
     private RequestSpecBuilder reqSpec;
@@ -46,30 +49,72 @@ public class LoremApi {
     }
 
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyDelete",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyDeleteOper emptyDelete() {
         return new EmptyDeleteOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyGet",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyGetOper emptyGet() {
         return new EmptyGetOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyHead",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyHeadOper emptyHead() {
         return new EmptyHeadOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyOptions",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyOptionsOper emptyOptions() {
         return new EmptyOptionsOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyPatch",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyPatchOper emptyPatch() {
         return new EmptyPatchOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyPost",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyPostOper emptyPost() {
         return new EmptyPostOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyPut",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
     public EmptyPutOper emptyPut() {
         return new EmptyPutOper(reqSpec);
     }
@@ -89,19 +134,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyDeleteOper {
+    public static class EmptyDeleteOper {
 
+        public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/lorem/deleteEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyDeleteOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyDeleteOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -116,7 +155,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(DELETE, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -144,19 +183,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyGetOper {
+    public static class EmptyGetOper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/lorem/getEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyGetOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyGetOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -171,7 +204,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -199,19 +232,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyHeadOper {
+    public static class EmptyHeadOper {
 
+        public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/lorem/headEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyHeadOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyHeadOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -226,7 +253,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(HEAD, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -254,19 +281,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyOptionsOper {
+    public static class EmptyOptionsOper {
 
+        public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/lorem/optionsEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyOptionsOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyOptionsOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -281,7 +302,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(OPTIONS, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -309,19 +330,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyPatchOper {
+    public static class EmptyPatchOper {
 
+        public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/lorem/patchEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyPatchOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyPatchOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -336,7 +351,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PATCH, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -364,19 +379,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyPostOper {
+    public static class EmptyPostOper {
 
+        public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/lorem/postEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyPostOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyPostOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -391,7 +400,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(POST, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -419,19 +428,13 @@ public class LoremApi {
      * 
      *
      */
-    public class EmptyPutOper {
+    public static class EmptyPutOper {
 
+        public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/lorem/putEmpty";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public EmptyPutOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public EmptyPutOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -446,7 +449,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PUT, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**

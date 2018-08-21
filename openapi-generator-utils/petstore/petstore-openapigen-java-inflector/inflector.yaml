@@ -4,7 +4,9 @@ swaggerUrl: ./src/main/swagger/swagger.yaml
 modelMappings:
   # to enable explicit mappings, use this syntax:
   DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
-  Category : fr.jmini.openapi.openapitools.model.Category
+  Body : fr.jmini.openapi.openapitools.model.Body
+Body1 : fr.jmini.openapi.openapitools.model.Body1
+Category : fr.jmini.openapi.openapitools.model.Category
 Order : fr.jmini.openapi.openapitools.model.Order
 Pet : fr.jmini.openapi.openapitools.model.Pet
 Tag : fr.jmini.openapi.openapitools.model.Tag

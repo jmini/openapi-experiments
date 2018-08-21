@@ -15,20 +15,16 @@ package fr.jmini.openapi.openapitools.restassured;
 
 import fr.jmini.openapi.openapitools.restassured.api.*;
 
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.response.Response;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
+import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
+import static io.restassured.config.RestAssuredConfig.config;
+import static fr.jmini.openapi.openapitools.restassured.GsonObjectMapper.gson;
+
 public class ApiClient {
+    public static final String BASE_URI = "http://localhost:8090";
 
     private final Config config;
 
@@ -48,7 +44,9 @@ public class ApiClient {
     }
 
     public static class Config {
-        private Supplier<RequestSpecBuilder> baseReqSpec;
+        private Supplier<RequestSpecBuilder> baseReqSpec = () -> new RequestSpecBuilder()
+                .setBaseUri(BASE_URI)
+                .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())));
 
         /**
          * Use common specification for all operations

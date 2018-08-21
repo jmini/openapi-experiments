@@ -1,6 +1,6 @@
 # IpsumApi
 
-All URIs are relative to *http://localhost:8090/*
+All URIs are relative to *http://localhost:8090*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ Method | HTTP request | Description
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingDelete().execute(r -> r.prettyPeek());
 ```
@@ -73,7 +73,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingHead().execute(r -> r.prettyPeek());
 ```
@@ -112,7 +112,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingOptions().execute(r -> r.prettyPeek());
 ```
@@ -151,7 +151,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingPatch().execute(r -> r.prettyPeek());
 ```
@@ -190,7 +190,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingPost().execute(r -> r.prettyPeek());
 ```
@@ -229,7 +229,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingPut().execute(r -> r.prettyPeek());
 ```
@@ -268,7 +268,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingDelete().execute(r -> r.prettyPeek());
 ```
@@ -307,7 +307,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingGet().execute(r -> r.prettyPeek());
 ```
@@ -346,7 +346,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingHead().execute(r -> r.prettyPeek());
 ```
@@ -385,7 +385,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingOptions().execute(r -> r.prettyPeek());
 ```
@@ -424,7 +424,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingPatch().execute(r -> r.prettyPeek());
 ```
@@ -463,7 +463,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingPost().execute(r -> r.prettyPeek());
 ```
@@ -502,7 +502,7 @@ No authorization required
 
 IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingPut().execute(r -> r.prettyPeek());
 ```

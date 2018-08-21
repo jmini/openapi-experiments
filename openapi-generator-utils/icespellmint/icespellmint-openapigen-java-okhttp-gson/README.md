@@ -98,7 +98,7 @@ public class IpsumApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8090/*
+All URIs are relative to *http://localhost:8090*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

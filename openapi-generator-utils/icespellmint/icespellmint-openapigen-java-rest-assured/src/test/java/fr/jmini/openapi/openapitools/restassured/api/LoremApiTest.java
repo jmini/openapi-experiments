@@ -42,7 +42,7 @@ public class LoremApiTest {
         api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
                 () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
     }
 
     /**

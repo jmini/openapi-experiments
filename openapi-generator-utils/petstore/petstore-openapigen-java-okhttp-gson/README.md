@@ -131,6 +131,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [Body](docs/Body.md)
+ - [Body1](docs/Body1.md)
  - [Category](docs/Category.md)
  - [Order](docs/Order.md)
  - [Pet](docs/Pet.md)

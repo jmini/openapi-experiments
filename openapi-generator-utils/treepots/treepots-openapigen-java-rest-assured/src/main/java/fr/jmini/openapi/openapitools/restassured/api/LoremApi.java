@@ -27,7 +27,9 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
+import io.swagger.annotations.*;
 
 import java.lang.reflect.Type;
 import java.util.function.Consumer;
@@ -37,6 +39,7 @@ import fr.jmini.openapi.openapitools.restassured.JSON;
 
 import static io.restassured.http.Method.*;
 
+@Api(value = "Lorem")
 public class LoremApi {
 
     private RequestSpecBuilder reqSpec;
@@ -50,18 +53,42 @@ public class LoremApi {
     }
 
 
+    @ApiOperation(value = "Update an existing pet",
+            notes = "",
+            nickname = "getCase1",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "Ok")  })
     public GetCase1Oper getCase1() {
         return new GetCase1Oper(reqSpec);
     }
 
+    @ApiOperation(value = "Codegen",
+            notes = "",
+            nickname = "issue7754",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "Ok")  })
     public Issue7754Oper issue7754() {
         return new Issue7754Oper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "op",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "Ok")  })
     public OpOper op() {
         return new OpOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pull66",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "Ok")  })
     public Pull66Oper pull66() {
         return new Pull66Oper(reqSpec);
     }
@@ -82,19 +109,13 @@ public class LoremApi {
      *
      * return ItemWithBoolean
      */
-    public class GetCase1Oper {
+    public static class GetCase1Oper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/case1";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public GetCase1Oper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public GetCase1Oper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -109,7 +130,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -148,19 +169,13 @@ public class LoremApi {
      *
      * return LongModel
      */
-    public class Issue7754Oper {
+    public static class Issue7754Oper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/issue7754";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public Issue7754Oper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public Issue7754Oper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -175,7 +190,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -214,19 +229,13 @@ public class LoremApi {
      *
      * return ObjWithEnums
      */
-    public class OpOper {
+    public static class OpOper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pull75";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public OpOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public OpOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -241,7 +250,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**
@@ -280,20 +289,13 @@ public class LoremApi {
      *
      * @see #body  (optional)
      */
-    public class Pull66Oper {
+    public static class Pull66Oper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pull66";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public Pull66Oper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public Pull66Oper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -309,7 +311,7 @@ public class LoremApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**

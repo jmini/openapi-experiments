@@ -26,7 +26,7 @@ public class ApiClient {
   public interface Api {}
 
   protected ObjectMapper objectMapper;
-  private String basePath = "http://localhost:8090/";
+  private String basePath = "http://localhost:8090";
   private Map<String, RequestInterceptor> apiAuthorizations;
   private Feign.Builder feignBuilder;
 

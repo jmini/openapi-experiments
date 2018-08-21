@@ -1,6 +1,6 @@
 # LoremApi
 
-All URIs are relative to *http://localhost:8090/*
+All URIs are relative to *http://localhost:8090*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyDelete().execute(r -> r.prettyPeek());
 ```
@@ -64,7 +64,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyGet().execute(r -> r.prettyPeek());
 ```
@@ -100,7 +100,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyHead().execute(r -> r.prettyPeek());
 ```
@@ -136,7 +136,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyOptions().execute(r -> r.prettyPeek());
 ```
@@ -172,7 +172,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyPatch().execute(r -> r.prettyPeek());
 ```
@@ -208,7 +208,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyPost().execute(r -> r.prettyPeek());
 ```
@@ -244,7 +244,7 @@ No authorization required
 
 LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setBaseUri("http://localhost:8090/"))).lorem();
+                        .setBaseUri("http://localhost:8090"))).lorem();
 
 api.emptyPut().execute(r -> r.prettyPeek());
 ```

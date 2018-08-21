@@ -24,7 +24,9 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
+import io.swagger.annotations.*;
 
 import java.lang.reflect.Type;
 import java.util.function.Consumer;
@@ -34,6 +36,7 @@ import fr.jmini.openapi.openapitools.restassured.JSON;
 
 import static io.restassured.http.Method.*;
 
+@Api(value = "Ipsum")
 public class IpsumApi {
 
     private RequestSpecBuilder reqSpec;
@@ -47,54 +50,132 @@ public class IpsumApi {
     }
 
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingDelete",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingDeleteOper jsonPingDelete() {
         return new JsonPingDeleteOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingHead",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingHeadOper jsonPingHead() {
         return new JsonPingHeadOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingOptions",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingOptionsOper jsonPingOptions() {
         return new JsonPingOptionsOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingPatch",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPatchOper jsonPingPatch() {
         return new JsonPingPatchOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingPost",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPostOper jsonPingPost() {
         return new JsonPingPostOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingPut",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPutOper jsonPingPut() {
         return new JsonPingPutOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingDelete",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingDeleteOper pingDelete() {
         return new PingDeleteOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingGet",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingGetOper pingGet() {
         return new PingGetOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingHead",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingHeadOper pingHead() {
         return new PingHeadOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingOptions",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingOptionsOper pingOptions() {
         return new PingOptionsOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingPatch",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingPatchOper pingPatch() {
         return new PingPatchOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingPost",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingPostOper pingPost() {
         return new PingPostOper(reqSpec);
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingPut",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
     public PingPutOper pingPut() {
         return new PingPutOper(reqSpec);
     }
@@ -115,20 +196,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingDeleteOper {
+    public static class JsonPingDeleteOper {
 
+        public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingDeleteOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingDeleteOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -144,7 +218,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(DELETE, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -182,20 +256,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingHeadOper {
+    public static class JsonPingHeadOper {
 
+        public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingHeadOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingHeadOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -211,7 +278,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(HEAD, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -249,20 +316,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingOptionsOper {
+    public static class JsonPingOptionsOper {
 
+        public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingOptionsOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingOptionsOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -278,7 +338,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(OPTIONS, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -316,20 +376,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingPatchOper {
+    public static class JsonPingPatchOper {
 
+        public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingPatchOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingPatchOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -345,7 +398,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PATCH, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -383,20 +436,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingPostOper {
+    public static class JsonPingPostOper {
 
+        public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingPostOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingPostOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -412,7 +458,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(POST, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -450,20 +496,13 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public class JsonPingPutOper {
+    public static class JsonPingPutOper {
 
+        public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/ipsum/jsonPing";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public JsonPingPutOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setContentType("application/json");
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public JsonPingPutOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -479,7 +518,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PUT, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
          /**
@@ -517,19 +556,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingDeleteOper {
+    public static class PingDeleteOper {
 
+        public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingDeleteOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingDeleteOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -544,7 +577,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(DELETE, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -584,19 +617,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingGetOper {
+    public static class PingGetOper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingGetOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingGetOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -611,7 +638,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -651,19 +678,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingHeadOper {
+    public static class PingHeadOper {
 
+        public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingHeadOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingHeadOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -678,7 +699,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(HEAD, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -718,19 +739,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingOptionsOper {
+    public static class PingOptionsOper {
 
+        public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingOptionsOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingOptionsOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -745,7 +760,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(OPTIONS, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -785,19 +800,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingPatchOper {
+    public static class PingPatchOper {
 
+        public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingPatchOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingPatchOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -812,7 +821,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PATCH, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -852,19 +861,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingPostOper {
+    public static class PingPostOper {
 
+        public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingPostOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingPostOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -879,7 +882,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(POST, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";
@@ -919,19 +922,13 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public class PingPutOper {
+    public static class PingPutOper {
 
+        public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/ipsum/ping";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public PingPutOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public PingPutOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -946,7 +943,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(PUT, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         public static final String CUSTOM_QUERY = "custom";

@@ -77,7 +77,7 @@ public class ApiClient {
 
     private HttpHeaders defaultHeaders = new HttpHeaders();
     
-    private String basePath = "http://localhost:8090/";
+    private String basePath = "http://localhost:8090";
 
     private final WebClient webClient;
     private final DateFormat dateFormat;

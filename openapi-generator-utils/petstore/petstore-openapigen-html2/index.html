@@ -816,6 +816,31 @@ ul.nav-tabs {
   <script>
     // Script section to load models into a JS Var
     var defs = {}
+    defs["body"] = {
+  "properties" : {
+    "name" : {
+      "type" : "string",
+      "description" : "Updated name of the pet"
+    },
+    "status" : {
+      "type" : "string",
+      "description" : "Updated status of the pet"
+    }
+  }
+};
+    defs["body_1"] = {
+  "properties" : {
+    "additionalMetadata" : {
+      "type" : "string",
+      "description" : "Additional data to pass to server"
+    },
+    "file" : {
+      "type" : "string",
+      "description" : "file to upload",
+      "format" : "binary"
+    }
+  }
+};
     defs["Category"] = {
   "type" : "object",
   "properties" : {

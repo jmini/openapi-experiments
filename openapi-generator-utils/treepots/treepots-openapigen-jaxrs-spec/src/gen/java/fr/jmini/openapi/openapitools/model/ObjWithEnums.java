@@ -1,13 +1,17 @@
 package fr.jmini.openapi.openapitools.model;
 
 import fr.jmini.openapi.openapitools.model.StringEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
-
 
 import io.swagger.annotations.*;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 
 
 public class ObjWithEnums   {
@@ -24,7 +28,7 @@ public enum IpropEnum {
         value = v;
     }
 
-    public String value() {
+    public Integer value() {
         return value;
     }
 
@@ -58,7 +62,7 @@ public enum LpropEnum {
         value = v;
     }
 
-    public String value() {
+    public Long value() {
         return value;
     }
 

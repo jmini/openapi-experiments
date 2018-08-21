@@ -25,7 +25,9 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
+import io.swagger.annotations.*;
 
 import java.lang.reflect.Type;
 import java.util.function.Consumer;
@@ -35,6 +37,7 @@ import fr.jmini.openapi.openapitools.restassured.JSON;
 
 import static io.restassured.http.Method.*;
 
+@Api(value = "Ipsum")
 public class IpsumApi {
 
     private RequestSpecBuilder reqSpec;
@@ -48,6 +51,13 @@ public class IpsumApi {
     }
 
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "op",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "a pet to be returned") ,
+            @ApiResponse(code = 0, message = "Unexpected error")  })
     public OpOper op() {
         return new OpOper(reqSpec);
     }
@@ -68,19 +78,13 @@ public class IpsumApi {
      *
      * return SomeObject
      */
-    public class OpOper {
+    public static class OpOper {
 
+        public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/issue199";
 
         private RequestSpecBuilder reqSpec;
-
         private ResponseSpecBuilder respSpec;
-
-        public OpOper() {
-            this.reqSpec = new RequestSpecBuilder();
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
 
         public OpOper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
@@ -95,7 +99,7 @@ public class IpsumApi {
          * @return type
          */
         public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(GET, REQ_URI));
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
 
         /**

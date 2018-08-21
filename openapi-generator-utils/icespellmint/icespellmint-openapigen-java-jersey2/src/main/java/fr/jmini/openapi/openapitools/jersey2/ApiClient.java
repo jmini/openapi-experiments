@@ -53,7 +53,7 @@ import fr.jmini.openapi.openapitools.jersey2.auth.OAuth;
 
 public class ApiClient {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  protected String basePath = "http://localhost:8090/";
+  protected String basePath = "http://localhost:8090";
   protected boolean debugging = false;
   protected int connectionTimeout = 0;
   private int readTimeout = 0;

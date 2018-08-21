@@ -46,7 +46,7 @@ import fr.jmini.openapi.openapitools.resteasy.auth.OAuth;
 
 public class ApiClient {
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  private String basePath = "http://localhost:8090/";
+  private String basePath = "http://localhost:8090";
   private boolean debugging = false;
 
   private Client httpClient;

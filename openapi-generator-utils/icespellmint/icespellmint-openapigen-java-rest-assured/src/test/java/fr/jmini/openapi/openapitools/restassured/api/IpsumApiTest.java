@@ -43,7 +43,7 @@ public class IpsumApiTest {
         api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
                 () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri("http://localhost:8090/"))).ipsum();
+                        .setBaseUri("http://localhost:8090"))).ipsum();
     }
 
     /**

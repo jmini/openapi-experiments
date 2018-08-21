@@ -75,6 +75,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorModel'
+  /pull708:
+    get:
+      operationId: op708
+      tags:
+        - lorem
+      parameters:
+        - name: bar
+          in: query
+          required: false
+          schema:
+            type: string
+            default: foobar
+      responses:
+        default:
+          description: successful operation
 components:
   schemas:
     ItemWithBoolean:

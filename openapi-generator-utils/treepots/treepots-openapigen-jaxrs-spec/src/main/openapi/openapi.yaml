@@ -85,6 +85,25 @@ paths:
       - ipsum
       x-tags:
       - tag: ipsum
+  /pull708:
+    get:
+      operationId: op708
+      parameters:
+      - explode: true
+        in: query
+        name: bar
+        required: false
+        schema:
+          default: foobar
+          type: string
+        style: form
+      responses:
+        default:
+          description: successful operation
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
 components:
   schemas:
     ItemWithBoolean:

@@ -80,6 +80,17 @@ public class LoremApiTest {
 
 
     /**
+     * successful operation
+     */
+    @Test
+    public void shouldSee0AfterOp708() {
+        String bar = null;
+        api.op708().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
      * Ok
      */
     @Test

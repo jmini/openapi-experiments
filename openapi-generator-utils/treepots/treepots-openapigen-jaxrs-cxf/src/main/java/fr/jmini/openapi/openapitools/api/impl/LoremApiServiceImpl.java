@@ -52,6 +52,12 @@ public class LoremApiServiceImpl implements LoremApi {
         return null;
     }
     
+    public void op708(String bar) {
+        // TODO: Implement...
+        
+        
+    }
+    
     public void pull66(EnumInArrayOfArray enumInArrayOfArray) {
         // TODO: Implement...
         

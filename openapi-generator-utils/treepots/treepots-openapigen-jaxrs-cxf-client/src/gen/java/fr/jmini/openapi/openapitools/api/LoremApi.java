@@ -63,6 +63,13 @@ public interface LoremApi  {
     public ObjWithEnums op();
 
     @GET
+    @Path("/pull708")
+    @ApiOperation(value = "", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation") })
+    public void op708(@QueryParam("bar")@DefaultValue("foobar") String bar);
+
+    @GET
     @Path("/pull66")
     @Consumes({ "application/json" })
     @ApiOperation(value = "", tags={  })

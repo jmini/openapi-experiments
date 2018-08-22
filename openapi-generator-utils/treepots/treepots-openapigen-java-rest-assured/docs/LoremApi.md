@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getCase1**](LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
 [**issue7754**](LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
 [**op**](LoremApi.md#op) | **GET** /pull75 | 
+[**op708**](LoremApi.md#op708) | **GET** /pull708 | 
 [**pull66**](LoremApi.md#pull66) | **GET** /pull66 | 
 
 
@@ -117,6 +118,45 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+<a name="op708"></a>
+# **op708**
+> op708(bar)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+LoremApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://api.company.xyz/v2"))).lorem();
+
+api.op708().execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bar** | **String**|  | [optional] [default to &quot;foobar&quot;]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="pull66"></a>
 # **pull66**

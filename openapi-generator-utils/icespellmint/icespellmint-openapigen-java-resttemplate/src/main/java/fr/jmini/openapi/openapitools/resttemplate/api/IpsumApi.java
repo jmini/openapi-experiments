@@ -7,6 +7,7 @@ import fr.jmini.openapi.openapitools.resttemplate.model.SomeObj;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;

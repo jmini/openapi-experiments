@@ -85,6 +85,16 @@ public class LoremApi {
 
     @ApiOperation(value = "",
             notes = "",
+            nickname = "op708",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 0, message = "successful operation")  })
+    public Op708Oper op708() {
+        return new Op708Oper(reqSpec);
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
             nickname = "pull66",
             tags = { "lorem" })
     @ApiResponses(value = { 
@@ -279,6 +289,67 @@ public class LoremApi {
          * @return operation
          */
         public OpOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
+            consumer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #barQuery  (optional, default to &quot;foobar&quot;)
+     */
+    public static class Op708Oper {
+
+        public static final Method REQ_METHOD = GET;
+        public static final String REQ_URI = "/pull708";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public Op708Oper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * GET /pull708
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String BAR_QUERY = "bar";
+
+        /**
+         * @param bar (String)  (optional, default to &quot;foobar&quot;)
+         * @return operation
+         */
+        public Op708Oper barQuery(Object... bar) {
+            reqSpec.addQueryParam(BAR_QUERY, bar);
+            return this;
+        }
+
+        /**
+         * Customise request specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public Op708Oper reqSpec(Consumer<RequestSpecBuilder> consumer) {
+            consumer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customise response specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public Op708Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
             consumer.accept(respSpec);
             return this;
         }

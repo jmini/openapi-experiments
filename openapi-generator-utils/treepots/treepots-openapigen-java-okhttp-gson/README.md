@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *LoremApi* | [**getCase1**](docs/LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *LoremApi* | [**issue7754**](docs/LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
 *LoremApi* | [**op**](docs/LoremApi.md#op) | **GET** /pull75 | 
+*LoremApi* | [**op708**](docs/LoremApi.md#op708) | **GET** /pull708 | 
 *LoremApi* | [**pull66**](docs/LoremApi.md#pull66) | **GET** /pull66 | 
 
 

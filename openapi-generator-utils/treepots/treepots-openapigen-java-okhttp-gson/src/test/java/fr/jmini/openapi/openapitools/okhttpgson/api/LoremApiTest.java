@@ -89,6 +89,22 @@ public class LoremApiTest {
      *          if the Api call fails
      */
     @Test
+    public void op708Test() throws ApiException {
+        String bar = null;
+        api.op708(bar);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
     public void pull66Test() throws ApiException {
         EnumInArrayOfArray enumInArrayOfArray = null;
         api.pull66(enumInArrayOfArray);

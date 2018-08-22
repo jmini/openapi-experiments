@@ -18,7 +18,7 @@
   -->
 
   <properties>
-    <openapiGeneratorVersion>3.1.2</openapiGeneratorVersion>
+    <openapiGeneratorVersion>3.2.2</openapiGeneratorVersion>
   </properties>
   <build>
     <plugins>

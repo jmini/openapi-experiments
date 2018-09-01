@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
+ - [EnumWithCustomName](docs/EnumWithCustomName.md)
  - [ErrorModel](docs/ErrorModel.md)
  - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)

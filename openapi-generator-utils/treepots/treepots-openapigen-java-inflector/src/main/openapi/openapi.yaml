@@ -222,6 +222,15 @@ components:
       - b
       - a
       type: string
+    EnumWithCustomName:
+      enum:
+      - 1
+      - 2
+      format: int32
+      type: integer
+      x-enum-varnames:
+      - FOO
+      - BAR
     SomeObject:
       example:
         firstName: firstName

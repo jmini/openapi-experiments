@@ -5,6 +5,7 @@ modelMappings:
   # to enable explicit mappings, use this syntax:
   DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
   EnumInArrayOfArray : fr.jmini.openapi.openapitools.model.EnumInArrayOfArray
+EnumWithCustomName : fr.jmini.openapi.openapitools.model.EnumWithCustomName
 ErrorModel : fr.jmini.openapi.openapitools.model.ErrorModel
 IntEnum : fr.jmini.openapi.openapitools.model.IntEnum
 ItemWithBoolean : fr.jmini.openapi.openapitools.model.ItemWithBoolean

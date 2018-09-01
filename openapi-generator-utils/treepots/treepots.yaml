@@ -182,6 +182,16 @@ components:
         - "b"
         - "a"
 
+    EnumWithCustomName:
+      type: integer
+      format: int32
+      enum:
+        - 1
+        - 2
+      x-enum-varnames:
+        - FOO
+        - BAR
+
     SomeObject:
       type: object
       properties:

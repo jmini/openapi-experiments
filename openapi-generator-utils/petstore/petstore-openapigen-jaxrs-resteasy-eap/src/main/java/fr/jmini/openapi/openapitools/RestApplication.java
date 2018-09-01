@@ -10,7 +10,7 @@ import fr.jmini.openapi.openapitools.api.impl.PetApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.StoreApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.UserApiServiceImpl;
 
-@ApplicationPath("/")
+@ApplicationPath("/v2")
 public class RestApplication extends Application {
 
 

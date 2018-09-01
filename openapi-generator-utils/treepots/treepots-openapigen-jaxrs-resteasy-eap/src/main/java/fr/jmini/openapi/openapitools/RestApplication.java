@@ -13,7 +13,7 @@ import fr.jmini.openapi.openapitools.api.impl.Pull66ApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Pull708ApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Pull75ApiServiceImpl;
 
-@ApplicationPath("/")
+@ApplicationPath("/v2")
 public class RestApplication extends Application {
 
 

@@ -18,7 +18,7 @@
         <version>3.2.3</version>
         <executions>
           <execution>
-            <id>generate-client-code</id>
+            <id>generate-code</id>
             <goals>
               <goal>generate</goal>
             </goals>
@@ -31,9 +31,10 @@
               <invokerPackage>${default.package}.invoker</invokerPackage>
               <groupId>fr.jmini.openapi.todoapp</groupId>
               <artifactId>todoapp-jersey</artifactId>
-              <java8>true</java8>
               <additionalProperties>
-                <dateLibrary>java8</dateLibrary>
+                <additionalProperty>java8=true</additionalProperty>
+                <additionalProperty>dateLibrary=java8</additionalProperty>
+                <additionalProperty>hideGenerationTimestamp=true</additionalProperty>
               </additionalProperties>
             </configuration>
           </execution>

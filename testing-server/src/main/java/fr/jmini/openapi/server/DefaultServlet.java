@@ -2,6 +2,9 @@ package fr.jmini.openapi.server;
 
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -53,13 +56,25 @@ public class DefaultServlet extends HttpServlet {
 		response.getWriter().println("{ \"status\": \"ok\"}");
 	}
 
-	private void printRequest(String method, HttpServletRequest request) {
+	private void printRequest(String method, HttpServletRequest request) throws IOException {
 		System.out.println("[" + method + "] " + request.getRequestURI());
+		Map<String, String[]> parameters = request.getParameterMap();
+		if (!parameters.isEmpty()) {
+			System.out.println("Parameters:");
+			for (Entry<String, String[]> e : parameters.entrySet()) {
+				System.out.println(" - " + e.getKey() + ": " + String.join(", ", e.getValue()));
+			}
+		}
 		Enumeration<String> headerNames = request.getHeaderNames();
 		System.out.println("Headers:");
 		while (headerNames.hasMoreElements()) {
 			String headerName = headerNames.nextElement();
 			System.out.println(" - " + headerName + ": " + request.getHeader(headerName));
+		}
+		String body = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+		if (!body.isEmpty()) {
+			System.out.println("Body:");
+			System.out.println(body);
 		}
 	}
 }

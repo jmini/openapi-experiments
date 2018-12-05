@@ -16,11 +16,11 @@ import javax.xml.bind.annotation.*;
 
 public class ErrorModel   {
   
-  private Integer statusCode = null;
+  private Integer statusCode;
 
-  private String statusDescription = null;
+  private String statusDescription;
 
-  private String errorMessage = null;
+  private String errorMessage;
 
 
   /**

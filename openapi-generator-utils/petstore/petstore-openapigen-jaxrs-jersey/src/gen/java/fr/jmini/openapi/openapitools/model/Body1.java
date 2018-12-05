@@ -20,6 +20,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * Body1
@@ -27,10 +28,10 @@ import javax.validation.constraints.*;
 
 public class Body1   {
   @JsonProperty("additionalMetadata")
-  private String additionalMetadata = null;
+  private String additionalMetadata;
 
   @JsonProperty("file")
-  private File file = null;
+  private File file;
 
   public Body1 additionalMetadata(String additionalMetadata) {
     this.additionalMetadata = additionalMetadata;
@@ -43,6 +44,7 @@ public class Body1   {
    **/
   @JsonProperty("additionalMetadata")
   @ApiModelProperty(value = "Additional data to pass to server")
+  
   public String getAdditionalMetadata() {
     return additionalMetadata;
   }
@@ -62,6 +64,7 @@ public class Body1   {
    **/
   @JsonProperty("file")
   @ApiModelProperty(value = "file to upload")
+  
   public File getFile() {
     return file;
   }

@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * Body
@@ -26,10 +27,10 @@ import javax.validation.constraints.*;
 
 public class Body   {
   @JsonProperty("name")
-  private String name = null;
+  private String name;
 
   @JsonProperty("status")
-  private String status = null;
+  private String status;
 
   public Body name(String name) {
     this.name = name;
@@ -42,6 +43,7 @@ public class Body   {
    **/
   @JsonProperty("name")
   @ApiModelProperty(value = "Updated name of the pet")
+  
   public String getName() {
     return name;
   }
@@ -61,6 +63,7 @@ public class Body   {
    **/
   @JsonProperty("status")
   @ApiModelProperty(value = "Updated status of the pet")
+  
   public String getStatus() {
     return status;
   }

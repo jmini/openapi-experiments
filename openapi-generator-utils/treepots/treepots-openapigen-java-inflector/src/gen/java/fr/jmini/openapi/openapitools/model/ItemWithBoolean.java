@@ -13,13 +13,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class ItemWithBoolean   {
   @JsonProperty("id")
-  private Integer id = null;
+  private Integer id;
 
   @JsonProperty("active")
-  private Boolean active = null;
+  private Boolean active;
 
   @JsonProperty("name")
-  private String name = null;
+  private String name;
 
   /**
    **/

@@ -31,11 +31,11 @@ import java.io.IOException;
 public class Body {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private String name = null;
+  private String name;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status = null;
+  private String status;
 
   public Body name(String name) {
     this.name = name;

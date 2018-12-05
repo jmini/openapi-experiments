@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SomeObject   {
   
-  private @Valid Integer id = null;
-  private @Valid String firstName = null;
-  private @Valid String lastName = null;
+  private @Valid Integer id;
+  private @Valid String firstName;
+  private @Valid String lastName;
 
   /**
    **/

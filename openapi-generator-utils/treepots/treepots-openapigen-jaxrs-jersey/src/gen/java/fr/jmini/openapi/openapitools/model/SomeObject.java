@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * SomeObject
@@ -26,13 +27,13 @@ import javax.validation.constraints.*;
 
 public class SomeObject   {
   @JsonProperty("id")
-  private Integer id = null;
+  private Integer id;
 
   @JsonProperty("firstName")
-  private String firstName = null;
+  private String firstName;
 
   @JsonProperty("lastName")
-  private String lastName = null;
+  private String lastName;
 
   public SomeObject id(Integer id) {
     this.id = id;
@@ -45,6 +46,7 @@ public class SomeObject   {
    **/
   @JsonProperty("id")
   @ApiModelProperty(value = "")
+  
   public Integer getId() {
     return id;
   }
@@ -64,6 +66,7 @@ public class SomeObject   {
    **/
   @JsonProperty("firstName")
   @ApiModelProperty(value = "")
+  
   public String getFirstName() {
     return firstName;
   }
@@ -83,6 +86,7 @@ public class SomeObject   {
    **/
   @JsonProperty("lastName")
   @ApiModelProperty(value = "")
+  
   public String getLastName() {
     return lastName;
   }

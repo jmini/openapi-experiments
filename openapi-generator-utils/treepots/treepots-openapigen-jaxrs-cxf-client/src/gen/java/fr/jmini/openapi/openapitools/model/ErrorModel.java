@@ -17,19 +17,19 @@ public class ErrorModel  {
  /**
    * http status code
   **/
-  private Integer statusCode = null;
+  private Integer statusCode;
 
   @ApiModelProperty(value = "http status reason phrase")
  /**
    * http status reason phrase
   **/
-  private String statusDescription = null;
+  private String statusDescription;
 
   @ApiModelProperty(value = "error description")
  /**
    * error description
   **/
-  private String errorMessage = null;
+  private String errorMessage;
  /**
    * http status code
    * @return statusCode

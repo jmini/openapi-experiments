@@ -32,11 +32,11 @@ import java.io.IOException;
 public class Body1 {
   public static final String SERIALIZED_NAME_ADDITIONAL_METADATA = "additionalMetadata";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_METADATA)
-  private String additionalMetadata = null;
+  private String additionalMetadata;
 
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
-  private File file = null;
+  private File file;
 
   public Body1 additionalMetadata(String additionalMetadata) {
     this.additionalMetadata = additionalMetadata;

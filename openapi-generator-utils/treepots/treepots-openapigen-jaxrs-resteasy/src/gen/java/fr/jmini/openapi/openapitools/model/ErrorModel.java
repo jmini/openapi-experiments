@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
@@ -11,9 +13,9 @@ import io.swagger.annotations.*;
 
 public class ErrorModel   {
   
-  private Integer statusCode = null;
-  private String statusDescription = null;
-  private String errorMessage = null;
+  private Integer statusCode;
+  private String statusDescription;
+  private String errorMessage;
 
   /**
    * http status code

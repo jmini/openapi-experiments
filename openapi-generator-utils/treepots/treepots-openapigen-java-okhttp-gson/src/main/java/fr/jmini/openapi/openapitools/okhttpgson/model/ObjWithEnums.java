@@ -20,6 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import fr.jmini.openapi.openapitools.okhttpgson.model.IntEnum;
+import fr.jmini.openapi.openapitools.okhttpgson.model.LongEnum;
 import fr.jmini.openapi.openapitools.okhttpgson.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,117 +32,19 @@ import java.io.IOException;
  */
 
 public class ObjWithEnums {
-  /**
-   * Gets or Sets iprop
-   */
-  @JsonAdapter(IpropEnum.Adapter.class)
-  public enum IpropEnum {
-    NUMBER_1(1),
-    
-    NUMBER_2(2),
-    
-    NUMBER_3(3);
-
-    private Integer value;
-
-    IpropEnum(Integer value) {
-      this.value = value;
-    }
-
-    public Integer getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static IpropEnum fromValue(String text) {
-      for (IpropEnum b : IpropEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<IpropEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final IpropEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public IpropEnum read(final JsonReader jsonReader) throws IOException {
-        Integer value = jsonReader.nextInt();
-        return IpropEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_IPROP = "IProp";
   @SerializedName(SERIALIZED_NAME_IPROP)
-  private IpropEnum iprop = null;
-
-  /**
-   * Gets or Sets lprop
-   */
-  @JsonAdapter(LpropEnum.Adapter.class)
-  public enum LpropEnum {
-    NUMBER_20(20l),
-    
-    NUMBER_30(30l),
-    
-    NUMBER_40(40l);
-
-    private Long value;
-
-    LpropEnum(Long value) {
-      this.value = value;
-    }
-
-    public Long getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static LpropEnum fromValue(String text) {
-      for (LpropEnum b : LpropEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<LpropEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final LpropEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public LpropEnum read(final JsonReader jsonReader) throws IOException {
-        Long value = jsonReader.nextLong();
-        return LpropEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
+  private IntEnum iprop = null;
 
   public static final String SERIALIZED_NAME_LPROP = "LProp";
   @SerializedName(SERIALIZED_NAME_LPROP)
-  private LpropEnum lprop = null;
+  private LongEnum lprop = null;
 
   public static final String SERIALIZED_NAME_SPROP = "SProp";
   @SerializedName(SERIALIZED_NAME_SPROP)
   private StringEnum sprop = null;
 
-  public ObjWithEnums iprop(IpropEnum iprop) {
+  public ObjWithEnums iprop(IntEnum iprop) {
     this.iprop = iprop;
     return this;
   }
@@ -150,15 +54,15 @@ public class ObjWithEnums {
    * @return iprop
   **/
   @ApiModelProperty(value = "")
-  public IpropEnum getIprop() {
+  public IntEnum getIprop() {
     return iprop;
   }
 
-  public void setIprop(IpropEnum iprop) {
+  public void setIprop(IntEnum iprop) {
     this.iprop = iprop;
   }
 
-  public ObjWithEnums lprop(LpropEnum lprop) {
+  public ObjWithEnums lprop(LongEnum lprop) {
     this.lprop = lprop;
     return this;
   }
@@ -168,11 +72,11 @@ public class ObjWithEnums {
    * @return lprop
   **/
   @ApiModelProperty(value = "")
-  public LpropEnum getLprop() {
+  public LongEnum getLprop() {
     return lprop;
   }
 
-  public void setLprop(LpropEnum lprop) {
+  public void setLprop(LongEnum lprop) {
     this.lprop = lprop;
   }
 

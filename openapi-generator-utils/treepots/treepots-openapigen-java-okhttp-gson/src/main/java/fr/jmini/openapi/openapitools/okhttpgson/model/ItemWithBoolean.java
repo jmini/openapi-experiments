@@ -31,15 +31,15 @@ import java.io.IOException;
 public class ItemWithBoolean {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id = null;
+  private Integer id;
 
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
-  private Boolean active = null;
+  private Boolean active;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private String name = null;
+  private String name;
 
   public ItemWithBoolean id(Integer id) {
     this.id = id;

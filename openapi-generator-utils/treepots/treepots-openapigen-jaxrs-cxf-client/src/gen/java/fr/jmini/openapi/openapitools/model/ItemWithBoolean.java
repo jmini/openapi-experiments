@@ -14,13 +14,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ItemWithBoolean  {
   
   @ApiModelProperty(value = "")
-  private Integer id = null;
+  private Integer id;
 
   @ApiModelProperty(value = "")
-  private Boolean active = null;
+  private Boolean active;
 
   @ApiModelProperty(value = "")
-  private String name = null;
+  private String name;
  /**
    * Get id
    * @return id

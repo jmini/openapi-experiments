@@ -13,10 +13,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class Body   {
   @JsonProperty("name")
-  private String name = null;
+  private String name;
 
   @JsonProperty("status")
-  private String status = null;
+  private String status;
 
   /**
    * Updated name of the pet

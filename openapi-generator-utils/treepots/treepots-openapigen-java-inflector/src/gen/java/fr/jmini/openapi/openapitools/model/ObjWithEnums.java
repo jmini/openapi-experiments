@@ -3,7 +3,8 @@ package fr.jmini.openapi.openapitools.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import fr.jmini.openapi.openapitools.model.IntEnum;
+import fr.jmini.openapi.openapitools.model.LongEnum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,84 +15,18 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 public class ObjWithEnums   {
-  /**
-   * Gets or Sets iprop
-   */
-  public enum IpropEnum {
-    NUMBER_1(1),
-    
-    NUMBER_2(2),
-    
-    NUMBER_3(3);
-
-    private Integer value;
-
-    IpropEnum(Integer value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static IpropEnum fromValue(String text) {
-      for (IpropEnum b : IpropEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-  }
-
   @JsonProperty("IProp")
-  private IpropEnum iprop = null;
-
-  /**
-   * Gets or Sets lprop
-   */
-  public enum LpropEnum {
-    NUMBER_20(20l),
-    
-    NUMBER_30(30l),
-    
-    NUMBER_40(40l);
-
-    private Long value;
-
-    LpropEnum(Long value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static LpropEnum fromValue(String text) {
-      for (LpropEnum b : LpropEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-  }
+  private IntEnum iprop = null;
 
   @JsonProperty("LProp")
-  private LpropEnum lprop = null;
+  private LongEnum lprop = null;
 
   @JsonProperty("SProp")
   private StringEnum sprop = null;
 
   /**
    **/
-  public ObjWithEnums iprop(IpropEnum iprop) {
+  public ObjWithEnums iprop(IntEnum iprop) {
     this.iprop = iprop;
     return this;
   }
@@ -99,16 +34,16 @@ public class ObjWithEnums   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("IProp")
-  public IpropEnum getIprop() {
+  public IntEnum getIprop() {
     return iprop;
   }
-  public void setIprop(IpropEnum iprop) {
+  public void setIprop(IntEnum iprop) {
     this.iprop = iprop;
   }
 
   /**
    **/
-  public ObjWithEnums lprop(LpropEnum lprop) {
+  public ObjWithEnums lprop(LongEnum lprop) {
     this.lprop = lprop;
     return this;
   }
@@ -116,10 +51,10 @@ public class ObjWithEnums   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("LProp")
-  public LpropEnum getLprop() {
+  public LongEnum getLprop() {
     return lprop;
   }
-  public void setLprop(LpropEnum lprop) {
+  public void setLprop(LongEnum lprop) {
     this.lprop = lprop;
   }
 

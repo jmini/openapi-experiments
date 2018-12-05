@@ -14,10 +14,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class LongModel  {
   
   @ApiModelProperty(value = "")
-  private Long long1 = null;
+  private Long long1;
 
   @ApiModelProperty(value = "")
-  private Long long2 = null;
+  private Long long2;
  /**
    * Get long1
    * @return long1

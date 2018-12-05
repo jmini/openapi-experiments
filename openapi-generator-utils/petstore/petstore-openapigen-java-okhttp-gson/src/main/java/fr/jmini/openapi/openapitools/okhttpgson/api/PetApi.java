@@ -71,16 +71,15 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             "application/json", "application/xml"
@@ -88,7 +87,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -186,18 +185,19 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (apiKey != null)
-        localVarHeaderParams.put("api_key", apiClient.parameterToString(apiKey));
+        if (apiKey != null) {
+            localVarHeaderParams.put("api_key", apiClient.parameterToString(apiKey));
+        }
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             
@@ -205,7 +205,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -295,7 +295,7 @@ public class PetApi {
     }
     /**
      * Build call for findPetsByStatus
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
+     * @param status Status values that need to be considered for filter (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -309,18 +309,19 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (status != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "status", status));
+        if (status != null) {
+            localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "status", status));
+        }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             "application/json", "application/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             
@@ -328,7 +329,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -356,7 +357,7 @@ public class PetApi {
     /**
      * Finds Pets by status
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
+     * @param status Status values that need to be considered for filter (optional)
      * @return List&lt;Pet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -368,7 +369,7 @@ public class PetApi {
     /**
      * Finds Pets by status
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
+     * @param status Status values that need to be considered for filter (optional)
      * @return ApiResponse&lt;List&lt;Pet&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -381,7 +382,7 @@ public class PetApi {
     /**
      * Finds Pets by status (asynchronously)
      * Multiple status values can be provided with comma separated strings
-     * @param status Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
+     * @param status Status values that need to be considered for filter (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -430,18 +431,19 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (tags != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "tags", tags));
+        if (tags != null) {
+            localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "tags", tags));
+        }
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             "application/json", "application/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             
@@ -449,7 +451,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -557,16 +559,15 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             "application/json", "application/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             
@@ -574,7 +575,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -679,16 +680,15 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
         final String[] localVarAccepts = {
             
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             "application/json", "application/xml"
@@ -696,7 +696,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -779,8 +779,8 @@ public class PetApi {
     /**
      * Build call for updatePetWithForm
      * @param petId ID of pet that needs to be updated (required)
-     * @param name Updated name of the pet (optional, default to null)
-     * @param status Updated status of the pet (optional, default to null)
+     * @param name Updated name of the pet (optional)
+     * @param status Updated status of the pet (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -795,20 +795,23 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (name != null)
-        localVarFormParams.put("name", name);
-        if (status != null)
-        localVarFormParams.put("status", status);
+        if (name != null) {
+            localVarFormParams.put("name", name);
+        }
+
+        if (status != null) {
+            localVarFormParams.put("status", status);
+        }
 
         final String[] localVarAccepts = {
             
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             "application/x-www-form-urlencoded"
@@ -816,7 +819,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -850,8 +853,8 @@ public class PetApi {
      * Updates a pet in the store with form data
      * 
      * @param petId ID of pet that needs to be updated (required)
-     * @param name Updated name of the pet (optional, default to null)
-     * @param status Updated status of the pet (optional, default to null)
+     * @param name Updated name of the pet (optional)
+     * @param status Updated status of the pet (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void updatePetWithForm(String petId, String name, String status) throws ApiException {
@@ -862,8 +865,8 @@ public class PetApi {
      * Updates a pet in the store with form data
      * 
      * @param petId ID of pet that needs to be updated (required)
-     * @param name Updated name of the pet (optional, default to null)
-     * @param status Updated status of the pet (optional, default to null)
+     * @param name Updated name of the pet (optional)
+     * @param status Updated status of the pet (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -876,8 +879,8 @@ public class PetApi {
      * Updates a pet in the store with form data (asynchronously)
      * 
      * @param petId ID of pet that needs to be updated (required)
-     * @param name Updated name of the pet (optional, default to null)
-     * @param status Updated status of the pet (optional, default to null)
+     * @param name Updated name of the pet (optional)
+     * @param status Updated status of the pet (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -910,8 +913,8 @@ public class PetApi {
     /**
      * Build call for uploadFile
      * @param petId ID of pet to update (required)
-     * @param additionalMetadata Additional data to pass to server (optional, default to null)
-     * @param file file to upload (optional, default to null)
+     * @param additionalMetadata Additional data to pass to server (optional)
+     * @param file file to upload (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -926,20 +929,23 @@ public class PetApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (additionalMetadata != null)
-        localVarFormParams.put("additionalMetadata", additionalMetadata);
-        if (file != null)
-        localVarFormParams.put("file", file);
+        if (additionalMetadata != null) {
+            localVarFormParams.put("additionalMetadata", additionalMetadata);
+        }
+
+        if (file != null) {
+            localVarFormParams.put("file", file);
+        }
 
         final String[] localVarAccepts = {
             
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
 
         final String[] localVarContentTypes = {
             "multipart/form-data"
@@ -947,7 +953,7 @@ public class PetApi {
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if(progressListener != null) {
+        if (progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
                 public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
@@ -981,8 +987,8 @@ public class PetApi {
      * uploads an image
      * 
      * @param petId ID of pet to update (required)
-     * @param additionalMetadata Additional data to pass to server (optional, default to null)
-     * @param file file to upload (optional, default to null)
+     * @param additionalMetadata Additional data to pass to server (optional)
+     * @param file file to upload (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void uploadFile(Long petId, String additionalMetadata, File file) throws ApiException {
@@ -993,8 +999,8 @@ public class PetApi {
      * uploads an image
      * 
      * @param petId ID of pet to update (required)
-     * @param additionalMetadata Additional data to pass to server (optional, default to null)
-     * @param file file to upload (optional, default to null)
+     * @param additionalMetadata Additional data to pass to server (optional)
+     * @param file file to upload (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1007,8 +1013,8 @@ public class PetApi {
      * uploads an image (asynchronously)
      * 
      * @param petId ID of pet to update (required)
-     * @param additionalMetadata Additional data to pass to server (optional, default to null)
-     * @param file file to upload (optional, default to null)
+     * @param additionalMetadata Additional data to pass to server (optional)
+     * @param file file to upload (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

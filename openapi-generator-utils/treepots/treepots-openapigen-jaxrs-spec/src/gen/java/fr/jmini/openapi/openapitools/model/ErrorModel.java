@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class ErrorModel   {
   
-  private @Valid Integer statusCode = null;
-  private @Valid String statusDescription = null;
-  private @Valid String errorMessage = null;
+  private @Valid Integer statusCode;
+  private @Valid String statusDescription;
+  private @Valid String errorMessage;
 
   /**
    * http status code

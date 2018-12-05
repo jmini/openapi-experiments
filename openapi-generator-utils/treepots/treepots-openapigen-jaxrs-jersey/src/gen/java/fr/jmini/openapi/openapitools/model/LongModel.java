@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * LongModel
@@ -26,10 +27,10 @@ import javax.validation.constraints.*;
 
 public class LongModel   {
   @JsonProperty("Long1")
-  private Long long1 = null;
+  private Long long1;
 
   @JsonProperty("Long2")
-  private Long long2 = null;
+  private Long long2;
 
   public LongModel long1(Long long1) {
     this.long1 = long1;
@@ -42,6 +43,7 @@ public class LongModel   {
    **/
   @JsonProperty("Long1")
   @ApiModelProperty(value = "")
+  
   public Long getLong1() {
     return long1;
   }
@@ -61,6 +63,7 @@ public class LongModel   {
    **/
   @JsonProperty("Long2")
   @ApiModelProperty(value = "")
+  
   public Long getLong2() {
     return long2;
   }

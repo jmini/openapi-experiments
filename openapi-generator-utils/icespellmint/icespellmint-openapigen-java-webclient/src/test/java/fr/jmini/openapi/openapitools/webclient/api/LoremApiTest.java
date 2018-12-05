@@ -13,7 +13,6 @@
 
 package fr.jmini.openapi.openapitools.webclient.api;
 
-import fr.jmini.openapi.openapitools.webclient.ApiException;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -35,12 +34,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyDeleteTest() throws ApiException {
+    public void emptyDeleteTest()  {
         api.emptyDelete().block();
 
         // TODO: test validations
@@ -50,12 +46,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyGetTest() throws ApiException {
+    public void emptyGetTest()  {
         api.emptyGet().block();
 
         // TODO: test validations
@@ -65,12 +58,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyHeadTest() throws ApiException {
+    public void emptyHeadTest()  {
         api.emptyHead().block();
 
         // TODO: test validations
@@ -80,12 +70,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyOptionsTest() throws ApiException {
+    public void emptyOptionsTest()  {
         api.emptyOptions().block();
 
         // TODO: test validations
@@ -95,12 +82,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyPatchTest() throws ApiException {
+    public void emptyPatchTest()  {
         api.emptyPatch().block();
 
         // TODO: test validations
@@ -110,12 +94,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyPostTest() throws ApiException {
+    public void emptyPostTest()  {
         api.emptyPost().block();
 
         // TODO: test validations
@@ -125,12 +106,9 @@ public class LoremApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void emptyPutTest() throws ApiException {
+    public void emptyPutTest()  {
         api.emptyPut().block();
 
         // TODO: test validations

@@ -4,7 +4,6 @@ import fr.jmini.openapi.openapitools.webclient.ApiClient;
 
 import fr.jmini.openapi.openapitools.webclient.model.SomeObj;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;

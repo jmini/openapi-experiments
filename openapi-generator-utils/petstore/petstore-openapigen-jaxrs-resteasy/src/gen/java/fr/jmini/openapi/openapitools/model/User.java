@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
@@ -11,14 +13,14 @@ import io.swagger.annotations.*;
 
 public class User   {
   
-  private Long id = null;
-  private String username = null;
-  private String firstName = null;
-  private String lastName = null;
-  private String email = null;
-  private String password = null;
-  private String phone = null;
-  private Integer userStatus = null;
+  private Long id;
+  private String username;
+  private String firstName;
+  private String lastName;
+  private String email;
+  private String password;
+  private String phone;
+  private Integer userStatus;
 
   /**
    **/

@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class LongModel   {
   
-  private @Valid Long long1 = null;
-  private @Valid Long long2 = null;
+  private @Valid Long long1;
+  private @Valid Long long2;
 
   /**
    **/

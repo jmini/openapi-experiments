@@ -24,6 +24,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 @Path("/pull66")
 
@@ -61,7 +62,7 @@ public class Pull66Api  {
     @io.swagger.annotations.ApiOperation(value = "", notes = "", response = Void.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = Void.class) })
-    public Response pull66(@ApiParam(value = "" ) EnumInArrayOfArray enumInArrayOfArray
+    public Response pull66(@ApiParam(value = "" ) @Valid EnumInArrayOfArray enumInArrayOfArray
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.pull66(enumInArrayOfArray,securityContext);

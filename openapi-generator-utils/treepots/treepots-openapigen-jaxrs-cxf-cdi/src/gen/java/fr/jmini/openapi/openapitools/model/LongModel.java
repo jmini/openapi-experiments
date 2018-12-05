@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.*;
 
 public class LongModel   {
   
-  private Long long1 = null;
+  private Long long1;
 
-  private Long long2 = null;
+  private Long long2;
 
 
   /**

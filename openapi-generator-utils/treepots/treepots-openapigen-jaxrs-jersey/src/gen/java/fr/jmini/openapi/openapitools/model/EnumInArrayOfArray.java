@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * EnumInArrayOfArray
@@ -153,6 +154,7 @@ public class EnumInArrayOfArray   {
    **/
   @JsonProperty("p1")
   @ApiModelProperty(value = "")
+  
   public List<P1Enum> getP1() {
     return p1;
   }
@@ -180,6 +182,7 @@ public class EnumInArrayOfArray   {
    **/
   @JsonProperty("p2")
   @ApiModelProperty(value = "")
+  @Valid
   public List<List<P2Enum>> getP2() {
     return p2;
   }
@@ -207,6 +210,7 @@ public class EnumInArrayOfArray   {
    **/
   @JsonProperty("p3")
   @ApiModelProperty(value = "")
+  @Valid
   public List<List<List<P3Enum>>> getP3() {
     return p3;
   }

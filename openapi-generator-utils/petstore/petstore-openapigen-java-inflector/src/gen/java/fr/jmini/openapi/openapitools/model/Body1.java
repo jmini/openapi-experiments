@@ -14,10 +14,10 @@ import java.io.File;
 
 public class Body1   {
   @JsonProperty("additionalMetadata")
-  private String additionalMetadata = null;
+  private String additionalMetadata;
 
   @JsonProperty("file")
-  private File file = null;
+  private File file;
 
   /**
    * Additional data to pass to server

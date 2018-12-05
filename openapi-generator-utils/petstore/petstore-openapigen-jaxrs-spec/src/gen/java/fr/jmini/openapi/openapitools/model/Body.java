@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class Body   {
   
-  private @Valid String name = null;
-  private @Valid String status = null;
+  private @Valid String name;
+  private @Valid String status;
 
   /**
    * Updated name of the pet

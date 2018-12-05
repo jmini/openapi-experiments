@@ -13,7 +13,6 @@
 
 package fr.jmini.openapi.openapitools.webclient.api;
 
-import fr.jmini.openapi.openapitools.webclient.ApiException;
 import fr.jmini.openapi.openapitools.webclient.model.SomeObj;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -36,12 +35,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingDeleteTest() throws ApiException {
+    public void jsonPingDeleteTest()  {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj).block();
 
@@ -52,12 +48,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingHeadTest() throws ApiException {
+    public void jsonPingHeadTest()  {
         SomeObj someObj = null;
         api.jsonPingHead(someObj).block();
 
@@ -68,12 +61,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingOptionsTest() throws ApiException {
+    public void jsonPingOptionsTest()  {
         SomeObj someObj = null;
         api.jsonPingOptions(someObj).block();
 
@@ -84,12 +74,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingPatchTest() throws ApiException {
+    public void jsonPingPatchTest()  {
         SomeObj someObj = null;
         api.jsonPingPatch(someObj).block();
 
@@ -100,12 +87,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingPostTest() throws ApiException {
+    public void jsonPingPostTest()  {
         SomeObj someObj = null;
         api.jsonPingPost(someObj).block();
 
@@ -116,12 +100,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void jsonPingPutTest() throws ApiException {
+    public void jsonPingPutTest()  {
         SomeObj someObj = null;
         api.jsonPingPut(someObj).block();
 
@@ -132,12 +113,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingDeleteTest() throws ApiException {
+    public void pingDeleteTest()  {
         String custom = null;
         api.pingDelete(custom).block();
 
@@ -148,12 +126,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingGetTest() throws ApiException {
+    public void pingGetTest()  {
         String custom = null;
         api.pingGet(custom).block();
 
@@ -164,12 +139,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingHeadTest() throws ApiException {
+    public void pingHeadTest()  {
         String custom = null;
         api.pingHead(custom).block();
 
@@ -180,12 +152,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingOptionsTest() throws ApiException {
+    public void pingOptionsTest()  {
         String custom = null;
         api.pingOptions(custom).block();
 
@@ -196,12 +165,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingPatchTest() throws ApiException {
+    public void pingPatchTest()  {
         String custom = null;
         api.pingPatch(custom).block();
 
@@ -212,12 +178,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingPostTest() throws ApiException {
+    public void pingPostTest()  {
         String custom = null;
         api.pingPost(custom).block();
 
@@ -228,12 +191,9 @@ public class IpsumApiTest {
      * 
      *
      * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
      */
     @Test
-    public void pingPutTest() throws ApiException {
+    public void pingPutTest()  {
         String custom = null;
         api.pingPut(custom).block();
 

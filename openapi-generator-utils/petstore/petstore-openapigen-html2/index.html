@@ -1503,8 +1503,8 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-Long *petId = 789; // Pet id to delete
-String *apiKey = apiKey_example; //  (optional)
+Long *petId = 789; // Pet id to delete (default to null)
+String *apiKey = apiKey_example; //  (optional) (default to null)
 
 PetApi *apiInstance = [[PetApi alloc] init];
 
@@ -1565,8 +1565,8 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var petId = 789;  // Long | Pet id to delete
-            var apiKey = apiKey_example;  // String |  (optional) 
+            var petId = 789;  // Long | Pet id to delete (default to null)
+            var apiKey = apiKey_example;  // String |  (optional)  (default to null)
 
             try
             {
@@ -1634,8 +1634,8 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-petId = 789 # Long | Pet id to delete
-apiKey = apiKey_example # String |  (optional)
+petId = 789 # Long | Pet id to delete (default to null)
+apiKey = apiKey_example # String |  (optional) (default to null)
 
 try: 
     # Deletes a pet
@@ -2263,7 +2263,7 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-array[String] *tags = ; // Tags to filter by (optional)
+array[String] *tags = ; // Tags to filter by (optional) (default to null)
 
 PetApi *apiInstance = [[PetApi alloc] init];
 
@@ -2325,7 +2325,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var tags = new array[String](); // array[String] | Tags to filter by (optional) 
+            var tags = new array[String](); // array[String] | Tags to filter by (optional)  (default to null)
 
             try
             {
@@ -2394,7 +2394,7 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-tags =  # array[String] | Tags to filter by (optional)
+tags =  # array[String] | Tags to filter by (optional) (default to null)
 
 try: 
     # Finds Pets by tags
@@ -2671,7 +2671,7 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-Long *petId = 789; // ID of pet that needs to be fetched
+Long *petId = 789; // ID of pet that needs to be fetched (default to null)
 
 PetApi *apiInstance = [[PetApi alloc] init];
 
@@ -2741,7 +2741,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var petId = 789;  // Long | ID of pet that needs to be fetched
+            var petId = 789;  // Long | ID of pet that needs to be fetched (default to null)
 
             try
             {
@@ -2822,7 +2822,7 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-petId = 789 # Long | ID of pet that needs to be fetched
+petId = 789 # Long | ID of pet that needs to be fetched (default to null)
 
 try: 
     # Find pet by ID
@@ -3478,7 +3478,7 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-String *petId = petId_example; // ID of pet that needs to be updated
+String *petId = petId_example; // ID of pet that needs to be updated (default to null)
 String *name = name_example; // Updated name of the pet (optional) (default to null)
 String *status = status_example; // Updated status of the pet (optional) (default to null)
 
@@ -3543,7 +3543,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var petId = petId_example;  // String | ID of pet that needs to be updated
+            var petId = petId_example;  // String | ID of pet that needs to be updated (default to null)
             var name = name_example;  // String | Updated name of the pet (optional)  (default to null)
             var status = status_example;  // String | Updated status of the pet (optional)  (default to null)
 
@@ -3615,7 +3615,7 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-petId = petId_example # String | ID of pet that needs to be updated
+petId = petId_example # String | ID of pet that needs to be updated (default to null)
 name = name_example # String | Updated name of the pet (optional) (default to null)
 status = status_example # String | Updated status of the pet (optional) (default to null)
 
@@ -3864,7 +3864,7 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-Long *petId = 789; // ID of pet to update
+Long *petId = 789; // ID of pet to update (default to null)
 String *additionalMetadata = additionalMetadata_example; // Additional data to pass to server (optional) (default to null)
 File *file = BINARY_DATA_HERE; // file to upload (optional) (default to null)
 
@@ -3929,7 +3929,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var petId = 789;  // Long | ID of pet to update
+            var petId = 789;  // Long | ID of pet to update (default to null)
             var additionalMetadata = additionalMetadata_example;  // String | Additional data to pass to server (optional)  (default to null)
             var file = BINARY_DATA_HERE;  // File | file to upload (optional)  (default to null)
 
@@ -4001,7 +4001,7 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-petId = 789 # Long | ID of pet to update
+petId = 789 # Long | ID of pet to update (default to null)
 additionalMetadata = additionalMetadata_example # String | Additional data to pass to server (optional) (default to null)
 file = BINARY_DATA_HERE # File | file to upload (optional) (default to null)
 
@@ -4245,7 +4245,7 @@ public class StoreApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Store-deleteOrder-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *orderId = orderId_example; // ID of the order that needs to be deleted
+                              <pre class="prettyprint"><code class="language-cpp">String *orderId = orderId_example; // ID of the order that needs to be deleted (default to null)
 
 StoreApi *apiInstance = [[StoreApi alloc] init];
 
@@ -4294,7 +4294,7 @@ namespace Example
         {
             
             var apiInstance = new StoreApi();
-            var orderId = orderId_example;  // String | ID of the order that needs to be deleted
+            var orderId = orderId_example;  // String | ID of the order that needs to be deleted (default to null)
 
             try
             {
@@ -4351,7 +4351,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.StoreApi()
-orderId = orderId_example # String | ID of the order that needs to be deleted
+orderId = orderId_example # String | ID of the order that needs to be deleted (default to null)
 
 try: 
     # Delete purchase order by ID
@@ -4891,7 +4891,7 @@ public class StoreApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Store-getOrderById-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *orderId = orderId_example; // ID of pet that needs to be fetched
+                              <pre class="prettyprint"><code class="language-cpp">String *orderId = orderId_example; // ID of pet that needs to be fetched (default to null)
 
 StoreApi *apiInstance = [[StoreApi alloc] init];
 
@@ -4943,7 +4943,7 @@ namespace Example
         {
             
             var apiInstance = new StoreApi();
-            var orderId = orderId_example;  // String | ID of pet that needs to be fetched
+            var orderId = orderId_example;  // String | ID of pet that needs to be fetched (default to null)
 
             try
             {
@@ -5003,7 +5003,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.StoreApi()
-orderId = orderId_example # String | ID of pet that needs to be fetched
+orderId = orderId_example # String | ID of pet that needs to be fetched (default to null)
 
 try: 
     # Find purchase order by ID
@@ -6484,7 +6484,7 @@ public class UserApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-User-deleteUser-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The name that needs to be deleted
+                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The name that needs to be deleted (default to null)
 
 UserApi *apiInstance = [[UserApi alloc] init];
 
@@ -6533,7 +6533,7 @@ namespace Example
         {
             
             var apiInstance = new UserApi();
-            var username = username_example;  // String | The name that needs to be deleted
+            var username = username_example;  // String | The name that needs to be deleted (default to null)
 
             try
             {
@@ -6590,7 +6590,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.UserApi()
-username = username_example # String | The name that needs to be deleted
+username = username_example # String | The name that needs to be deleted (default to null)
 
 try: 
     # Delete user
@@ -6788,7 +6788,7 @@ public class UserApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-User-getUserByName-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The name that needs to be fetched. Use user1 for testing. 
+                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The name that needs to be fetched. Use user1 for testing.  (default to null)
 
 UserApi *apiInstance = [[UserApi alloc] init];
 
@@ -6840,7 +6840,7 @@ namespace Example
         {
             
             var apiInstance = new UserApi();
-            var username = username_example;  // String | The name that needs to be fetched. Use user1 for testing. 
+            var username = username_example;  // String | The name that needs to be fetched. Use user1 for testing.  (default to null)
 
             try
             {
@@ -6900,7 +6900,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.UserApi()
-username = username_example # String | The name that needs to be fetched. Use user1 for testing. 
+username = username_example # String | The name that needs to be fetched. Use user1 for testing.  (default to null)
 
 try: 
     # Get user by user name
@@ -7167,8 +7167,8 @@ public class UserApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-User-loginUser-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The user name for login (optional)
-String *password = password_example; // The password for login in clear text (optional)
+                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // The user name for login (optional) (default to null)
+String *password = password_example; // The password for login in clear text (optional) (default to null)
 
 UserApi *apiInstance = [[UserApi alloc] init];
 
@@ -7224,8 +7224,8 @@ namespace Example
         {
             
             var apiInstance = new UserApi();
-            var username = username_example;  // String | The user name for login (optional) 
-            var password = password_example;  // String | The password for login in clear text (optional) 
+            var username = username_example;  // String | The user name for login (optional)  (default to null)
+            var password = password_example;  // String | The password for login in clear text (optional)  (default to null)
 
             try
             {
@@ -7287,8 +7287,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.UserApi()
-username = username_example # String | The user name for login (optional)
-password = password_example # String | The password for login in clear text (optional)
+username = username_example # String | The user name for login (optional) (default to null)
+password = password_example # String | The password for login in clear text (optional) (default to null)
 
 try: 
     # Logs user into the system
@@ -7789,7 +7789,7 @@ public class UserApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-User-updateUser-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // name that need to be deleted
+                              <pre class="prettyprint"><code class="language-cpp">String *username = username_example; // name that need to be deleted (default to null)
 User *user = ; //  (optional)
 
 UserApi *apiInstance = [[UserApi alloc] init];
@@ -7843,7 +7843,7 @@ namespace Example
         {
             
             var apiInstance = new UserApi();
-            var username = username_example;  // String | name that need to be deleted
+            var username = username_example;  // String | name that need to be deleted (default to null)
             var user = new User(); // User |  (optional) 
 
             try
@@ -7903,7 +7903,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = openapi_client.UserApi()
-username = username_example # String | name that need to be deleted
+username = username_example # String | name that need to be deleted (default to null)
 user =  # User |  (optional)
 
 try: 

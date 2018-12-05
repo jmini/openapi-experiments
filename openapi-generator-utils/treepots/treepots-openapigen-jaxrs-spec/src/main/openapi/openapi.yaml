@@ -186,24 +186,12 @@ components:
           type: array
       type: object
     ObjWithEnums:
-      example:
-        IProp: 0
-        LProp: 6
+      example: {}
       properties:
         IProp:
-          enum:
-          - 1
-          - 2
-          - 3
-          format: int32
-          type: integer
+          $ref: '#/components/schemas/IntEnum'
         LProp:
-          enum:
-          - 20
-          - 30
-          - 40
-          format: int64
-          type: integer
+          $ref: '#/components/schemas/LongEnum'
         SProp:
           $ref: '#/components/schemas/StringEnum'
       type: object

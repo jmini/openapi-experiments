@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class Category   {
   
-  private @Valid Long id = null;
-  private @Valid String name = null;
+  private @Valid Long id;
+  private @Valid String name;
 
   /**
    **/

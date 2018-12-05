@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.*;
 
 public class Body   {
   
-  private String name = null;
+  private String name;
 
-  private String status = null;
+  private String status;
 
 
   /**

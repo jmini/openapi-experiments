@@ -18,7 +18,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("DELETE /ipsum/jsonPing")
   @Headers({
@@ -30,7 +30,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("HEAD /ipsum/jsonPing")
   @Headers({
@@ -42,7 +42,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("OPTIONS /ipsum/jsonPing")
   @Headers({
@@ -54,7 +54,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("PATCH /ipsum/jsonPing")
   @Headers({
@@ -66,7 +66,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("POST /ipsum/jsonPing")
   @Headers({
@@ -78,7 +78,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param someObj  (optional)
+   * @param someObj  (optional)
    */
   @RequestLine("PUT /ipsum/jsonPing")
   @Headers({
@@ -90,7 +90,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("DELETE /ipsum/ping?custom={custom}")
   @Headers({
@@ -132,7 +132,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("GET /ipsum/ping?custom={custom}")
   @Headers({
@@ -174,7 +174,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("HEAD /ipsum/ping?custom={custom}")
   @Headers({
@@ -216,7 +216,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("OPTIONS /ipsum/ping?custom={custom}")
   @Headers({
@@ -258,7 +258,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("PATCH /ipsum/ping?custom={custom}")
   @Headers({
@@ -300,7 +300,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("POST /ipsum/ping?custom={custom}")
   @Headers({
@@ -342,7 +342,7 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
-    * @param custom  (optional)
+   * @param custom  (optional)
    */
   @RequestLine("PUT /ipsum/ping?custom={custom}")
   @Headers({

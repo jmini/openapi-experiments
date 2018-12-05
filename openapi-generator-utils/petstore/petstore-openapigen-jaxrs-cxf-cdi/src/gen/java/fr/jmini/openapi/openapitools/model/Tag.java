@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.*;
 
 public class Tag   {
   
-  private Long id = null;
+  private Long id;
 
-  private String name = null;
+  private String name;
 
 
   /**

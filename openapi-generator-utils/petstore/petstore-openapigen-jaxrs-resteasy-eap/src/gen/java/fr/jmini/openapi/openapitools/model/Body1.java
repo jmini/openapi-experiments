@@ -15,9 +15,9 @@ import io.swagger.annotations.*;
 public class Body1   {
   
 
-  private String additionalMetadata = null;
+  private String additionalMetadata;
 
-  private File file = null;
+  private File file;
 
   /**
    * Additional data to pass to server

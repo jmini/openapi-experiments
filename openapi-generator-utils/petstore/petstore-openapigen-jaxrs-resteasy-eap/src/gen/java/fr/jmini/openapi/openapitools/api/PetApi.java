@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 
 @Path("/pet")
@@ -39,7 +40,7 @@ public interface PetApi  {
     }, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response addPet(@ApiParam(value = "Pet object that needs to be added to the store" ) Pet pet,@Context SecurityContext securityContext);
+    public Response addPet(@ApiParam(value = "Pet object that needs to be added to the store" ) @Valid Pet pet,@Context SecurityContext securityContext);
     @DELETE
     @Path("/{petId}")
     
@@ -117,7 +118,7 @@ public interface PetApi  {
         @io.swagger.annotations.ApiResponse(code = 404, message = "Pet not found", response = Void.class),
         
         @io.swagger.annotations.ApiResponse(code = 405, message = "Validation exception", response = Void.class) })
-    public Response updatePet(@ApiParam(value = "Pet object that needs to be added to the store" ) Pet pet,@Context SecurityContext securityContext);
+    public Response updatePet(@ApiParam(value = "Pet object that needs to be added to the store" ) @Valid Pet pet,@Context SecurityContext securityContext);
     @POST
     @Path("/{petId}")
     @Consumes({ "application/x-www-form-urlencoded" })
@@ -130,7 +131,7 @@ public interface PetApi  {
     }, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
-    public Response updatePetWithForm( @PathParam("petId") String petId,@ApiParam(value = "Updated name of the pet", defaultValue="null")@FormParam("name")  String name,@ApiParam(value = "Updated status of the pet", defaultValue="null")@FormParam("status")  String status,@Context SecurityContext securityContext);
+    public Response updatePetWithForm( @PathParam("petId") String petId,@ApiParam(value = "Updated name of the pet")@FormParam("name")  String name,@ApiParam(value = "Updated status of the pet")@FormParam("status")  String status,@Context SecurityContext securityContext);
     @POST
     @Path("/{petId}/uploadImage")
     @Consumes({ "multipart/form-data" })

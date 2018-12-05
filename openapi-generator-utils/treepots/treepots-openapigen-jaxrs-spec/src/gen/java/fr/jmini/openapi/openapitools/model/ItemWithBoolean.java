@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class ItemWithBoolean   {
   
-  private @Valid Integer id = null;
-  private @Valid Boolean active = null;
-  private @Valid String name = null;
+  private @Valid Integer id;
+  private @Valid Boolean active;
+  private @Valid String name;
 
   /**
    **/

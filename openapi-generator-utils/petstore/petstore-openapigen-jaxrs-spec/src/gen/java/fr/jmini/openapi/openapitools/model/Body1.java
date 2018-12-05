@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class Body1   {
   
-  private @Valid String additionalMetadata = null;
-  private @Valid File file = null;
+  private @Valid String additionalMetadata;
+  private @Valid File file;
 
   /**
    * Additional data to pass to server

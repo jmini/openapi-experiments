@@ -18,13 +18,13 @@ public class Body1  {
  /**
    * Additional data to pass to server
   **/
-  private String additionalMetadata = null;
+  private String additionalMetadata;
 
   @ApiModelProperty(value = "file to upload")
  /**
    * file to upload
   **/
-  private File file = null;
+  private File file;
  /**
    * Additional data to pass to server
    * @return additionalMetadata

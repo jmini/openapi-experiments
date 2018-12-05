@@ -13,13 +13,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class SomeObject   {
   @JsonProperty("id")
-  private Integer id = null;
+  private Integer id;
 
   @JsonProperty("firstName")
-  private String firstName = null;
+  private String firstName;
 
   @JsonProperty("lastName")
-  private String lastName = null;
+  private String lastName;
 
   /**
    **/

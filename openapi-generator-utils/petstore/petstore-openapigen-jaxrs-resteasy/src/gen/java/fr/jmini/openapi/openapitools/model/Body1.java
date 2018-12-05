@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
@@ -12,8 +14,8 @@ import io.swagger.annotations.*;
 
 public class Body1   {
   
-  private String additionalMetadata = null;
-  private File file = null;
+  private String additionalMetadata;
+  private File file;
 
   /**
    * Additional data to pass to server

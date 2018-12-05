@@ -13,13 +13,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class ErrorModel   {
   @JsonProperty("statusCode")
-  private Integer statusCode = null;
+  private Integer statusCode;
 
   @JsonProperty("statusDescription")
-  private String statusDescription = null;
+  private String statusDescription;
 
   @JsonProperty("errorMessage")
-  private String errorMessage = null;
+  private String errorMessage;
 
   /**
    * http status code

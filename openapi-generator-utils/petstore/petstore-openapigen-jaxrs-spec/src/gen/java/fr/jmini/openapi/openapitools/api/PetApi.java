@@ -78,7 +78,7 @@ public class PetApi {
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class)
     })
-    public Response findPetsByTags(@QueryParam("tags")   @ApiParam("Tags to filter by")  List<String> tags) {
+    public Response findPetsByTags(@QueryParam("tags")  @DefaultValue("new ArrayList<String>()")  @ApiParam("Tags to filter by")  List<String> tags) {
         return Response.ok().entity("magic!").build();
     }
 

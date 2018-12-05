@@ -13,10 +13,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 public class LongModel   {
   @JsonProperty("Long1")
-  private Long long1 = null;
+  private Long long1;
 
   @JsonProperty("Long2")
-  private Long long2 = null;
+  private Long long2;
 
   /**
    **/

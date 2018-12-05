@@ -31,15 +31,15 @@ import java.io.IOException;
 public class ErrorModel {
   public static final String SERIALIZED_NAME_STATUS_CODE = "statusCode";
   @SerializedName(SERIALIZED_NAME_STATUS_CODE)
-  private Integer statusCode = null;
+  private Integer statusCode;
 
   public static final String SERIALIZED_NAME_STATUS_DESCRIPTION = "statusDescription";
   @SerializedName(SERIALIZED_NAME_STATUS_DESCRIPTION)
-  private String statusDescription = null;
+  private String statusDescription;
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
-  private String errorMessage = null;
+  private String errorMessage;
 
   public ErrorModel statusCode(Integer statusCode) {
     this.statusCode = statusCode;

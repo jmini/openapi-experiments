@@ -17,13 +17,13 @@ public class Body  {
  /**
    * Updated name of the pet
   **/
-  private String name = null;
+  private String name;
 
   @ApiModelProperty(value = "Updated status of the pet")
  /**
    * Updated status of the pet
   **/
-  private String status = null;
+  private String status;
  /**
    * Updated name of the pet
    * @return name

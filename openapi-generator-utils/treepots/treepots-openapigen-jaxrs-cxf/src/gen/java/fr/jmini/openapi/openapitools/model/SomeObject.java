@@ -16,13 +16,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SomeObject  {
   
   @ApiModelProperty(value = "")
-  private Integer id = null;
+  private Integer id;
 
   @ApiModelProperty(value = "")
-  private String firstName = null;
+  private String firstName;
 
   @ApiModelProperty(value = "")
-  private String lastName = null;
+  private String lastName;
  /**
    * Get id
    * @return id

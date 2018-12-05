@@ -16,11 +16,11 @@ import javax.xml.bind.annotation.*;
 
 public class SomeObject   {
   
-  private Integer id = null;
+  private Integer id;
 
-  private String firstName = null;
+  private String firstName;
 
-  private String lastName = null;
+  private String lastName;
 
 
   /**

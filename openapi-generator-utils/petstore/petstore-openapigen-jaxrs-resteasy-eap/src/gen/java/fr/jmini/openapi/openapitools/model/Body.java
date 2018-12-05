@@ -14,9 +14,9 @@ import io.swagger.annotations.*;
 public class Body   {
   
 
-  private String name = null;
+  private String name;
 
-  private String status = null;
+  private String status;
 
   /**
    * Updated name of the pet

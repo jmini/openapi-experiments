@@ -31,15 +31,15 @@ import java.io.IOException;
 public class SomeObject {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id = null;
+  private Integer id;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  private String firstName = null;
+  private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  private String lastName = null;
+  private String lastName;
 
   public SomeObject id(Integer id) {
     this.id = id;

@@ -2,6 +2,8 @@ package fr.jmini.openapi.openapitools.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fr.jmini.openapi.openapitools.model.IntEnum;
+import fr.jmini.openapi.openapitools.model.LongEnum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -17,82 +19,16 @@ import javax.xml.bind.annotation.*;
 
 public class ObjWithEnums   {
   
+  private IntEnum iprop = null;
 
-@XmlType(name="IpropEnum")
-@XmlEnum(Integer.class)
-public enum IpropEnum {
-
-    @XmlEnumValue("1") NUMBER_1(Integer.valueOf(1)), @XmlEnumValue("2") NUMBER_2(Integer.valueOf(2)), @XmlEnumValue("3") NUMBER_3(Integer.valueOf(3));
-
-
-    private Integer value;
-
-    IpropEnum(Integer v) {
-        value = v;
-    }
-
-    public Integer value() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static IpropEnum fromValue(String v) {
-        for (IpropEnum b : IpropEnum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
-    }
-}
-
-  private IpropEnum iprop = null;
-
-
-@XmlType(name="LpropEnum")
-@XmlEnum(Long.class)
-public enum LpropEnum {
-
-    @XmlEnumValue("20l") NUMBER_20(Long.valueOf(20l)), @XmlEnumValue("30l") NUMBER_30(Long.valueOf(30l)), @XmlEnumValue("40l") NUMBER_40(Long.valueOf(40l));
-
-
-    private Long value;
-
-    LpropEnum(Long v) {
-        value = v;
-    }
-
-    public Long value() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static LpropEnum fromValue(String v) {
-        for (LpropEnum b : LpropEnum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
-    }
-}
-
-  private LpropEnum lprop = null;
+  private LongEnum lprop = null;
 
   private StringEnum sprop = null;
 
 
   /**
    **/
-  public ObjWithEnums iprop(IpropEnum iprop) {
+  public ObjWithEnums iprop(IntEnum iprop) {
     this.iprop = iprop;
     return this;
   }
@@ -100,17 +36,17 @@ public enum LpropEnum {
   
   @ApiModelProperty(value = "")
   @JsonProperty("IProp")
-  public IpropEnum getIprop() {
+  public IntEnum getIprop() {
     return iprop;
   }
-  public void setIprop(IpropEnum iprop) {
+  public void setIprop(IntEnum iprop) {
     this.iprop = iprop;
   }
 
 
   /**
    **/
-  public ObjWithEnums lprop(LpropEnum lprop) {
+  public ObjWithEnums lprop(LongEnum lprop) {
     this.lprop = lprop;
     return this;
   }
@@ -118,10 +54,10 @@ public enum LpropEnum {
   
   @ApiModelProperty(value = "")
   @JsonProperty("LProp")
-  public LpropEnum getLprop() {
+  public LongEnum getLprop() {
     return lprop;
   }
-  public void setLprop(LpropEnum lprop) {
+  public void setLprop(LongEnum lprop) {
     this.lprop = lprop;
   }
 

@@ -31,11 +31,11 @@ import java.io.IOException;
 public class LongModel {
   public static final String SERIALIZED_NAME_LONG1 = "Long1";
   @SerializedName(SERIALIZED_NAME_LONG1)
-  private Long long1 = null;
+  private Long long1;
 
   public static final String SERIALIZED_NAME_LONG2 = "Long2";
   @SerializedName(SERIALIZED_NAME_LONG2)
-  private Long long2 = null;
+  private Long long2;
 
   public LongModel long1(Long long1) {
     this.long1 = long1;

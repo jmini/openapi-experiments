@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
+import javax.validation.Valid;
 
 /**
  * ErrorModel
@@ -26,13 +27,13 @@ import javax.validation.constraints.*;
 
 public class ErrorModel   {
   @JsonProperty("statusCode")
-  private Integer statusCode = null;
+  private Integer statusCode;
 
   @JsonProperty("statusDescription")
-  private String statusDescription = null;
+  private String statusDescription;
 
   @JsonProperty("errorMessage")
-  private String errorMessage = null;
+  private String errorMessage;
 
   public ErrorModel statusCode(Integer statusCode) {
     this.statusCode = statusCode;
@@ -45,6 +46,7 @@ public class ErrorModel   {
    **/
   @JsonProperty("statusCode")
   @ApiModelProperty(value = "http status code")
+  
   public Integer getStatusCode() {
     return statusCode;
   }
@@ -64,6 +66,7 @@ public class ErrorModel   {
    **/
   @JsonProperty("statusDescription")
   @ApiModelProperty(value = "http status reason phrase")
+  
   public String getStatusDescription() {
     return statusDescription;
   }
@@ -83,6 +86,7 @@ public class ErrorModel   {
    **/
   @JsonProperty("errorMessage")
   @ApiModelProperty(value = "error description")
+  
   public String getErrorMessage() {
     return errorMessage;
   }

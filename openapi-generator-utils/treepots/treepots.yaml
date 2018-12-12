@@ -90,6 +90,18 @@ paths:
       responses:
         default:
           description: successful operation
+  /polymorphic:
+    get:
+      operationId: getPolymorphic
+      tags:
+        - lorem
+      responses:
+        '200':
+          description: a pet to be returned
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SomeObject'
 components:
   schemas:
     ItemWithBoolean:
@@ -216,3 +228,32 @@ components:
         errorMessage:
           type: string
           description: error description
+
+    Element:
+      type: object
+      required:
+        - type
+      discriminator:
+        propertyName: type
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+
+    Node:
+      allOf:
+        - $ref: '#/components/schemas/Element'
+        - type: object
+          properties:
+            childrenIds:
+              type: array
+              items:
+                type: string
+    Leave:
+      allOf:
+        - $ref: '#/components/schemas/Element'
+        - type: object
+          properties:
+            value:
+              type: string

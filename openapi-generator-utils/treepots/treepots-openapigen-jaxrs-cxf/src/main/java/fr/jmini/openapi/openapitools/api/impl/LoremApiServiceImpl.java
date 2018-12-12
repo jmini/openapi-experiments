@@ -5,6 +5,7 @@ import fr.jmini.openapi.openapitools.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.model.LongModel;
 import fr.jmini.openapi.openapitools.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.model.SomeObject;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -31,6 +32,12 @@ public class LoremApiServiceImpl implements LoremApi {
      *
      */
     public ItemWithBoolean getCase1() {
+        // TODO: Implement...
+        
+        return null;
+    }
+    
+    public SomeObject getPolymorphic() {
         // TODO: Implement...
         
         return null;

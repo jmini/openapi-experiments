@@ -18,6 +18,7 @@ import fr.jmini.openapi.openapitools.restassured.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.restassured.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.restassured.model.LongModel;
 import fr.jmini.openapi.openapitools.restassured.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.restassured.model.SomeObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,6 +62,16 @@ public class LoremApi {
             @ApiResponse(code = 200, message = "Ok")  })
     public GetCase1Oper getCase1() {
         return new GetCase1Oper(reqSpec);
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "getPolymorphic",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "a pet to be returned")  })
+    public GetPolymorphicOper getPolymorphic() {
+        return new GetPolymorphicOper(reqSpec);
     }
 
     @ApiOperation(value = "Codegen",
@@ -169,6 +180,66 @@ public class LoremApi {
          * @return operation
          */
         public GetCase1Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
+            consumer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * return SomeObject
+     */
+    public static class GetPolymorphicOper {
+
+        public static final Method REQ_METHOD = GET;
+        public static final String REQ_URI = "/polymorphic";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public GetPolymorphicOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * GET /polymorphic
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        /**
+         * GET /polymorphic
+         * @param handler handler
+         * @return SomeObject
+         */
+        public SomeObject executeAs(Function<Response, Response> handler) {
+            Type type = new TypeToken<SomeObject>(){}.getType();
+            return execute(handler).as(type);
+        }
+
+        /**
+         * Customise request specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public GetPolymorphicOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
+            consumer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customise response specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public GetPolymorphicOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
             consumer.accept(respSpec);
             return this;
         }

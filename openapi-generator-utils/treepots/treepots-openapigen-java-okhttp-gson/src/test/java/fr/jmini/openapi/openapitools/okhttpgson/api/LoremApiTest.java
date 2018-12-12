@@ -18,6 +18,7 @@ import fr.jmini.openapi.openapitools.okhttpgson.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.okhttpgson.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.okhttpgson.model.LongModel;
 import fr.jmini.openapi.openapitools.okhttpgson.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.okhttpgson.model.SomeObject;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,6 +47,21 @@ public class LoremApiTest {
     @Test
     public void getCase1Test() throws ApiException {
         ItemWithBoolean response = api.getCase1();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPolymorphicTest() throws ApiException {
+        SomeObject response = api.getPolymorphic();
 
         // TODO: test validations
     }

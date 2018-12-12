@@ -5,6 +5,7 @@ All URIs are relative to *http://api.company.xyz/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCase1**](LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
+[**getPolymorphic**](LoremApi.md#getPolymorphic) | **GET** /polymorphic | 
 [**issue7754**](LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
 [**op**](LoremApi.md#op) | **GET** /pull75 | 
 [**op708**](LoremApi.md#op708) | **GET** /pull708 | 
@@ -40,6 +41,45 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ItemWithBoolean**](ItemWithBoolean.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getPolymorphic"></a>
+# **getPolymorphic**
+> SomeObject getPolymorphic()
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+
+
+LoremApi apiInstance = new LoremApi();
+try {
+    SomeObject result = apiInstance.getPolymorphic();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LoremApi#getPolymorphic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SomeObject**](SomeObject.md)
 
 ### Authorization
 

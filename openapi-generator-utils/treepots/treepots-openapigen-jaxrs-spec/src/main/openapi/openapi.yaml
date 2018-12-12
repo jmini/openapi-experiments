@@ -104,6 +104,20 @@ paths:
       - lorem
       x-tags:
       - tag: lorem
+  /polymorphic:
+    get:
+      operationId: getPolymorphic
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SomeObject'
+          description: a pet to be returned
+      tags:
+      - lorem
+      x-tags:
+      - tag: lorem
 components:
   schemas:
     ItemWithBoolean:
@@ -251,3 +265,30 @@ components:
           description: error description
           type: string
       type: object
+    Element:
+      discriminator:
+        propertyName: type
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      type: object
+    Node:
+      allOf:
+      - $ref: '#/components/schemas/Element'
+      - properties:
+          childrenIds:
+            items:
+              type: string
+            type: array
+        type: object
+    Leave:
+      allOf:
+      - $ref: '#/components/schemas/Element'
+      - properties:
+          value:
+            type: string
+        type: object

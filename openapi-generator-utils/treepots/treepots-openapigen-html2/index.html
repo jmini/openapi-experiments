@@ -816,6 +816,21 @@ ul.nav-tabs {
   <script>
     // Script section to load models into a JS Var
     var defs = {}
+    defs["Element"] = {
+  "required" : [ "type" ],
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "string"
+    },
+    "type" : {
+      "type" : "string"
+    }
+  },
+  "discriminator" : {
+    "propertyName" : "type"
+  }
+};
     defs["EnumInArrayOfArray"] = {
   "type" : "object",
   "properties" : {
@@ -895,6 +910,18 @@ ul.nav-tabs {
     }
   }
 };
+    defs["Leave"] = {
+  "allOf" : [ {
+    "$ref" : "#/components/schemas/Element"
+  }, {
+    "type" : "object",
+    "properties" : {
+      "value" : {
+        "type" : "string"
+      }
+    }
+  } ]
+};
     defs["LongEnum"] = {
   "type" : "integer",
   "format" : "int64",
@@ -911,6 +938,21 @@ ul.nav-tabs {
       "format" : "int64"
     }
   }
+};
+    defs["Node"] = {
+  "allOf" : [ {
+    "$ref" : "#/components/schemas/Element"
+  }, {
+    "type" : "object",
+    "properties" : {
+      "childrenIds" : {
+        "type" : "array",
+        "items" : {
+          "type" : "string"
+        }
+      }
+    }
+  } ]
 };
     defs["ObjWithEnums"] = {
   "type" : "object",
@@ -970,6 +1012,9 @@ ul.nav-tabs {
                   <li class="nav-header" data-group="Lorem"><a href="#api-Lorem">API Methods - Lorem</a></li>
                     <li data-group="Lorem" data-name="getCase1" class="">
                       <a href="#api-Lorem-getCase1">getCase1</a>
+                    </li>
+                    <li data-group="Lorem" data-name="getPolymorphic" class="">
+                      <a href="#api-Lorem-getPolymorphic">getPolymorphic</a>
                     </li>
                     <li data-group="Lorem" data-name="issue7754" class="">
                       <a href="#api-Lorem-issue7754">issue7754</a>
@@ -1638,6 +1683,291 @@ pub fn main() {
                                     </script>
                                   </div>
                                   <input id='responses-Lorem-getCase1-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Lorem-getPolymorphic">
+                      <article id="api-Lorem-getPolymorphic-0" data-group="User" data-name="getPolymorphic" data-version="0">
+                        <div class="pull-left">
+                          <h1>getPolymorphic</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/polymorphic</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Lorem-getPolymorphic-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Lorem-getPolymorphic-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Lorem-getPolymorphic-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Lorem-getPolymorphic-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Lorem-getPolymorphic-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://api.company.xyz/v2/polymorphic"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.LoremApi;
+
+import java.io.File;
+import java.util.*;
+
+public class LoremApiExample {
+
+    public static void main(String[] args) {
+        
+        LoremApi apiInstance = new LoremApi();
+        try {
+            SomeObject result = apiInstance.getPolymorphic();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LoremApi#getPolymorphic");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.LoremApi;
+
+public class LoremApiExample {
+
+    public static void main(String[] args) {
+        LoremApi apiInstance = new LoremApi();
+        try {
+            SomeObject result = apiInstance.getPolymorphic();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LoremApi#getPolymorphic");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+LoremApi *apiInstance = [[LoremApi alloc] init];
+
+[apiInstance getPolymorphicWithCompletionHandler: 
+              ^(SomeObject output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var OpenApiTreePots = require('open_api_tree_pots');
+
+var api = new OpenApiTreePots.LoremApi()
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getPolymorphic(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Lorem-getPolymorphic-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class getPolymorphicExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new LoremApi();
+
+            try
+            {
+                SomeObject result = apiInstance.getPolymorphic();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LoremApi.getPolymorphic: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new OpenAPITools\Client\Api\LoremApi();
+
+try {
+    $result = $api_instance->getPolymorphic();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LoremApi->getPolymorphic: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::LoremApi;
+
+my $api_instance = WWW::OPenAPIClient::LoremApi->new();
+
+eval { 
+    my $result = $api_instance->getPolymorphic();
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling LoremApi->getPolymorphic: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = openapi_client.LoremApi()
+
+try: 
+    api_response = api_instance.get_polymorphic()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoremApi->getPolymorphic: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-getPolymorphic-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate LoremApi;
+
+pub fn main() {
+
+    let mut context = LoremApi::Context::default();
+    let result = client.getPolymorphic(&context).wait();
+    println!("{:?}", result);
+
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-Lorem-getPolymorphic-title-200"></h3>
+                            <p id="examples-Lorem-getPolymorphic-description-200" class="marked"></p>
+                            <script>
+                              var responseLorem200_description = `a pet to be returned`;
+                              var responseLorem200_description_break = responseLorem200_description.indexOf('\n');
+                              if (responseLorem200_description_break == -1) {
+                                $("#examples-Lorem-getPolymorphic-title-200").text("Status: 200 - " + responseLorem200_description);
+                              } else {
+                                $("#examples-Lorem-getPolymorphic-title-200").text("Status: 200 - " + responseLorem200_description.substring(0, responseLorem200_description_break));
+                                $("#examples-Lorem-getPolymorphic-description-200").html(responseLorem200_description.substring(responseLorem200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-Lorem-getPolymorphic-200" class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-Lorem-getPolymorphic-200-schema">Schema</a>
+                                </li>
+
+
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-Lorem-getPolymorphic-200-wrapper" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-Lorem-getPolymorphic-200-schema">
+                                  <div id="responses-Lorem-getPolymorphic-schema-200" class="exampleStyle">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "a pet to be returned",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SomeObject"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-Lorem-getPolymorphic-200-schema-data').val(JSON.stringify(schema));
+                                        var result = $('#responses-Lorem-getPolymorphic-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-Lorem-getPolymorphic-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
                         </article>

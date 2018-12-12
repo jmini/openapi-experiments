@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *IpsumApi* | [**op**](docs/IpsumApi.md#op) | **GET** /ipsum/issue199 | 
 *LoremApi* | [**getCase1**](docs/LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
+*LoremApi* | [**getPolymorphic**](docs/LoremApi.md#getPolymorphic) | **GET** /polymorphic | 
 *LoremApi* | [**issue7754**](docs/LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
 *LoremApi* | [**op**](docs/LoremApi.md#op) | **GET** /pull75 | 
 *LoremApi* | [**op708**](docs/LoremApi.md#op708) | **GET** /pull708 | 
@@ -112,13 +113,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [Element](docs/Element.md)
  - [EnumInArrayOfArray](docs/EnumInArrayOfArray.md)
  - [EnumWithCustomName](docs/EnumWithCustomName.md)
  - [ErrorModel](docs/ErrorModel.md)
  - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
+ - [Leave](docs/Leave.md)
  - [LongEnum](docs/LongEnum.md)
  - [LongModel](docs/LongModel.md)
+ - [Node](docs/Node.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
  - [SomeObject](docs/SomeObject.md)
  - [StringEnum](docs/StringEnum.md)

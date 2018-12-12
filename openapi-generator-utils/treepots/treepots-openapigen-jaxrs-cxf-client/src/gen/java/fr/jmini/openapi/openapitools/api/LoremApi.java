@@ -4,6 +4,7 @@ import fr.jmini.openapi.openapitools.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.model.LongModel;
 import fr.jmini.openapi.openapitools.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.model.SomeObject;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -41,6 +42,14 @@ public interface LoremApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ItemWithBoolean.class) })
     public ItemWithBoolean getCase1();
+
+    @GET
+    @Path("/polymorphic")
+    @Produces({ "application/json" })
+    @ApiOperation(value = "", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "a pet to be returned", response = SomeObject.class) })
+    public SomeObject getPolymorphic();
 
     /**
      * Codegen

@@ -29,6 +29,7 @@ import fr.jmini.openapi.openapitools.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.model.LongModel;
 import fr.jmini.openapi.openapitools.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.model.SomeObject;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
@@ -83,6 +84,19 @@ public class LoremApiTest {
     @Test
     public void getCase1Test() {
         //ItemWithBoolean response = api.getCase1();
+        //assertNotNull(response);
+        // TODO: test validations
+        
+        
+    }
+    
+    /**
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPolymorphicTest() {
+        //SomeObject response = api.getPolymorphic();
         //assertNotNull(response);
         // TODO: test validations
         

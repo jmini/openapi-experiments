@@ -201,6 +201,7 @@ font-style: italic;
   <h4><a href="#Lorem">Lorem</a></h4>
   <ul>
   <li><a href="#getCase1"><code><span class="http-method">get</span> /case1</code></a></li>
+  <li><a href="#getPolymorphic"><code><span class="http-method">get</span> /polymorphic</code></a></li>
   <li><a href="#issue7754"><code><span class="http-method">get</span> /issue7754</code></a></li>
   <li><a href="#op"><code><span class="http-method">get</span> /pull75</code></a></li>
   <li><a href="#op708"><code><span class="http-method">get</span> /pull708</code></a></li>
@@ -294,6 +295,48 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     Ok
         <a href="#ItemWithBoolean">ItemWithBoolean</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getPolymorphic"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /polymorphic</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">getPolymorphic</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SomeObject">SomeObject</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "firstName" : "firstName",
+  "lastName" : "lastName",
+  "id" : 0
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    a pet to be returned
+        <a href="#SomeObject">SomeObject</a>
   </div> <!-- method -->
   <hr/>
   <div class="method"><a name="issue7754"/>
@@ -447,18 +490,29 @@ font-style: italic;
 
   <h3>Table of Contents</h3>
   <ol>
+    <li><a href="#Element"><code>Element</code> - </a></li>
     <li><a href="#EnumInArrayOfArray"><code>EnumInArrayOfArray</code> - </a></li>
     <li><a href="#EnumWithCustomName"><code>EnumWithCustomName</code> - </a></li>
     <li><a href="#ErrorModel"><code>ErrorModel</code> - </a></li>
     <li><a href="#IntEnum"><code>IntEnum</code> - </a></li>
     <li><a href="#ItemWithBoolean"><code>ItemWithBoolean</code> - </a></li>
+    <li><a href="#Leave"><code>Leave</code> - </a></li>
     <li><a href="#LongEnum"><code>LongEnum</code> - </a></li>
     <li><a href="#LongModel"><code>LongModel</code> - </a></li>
+    <li><a href="#Node"><code>Node</code> - </a></li>
     <li><a href="#ObjWithEnums"><code>ObjWithEnums</code> - </a></li>
     <li><a href="#SomeObject"><code>SomeObject</code> - </a></li>
     <li><a href="#StringEnum"><code>StringEnum</code> - </a></li>
   </ol>
 
+  <div class="model">
+    <h3><a name="Element"><code>Element</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3><a name="EnumInArrayOfArray"><code>EnumInArrayOfArray</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
@@ -505,6 +559,15 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3><a name="Leave"><code>Leave</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3><a name="LongEnum"><code>LongEnum</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
@@ -516,6 +579,15 @@ font-style: italic;
     <div class="field-items">
       <div class="param">Long1 (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
 <div class="param">Long2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Node"><code>Node</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">childrenIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

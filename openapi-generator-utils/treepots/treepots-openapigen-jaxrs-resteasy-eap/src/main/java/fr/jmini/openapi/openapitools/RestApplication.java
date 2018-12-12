@@ -9,6 +9,7 @@ import java.util.HashSet;
 import fr.jmini.openapi.openapitools.api.impl.Case1ApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.IpsumApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Issue7754ApiServiceImpl;
+import fr.jmini.openapi.openapitools.api.impl.PolymorphicApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Pull66ApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Pull708ApiServiceImpl;
 import fr.jmini.openapi.openapitools.api.impl.Pull75ApiServiceImpl;
@@ -22,6 +23,7 @@ public class RestApplication extends Application {
         resources.add(Case1ApiServiceImpl.class);
         resources.add(IpsumApiServiceImpl.class);
         resources.add(Issue7754ApiServiceImpl.class);
+        resources.add(PolymorphicApiServiceImpl.class);
         resources.add(Pull66ApiServiceImpl.class);
         resources.add(Pull708ApiServiceImpl.class);
         resources.add(Pull75ApiServiceImpl.class);

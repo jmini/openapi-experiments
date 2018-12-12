@@ -17,6 +17,7 @@ import fr.jmini.openapi.openapitools.restassured.model.EnumInArrayOfArray;
 import fr.jmini.openapi.openapitools.restassured.model.ItemWithBoolean;
 import fr.jmini.openapi.openapitools.restassured.model.LongModel;
 import fr.jmini.openapi.openapitools.restassured.model.ObjWithEnums;
+import fr.jmini.openapi.openapitools.restassured.model.SomeObject;
 import fr.jmini.openapi.openapitools.restassured.ApiClient;
 import fr.jmini.openapi.openapitools.restassured.api.LoremApi;
 import io.restassured.builder.RequestSpecBuilder;
@@ -55,6 +56,16 @@ public class LoremApiTest {
     @Test
     public void shouldSee200AfterGetCase1() {
         api.getCase1().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * a pet to be returned
+     */
+    @Test
+    public void shouldSee200AfterGetPolymorphic() {
+        api.getPolymorphic().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

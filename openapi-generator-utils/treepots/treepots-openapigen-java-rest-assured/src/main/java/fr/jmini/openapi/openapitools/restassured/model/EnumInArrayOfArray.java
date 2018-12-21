@@ -82,7 +82,7 @@ public class EnumInArrayOfArray {
 
   public static final String SERIALIZED_NAME_P1 = "p1";
   @SerializedName(SERIALIZED_NAME_P1)
-  private List<P1Enum> p1 = null;
+  private List<P1Enum> p1 = new ArrayList<P1Enum>();
 
   /**
    * Gets or Sets p2
@@ -135,7 +135,7 @@ public class EnumInArrayOfArray {
 
   public static final String SERIALIZED_NAME_P2 = "p2";
   @SerializedName(SERIALIZED_NAME_P2)
-  private List<List<P2Enum>> p2 = null;
+  private List<List<P2Enum>> p2 = new ArrayList<List<P2Enum>>();
 
   /**
    * Gets or Sets p3
@@ -186,7 +186,7 @@ public class EnumInArrayOfArray {
 
   public static final String SERIALIZED_NAME_P3 = "p3";
   @SerializedName(SERIALIZED_NAME_P3)
-  private List<List<List<P3Enum>>> p3 = null;
+  private List<List<List<P3Enum>>> p3 = new ArrayList<List<List<P3Enum>>>();
 
   public EnumInArrayOfArray p1(List<P1Enum> p1) {
     this.p1 = p1;

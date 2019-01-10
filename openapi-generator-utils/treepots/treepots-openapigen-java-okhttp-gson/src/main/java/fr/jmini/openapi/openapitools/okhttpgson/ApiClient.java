@@ -48,9 +48,6 @@ import java.util.regex.Pattern;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.Authentication;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.HttpBasicAuth;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.ApiKeyAuth;
-import fr.jmini.openapi.openapitools.okhttpgson.auth.OAuth;
-import fr.jmini.openapi.openapitools.okhttpgson.auth.RetryingOAuth;
-import fr.jmini.openapi.openapitools.okhttpgson.auth.OAuthFlow;
 
 public class ApiClient {
 
@@ -336,12 +333,6 @@ public class ApiClient {
      * @param accessToken Access token
      */
     public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
-        }
         throw new RuntimeException("No OAuth2 authentication configured!");
     }
 
@@ -487,19 +478,6 @@ public class ApiClient {
         return this;
     }
 
-    /**
-     * Helper method to configure the token endpoint of the first oauth found in the apiAuthorizations (there should be only one)
-     * @return Token request builder
-     */
-    public TokenRequestBuilder getTokenEndPoint() {
-        for (Authentication apiAuth : authentications.values()) {
-            if (apiAuth instanceof RetryingOAuth) {
-                RetryingOAuth retryingOAuth = (RetryingOAuth) apiAuth;
-                return retryingOAuth.getTokenRequestBuilder();
-            }
-        }
-        return null;
-    }
 
     /**
      * Format the given parameter object into string.

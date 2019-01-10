@@ -34,8 +34,14 @@ public class Task {
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
+    /**
+     * Open task status
+     */
     OPEN("OPEN"),
     
+    /**
+     * Terminated task status
+     */
     CLOSED("CLOSED");
 
     private String value;

@@ -29,10 +29,19 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(LongEnumWithCustomName.Adapter.class)
 public enum LongEnumWithCustomName {
   
+  /**
+   * Twenty value
+   */
   TWENTY(20l),
   
+  /**
+   * Thirty value
+   */
   THIRTY(30l),
   
+  /**
+   * Forty value
+   */
   FORTY(40l);
 
   private Long value;

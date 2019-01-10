@@ -142,8 +142,14 @@ public class EnumInArrayOfArray {
    */
   @JsonAdapter(P3Enum.Adapter.class)
   public enum P3Enum {
+    /**
+     * This is a lorem
+     */
     LOREM_ENUM_VALUE("lorem"),
     
+    /**
+     * This is a ipsum
+     */
     IPSUM_ENUM_VALUE("ipsum");
 
     private String value;

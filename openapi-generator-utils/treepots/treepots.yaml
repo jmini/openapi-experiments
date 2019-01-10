@@ -47,7 +47,7 @@ paths:
           description: Ok
   /pull75:
     get:
-      operationId: op
+      operationId: op75
       tags:
         - lorem
       responses:
@@ -59,7 +59,7 @@ paths:
                 $ref: '#/components/schemas/ObjWithEnums'
   /ipsum/issue199:
     get:
-      operationId: op
+      operationId: op199
       tags:
         - ipsum
       responses:
@@ -160,6 +160,12 @@ components:
                 enum:
                   - lorem
                   - ipsum
+                x-enum-varnames:
+                  - LOREM_ENUM_VALUE
+                  - IPSUM_ENUM_VALUE
+                x-enum-descriptions:
+                  - 'This is a lorem'
+                  - 'This is a ipsum'
 
     ObjWithEnums:
       type: object
@@ -203,6 +209,53 @@ components:
       x-enum-varnames:
         - FOO
         - BAR
+
+    LongEnumWithCustomName:
+      type: integer
+      format: int64
+      enum:
+        - 20
+        - 30
+        - 40
+      x-enum-varnames:
+        - TWENTY
+        - THIRTY
+        - FORTY
+      x-enum-descriptions:
+        - 'Twenty value'
+        - 'Thirty value'
+        - 'Forty value'
+
+    Task:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - OPEN
+            - CLOSED
+          x-enum-descriptions:
+            - 'Open task status'
+            - 'Terminated task status'
+
+    Weather:
+      type: object
+      properties:
+        type:
+          type: integer
+          format: int32
+          enum:
+            - 1
+            - 2
+            - 3
+          x-enum-descriptions:
+            - 'Blue sky'
+            - 'Slightly overcast'
+            - 'Take an umbrella with you'
+          x-enum-varnames:
+            - Sunny
+            - Cloudy
+            - Rainy
 
     SomeObject:
       type: object

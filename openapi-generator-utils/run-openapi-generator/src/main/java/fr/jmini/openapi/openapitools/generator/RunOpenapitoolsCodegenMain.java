@@ -167,7 +167,7 @@ public class RunOpenapitoolsCodegenMain {
 		}
 
 		config.setHideGenerationTimestamp(true);
-		config.setOutputDir(outputDir);
+		config.setOutputDir(outputDirPath.toFile().getCanonicalPath());
 
 		final OpenAPIV3Parser openApiParser = new OpenAPIV3Parser();
 		final ParseOptions options = new ParseOptions();

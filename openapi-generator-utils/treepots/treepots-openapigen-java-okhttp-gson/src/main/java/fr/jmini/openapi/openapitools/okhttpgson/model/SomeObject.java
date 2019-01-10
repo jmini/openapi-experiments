@@ -120,7 +120,6 @@ public class SomeObject {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SomeObject {\n");
-    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");

@@ -123,7 +123,6 @@ public class ObjWithEnums {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjWithEnums {\n");
-    
     sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
     sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");

@@ -17,7 +17,7 @@ import javax.validation.constraints.*;
 
 public class Pull708ApiServiceImpl extends Pull708ApiService {
     @Override
-    public Response op708( String bar, SecurityContext securityContext) throws NotFoundException {
+    public Response op708(String bar, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

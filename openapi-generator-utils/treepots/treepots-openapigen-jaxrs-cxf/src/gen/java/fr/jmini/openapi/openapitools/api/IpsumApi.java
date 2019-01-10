@@ -37,6 +37,6 @@ public interface IpsumApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "a pet to be returned", response = SomeObject.class),
         @ApiResponse(code = 200, message = "Unexpected error", response = ErrorModel.class) })
-    public SomeObject op();
+    public SomeObject op199();
 }
 

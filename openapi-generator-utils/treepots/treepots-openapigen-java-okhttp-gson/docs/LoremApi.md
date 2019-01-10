@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**getCase1**](LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
 [**getPolymorphic**](LoremApi.md#getPolymorphic) | **GET** /polymorphic | 
 [**issue7754**](LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
-[**op**](LoremApi.md#op) | **GET** /pull75 | 
 [**op708**](LoremApi.md#op708) | **GET** /pull708 | 
+[**op75**](LoremApi.md#op75) | **GET** /pull75 | 
 [**pull66**](LoremApi.md#pull66) | **GET** /pull66 | 
 
 
@@ -129,45 +129,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="op"></a>
-# **op**
-> ObjWithEnums op()
-
-
-
-### Example
-```java
-// Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
-
-
-LoremApi apiInstance = new LoremApi();
-try {
-    ObjWithEnums result = apiInstance.op();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#op");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ObjWithEnums**](ObjWithEnums.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="op708"></a>
 # **op708**
 > op708(bar)
@@ -209,6 +170,45 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+<a name="op75"></a>
+# **op75**
+> ObjWithEnums op75()
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+
+
+LoremApi apiInstance = new LoremApi();
+try {
+    ObjWithEnums result = apiInstance.op75();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LoremApi#op75");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ObjWithEnums**](ObjWithEnums.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="pull66"></a>
 # **pull66**

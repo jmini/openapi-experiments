@@ -39,8 +39,8 @@ public class Pull75Api  {
     @io.swagger.annotations.ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
-    public Response op(@Context SecurityContext securityContext)
+    public Response op75(@Context SecurityContext securityContext)
     throws NotFoundException {
-        return service.op(securityContext);
+        return service.op75(securityContext);
     }
 }

@@ -24,17 +24,17 @@ public class PetApiServiceImpl extends PetApiService {
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response deletePet(Long petId,  String apiKey, SecurityContext securityContext) throws NotFoundException {
+    public Response deletePet(Long petId, String apiKey, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response findPetsByStatus( List<String> status, SecurityContext securityContext) throws NotFoundException {
+    public Response findPetsByStatus(List<String> status, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response findPetsByTags( List<String> tags, SecurityContext securityContext) throws NotFoundException {
+    public Response findPetsByTags(List<String> tags, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

@@ -105,9 +105,9 @@ public class EnumInArrayOfArray   {
    * Gets or Sets p3
    */
   public enum P3Enum {
-    LOREM("lorem"),
+    LOREM_ENUM_VALUE("lorem"),
     
-    IPSUM("ipsum");
+    IPSUM_ENUM_VALUE("ipsum");
 
     private String value;
 

@@ -4,12 +4,12 @@ All URIs are relative to *http://api.company.xyz/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**op**](IpsumApi.md#op) | **GET** /ipsum/issue199 | 
+[**op199**](IpsumApi.md#op199) | **GET** /ipsum/issue199 | 
 
 
-<a name="op"></a>
-# **op**
-> SomeObject op()
+<a name="op199"></a>
+# **op199**
+> SomeObject op199()
 
 
 
@@ -22,10 +22,10 @@ Method | HTTP request | Description
 
 IpsumApi apiInstance = new IpsumApi();
 try {
-    SomeObject result = apiInstance.op();
+    SomeObject result = apiInstance.op199();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#op");
+    System.err.println("Exception when calling IpsumApi#op199");
     e.printStackTrace();
 }
 ```

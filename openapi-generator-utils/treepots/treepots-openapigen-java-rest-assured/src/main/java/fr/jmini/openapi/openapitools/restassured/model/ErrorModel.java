@@ -120,7 +120,6 @@ public class ErrorModel {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorModel {\n");
-    
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

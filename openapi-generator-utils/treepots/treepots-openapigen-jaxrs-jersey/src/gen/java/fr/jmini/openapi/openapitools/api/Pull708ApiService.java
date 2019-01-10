@@ -16,5 +16,5 @@ import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
 
 public abstract class Pull708ApiService {
-    public abstract Response op708( String bar,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response op708(String bar,SecurityContext securityContext) throws NotFoundException;
 }

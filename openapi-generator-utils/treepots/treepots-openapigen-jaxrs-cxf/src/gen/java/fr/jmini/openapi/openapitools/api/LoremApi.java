@@ -66,19 +66,19 @@ public interface LoremApi  {
     public LongModel issue7754();
 
     @GET
+    @Path("/pull708")
+    @ApiOperation(value = "", tags={ "lorem",  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation") })
+    public void op708(@QueryParam("bar")  @DefaultValue("foobar") String bar);
+
+    @GET
     @Path("/pull75")
     @Produces({ "application/json" })
     @ApiOperation(value = "", tags={ "lorem",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
-    public ObjWithEnums op();
-
-    @GET
-    @Path("/pull708")
-    @ApiOperation(value = "", tags={ "lorem",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation") })
-    public void op708(@QueryParam("bar") @DefaultValue("foobar") String bar);
+    public ObjWithEnums op75();
 
     @GET
     @Path("/pull66")

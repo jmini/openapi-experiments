@@ -86,22 +86,22 @@ public class LoremApi {
 
     @ApiOperation(value = "",
             notes = "",
-            nickname = "op",
-            tags = { "lorem" })
-    @ApiResponses(value = { 
-            @ApiResponse(code = 200, message = "Ok")  })
-    public OpOper op() {
-        return new OpOper(reqSpec);
-    }
-
-    @ApiOperation(value = "",
-            notes = "",
             nickname = "op708",
             tags = { "lorem" })
     @ApiResponses(value = { 
             @ApiResponse(code = 0, message = "successful operation")  })
     public Op708Oper op708() {
         return new Op708Oper(reqSpec);
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "op75",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "Ok")  })
+    public Op75Oper op75() {
+        return new Op75Oper(reqSpec);
     }
 
     @ApiOperation(value = "",
@@ -308,66 +308,6 @@ public class LoremApi {
      * 
      * 
      *
-     * return ObjWithEnums
-     */
-    public static class OpOper {
-
-        public static final Method REQ_METHOD = GET;
-        public static final String REQ_URI = "/pull75";
-
-        private RequestSpecBuilder reqSpec;
-        private ResponseSpecBuilder respSpec;
-
-        public OpOper(RequestSpecBuilder reqSpec) {
-            this.reqSpec = reqSpec;
-            reqSpec.setAccept("application/json");
-            this.respSpec = new ResponseSpecBuilder();
-        }
-
-        /**
-         * GET /pull75
-         * @param handler handler
-         * @param <T> type
-         * @return type
-         */
-        public <T> T execute(Function<Response, T> handler) {
-            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
-        }
-
-        /**
-         * GET /pull75
-         * @param handler handler
-         * @return ObjWithEnums
-         */
-        public ObjWithEnums executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<ObjWithEnums>(){}.getType();
-            return execute(handler).as(type);
-        }
-
-        /**
-         * Customise request specification
-         * @param consumer consumer
-         * @return operation
-         */
-        public OpOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
-            return this;
-        }
-
-        /**
-         * Customise response specification
-         * @param consumer consumer
-         * @return operation
-         */
-        public OpOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
-            return this;
-        }
-    }
-    /**
-     * 
-     * 
-     *
      * @see #barQuery  (optional, default to &quot;foobar&quot;)
      */
     public static class Op708Oper {
@@ -421,6 +361,66 @@ public class LoremApi {
          * @return operation
          */
         public Op708Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
+            consumer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * return ObjWithEnums
+     */
+    public static class Op75Oper {
+
+        public static final Method REQ_METHOD = GET;
+        public static final String REQ_URI = "/pull75";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public Op75Oper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * GET /pull75
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        /**
+         * GET /pull75
+         * @param handler handler
+         * @return ObjWithEnums
+         */
+        public ObjWithEnums executeAs(Function<Response, Response> handler) {
+            Type type = new TypeToken<ObjWithEnums>(){}.getType();
+            return execute(handler).as(type);
+        }
+
+        /**
+         * Customise request specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public Op75Oper reqSpec(Consumer<RequestSpecBuilder> consumer) {
+            consumer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customise response specification
+         * @param consumer consumer
+         * @return operation
+         */
+        public Op75Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
             consumer.accept(respSpec);
             return this;
         }

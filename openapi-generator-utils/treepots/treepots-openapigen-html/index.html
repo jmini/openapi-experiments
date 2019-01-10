@@ -196,24 +196,24 @@ font-style: italic;
   <div class="method-summary"></div>
   <h4><a href="#Ipsum">Ipsum</a></h4>
   <ul>
-  <li><a href="#op"><code><span class="http-method">get</span> /ipsum/issue199</code></a></li>
+  <li><a href="#op199"><code><span class="http-method">get</span> /ipsum/issue199</code></a></li>
   </ul>
   <h4><a href="#Lorem">Lorem</a></h4>
   <ul>
   <li><a href="#getCase1"><code><span class="http-method">get</span> /case1</code></a></li>
   <li><a href="#getPolymorphic"><code><span class="http-method">get</span> /polymorphic</code></a></li>
   <li><a href="#issue7754"><code><span class="http-method">get</span> /issue7754</code></a></li>
-  <li><a href="#op"><code><span class="http-method">get</span> /pull75</code></a></li>
   <li><a href="#op708"><code><span class="http-method">get</span> /pull708</code></a></li>
+  <li><a href="#op75"><code><span class="http-method">get</span> /pull75</code></a></li>
   <li><a href="#pull66"><code><span class="http-method">get</span> /pull66</code></a></li>
   </ul>
 
   <h1><a name="Ipsum">Ipsum</a></h1>
-  <div class="method"><a name="op"/>
+  <div class="method"><a name="op199"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /ipsum/issue199</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">op</span>)</div>
+    <div class="method-summary"> (<span class="nickname">op199</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -380,11 +380,41 @@ font-style: italic;
         <a href="#LongModel">LongModel</a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="op"/>
+  <div class="method"><a name="op708"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pull708</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">op708</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">bar (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  default: foobar </div>
+    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">default</h4>
+    successful operation
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="op75"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pull75</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">op</span>)</div>
+    <div class="method-summary"> (<span class="nickname">op75</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -416,36 +446,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     Ok
         <a href="#ObjWithEnums">ObjWithEnums</a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="op708"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pull708</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">op708</span>)</div>
-    <div class="method-notes"></div>
-
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">bar (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash;  default: foobar </div>
-    </div>  <!-- field-items -->
-
-
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">default</h4>
-    successful operation
-        <a href="#"></a>
   </div> <!-- method -->
   <hr/>
   <div class="method"><a name="pull66"/>
@@ -498,11 +498,14 @@ font-style: italic;
     <li><a href="#ItemWithBoolean"><code>ItemWithBoolean</code> - </a></li>
     <li><a href="#Leave"><code>Leave</code> - </a></li>
     <li><a href="#LongEnum"><code>LongEnum</code> - </a></li>
+    <li><a href="#LongEnumWithCustomName"><code>LongEnumWithCustomName</code> - </a></li>
     <li><a href="#LongModel"><code>LongModel</code> - </a></li>
     <li><a href="#Node"><code>Node</code> - </a></li>
     <li><a href="#ObjWithEnums"><code>ObjWithEnums</code> - </a></li>
     <li><a href="#SomeObject"><code>SomeObject</code> - </a></li>
     <li><a href="#StringEnum"><code>StringEnum</code> - </a></li>
+    <li><a href="#Task"><code>Task</code> - </a></li>
+    <li><a href="#Weather"><code>Weather</code> - </a></li>
   </ol>
 
   <div class="model">
@@ -574,6 +577,12 @@ font-style: italic;
           </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3><a name="LongEnumWithCustomName"><code>LongEnumWithCustomName</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3><a name="LongModel"><code>LongModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
@@ -613,6 +622,24 @@ font-style: italic;
     <div class='model-description'></div>
     <div class="field-items">
           </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Task"><code>Task</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">OPEN</div><div class="param-enum">CLOSED</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Weather"><code>Weather</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">1</div><div class="param-enum">2</div><div class="param-enum">3</div>
+    </div>  <!-- field-items -->
   </div>
   </body>
 </html>

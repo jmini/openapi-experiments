@@ -88,7 +88,7 @@ public enum P2Enum {
  
 public enum P3Enum {
 
-    LOREM(String.valueOf("lorem")), IPSUM(String.valueOf("ipsum"));
+    LOREM_ENUM_VALUE(String.valueOf("lorem")), IPSUM_ENUM_VALUE(String.valueOf("ipsum"));
 
 
     private String value;

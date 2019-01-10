@@ -101,7 +101,7 @@ public class UserApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = String.class),
         @ApiResponse(code = 400, message = "Invalid username/password supplied", response = Void.class) })
-    public Response loginUser( @ApiParam(value = "The user name for login")  @QueryParam("username") String username,  @ApiParam(value = "The password for login in clear text")  @QueryParam("password") String password) {
+    public Response loginUser(@ApiParam(value = "The user name for login")  @QueryParam("username") String username, @ApiParam(value = "The password for login in clear text")  @QueryParam("password") String password) {
         return delegate.loginUser(username, password, securityContext);
     }
 

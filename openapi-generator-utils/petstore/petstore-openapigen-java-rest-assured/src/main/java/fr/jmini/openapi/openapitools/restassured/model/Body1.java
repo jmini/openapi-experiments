@@ -98,7 +98,6 @@ public class Body1 {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Body1 {\n");
-    
     sb.append("    additionalMetadata: ").append(toIndentedString(additionalMetadata)).append("\n");
     sb.append("    file: ").append(toIndentedString(file)).append("\n");
     sb.append("}");

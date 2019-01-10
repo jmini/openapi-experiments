@@ -90,8 +90,9 @@ public class LoremApiTest {
      *          if the Api call fails
      */
     @Test
-    public void opTest() throws ApiException {
-        ObjWithEnums response = api.op();
+    public void op708Test() throws ApiException {
+        String bar = null;
+        api.op708(bar);
 
         // TODO: test validations
     }
@@ -105,9 +106,8 @@ public class LoremApiTest {
      *          if the Api call fails
      */
     @Test
-    public void op708Test() throws ApiException {
-        String bar = null;
-        api.op708(bar);
+    public void op75Test() throws ApiException {
+        ObjWithEnums response = api.op75();
 
         // TODO: test validations
     }

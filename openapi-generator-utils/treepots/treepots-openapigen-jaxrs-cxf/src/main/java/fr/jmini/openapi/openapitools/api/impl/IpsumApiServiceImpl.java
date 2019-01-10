@@ -24,7 +24,7 @@ import io.swagger.annotations.Api;
  *
  */
 public class IpsumApiServiceImpl implements IpsumApi {
-    public SomeObject op() {
+    public SomeObject op199() {
         // TODO: Implement...
         
         return null;

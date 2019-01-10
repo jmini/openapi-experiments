@@ -859,7 +859,9 @@ ul.nav-tabs {
           "type" : "array",
           "items" : {
             "type" : "string",
-            "enum" : [ "lorem", "ipsum" ]
+            "enum" : [ "lorem", "ipsum" ],
+            "x-enum-varnames" : [ "LOREM_ENUM_VALUE", "IPSUM_ENUM_VALUE" ],
+            "x-enum-descriptions" : [ "This is a lorem", "This is a ipsum" ]
           }
         }
       }
@@ -927,6 +929,13 @@ ul.nav-tabs {
   "format" : "int64",
   "enum" : [ 20, 30, 40 ]
 };
+    defs["LongEnumWithCustomName"] = {
+  "type" : "integer",
+  "format" : "int64",
+  "enum" : [ 20, 30, 40 ],
+  "x-enum-varnames" : [ "TWENTY", "THIRTY", "FORTY" ],
+  "x-enum-descriptions" : [ "Twenty value", "Thirty value", "Forty value" ]
+};
     defs["LongModel"] = {
   "type" : "object",
   "properties" : {
@@ -987,6 +996,28 @@ ul.nav-tabs {
   "type" : "string",
   "enum" : [ "c", "b", "a" ]
 };
+    defs["Task"] = {
+  "type" : "object",
+  "properties" : {
+    "status" : {
+      "type" : "string",
+      "enum" : [ "OPEN", "CLOSED" ],
+      "x-enum-descriptions" : [ "Open task status", "Terminated task status" ]
+    }
+  }
+};
+    defs["Weather"] = {
+  "type" : "object",
+  "properties" : {
+    "type" : {
+      "type" : "integer",
+      "format" : "int32",
+      "enum" : [ 1, 2, 3 ],
+      "x-enum-descriptions" : [ "Blue sky", "Slightly overcast", "Take an umbrella with you" ],
+      "x-enum-varnames" : [ "Sunny", "Cloudy", "Rainy" ]
+    }
+  }
+};
 
     var errs = {};
   </script>
@@ -1006,8 +1037,8 @@ ul.nav-tabs {
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Ipsum"><a href="#api-Ipsum">API Methods - Ipsum</a></li>
-                    <li data-group="Ipsum" data-name="op" class="">
-                      <a href="#api-Ipsum-op">op</a>
+                    <li data-group="Ipsum" data-name="op199" class="">
+                      <a href="#api-Ipsum-op199">op199</a>
                     </li>
                   <li class="nav-header" data-group="Lorem"><a href="#api-Lorem">API Methods - Lorem</a></li>
                     <li data-group="Lorem" data-name="getCase1" class="">
@@ -1019,11 +1050,11 @@ ul.nav-tabs {
                     <li data-group="Lorem" data-name="issue7754" class="">
                       <a href="#api-Lorem-issue7754">issue7754</a>
                     </li>
-                    <li data-group="Lorem" data-name="op" class="">
-                      <a href="#api-Lorem-op">op</a>
-                    </li>
                     <li data-group="Lorem" data-name="op708" class="">
                       <a href="#api-Lorem-op708">op708</a>
+                    </li>
+                    <li data-group="Lorem" data-name="op75" class="">
+                      <a href="#api-Lorem-op75">op75</a>
                     </li>
                     <li data-group="Lorem" data-name="pull66" class="">
                       <a href="#api-Lorem-pull66">pull66</a>
@@ -1051,10 +1082,10 @@ ul.nav-tabs {
         <div id="sections">
                 <section id="api-Ipsum">
                   <h1>Ipsum</h1>
-                    <div id="api-Ipsum-op">
-                      <article id="api-Ipsum-op-0" data-group="User" data-name="op" data-version="0">
+                    <div id="api-Ipsum-op199">
+                      <article id="api-Ipsum-op199-0" data-group="User" data-name="op199" data-version="0">
                         <div class="pull-left">
-                          <h1>op</h1>
+                          <h1>op199</h1>
                           <p></p>
                         </div>
                         <div class="pull-right"></div>
@@ -1068,25 +1099,25 @@ ul.nav-tabs {
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Ipsum-op-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Ipsum-op-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Ipsum-op-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Ipsum-op-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Ipsum-op-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-python">Python</a></li>
-                          <li class=""><a href="#examples-Ipsum-op-0-rust">Rust</a></li>
+                          <li class="active"><a href="#examples-Ipsum-op199-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Ipsum-op199-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Ipsum-op199-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Ipsum-op199-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Ipsum-op199-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Ipsum-op199-0-rust">Rust</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Ipsum-op-0-curl">
+                          <div class="tab-pane active" id="examples-Ipsum-op199-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://api.company.xyz/v2/ipsum/issue199"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Ipsum-op-0-java">
+                          <div class="tab-pane" id="examples-Ipsum-op199-0-java">
                             <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.model.*;
@@ -1101,17 +1132,17 @@ public class IpsumApiExample {
         
         IpsumApi apiInstance = new IpsumApi();
         try {
-            SomeObject result = apiInstance.op();
+            SomeObject result = apiInstance.op199();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling IpsumApi#op");
+            System.err.println("Exception when calling IpsumApi#op199");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Ipsum-op-0-android">
+                          <div class="tab-pane" id="examples-Ipsum-op199-0-android">
                             <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.IpsumApi;
 
 public class IpsumApiExample {
@@ -1119,24 +1150,24 @@ public class IpsumApiExample {
     public static void main(String[] args) {
         IpsumApi apiInstance = new IpsumApi();
         try {
-            SomeObject result = apiInstance.op();
+            SomeObject result = apiInstance.op199();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling IpsumApi#op");
+            System.err.println("Exception when calling IpsumApi#op199");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Ipsum-op-0-groovy">
+  <div class="tab-pane" id="examples-Ipsum-op199-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Ipsum-op-0-objc">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">
 IpsumApi *apiInstance = [[IpsumApi alloc] init];
 
-[apiInstance opWithCompletionHandler: 
+[apiInstance op199WithCompletionHandler: 
               ^(SomeObject output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1148,7 +1179,7 @@ IpsumApi *apiInstance = [[IpsumApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Ipsum-op-0-javascript">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var OpenApiTreePots = require('open_api_tree_pots');
 
 var api = new OpenApiTreePots.IpsumApi()
@@ -1159,14 +1190,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.op(callback);
+api.op199(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Ipsum-op-0-angular">
+                            <!--<div class="tab-pane" id="examples-Ipsum-op199-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Ipsum-op-0-csharp">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
@@ -1175,7 +1206,7 @@ using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class opExample
+    public class op199Example
     {
         public void main()
         {
@@ -1184,12 +1215,12 @@ namespace Example
 
             try
             {
-                SomeObject result = apiInstance.op();
+                SomeObject result = apiInstance.op199();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling IpsumApi.op: " + e.Message );
+                Debug.Print("Exception when calling IpsumApi.op199: " + e.Message );
             }
         }
     }
@@ -1197,22 +1228,22 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Ipsum-op-0-php">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new OpenAPITools\Client\Api\IpsumApi();
 
 try {
-    $result = $api_instance->op();
+    $result = $api_instance->op199();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling IpsumApi->op: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling IpsumApi->op199: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Ipsum-op-0-perl">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::OPenAPIClient::Configuration;
 use WWW::OPenAPIClient::IpsumApi;
@@ -1220,15 +1251,15 @@ use WWW::OPenAPIClient::IpsumApi;
 my $api_instance = WWW::OPenAPIClient::IpsumApi->new();
 
 eval { 
-    my $result = $api_instance->op();
+    my $result = $api_instance->op199();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling IpsumApi->op: $@\n";
+    warn "Exception when calling IpsumApi->op199: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Ipsum-op-0-python">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import openapi_client
@@ -1239,19 +1270,19 @@ from pprint import pprint
 api_instance = openapi_client.IpsumApi()
 
 try: 
-    api_response = api_instance.op()
+    api_response = api_instance.op199()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IpsumApi->op: %s\n" % e)</code></pre>
+    print("Exception when calling IpsumApi->op199: %s\n" % e)</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Ipsum-op-0-rust">
+                            <div class="tab-pane" id="examples-Ipsum-op199-0-rust">
                               <pre class="prettyprint"><code class="language-rust">extern crate IpsumApi;
 
 pub fn main() {
 
     let mut context = IpsumApi::Context::default();
-    let result = client.op(&context).wait();
+    let result = client.op199(&context).wait();
     println!("{:?}", result);
 
 }
@@ -1272,23 +1303,23 @@ pub fn main() {
 
 
                           <h2>Responses</h2>
-                            <h3 id="examples-Ipsum-op-title-200"></h3>
-                            <p id="examples-Ipsum-op-description-200" class="marked"></p>
+                            <h3 id="examples-Ipsum-op199-title-200"></h3>
+                            <p id="examples-Ipsum-op199-description-200" class="marked"></p>
                             <script>
                               var responseIpsum200_description = `a pet to be returned`;
                               var responseIpsum200_description_break = responseIpsum200_description.indexOf('\n');
                               if (responseIpsum200_description_break == -1) {
-                                $("#examples-Ipsum-op-title-200").text("Status: 200 - " + responseIpsum200_description);
+                                $("#examples-Ipsum-op199-title-200").text("Status: 200 - " + responseIpsum200_description);
                               } else {
-                                $("#examples-Ipsum-op-title-200").text("Status: 200 - " + responseIpsum200_description.substring(0, responseIpsum200_description_break));
-                                $("#examples-Ipsum-op-description-200").html(responseIpsum200_description.substring(responseIpsum200_description_break));
+                                $("#examples-Ipsum-op199-title-200").text("Status: 200 - " + responseIpsum200_description.substring(0, responseIpsum200_description_break));
+                                $("#examples-Ipsum-op199-description-200").html(responseIpsum200_description.substring(responseIpsum200_description_break));
                               }
                             </script>
 
 
-                            <ul id="responses-detail-Ipsum-op-200" class="nav nav-tabs nav-tabs-examples" >
+                            <ul id="responses-detail-Ipsum-op199-200" class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-Ipsum-op-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-Ipsum-op199-200-schema">Schema</a>
                                 </li>
 
 
@@ -1297,9 +1328,9 @@ pub fn main() {
                             </ul>
 
 
-                            <div class="tab-content" id="responses-Ipsum-op-200-wrapper" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-Ipsum-op-200-schema">
-                                  <div id="responses-Ipsum-op-schema-200" class="exampleStyle">
+                            <div class="tab-content" id="responses-Ipsum-op199-200-wrapper" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-Ipsum-op199-200-schema">
+                                  <div id="responses-Ipsum-op199-schema-200" class="exampleStyle">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1323,33 +1354,33 @@ pub fn main() {
                                         }
 
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-Ipsum-op-200-schema-data').val(JSON.stringify(schema));
-                                        var result = $('#responses-Ipsum-op-schema-200');
+                                        $('#responses-Ipsum-op199-200-schema-data').val(JSON.stringify(schema));
+                                        var result = $('#responses-Ipsum-op199-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-Ipsum-op-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-Ipsum-op199-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
-                            <h3 id="examples-Ipsum-op-title-default"></h3>
-                            <p id="examples-Ipsum-op-description-default" class="marked"></p>
+                            <h3 id="examples-Ipsum-op199-title-default"></h3>
+                            <p id="examples-Ipsum-op199-description-default" class="marked"></p>
                             <script>
                               var responseIpsumdefault_description = `Unexpected error`;
                               var responseIpsumdefault_description_break = responseIpsumdefault_description.indexOf('\n');
                               if (responseIpsumdefault_description_break == -1) {
-                                $("#examples-Ipsum-op-title-default").text("Status: default - " + responseIpsumdefault_description);
+                                $("#examples-Ipsum-op199-title-default").text("Status: default - " + responseIpsumdefault_description);
                               } else {
-                                $("#examples-Ipsum-op-title-default").text("Status: default - " + responseIpsumdefault_description.substring(0, responseIpsumdefault_description_break));
-                                $("#examples-Ipsum-op-description-default").html(responseIpsumdefault_description.substring(responseIpsumdefault_description_break));
+                                $("#examples-Ipsum-op199-title-default").text("Status: default - " + responseIpsumdefault_description.substring(0, responseIpsumdefault_description_break));
+                                $("#examples-Ipsum-op199-description-default").html(responseIpsumdefault_description.substring(responseIpsumdefault_description_break));
                               }
                             </script>
 
 
-                            <ul id="responses-detail-Ipsum-op-default" class="nav nav-tabs nav-tabs-examples" >
+                            <ul id="responses-detail-Ipsum-op199-default" class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-Ipsum-op-default-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-Ipsum-op199-default-schema">Schema</a>
                                 </li>
 
 
@@ -1358,9 +1389,9 @@ pub fn main() {
                             </ul>
 
 
-                            <div class="tab-content" id="responses-Ipsum-op-default-wrapper" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-Ipsum-op-default-schema">
-                                  <div id="responses-Ipsum-op-schema-default" class="exampleStyle">
+                            <div class="tab-content" id="responses-Ipsum-op199-default-wrapper" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-Ipsum-op199-default-schema">
+                                  <div id="responses-Ipsum-op199-schema-default" class="exampleStyle">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1384,14 +1415,14 @@ pub fn main() {
                                         }
 
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-Ipsum-op-default-schema-data').val(JSON.stringify(schema));
-                                        var result = $('#responses-Ipsum-op-schema-default');
+                                        $('#responses-Ipsum-op199-default-schema-data').val(JSON.stringify(schema));
+                                        var result = $('#responses-Ipsum-op199-schema-default');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-Ipsum-op-default-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-Ipsum-op199-default-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
                         </article>
@@ -2261,291 +2292,6 @@ pub fn main() {
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Lorem-op">
-                      <article id="api-Lorem-op-0" data-group="User" data-name="op" data-version="0">
-                        <div class="pull-left">
-                          <h1>op</h1>
-                          <p></p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked"></p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/pull75</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Lorem-op-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Lorem-op-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Lorem-op-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Lorem-op-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Lorem-op-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-python">Python</a></li>
-                          <li class=""><a href="#examples-Lorem-op-0-rust">Rust</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Lorem-op-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://api.company.xyz/v2/pull75"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Lorem-op-0-java">
-                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.model.*;
-import org.openapitools.client.api.LoremApi;
-
-import java.io.File;
-import java.util.*;
-
-public class LoremApiExample {
-
-    public static void main(String[] args) {
-        
-        LoremApi apiInstance = new LoremApi();
-        try {
-            ObjWithEnums result = apiInstance.op();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoremApi#op");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Lorem-op-0-android">
-                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.LoremApi;
-
-public class LoremApiExample {
-
-    public static void main(String[] args) {
-        LoremApi apiInstance = new LoremApi();
-        try {
-            ObjWithEnums result = apiInstance.op();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoremApi#op");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Lorem-op-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Lorem-op-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
-LoremApi *apiInstance = [[LoremApi alloc] init];
-
-[apiInstance opWithCompletionHandler: 
-              ^(ObjWithEnums output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Lorem-op-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenApiTreePots = require('open_api_tree_pots');
-
-var api = new OpenApiTreePots.LoremApi()
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.op(callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Lorem-op-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Lorem-op-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class opExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new LoremApi();
-
-            try
-            {
-                ObjWithEnums result = apiInstance.op();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling LoremApi.op: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Lorem-op-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new OpenAPITools\Client\Api\LoremApi();
-
-try {
-    $result = $api_instance->op();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LoremApi->op: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Lorem-op-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::OPenAPIClient::Configuration;
-use WWW::OPenAPIClient::LoremApi;
-
-my $api_instance = WWW::OPenAPIClient::LoremApi->new();
-
-eval { 
-    my $result = $api_instance->op();
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling LoremApi->op: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Lorem-op-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = openapi_client.LoremApi()
-
-try: 
-    api_response = api_instance.op()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LoremApi->op: %s\n" % e)</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Lorem-op-0-rust">
-                              <pre class="prettyprint"><code class="language-rust">extern crate LoremApi;
-
-pub fn main() {
-
-    let mut context = LoremApi::Context::default();
-    let result = client.op(&context).wait();
-    println!("{:?}", result);
-
-}
-</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Scopes</h2>
-                          <table>
-                            
-                          </table>
-
-                          <h2>Parameters</h2>
-
-
-
-
-
-
-                          <h2>Responses</h2>
-                            <h3 id="examples-Lorem-op-title-200"></h3>
-                            <p id="examples-Lorem-op-description-200" class="marked"></p>
-                            <script>
-                              var responseLorem200_description = `Ok`;
-                              var responseLorem200_description_break = responseLorem200_description.indexOf('\n');
-                              if (responseLorem200_description_break == -1) {
-                                $("#examples-Lorem-op-title-200").text("Status: 200 - " + responseLorem200_description);
-                              } else {
-                                $("#examples-Lorem-op-title-200").text("Status: 200 - " + responseLorem200_description.substring(0, responseLorem200_description_break));
-                                $("#examples-Lorem-op-description-200").html(responseLorem200_description.substring(responseLorem200_description_break));
-                              }
-                            </script>
-
-
-                            <ul id="responses-detail-Lorem-op-200" class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-Lorem-op-200-schema">Schema</a>
-                                </li>
-
-
-
-
-                            </ul>
-
-
-                            <div class="tab-content" id="responses-Lorem-op-200-wrapper" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-Lorem-op-200-schema">
-                                  <div id="responses-Lorem-op-schema-200" class="exampleStyle">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "Ok",
-  "content" : {
-    "application/json" : {
-      "schema" : {
-        "$ref" : "#/components/schemas/ObjWithEnums"
-      }
-    }
-  }
-};
-                                        var schema = schemaWrapper.schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = Object.assign({}, defs);
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-Lorem-op-200-schema-data').val(JSON.stringify(schema));
-                                        var result = $('#responses-Lorem-op-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-Lorem-op-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-                        </article>
-                      </div>
-                      <hr>
                     <div id="api-Lorem-op708">
                       <article id="api-Lorem-op708-0" data-group="User" data-name="op708" data-version="0">
                         <div class="pull-left">
@@ -2815,6 +2561,291 @@ pub fn main() {
 
 
                             <div class="tab-content" id="responses-Lorem-op708-default-wrapper" style='margin-bottom: 10px;'>
+                            </div>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Lorem-op75">
+                      <article id="api-Lorem-op75-0" data-group="User" data-name="op75" data-version="0">
+                        <div class="pull-left">
+                          <h1>op75</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/pull75</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Lorem-op75-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Lorem-op75-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Lorem-op75-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Lorem-op75-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Lorem-op75-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Lorem-op75-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Lorem-op75-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://api.company.xyz/v2/pull75"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Lorem-op75-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.LoremApi;
+
+import java.io.File;
+import java.util.*;
+
+public class LoremApiExample {
+
+    public static void main(String[] args) {
+        
+        LoremApi apiInstance = new LoremApi();
+        try {
+            ObjWithEnums result = apiInstance.op75();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LoremApi#op75");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Lorem-op75-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.LoremApi;
+
+public class LoremApiExample {
+
+    public static void main(String[] args) {
+        LoremApi apiInstance = new LoremApi();
+        try {
+            ObjWithEnums result = apiInstance.op75();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LoremApi#op75");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Lorem-op75-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Lorem-op75-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+LoremApi *apiInstance = [[LoremApi alloc] init];
+
+[apiInstance op75WithCompletionHandler: 
+              ^(ObjWithEnums output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-op75-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var OpenApiTreePots = require('open_api_tree_pots');
+
+var api = new OpenApiTreePots.LoremApi()
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.op75(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Lorem-op75-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Lorem-op75-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class op75Example
+    {
+        public void main()
+        {
+            
+            var apiInstance = new LoremApi();
+
+            try
+            {
+                ObjWithEnums result = apiInstance.op75();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LoremApi.op75: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-op75-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new OpenAPITools\Client\Api\LoremApi();
+
+try {
+    $result = $api_instance->op75();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LoremApi->op75: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-op75-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::LoremApi;
+
+my $api_instance = WWW::OPenAPIClient::LoremApi->new();
+
+eval { 
+    my $result = $api_instance->op75();
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling LoremApi->op75: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-op75-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = openapi_client.LoremApi()
+
+try: 
+    api_response = api_instance.op75()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoremApi->op75: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Lorem-op75-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate LoremApi;
+
+pub fn main() {
+
+    let mut context = LoremApi::Context::default();
+    let result = client.op75(&context).wait();
+    println!("{:?}", result);
+
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-Lorem-op75-title-200"></h3>
+                            <p id="examples-Lorem-op75-description-200" class="marked"></p>
+                            <script>
+                              var responseLorem200_description = `Ok`;
+                              var responseLorem200_description_break = responseLorem200_description.indexOf('\n');
+                              if (responseLorem200_description_break == -1) {
+                                $("#examples-Lorem-op75-title-200").text("Status: 200 - " + responseLorem200_description);
+                              } else {
+                                $("#examples-Lorem-op75-title-200").text("Status: 200 - " + responseLorem200_description.substring(0, responseLorem200_description_break));
+                                $("#examples-Lorem-op75-description-200").html(responseLorem200_description.substring(responseLorem200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-Lorem-op75-200" class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-Lorem-op75-200-schema">Schema</a>
+                                </li>
+
+
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-Lorem-op75-200-wrapper" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-Lorem-op75-200-schema">
+                                  <div id="responses-Lorem-op75-schema-200" class="exampleStyle">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Ok",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ObjWithEnums"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-Lorem-op75-200-schema-data').val(JSON.stringify(schema));
+                                        var result = $('#responses-Lorem-op75-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-Lorem-op75-200-schema-data' type='hidden' value=''></input>
+                                </div>
                             </div>
                         </article>
                       </div>

@@ -16,7 +16,7 @@ import javax.ws.rs.core.SecurityContext;
 
 
 public class IpsumApiServiceImpl implements IpsumApi {
-      public Response op(SecurityContext securityContext) {
+      public Response op199(SecurityContext securityContext) {
       // do some magic!
       return Response.ok().build();
   }

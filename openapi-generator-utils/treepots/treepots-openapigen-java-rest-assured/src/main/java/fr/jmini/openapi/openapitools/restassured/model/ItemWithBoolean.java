@@ -120,7 +120,6 @@ public class ItemWithBoolean {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ItemWithBoolean {\n");
-    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

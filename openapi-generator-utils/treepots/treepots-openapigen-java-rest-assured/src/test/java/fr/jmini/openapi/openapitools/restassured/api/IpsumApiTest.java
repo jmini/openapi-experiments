@@ -51,8 +51,8 @@ public class IpsumApiTest {
      * a pet to be returned
      */
     @Test
-    public void shouldSee200AfterOp() {
-        api.op().execute(r -> r.prettyPeek());
+    public void shouldSee200AfterOp199() {
+        api.op199().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 
@@ -60,8 +60,8 @@ public class IpsumApiTest {
      * Unexpected error
      */
     @Test
-    public void shouldSee0AfterOp() {
-        api.op().execute(r -> r.prettyPeek());
+    public void shouldSee0AfterOp199() {
+        api.op199().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

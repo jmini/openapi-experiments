@@ -142,9 +142,9 @@ public class EnumInArrayOfArray {
    */
   @JsonAdapter(P3Enum.Adapter.class)
   public enum P3Enum {
-    LOREM("lorem"),
+    LOREM_ENUM_VALUE("lorem"),
     
-    IPSUM("ipsum");
+    IPSUM_ENUM_VALUE("ipsum");
 
     private String value;
 
@@ -291,7 +291,6 @@ public class EnumInArrayOfArray {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EnumInArrayOfArray {\n");
-    
     sb.append("    p1: ").append(toIndentedString(p1)).append("\n");
     sb.append("    p2: ").append(toIndentedString(p2)).append("\n");
     sb.append("    p3: ").append(toIndentedString(p3)).append("\n");

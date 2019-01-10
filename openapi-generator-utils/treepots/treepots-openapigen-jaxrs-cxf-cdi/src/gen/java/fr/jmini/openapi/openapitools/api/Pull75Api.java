@@ -41,7 +41,7 @@ public class Pull75Api  {
     @ApiOperation(value = "", notes = "", response = ObjWithEnums.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class) })
-    public Response op() {
-        return delegate.op(securityContext);
+    public Response op75() {
+        return delegate.op75(securityContext);
     }
 }

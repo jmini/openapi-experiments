@@ -97,7 +97,6 @@ public class LongModel {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LongModel {\n");
-    
     sb.append("    long1: ").append(toIndentedString(long1)).append("\n");
     sb.append("    long2: ").append(toIndentedString(long2)).append("\n");
     sb.append("}");

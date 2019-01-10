@@ -77,8 +77,8 @@ public class IpsumApiTest {
      *          if the Api call fails
      */
     @Test
-    public void opTest() {
-        //SomeObject response = api.op();
+    public void op199Test() {
+        //SomeObject response = api.op199();
         //assertNotNull(response);
         // TODO: test validations
         

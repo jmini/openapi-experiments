@@ -93,7 +93,7 @@ public enum P2Enum {
 @XmlEnum(String.class)
 public enum P3Enum {
 
-    @XmlEnumValue("lorem") LOREM(String.valueOf("lorem")), @XmlEnumValue("ipsum") IPSUM(String.valueOf("ipsum"));
+    @XmlEnumValue("lorem") LOREM_ENUM_VALUE(String.valueOf("lorem")), @XmlEnumValue("ipsum") IPSUM_ENUM_VALUE(String.valueOf("ipsum"));
 
 
     private String value;

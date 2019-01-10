@@ -19,7 +19,7 @@ import javax.validation.constraints.*;
 
 public class IpsumApiServiceImpl extends IpsumApiService {
     @Override
-    public Response op(SecurityContext securityContext) throws NotFoundException {
+    public Response op199(SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

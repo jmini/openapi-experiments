@@ -53,7 +53,7 @@ paths:
       - tag: lorem
   /pull75:
     get:
-      operationId: op
+      operationId: op75
       responses:
         200:
           content:
@@ -67,7 +67,7 @@ paths:
       - tag: lorem
   /ipsum/issue199:
     get:
-      operationId: op
+      operationId: op199
       responses:
         200:
           content:
@@ -195,6 +195,12 @@ components:
                 - lorem
                 - ipsum
                 type: string
+                x-enum-varnames:
+                - LOREM_ENUM_VALUE
+                - IPSUM_ENUM_VALUE
+                x-enum-descriptions:
+                - This is a lorem
+                - This is a ipsum
               type: array
             type: array
           type: array
@@ -238,6 +244,50 @@ components:
       x-enum-varnames:
       - FOO
       - BAR
+    LongEnumWithCustomName:
+      enum:
+      - 20
+      - 30
+      - 40
+      format: int64
+      type: integer
+      x-enum-varnames:
+      - TWENTY
+      - THIRTY
+      - FORTY
+      x-enum-descriptions:
+      - Twenty value
+      - Thirty value
+      - Forty value
+    Task:
+      properties:
+        status:
+          enum:
+          - OPEN
+          - CLOSED
+          type: string
+          x-enum-descriptions:
+          - Open task status
+          - Terminated task status
+      type: object
+    Weather:
+      properties:
+        type:
+          enum:
+          - 1
+          - 2
+          - 3
+          format: int32
+          type: integer
+          x-enum-descriptions:
+          - Blue sky
+          - Slightly overcast
+          - Take an umbrella with you
+          x-enum-varnames:
+          - Sunny
+          - Cloudy
+          - Rainy
+      type: object
     SomeObject:
       example:
         firstName: firstName

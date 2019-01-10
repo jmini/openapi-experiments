@@ -18,7 +18,7 @@ import javax.validation.constraints.*;
 
 public class Pull75ApiServiceImpl extends Pull75ApiService {
     @Override
-    public Response op(SecurityContext securityContext) throws NotFoundException {
+    public Response op75(SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

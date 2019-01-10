@@ -85,10 +85,10 @@ public class IpsumApiExample {
         
         IpsumApi apiInstance = new IpsumApi();
         try {
-            SomeObject result = apiInstance.op();
+            SomeObject result = apiInstance.op199();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling IpsumApi#op");
+            System.err.println("Exception when calling IpsumApi#op199");
             e.printStackTrace();
         }
     }
@@ -102,12 +102,12 @@ All URIs are relative to *http://api.company.xyz/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IpsumApi* | [**op**](docs/IpsumApi.md#op) | **GET** /ipsum/issue199 | 
+*IpsumApi* | [**op199**](docs/IpsumApi.md#op199) | **GET** /ipsum/issue199 | 
 *LoremApi* | [**getCase1**](docs/LoremApi.md#getCase1) | **GET** /case1 | Update an existing pet
 *LoremApi* | [**getPolymorphic**](docs/LoremApi.md#getPolymorphic) | **GET** /polymorphic | 
 *LoremApi* | [**issue7754**](docs/LoremApi.md#issue7754) | **GET** /issue7754 | Codegen
-*LoremApi* | [**op**](docs/LoremApi.md#op) | **GET** /pull75 | 
 *LoremApi* | [**op708**](docs/LoremApi.md#op708) | **GET** /pull708 | 
+*LoremApi* | [**op75**](docs/LoremApi.md#op75) | **GET** /pull75 | 
 *LoremApi* | [**pull66**](docs/LoremApi.md#pull66) | **GET** /pull66 | 
 
 
@@ -121,11 +121,14 @@ Class | Method | HTTP request | Description
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
  - [Leave](docs/Leave.md)
  - [LongEnum](docs/LongEnum.md)
+ - [LongEnumWithCustomName](docs/LongEnumWithCustomName.md)
  - [LongModel](docs/LongModel.md)
  - [Node](docs/Node.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
  - [SomeObject](docs/SomeObject.md)
  - [StringEnum](docs/StringEnum.md)
+ - [Task](docs/Task.md)
+ - [Weather](docs/Weather.md)
 
 
 ## Documentation for Authorization

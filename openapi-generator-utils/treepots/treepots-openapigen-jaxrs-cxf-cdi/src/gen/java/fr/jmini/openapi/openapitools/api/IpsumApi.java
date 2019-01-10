@@ -43,7 +43,7 @@ public class IpsumApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "a pet to be returned", response = SomeObject.class),
         @ApiResponse(code = 200, message = "Unexpected error", response = ErrorModel.class) })
-    public Response op() {
-        return delegate.op(securityContext);
+    public Response op199() {
+        return delegate.op199(securityContext);
     }
 }

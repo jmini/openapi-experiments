@@ -81,22 +81,22 @@ public class LoremApiTest {
 
 
     /**
-     * Ok
-     */
-    @Test
-    public void shouldSee200AfterOp() {
-        api.op().execute(r -> r.prettyPeek());
-        // TODO: test validations
-    }
-
-
-    /**
      * successful operation
      */
     @Test
     public void shouldSee0AfterOp708() {
         String bar = null;
         api.op708().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * Ok
+     */
+    @Test
+    public void shouldSee200AfterOp75() {
+        api.op75().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

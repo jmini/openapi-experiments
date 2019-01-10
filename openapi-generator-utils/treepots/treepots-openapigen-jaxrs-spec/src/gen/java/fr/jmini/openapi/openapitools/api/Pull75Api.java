@@ -23,7 +23,7 @@ public class Pull75Api {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Ok", response = ObjWithEnums.class)
     })
-    public Response op() {
+    public Response op75() {
         return Response.ok().entity("magic!").build();
     }
 }

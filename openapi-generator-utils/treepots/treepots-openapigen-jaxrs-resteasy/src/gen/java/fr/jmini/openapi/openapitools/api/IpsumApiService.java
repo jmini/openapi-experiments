@@ -17,6 +17,6 @@ import javax.ws.rs.core.SecurityContext;
 
 
 public interface IpsumApiService {
-      Response op(SecurityContext securityContext)
+      Response op199(SecurityContext securityContext)
       throws NotFoundException;
 }

@@ -4,12 +4,12 @@ All URIs are relative to *http://api.company.xyz/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**op**](IpsumApi.md#op) | **GET** /ipsum/issue199 | 
+[**op199**](IpsumApi.md#op199) | **GET** /ipsum/issue199 | 
 
 
-<a name="op"></a>
-# **op**
-> SomeObject op()
+<a name="op199"></a>
+# **op199**
+> SomeObject op199()
 
 
 
@@ -24,7 +24,7 @@ IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                 () -> new RequestSpecBuilder()
                         .setBaseUri("http://api.company.xyz/v2"))).ipsum();
 
-api.op().execute(r -> r.prettyPeek());
+api.op199().execute(r -> r.prettyPeek());
 ```
 
 ### Parameters

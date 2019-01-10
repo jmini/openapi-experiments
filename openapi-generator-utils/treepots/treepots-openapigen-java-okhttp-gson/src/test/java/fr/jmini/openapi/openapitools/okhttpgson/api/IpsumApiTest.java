@@ -42,8 +42,8 @@ public class IpsumApiTest {
      *          if the Api call fails
      */
     @Test
-    public void opTest() throws ApiException {
-        SomeObject response = api.op();
+    public void op199Test() throws ApiException {
+        SomeObject response = api.op199();
 
         // TODO: test validations
     }

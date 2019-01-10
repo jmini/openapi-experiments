@@ -53,13 +53,13 @@ public class IpsumApi {
 
     @ApiOperation(value = "",
             notes = "",
-            nickname = "op",
+            nickname = "op199",
             tags = { "ipsum" })
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "a pet to be returned") ,
             @ApiResponse(code = 0, message = "Unexpected error")  })
-    public OpOper op() {
-        return new OpOper(reqSpec);
+    public Op199Oper op199() {
+        return new Op199Oper(reqSpec);
     }
 
     /**
@@ -78,7 +78,7 @@ public class IpsumApi {
      *
      * return SomeObject
      */
-    public static class OpOper {
+    public static class Op199Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/issue199";
@@ -86,7 +86,7 @@ public class IpsumApi {
         private RequestSpecBuilder reqSpec;
         private ResponseSpecBuilder respSpec;
 
-        public OpOper(RequestSpecBuilder reqSpec) {
+        public Op199Oper(RequestSpecBuilder reqSpec) {
             this.reqSpec = reqSpec;
             reqSpec.setAccept("application/json");
             this.respSpec = new ResponseSpecBuilder();
@@ -117,7 +117,7 @@ public class IpsumApi {
          * @param consumer consumer
          * @return operation
          */
-        public OpOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
+        public Op199Oper reqSpec(Consumer<RequestSpecBuilder> consumer) {
             consumer.accept(reqSpec);
             return this;
         }
@@ -127,7 +127,7 @@ public class IpsumApi {
          * @param consumer consumer
          * @return operation
          */
-        public OpOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
+        public Op199Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
             consumer.accept(respSpec);
             return this;
         }

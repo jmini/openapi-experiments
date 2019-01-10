@@ -18,5 +18,5 @@ import javax.ws.rs.core.SecurityContext;
 
 
 public interface IpsumApiService {
-      public Response op(SecurityContext securityContext);
+      public Response op199(SecurityContext securityContext);
 }

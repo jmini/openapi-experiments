@@ -20,7 +20,7 @@ import javax.ws.rs.core.SecurityContext;
 
 public class IpsumApiServiceImpl implements IpsumApiService {
       @Override
-      public Response op(SecurityContext securityContext) {
+      public Response op199(SecurityContext securityContext) {
       // do some magic!
       return Response.ok().entity("magic!").build();
   }

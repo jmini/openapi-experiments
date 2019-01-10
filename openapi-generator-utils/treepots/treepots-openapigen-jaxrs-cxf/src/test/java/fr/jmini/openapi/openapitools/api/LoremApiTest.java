@@ -123,9 +123,10 @@ public class LoremApiTest {
      *          if the Api call fails
      */
     @Test
-    public void opTest() {
-        //ObjWithEnums response = api.op();
-        //assertNotNull(response);
+    public void op708Test() {
+        String bar = null;
+        //api.op708(bar);
+        
         // TODO: test validations
         
         
@@ -136,10 +137,9 @@ public class LoremApiTest {
      *          if the Api call fails
      */
     @Test
-    public void op708Test() {
-        String bar = null;
-        //api.op708(bar);
-        
+    public void op75Test() {
+        //ObjWithEnums response = api.op75();
+        //assertNotNull(response);
         // TODO: test validations
         
         

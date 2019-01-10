@@ -23,9 +23,6 @@ import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.apache.oltu.oauth2.common.message.types.GrantType;
-
 import javax.net.ssl.*;
 import java.io.File;
 import java.io.IOException;
@@ -88,7 +85,7 @@ public class ApiClient {
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
-    
+
     private void init() {
         httpClient = new OkHttpClient();
 

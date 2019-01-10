@@ -16,6 +16,6 @@ import javax.ws.rs.core.SecurityContext;
 
 
 public interface Pull75ApiService {
-      Response op(SecurityContext securityContext)
+      Response op75(SecurityContext securityContext)
       throws NotFoundException;
 }

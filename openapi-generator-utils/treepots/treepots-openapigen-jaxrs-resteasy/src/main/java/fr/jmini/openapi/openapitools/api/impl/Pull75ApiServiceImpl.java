@@ -18,7 +18,7 @@ import javax.ws.rs.core.SecurityContext;
 @RequestScoped
 
 public class Pull75ApiServiceImpl implements Pull75ApiService {
-      public Response op(SecurityContext securityContext)
+      public Response op75(SecurityContext securityContext)
       throws NotFoundException {
       // do some magic!
       return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();

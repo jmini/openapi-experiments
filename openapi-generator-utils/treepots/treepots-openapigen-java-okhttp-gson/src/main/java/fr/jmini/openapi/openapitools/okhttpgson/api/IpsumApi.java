@@ -56,13 +56,13 @@ public class IpsumApi {
     }
 
     /**
-     * Build call for op
+     * Build call for op199
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call opCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call op199Call(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -103,10 +103,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call opValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call op199ValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = opCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = op199Call(progressListener, progressRequestListener);
         return call;
 
     }
@@ -117,8 +117,8 @@ public class IpsumApi {
      * @return SomeObject
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SomeObject op() throws ApiException {
-        ApiResponse<SomeObject> resp = opWithHttpInfo();
+    public SomeObject op199() throws ApiException {
+        ApiResponse<SomeObject> resp = op199WithHttpInfo();
         return resp.getData();
     }
 
@@ -128,8 +128,8 @@ public class IpsumApi {
      * @return ApiResponse&lt;SomeObject&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SomeObject> opWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = opValidateBeforeCall(null, null);
+    public ApiResponse<SomeObject> op199WithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = op199ValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<SomeObject>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -141,7 +141,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call opAsync(final ApiCallback<SomeObject> callback) throws ApiException {
+    public com.squareup.okhttp.Call op199Async(final ApiCallback<SomeObject> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -162,7 +162,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = opValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = op199ValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SomeObject>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

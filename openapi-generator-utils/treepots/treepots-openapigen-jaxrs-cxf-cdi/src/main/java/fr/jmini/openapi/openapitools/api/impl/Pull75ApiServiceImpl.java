@@ -19,7 +19,7 @@ import javax.ws.rs.core.SecurityContext;
 
 public class Pull75ApiServiceImpl implements Pull75ApiService {
       @Override
-      public Response op(SecurityContext securityContext) {
+      public Response op75(SecurityContext securityContext) {
       // do some magic!
       return Response.ok().entity("magic!").build();
   }

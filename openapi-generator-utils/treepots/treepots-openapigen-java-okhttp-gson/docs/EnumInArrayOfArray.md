@@ -31,8 +31,8 @@ VAL3 | &quot;val3&quot;
 ## Enum: List&lt;List&lt;List&lt;P3Enum&gt;&gt;&gt;
 Name | Value
 ---- | -----
-LOREM | &quot;lorem&quot;
-IPSUM | &quot;ipsum&quot;
+LOREM_ENUM_VALUE | &quot;lorem&quot;
+IPSUM_ENUM_VALUE | &quot;ipsum&quot;
 
 
 

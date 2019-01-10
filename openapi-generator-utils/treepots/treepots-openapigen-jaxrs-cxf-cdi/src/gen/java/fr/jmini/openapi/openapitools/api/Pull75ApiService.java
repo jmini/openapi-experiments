@@ -17,5 +17,5 @@ import javax.ws.rs.core.SecurityContext;
 
 
 public interface Pull75ApiService {
-      public Response op(SecurityContext securityContext);
+      public Response op75(SecurityContext securityContext);
 }

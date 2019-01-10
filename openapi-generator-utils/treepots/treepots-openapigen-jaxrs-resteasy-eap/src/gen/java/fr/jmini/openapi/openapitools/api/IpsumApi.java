@@ -36,5 +36,5 @@ public interface IpsumApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "a pet to be returned", response = SomeObject.class),
         
         @io.swagger.annotations.ApiResponse(code = 200, message = "Unexpected error", response = ErrorModel.class) })
-    public Response op(@Context SecurityContext securityContext);
+    public Response op199(@Context SecurityContext securityContext);
 }

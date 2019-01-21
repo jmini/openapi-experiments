@@ -62,7 +62,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingDeleteCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingDeleteCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -87,15 +87,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -103,10 +103,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingDeleteValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingDeleteValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingDeleteCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingDeleteCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -129,7 +129,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingDeleteWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingDeleteValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingDeleteValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -141,7 +141,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingDeleteAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingDeleteAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -162,7 +162,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingDeleteValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingDeleteValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -174,7 +174,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingHeadCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingHeadCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -199,15 +199,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -215,10 +215,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingHeadValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingHeadValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingHeadCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingHeadCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -241,7 +241,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingHeadWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingHeadValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingHeadValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -253,7 +253,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingHeadAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingHeadAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -274,7 +274,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingHeadValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingHeadValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -286,7 +286,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingOptionsCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingOptionsCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -311,15 +311,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -327,10 +327,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingOptionsValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingOptionsValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingOptionsCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingOptionsCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -353,7 +353,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingOptionsWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingOptionsValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingOptionsValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -365,7 +365,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingOptionsAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingOptionsAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -386,7 +386,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingOptionsValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingOptionsValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -398,7 +398,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPatchCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPatchCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -423,15 +423,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -439,10 +439,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingPatchValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPatchValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingPatchCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPatchCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -465,7 +465,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPatchWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingPatchValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingPatchValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -477,7 +477,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPatchAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingPatchAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -498,7 +498,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingPatchValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPatchValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -510,7 +510,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPostCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPostCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -535,15 +535,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -551,10 +551,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingPostValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPostValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingPostCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPostCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -577,7 +577,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPostWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingPostValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingPostValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -589,7 +589,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPostAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingPostAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -610,7 +610,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingPostValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPostValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -622,7 +622,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPutCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPutCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -647,15 +647,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -663,10 +663,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call jsonPingPutValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPutValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = jsonPingPutCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPutCall(someObj, progressListener, progressRequestListener);
         return call;
 
     }
@@ -689,7 +689,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPutWithHttpInfo(SomeObj someObj) throws ApiException {
-        com.squareup.okhttp.Call call = jsonPingPutValidateBeforeCall(someObj, null, null);
+        okhttp3.Call call = jsonPingPutValidateBeforeCall(someObj, null, null);
         return apiClient.execute(call);
     }
 
@@ -701,7 +701,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jsonPingPutAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call jsonPingPutAsync(SomeObj someObj, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -722,7 +722,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = jsonPingPutValidateBeforeCall(someObj, progressListener, progressRequestListener);
+        okhttp3.Call call = jsonPingPutValidateBeforeCall(someObj, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -734,7 +734,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingDeleteCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingDeleteCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -763,15 +763,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -779,10 +779,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingDeleteValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingDeleteValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingDeleteCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingDeleteCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -805,7 +805,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingDeleteWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingDeleteValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingDeleteValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -817,7 +817,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingDeleteAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingDeleteAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -838,7 +838,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingDeleteValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingDeleteValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -850,7 +850,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingGetCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingGetCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -879,15 +879,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -895,10 +895,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingGetValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingGetValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingGetCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingGetCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -921,7 +921,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingGetWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingGetValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingGetValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -933,7 +933,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingGetAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingGetAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -954,7 +954,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingGetValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingGetValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -966,7 +966,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingHeadCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingHeadCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -995,15 +995,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -1011,10 +1011,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingHeadValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingHeadValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingHeadCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingHeadCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1037,7 +1037,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingHeadWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingHeadValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingHeadValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -1049,7 +1049,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingHeadAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingHeadAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1070,7 +1070,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingHeadValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingHeadValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1082,7 +1082,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingOptionsCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingOptionsCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1111,15 +1111,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -1127,10 +1127,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingOptionsValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingOptionsValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingOptionsCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingOptionsCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1153,7 +1153,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingOptionsWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingOptionsValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingOptionsValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -1165,7 +1165,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingOptionsAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingOptionsAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1186,7 +1186,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingOptionsValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingOptionsValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1198,7 +1198,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingPatchCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPatchCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1227,15 +1227,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -1243,10 +1243,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingPatchValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPatchValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingPatchCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPatchCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1269,7 +1269,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPatchWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingPatchValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingPatchValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -1281,7 +1281,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingPatchAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingPatchAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1302,7 +1302,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingPatchValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPatchValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1314,7 +1314,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingPostCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPostCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1343,15 +1343,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -1359,10 +1359,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingPostValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPostValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingPostCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPostCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1385,7 +1385,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPostWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingPostValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingPostValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -1397,7 +1397,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingPostAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingPostAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1418,7 +1418,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingPostValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPostValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1430,7 +1430,7 @@ public class IpsumApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call pingPutCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPutCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1459,15 +1459,15 @@ public class IpsumApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -1475,10 +1475,10 @@ public class IpsumApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingPutValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPutValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = pingPutCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPutCall(custom, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1501,7 +1501,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPutWithHttpInfo(String custom) throws ApiException {
-        com.squareup.okhttp.Call call = pingPutValidateBeforeCall(custom, null, null);
+        okhttp3.Call call = pingPutValidateBeforeCall(custom, null, null);
         return apiClient.execute(call);
     }
 
@@ -1513,7 +1513,7 @@ public class IpsumApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call pingPutAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call pingPutAsync(String custom, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1534,7 +1534,7 @@ public class IpsumApi {
             };
         }
 
-        com.squareup.okhttp.Call call = pingPutValidateBeforeCall(custom, progressListener, progressRequestListener);
+        okhttp3.Call call = pingPutValidateBeforeCall(custom, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

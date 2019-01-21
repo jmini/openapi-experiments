@@ -19,6 +19,7 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Gets or Sets IntEnum
@@ -35,6 +36,11 @@ public enum IntEnum {
 
   IntEnum(Integer value) {
     this.value = value;
+  }
+
+  @JsonValue
+  public Integer getValue() {
+    return value;
   }
 
   @Override

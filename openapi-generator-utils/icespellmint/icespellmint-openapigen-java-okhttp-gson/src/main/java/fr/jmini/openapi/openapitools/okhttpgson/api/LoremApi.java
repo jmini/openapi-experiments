@@ -60,7 +60,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyDeleteCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyDeleteCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -85,15 +85,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -101,10 +101,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyDeleteValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyDeleteValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyDeleteCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyDeleteCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -125,7 +125,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyDeleteWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyDeleteValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyDeleteValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -136,7 +136,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyDeleteAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyDeleteAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,7 +157,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyDeleteValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyDeleteValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -168,7 +168,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -193,15 +193,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -209,10 +209,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyGetCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyGetCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -233,7 +233,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyGetWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyGetValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyGetValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -244,7 +244,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyGetAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyGetAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -265,7 +265,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyGetValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyGetValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -276,7 +276,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyHeadCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyHeadCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -301,15 +301,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -317,10 +317,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyHeadValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyHeadValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyHeadCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyHeadCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -341,7 +341,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyHeadWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyHeadValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyHeadValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -352,7 +352,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyHeadAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyHeadAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -373,7 +373,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyHeadValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyHeadValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -384,7 +384,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyOptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyOptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -409,15 +409,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -425,10 +425,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyOptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyOptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyOptionsCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyOptionsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -449,7 +449,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyOptionsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyOptionsValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyOptionsValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -460,7 +460,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyOptionsAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyOptionsAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -481,7 +481,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyOptionsValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyOptionsValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -492,7 +492,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyPatchCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPatchCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -517,15 +517,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -533,10 +533,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyPatchValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPatchValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyPatchCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPatchCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -557,7 +557,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPatchWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyPatchValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyPatchValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -568,7 +568,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyPatchAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyPatchAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -589,7 +589,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyPatchValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPatchValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -600,7 +600,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyPostCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPostCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -625,15 +625,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -641,10 +641,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyPostValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPostValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyPostCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPostCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -665,7 +665,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPostWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyPostValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyPostValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -676,7 +676,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyPostAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyPostAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -697,7 +697,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyPostValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPostValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -708,7 +708,7 @@ public class LoremApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call emptyPutCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPutCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -733,15 +733,15 @@ public class LoremApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                            .build();
                 }
-            });
+            }).build());
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -749,10 +749,10 @@ public class LoremApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call emptyPutValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPutValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = emptyPutCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPutCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -773,7 +773,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPutWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = emptyPutValidateBeforeCall(null, null);
+        okhttp3.Call call = emptyPutValidateBeforeCall(null, null);
         return apiClient.execute(call);
     }
 
@@ -784,7 +784,7 @@ public class LoremApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call emptyPutAsync(final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call emptyPutAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -805,7 +805,7 @@ public class LoremApi {
             };
         }
 
-        com.squareup.okhttp.Call call = emptyPutValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = emptyPutValidateBeforeCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

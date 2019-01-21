@@ -15,7 +15,7 @@ package fr.jmini.openapi.openapitools.okhttpgson.auth;
 
 import fr.jmini.openapi.openapitools.okhttpgson.Pair;
 
-import com.squareup.okhttp.Credentials;
+import okhttp3.Credentials;
 
 import java.util.Map;
 import java.util.List;

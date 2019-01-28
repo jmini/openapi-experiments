@@ -31,10 +31,19 @@ public class Weather   {
    * Gets or Sets type
    */
   public enum TypeEnum {
+    /**
+     * Blue sky
+     */
     Sunny(1),
     
+    /**
+     * Slightly overcast
+     */
     Cloudy(2),
     
+    /**
+     * Take an umbrella with you
+     */
     Rainy(3);
 
     private Integer value;

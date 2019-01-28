@@ -105,8 +105,14 @@ public class EnumInArrayOfArray   {
    * Gets or Sets p3
    */
   public enum P3Enum {
+    /**
+     * This is a lorem
+     */
     LOREM_ENUM_VALUE("lorem"),
     
+    /**
+     * This is a ipsum
+     */
     IPSUM_ENUM_VALUE("ipsum");
 
     private String value;

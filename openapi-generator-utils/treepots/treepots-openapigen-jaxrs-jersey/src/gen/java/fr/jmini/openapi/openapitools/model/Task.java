@@ -31,8 +31,14 @@ public class Task   {
    * Gets or Sets status
    */
   public enum StatusEnum {
+    /**
+     * Open task status
+     */
     OPEN("OPEN"),
     
+    /**
+     * Terminated task status
+     */
     CLOSED("CLOSED");
 
     private String value;

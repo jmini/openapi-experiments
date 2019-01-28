@@ -60,7 +60,6 @@ import java.util.TimeZone;
 import fr.jmini.openapi.openapitools.webclient.auth.Authentication;
 import fr.jmini.openapi.openapitools.webclient.auth.HttpBasicAuth;
 import fr.jmini.openapi.openapitools.webclient.auth.ApiKeyAuth;
-import fr.jmini.openapi.openapitools.webclient.auth.OAuth;
 
 
 public class ApiClient {
@@ -231,20 +230,6 @@ public class ApiClient {
             }
         }
         throw new RuntimeException("No API key authentication configured!");
-    }
-
-    /**
-     * Helper method to set access token for the first OAuth2 authentication.
-     * @param accessToken the access token
-     */
-    public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
-        }
-        throw new RuntimeException("No OAuth2 authentication configured!");
     }
 
     /**

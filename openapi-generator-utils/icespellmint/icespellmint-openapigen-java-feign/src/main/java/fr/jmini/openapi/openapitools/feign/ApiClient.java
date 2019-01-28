@@ -19,7 +19,6 @@ import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import feign.slf4j.Slf4jLogger;
 import fr.jmini.openapi.openapitools.feign.auth.*;
-import fr.jmini.openapi.openapitools.feign.auth.OAuth.AccessTokenListener;
 
 
 public class ApiClient {
@@ -74,23 +73,6 @@ public class ApiClient {
     this(authName);
     this.setCredentials(username,  password);
   }
-
-  /**
-   * Helper constructor for single password oauth2
-   * @param authName
-   * @param clientId
-   * @param secret
-   * @param username
-   * @param password
-   */
-   public ApiClient(String authName, String clientId, String secret, String username, String password) {
-     this(authName);
-     this.getTokenEndPoint()
-            .setClientId(clientId)
-            .setClientSecret(secret)
-            .setUsername(username)
-            .setPassword(password);
-   }
 
   public String getBasePath() {
     return basePath;
@@ -211,92 +193,8 @@ public class ApiClient {
         basicAuth.setCredentials(username, password);
         return;
       }
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        oauth.getTokenRequestBuilder().setUsername(username).setPassword(password);
-        return;
-      }
     }
     throw new RuntimeException("No Basic authentication or OAuth configured!");
-  }
-
-  /**
-   * Helper method to configure the token endpoint of the first oauth found in the apiAuthorizations (there should be only one)
-   * @return Token request builder
-   */
-  public TokenRequestBuilder getTokenEndPoint() {
-    for(RequestInterceptor apiAuthorization : apiAuthorizations.values()) {
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        return oauth.getTokenRequestBuilder();
-      }
-    }
-    return null;
-  }
-
-  /**
-   * Helper method to configure authorization endpoint of the first oauth found in the apiAuthorizations (there should be only one)
-   * @return Authentication request builder
-   */
-  public AuthenticationRequestBuilder getAuthorizationEndPoint() {
-    for(RequestInterceptor apiAuthorization : apiAuthorizations.values()) {
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        return oauth.getAuthenticationRequestBuilder();
-      }
-    }
-    return null;
-  }
-
-  /**
-   * Helper method to pre-set the oauth access token of the first oauth found in the apiAuthorizations (there should be only one)
-   * @param accessToken Access Token
-   * @param expiresIn Validity period in seconds
-   */
-  public void setAccessToken(String accessToken, Long expiresIn) {
-    for(RequestInterceptor apiAuthorization : apiAuthorizations.values()) {
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        oauth.setAccessToken(accessToken, expiresIn);
-        return;
-      }
-    }
-  }
-
-  /**
-   * Helper method to configure the oauth accessCode/implicit flow parameters
-   * @param clientId Client ID
-   * @param clientSecret Client secret
-   * @param redirectURI Redirect URI
-   */
-  public void configureAuthorizationFlow(String clientId, String clientSecret, String redirectURI) {
-    for(RequestInterceptor apiAuthorization : apiAuthorizations.values()) {
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        oauth.getTokenRequestBuilder()
-                .setClientId(clientId)
-                .setClientSecret(clientSecret)
-                .setRedirectURI(redirectURI);
-        oauth.getAuthenticationRequestBuilder()
-                .setClientId(clientId)
-                .setRedirectURI(redirectURI);
-        return;
-      }
-    }
-  }
-
-  /**
-   * Configures a listener which is notified when a new access token is received.
-   * @param accessTokenListener Acesss token listener
-   */
-  public void registerAccessTokenListener(AccessTokenListener accessTokenListener) {
-    for(RequestInterceptor apiAuthorization : apiAuthorizations.values()) {
-      if (apiAuthorization instanceof OAuth) {
-        OAuth oauth = (OAuth) apiAuthorization;
-        oauth.registerAccessTokenListener(accessTokenListener);
-        return;
-      }
-    }
   }
 
   /**

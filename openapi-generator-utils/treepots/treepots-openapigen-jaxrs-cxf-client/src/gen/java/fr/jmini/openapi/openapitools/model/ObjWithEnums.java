@@ -2,6 +2,7 @@ package fr.jmini.openapi.openapitools.model;
 
 import fr.jmini.openapi.openapitools.model.IntEnum;
 import fr.jmini.openapi.openapitools.model.LongEnum;
+import fr.jmini.openapi.openapitools.model.String2Enum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -17,13 +18,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ObjWithEnums  {
   
   @ApiModelProperty(value = "")
-  private IntEnum iprop = null;
+  private IntEnum iprop;
 
   @ApiModelProperty(value = "")
-  private LongEnum lprop = null;
+  private LongEnum lprop;
 
   @ApiModelProperty(value = "")
-  private StringEnum sprop = null;
+  private StringEnum sprop;
+
+  @ApiModelProperty(value = "")
+  private String2Enum sprop2 = String2Enum.B;
  /**
    * Get iprop
    * @return iprop
@@ -78,6 +82,24 @@ public class ObjWithEnums  {
     return this;
   }
 
+ /**
+   * Get sprop2
+   * @return sprop2
+  **/
+  @JsonProperty("SProp2")
+  public String2Enum getSprop2() {
+    return sprop2;
+  }
+
+  public void setSprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+  }
+
+  public ObjWithEnums sprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+    return this;
+  }
+
 
   @Override
   public String toString() {
@@ -87,6 +109,7 @@ public class ObjWithEnums  {
     sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
     sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
+    sb.append("    sprop2: ").append(toIndentedString(sprop2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

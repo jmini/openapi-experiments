@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fr.jmini.openapi.openapitools.model.IntEnum;
 import fr.jmini.openapi.openapitools.model.LongEnum;
+import fr.jmini.openapi.openapitools.model.String2Enum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,13 +31,16 @@ import javax.validation.Valid;
 
 public class ObjWithEnums   {
   @JsonProperty("IProp")
-  private IntEnum iprop = null;
+  private IntEnum iprop;
 
   @JsonProperty("LProp")
-  private LongEnum lprop = null;
+  private LongEnum lprop;
 
   @JsonProperty("SProp")
-  private StringEnum sprop = null;
+  private StringEnum sprop;
+
+  @JsonProperty("SProp2")
+  private String2Enum sprop2 = String2Enum.B;
 
   public ObjWithEnums iprop(IntEnum iprop) {
     this.iprop = iprop;
@@ -98,6 +102,26 @@ public class ObjWithEnums   {
     this.sprop = sprop;
   }
 
+  public ObjWithEnums sprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+    return this;
+  }
+
+  /**
+   * Get sprop2
+   * @return sprop2
+   **/
+  @JsonProperty("SProp2")
+  @ApiModelProperty(value = "")
+  @Valid
+  public String2Enum getSprop2() {
+    return sprop2;
+  }
+
+  public void setSprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,12 +134,13 @@ public class ObjWithEnums   {
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
     return Objects.equals(this.iprop, objWithEnums.iprop) &&
         Objects.equals(this.lprop, objWithEnums.lprop) &&
-        Objects.equals(this.sprop, objWithEnums.sprop);
+        Objects.equals(this.sprop, objWithEnums.sprop) &&
+        Objects.equals(this.sprop2, objWithEnums.sprop2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iprop, lprop, sprop);
+    return Objects.hash(iprop, lprop, sprop, sprop2);
   }
 
 
@@ -127,6 +152,7 @@ public class ObjWithEnums   {
     sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
     sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
+    sb.append("    sprop2: ").append(toIndentedString(sprop2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

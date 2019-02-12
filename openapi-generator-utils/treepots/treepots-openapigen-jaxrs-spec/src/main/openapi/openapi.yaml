@@ -214,8 +214,18 @@ components:
           $ref: '#/components/schemas/LongEnum'
         SProp:
           $ref: '#/components/schemas/StringEnum'
+        SProp2:
+          $ref: '#/components/schemas/String2Enum'
       type: object
     IntEnum:
+      enum:
+      - 1
+      - 2
+      - 3
+      format: int32
+      type: integer
+    Int2Enum:
+      default: 2
       enum:
       - 1
       - 2
@@ -229,13 +239,38 @@ components:
       - 40
       format: int64
       type: integer
+    Long2Enum:
+      default: 30
+      enum:
+      - 20
+      - 30
+      - 40
+      format: int64
+      type: integer
     StringEnum:
       enum:
       - c
       - b
       - a
       type: string
+    String2Enum:
+      default: b
+      enum:
+      - c
+      - b
+      - a
+      type: string
     EnumWithCustomName:
+      enum:
+      - 1
+      - 2
+      format: int32
+      type: integer
+      x-enum-varnames:
+      - FOO
+      - BAR
+    Enum2WithCustomName:
+      default: 2
       enum:
       - 1
       - 2

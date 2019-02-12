@@ -831,6 +831,13 @@ ul.nav-tabs {
     "propertyName" : "type"
   }
 };
+    defs["Enum2WithCustomName"] = {
+  "type" : "integer",
+  "format" : "int32",
+  "default" : 2,
+  "enum" : [ 1, 2 ],
+  "x-enum-varnames" : [ "FOO", "BAR" ]
+};
     defs["EnumInArrayOfArray"] = {
   "type" : "object",
   "properties" : {
@@ -892,6 +899,12 @@ ul.nav-tabs {
     }
   }
 };
+    defs["Int2Enum"] = {
+  "type" : "integer",
+  "format" : "int32",
+  "default" : 2,
+  "enum" : [ 1, 2, 3 ]
+};
     defs["IntEnum"] = {
   "type" : "integer",
   "format" : "int32",
@@ -923,6 +936,12 @@ ul.nav-tabs {
       }
     }
   } ]
+};
+    defs["Long2Enum"] = {
+  "type" : "integer",
+  "format" : "int64",
+  "default" : 30,
+  "enum" : [ 20, 30, 40 ]
 };
     defs["LongEnum"] = {
   "type" : "integer",
@@ -974,6 +993,9 @@ ul.nav-tabs {
     },
     "SProp" : {
       "$ref" : "#/components/schemas/StringEnum"
+    },
+    "SProp2" : {
+      "$ref" : "#/components/schemas/String2Enum"
     }
   }
 };
@@ -991,6 +1013,11 @@ ul.nav-tabs {
       "type" : "string"
     }
   }
+};
+    defs["String2Enum"] = {
+  "type" : "string",
+  "default" : "b",
+  "enum" : [ "c", "b", "a" ]
 };
     defs["StringEnum"] = {
   "type" : "string",

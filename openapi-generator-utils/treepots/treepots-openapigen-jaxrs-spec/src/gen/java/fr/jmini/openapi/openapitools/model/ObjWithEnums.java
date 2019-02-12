@@ -2,6 +2,7 @@ package fr.jmini.openapi.openapitools.model;
 
 import fr.jmini.openapi.openapitools.model.IntEnum;
 import fr.jmini.openapi.openapitools.model.LongEnum;
+import fr.jmini.openapi.openapitools.model.String2Enum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -18,9 +19,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class ObjWithEnums   {
   
-  private @Valid IntEnum iprop = null;
-  private @Valid LongEnum lprop = null;
-  private @Valid StringEnum sprop = null;
+  private @Valid IntEnum iprop;
+  private @Valid LongEnum lprop;
+  private @Valid StringEnum sprop;
+  private @Valid String2Enum sprop2 = String2Enum.B;
 
   /**
    **/
@@ -73,6 +75,23 @@ public class ObjWithEnums   {
     this.sprop = sprop;
   }
 
+  /**
+   **/
+  public ObjWithEnums sprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+    return this;
+  }
+
+  
+  @ApiModelProperty(value = "")
+  @JsonProperty("SProp2")
+  public String2Enum getSprop2() {
+    return sprop2;
+  }
+  public void setSprop2(String2Enum sprop2) {
+    this.sprop2 = sprop2;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -85,12 +104,13 @@ public class ObjWithEnums   {
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
     return Objects.equals(iprop, objWithEnums.iprop) &&
         Objects.equals(lprop, objWithEnums.lprop) &&
-        Objects.equals(sprop, objWithEnums.sprop);
+        Objects.equals(sprop, objWithEnums.sprop) &&
+        Objects.equals(sprop2, objWithEnums.sprop2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iprop, lprop, sprop);
+    return Objects.hash(iprop, lprop, sprop, sprop2);
   }
 
   @Override
@@ -101,6 +121,7 @@ public class ObjWithEnums   {
     sb.append("    iprop: ").append(toIndentedString(iprop)).append("\n");
     sb.append("    lprop: ").append(toIndentedString(lprop)).append("\n");
     sb.append("    sprop: ").append(toIndentedString(sprop)).append("\n");
+    sb.append("    sprop2: ").append(toIndentedString(sprop2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -47,6 +47,7 @@ import java.util.regex.Pattern;
 
 import fr.jmini.openapi.openapitools.jersey2.auth.Authentication;
 import fr.jmini.openapi.openapitools.jersey2.auth.HttpBasicAuth;
+import fr.jmini.openapi.openapitools.jersey2.auth.HttpBearerAuth;
 import fr.jmini.openapi.openapitools.jersey2.auth.ApiKeyAuth;
 
 

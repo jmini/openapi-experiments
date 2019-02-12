@@ -5,18 +5,22 @@ modelMappings:
   # to enable explicit mappings, use this syntax:
   DefinitionFromSwaggerSpecification: fully.qualified.path.to.Model
   Element : fr.jmini.openapi.openapitools.model.Element
+Enum2WithCustomName : fr.jmini.openapi.openapitools.model.Enum2WithCustomName
 EnumInArrayOfArray : fr.jmini.openapi.openapitools.model.EnumInArrayOfArray
 EnumWithCustomName : fr.jmini.openapi.openapitools.model.EnumWithCustomName
 ErrorModel : fr.jmini.openapi.openapitools.model.ErrorModel
+Int2Enum : fr.jmini.openapi.openapitools.model.Int2Enum
 IntEnum : fr.jmini.openapi.openapitools.model.IntEnum
 ItemWithBoolean : fr.jmini.openapi.openapitools.model.ItemWithBoolean
 Leave : fr.jmini.openapi.openapitools.model.Leave
+Long2Enum : fr.jmini.openapi.openapitools.model.Long2Enum
 LongEnum : fr.jmini.openapi.openapitools.model.LongEnum
 LongEnumWithCustomName : fr.jmini.openapi.openapitools.model.LongEnumWithCustomName
 LongModel : fr.jmini.openapi.openapitools.model.LongModel
 Node : fr.jmini.openapi.openapitools.model.Node
 ObjWithEnums : fr.jmini.openapi.openapitools.model.ObjWithEnums
 SomeObject : fr.jmini.openapi.openapitools.model.SomeObject
+String2Enum : fr.jmini.openapi.openapitools.model.String2Enum
 StringEnum : fr.jmini.openapi.openapitools.model.StringEnum
 Task : fr.jmini.openapi.openapitools.model.Task
 Weather : fr.jmini.openapi.openapitools.model.Weather

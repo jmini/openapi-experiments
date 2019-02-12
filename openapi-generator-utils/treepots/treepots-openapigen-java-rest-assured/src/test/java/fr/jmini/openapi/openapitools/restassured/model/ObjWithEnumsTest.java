@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import fr.jmini.openapi.openapitools.restassured.model.IntEnum;
 import fr.jmini.openapi.openapitools.restassured.model.LongEnum;
+import fr.jmini.openapi.openapitools.restassured.model.String2Enum;
 import fr.jmini.openapi.openapitools.restassured.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -65,6 +66,14 @@ public class ObjWithEnumsTest {
     @Test
     public void spropTest() {
         // TODO: test sprop
+    }
+
+    /**
+     * Test the property 'sprop2'
+     */
+    @Test
+    public void sprop2Test() {
+        // TODO: test sprop2
     }
 
 }

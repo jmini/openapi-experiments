@@ -18,7 +18,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import fr.jmini.openapi.openapitools.restassured.model.Enum2WithCustomName;
+import fr.jmini.openapi.openapitools.restassured.model.Int2Enum;
 import fr.jmini.openapi.openapitools.restassured.model.IntEnum;
+import fr.jmini.openapi.openapitools.restassured.model.Long2Enum;
 import fr.jmini.openapi.openapitools.restassured.model.LongEnum;
 import fr.jmini.openapi.openapitools.restassured.model.String2Enum;
 import fr.jmini.openapi.openapitools.restassured.model.StringEnum;
@@ -69,11 +72,35 @@ public class ObjWithEnumsTest {
     }
 
     /**
+     * Test the property 'iprop2'
+     */
+    @Test
+    public void iprop2Test() {
+        // TODO: test iprop2
+    }
+
+    /**
+     * Test the property 'lprop2'
+     */
+    @Test
+    public void lprop2Test() {
+        // TODO: test lprop2
+    }
+
+    /**
      * Test the property 'sprop2'
      */
     @Test
     public void sprop2Test() {
         // TODO: test sprop2
+    }
+
+    /**
+     * Test the property 'custom'
+     */
+    @Test
+    public void customTest() {
+        // TODO: test custom
     }
 
 }

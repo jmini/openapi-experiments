@@ -57,7 +57,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -85,7 +85,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -113,7 +113,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -141,7 +141,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -169,7 +169,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -197,7 +197,7 @@ public class IpsumApi {
         Object postBody = someObj;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -225,11 +225,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -253,11 +253,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -281,11 +281,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -309,11 +309,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -337,11 +337,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -365,11 +365,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };
@@ -393,11 +393,11 @@ public class IpsumApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-        
+
         queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
 
         final String[] accepts = { };

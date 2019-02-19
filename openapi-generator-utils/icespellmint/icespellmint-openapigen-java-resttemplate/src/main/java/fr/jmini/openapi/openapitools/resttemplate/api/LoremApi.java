@@ -55,7 +55,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/deleteEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -80,7 +80,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/getEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -105,7 +105,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/headEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -130,7 +130,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/optionsEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -155,7 +155,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/patchEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -180,7 +180,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/postEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
@@ -205,7 +205,7 @@ public class LoremApi {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/lorem/putEmpty").build().toUriString();
-        
+
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();

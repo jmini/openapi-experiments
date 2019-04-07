@@ -22,7 +22,7 @@
       <plugin>
         <groupId>org.openapitools</groupId>
         <artifactId>openapi-generator-maven-plugin</artifactId>
-        <version>3.2.3</version>
+        <version>4.0.0-beta3</version>
         <executions>
           <execution>
             <id>generate-client-code</id>

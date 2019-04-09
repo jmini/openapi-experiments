@@ -1,7 +1,9 @@
 
+
 # ObjWithEnums
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iprop** | [**IntEnum**](IntEnum.md) |  |  [optional]

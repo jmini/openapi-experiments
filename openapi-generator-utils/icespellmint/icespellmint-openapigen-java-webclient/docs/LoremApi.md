@@ -13,13 +13,15 @@ Method | HTTP request | Description
 [**emptyPut**](LoremApi.md#emptyPut) | **PUT** /lorem/putEmpty | 
 
 
-<a name="emptyDelete"></a>
-# **emptyDelete**
+
+## emptyDelete
+
 > emptyDelete()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -36,6 +38,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -48,16 +51,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyGet"></a>
-# **emptyGet**
+
+## emptyGet
+
 > emptyGet()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -74,6 +79,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -86,16 +92,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyHead"></a>
-# **emptyHead**
+
+## emptyHead
+
 > emptyHead()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -112,6 +120,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -124,16 +133,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyOptions"></a>
-# **emptyOptions**
+
+## emptyOptions
+
 > emptyOptions()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -150,6 +161,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -162,16 +174,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyPatch"></a>
-# **emptyPatch**
+
+## emptyPatch
+
 > emptyPatch()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -188,6 +202,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -200,16 +215,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyPost"></a>
-# **emptyPost**
+
+## emptyPost
+
 > emptyPost()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -226,6 +243,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -238,16 +256,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="emptyPut"></a>
-# **emptyPut**
+
+## emptyPut
+
 > emptyPut()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.webclient.ApiException;
@@ -264,6 +284,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -276,6 +297,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

@@ -28,13 +28,13 @@ public enum Long2Enum {
         return String.valueOf(value);
     }
 
-    public static Long2Enum fromValue(String v) {
+    public static Long2Enum fromValue(Long value) {
         for (Long2Enum b : Long2Enum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
+            if (b.value.equals(value)) {
                 return b;
             }
         }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 }
 

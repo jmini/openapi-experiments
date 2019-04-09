@@ -65,7 +65,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("IProp")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public IntEnum getIprop() {
     return iprop;
   }
@@ -85,7 +85,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("LProp")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public LongEnum getLprop() {
     return lprop;
   }
@@ -105,7 +105,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("SProp")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public StringEnum getSprop() {
     return sprop;
   }
@@ -125,7 +125,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("IProp2")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public Int2Enum getIprop2() {
     return iprop2;
   }
@@ -145,7 +145,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("LProp2")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public Long2Enum getLprop2() {
     return lprop2;
   }
@@ -165,7 +165,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("SProp2")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public String2Enum getSprop2() {
     return sprop2;
   }
@@ -185,7 +185,7 @@ public class ObjWithEnums   {
    **/
   @JsonProperty("Custom")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public Enum2WithCustomName getCustom() {
     return custom;
   }

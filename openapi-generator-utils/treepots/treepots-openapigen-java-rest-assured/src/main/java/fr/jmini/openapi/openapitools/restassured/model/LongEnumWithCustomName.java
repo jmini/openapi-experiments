@@ -59,13 +59,13 @@ public enum LongEnumWithCustomName {
     return String.valueOf(value);
   }
 
-  public static LongEnumWithCustomName fromValue(String text) {
+  public static LongEnumWithCustomName fromValue(Long value) {
     for (LongEnumWithCustomName b : LongEnumWithCustomName.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LongEnumWithCustomName> {
@@ -77,7 +77,7 @@ public enum LongEnumWithCustomName {
     @Override
     public LongEnumWithCustomName read(final JsonReader jsonReader) throws IOException {
       Long value = jsonReader.nextLong();
-      return LongEnumWithCustomName.fromValue(String.valueOf(value));
+      return LongEnumWithCustomName.fromValue(value);
     }
   }
 }

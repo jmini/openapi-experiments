@@ -50,13 +50,13 @@ public enum Int2Enum {
     return String.valueOf(value);
   }
 
-  public static Int2Enum fromValue(String text) {
+  public static Int2Enum fromValue(Integer value) {
     for (Int2Enum b : Int2Enum.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<Int2Enum> {
@@ -68,7 +68,7 @@ public enum Int2Enum {
     @Override
     public Int2Enum read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return Int2Enum.fromValue(String.valueOf(value));
+      return Int2Enum.fromValue(value);
     }
   }
 }

@@ -49,13 +49,13 @@ public enum LongEnum {
   }
 
   @JsonCreator
-  public static LongEnum fromValue(String text) {
+  public static LongEnum fromValue(Long value) {
     for (LongEnum b : LongEnum.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 }
 

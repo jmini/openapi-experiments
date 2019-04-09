@@ -83,7 +83,8 @@ paths:
         name: status
         required: false
         schema:
-          default: available
+          default:
+          - available
           items:
             enum:
             - available

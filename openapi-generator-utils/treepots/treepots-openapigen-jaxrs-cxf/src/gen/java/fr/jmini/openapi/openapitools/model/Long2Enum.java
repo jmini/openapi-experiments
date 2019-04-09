@@ -30,13 +30,13 @@ public enum Long2Enum {
   }
 
   @JsonCreator
-  public static Long2Enum fromValue(String text) {
+  public static Long2Enum fromValue(Long value) {
     for (Long2Enum b : Long2Enum.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
   
 }

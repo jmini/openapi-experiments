@@ -30,13 +30,13 @@ public enum StringEnum {
   }
 
   @JsonCreator
-  public static StringEnum fromValue(String text) {
+  public static StringEnum fromValue(String value) {
     for (StringEnum b : StringEnum.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
   
 }

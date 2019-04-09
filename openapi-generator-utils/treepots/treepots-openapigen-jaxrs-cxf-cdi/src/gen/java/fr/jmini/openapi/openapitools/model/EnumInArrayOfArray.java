@@ -41,13 +41,13 @@ public enum P1Enum {
         return String.valueOf(value);
     }
 
-    public static P1Enum fromValue(String v) {
+    public static P1Enum fromValue(String value) {
         for (P1Enum b : P1Enum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
+            if (b.value.equals(value)) {
                 return b;
             }
         }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 }
 
@@ -76,13 +76,13 @@ public enum P2Enum {
         return String.valueOf(value);
     }
 
-    public static P2Enum fromValue(String v) {
+    public static P2Enum fromValue(String value) {
         for (P2Enum b : P2Enum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
+            if (b.value.equals(value)) {
                 return b;
             }
         }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 }
 
@@ -111,13 +111,13 @@ public enum P3Enum {
         return String.valueOf(value);
     }
 
-    public static P3Enum fromValue(String v) {
+    public static P3Enum fromValue(String value) {
         for (P3Enum b : P3Enum.values()) {
-            if (String.valueOf(b.value).equals(v)) {
+            if (b.value.equals(value)) {
                 return b;
             }
         }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 }
 

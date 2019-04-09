@@ -22,13 +22,13 @@ public enum Enum2WithCustomName {
     return String.valueOf(value);
   }
 
-  public static Enum2WithCustomName fromValue(String text) {
+  public static Enum2WithCustomName fromValue(Integer value) {
     for (Enum2WithCustomName b : Enum2WithCustomName.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
   
 }

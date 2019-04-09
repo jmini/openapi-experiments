@@ -1859,7 +1859,7 @@ public class PetApiExample {
 // Configure OAuth2 access token for authorization: (authentication scheme: petstore_auth)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
-array[String] *status = ; // Status values that need to be considered for filter (optional) (default to available)
+array[String] *status = ; // Status values that need to be considered for filter (optional) (default to ["available"])
 
 PetApi *apiInstance = [[PetApi alloc] init];
 
@@ -1921,7 +1921,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PetApi();
-            var status = new array[String](); // array[String] | Status values that need to be considered for filter (optional)  (default to available)
+            var status = new array[String](); // array[String] | Status values that need to be considered for filter (optional)  (default to ["available"])
 
             try
             {
@@ -1990,7 +1990,7 @@ openapi_client.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = openapi_client.PetApi()
-status =  # array[String] | Status values that need to be considered for filter (optional) (default to available)
+status =  # array[String] | Status values that need to be considered for filter (optional) (default to ["available"])
 
 try: 
     # Finds Pets by status

@@ -55,12 +55,11 @@ public class LoremApi {
 
     /**
      * Build call for emptyDelete
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyDeleteCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyDeleteCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -84,27 +83,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyDeleteValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyDeleteValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyDeleteCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyDeleteCall(_callback);
         return localVarCall;
 
     }
@@ -125,7 +112,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyDeleteWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyDeleteValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyDeleteValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -138,37 +125,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyDeleteAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyDeleteValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyDeleteValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyGet
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyGetCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyGetCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -192,27 +159,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyGetValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyGetCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyGetCall(_callback);
         return localVarCall;
 
     }
@@ -233,7 +188,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyGetValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyGetValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -246,37 +201,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyGetAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyGetValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyGetValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyHead
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyHeadCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyHeadCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -300,27 +235,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyHeadValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyHeadValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyHeadCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyHeadCall(_callback);
         return localVarCall;
 
     }
@@ -341,7 +264,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyHeadWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyHeadValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyHeadValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -354,37 +277,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyHeadAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyHeadValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyHeadValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyOptions
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyOptionsCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyOptionsCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -408,27 +311,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyOptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyOptionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyOptionsCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyOptionsCall(_callback);
         return localVarCall;
 
     }
@@ -449,7 +340,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyOptionsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyOptionsValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyOptionsValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -462,37 +353,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyOptionsAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyOptionsValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyOptionsValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyPatch
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyPatchCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPatchCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -516,27 +387,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyPatchValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPatchValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyPatchCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPatchCall(_callback);
         return localVarCall;
 
     }
@@ -557,7 +416,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPatchWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyPatchValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyPatchValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -570,37 +429,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyPatchAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyPatchValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPatchValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyPost
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyPostCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPostCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -624,27 +463,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyPostValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyPostCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPostCall(_callback);
         return localVarCall;
 
     }
@@ -665,7 +492,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyPostValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyPostValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -678,37 +505,17 @@ public class LoremApi {
      */
     public okhttp3.Call emptyPostAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyPostValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPostValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for emptyPut
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call emptyPutCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call emptyPutCall(final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -732,27 +539,15 @@ public class LoremApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emptyPutValidateBeforeCall(final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call emptyPutValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = emptyPutCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPutCall(_callback);
         return localVarCall;
 
     }
@@ -773,7 +568,7 @@ public class LoremApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> emptyPutWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = emptyPutValidateBeforeCall(null, null);
+        okhttp3.Call localVarCall = emptyPutValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -786,26 +581,7 @@ public class LoremApi {
      */
     public okhttp3.Call emptyPutAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = emptyPutValidateBeforeCall(_progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = emptyPutValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

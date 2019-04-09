@@ -64,6 +64,6 @@ public class Pull708Api  {
     public Response op708(@ApiParam(value = "", defaultValue="foobar") @DefaultValue("foobar") @QueryParam("bar") String bar
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.op708(bar,securityContext);
+        return delegate.op708(bar, securityContext);
     }
 }

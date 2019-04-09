@@ -59,13 +59,13 @@ public class Task {
       return String.valueOf(value);
     }
 
-    public static StatusEnum fromValue(String text) {
+    public static StatusEnum fromValue(String value) {
       for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {
@@ -77,7 +77,7 @@ public class Task {
       @Override
       public StatusEnum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
+        return StatusEnum.fromValue(value);
       }
     }
   }

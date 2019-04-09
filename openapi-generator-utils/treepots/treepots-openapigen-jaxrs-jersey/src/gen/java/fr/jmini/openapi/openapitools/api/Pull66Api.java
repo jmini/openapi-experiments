@@ -65,6 +65,6 @@ public class Pull66Api  {
     public Response pull66(@ApiParam(value = "" ) @Valid EnumInArrayOfArray enumInArrayOfArray
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.pull66(enumInArrayOfArray,securityContext);
+        return delegate.pull66(enumInArrayOfArray, securityContext);
     }
 }

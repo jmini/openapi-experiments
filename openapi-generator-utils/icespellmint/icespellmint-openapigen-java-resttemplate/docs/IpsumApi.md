@@ -19,13 +19,15 @@ Method | HTTP request | Description
 [**pingPut**](IpsumApi.md#pingPut) | **PUT** /ipsum/ping | 
 
 
-<a name="jsonPingDelete"></a>
-# **jsonPingDelete**
+
+## jsonPingDelete
+
 > jsonPingDelete(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -44,6 +46,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -58,16 +61,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="jsonPingHead"></a>
-# **jsonPingHead**
+
+## jsonPingHead
+
 > jsonPingHead(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -86,6 +91,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -100,16 +106,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="jsonPingOptions"></a>
-# **jsonPingOptions**
+
+## jsonPingOptions
+
 > jsonPingOptions(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -128,6 +136,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -142,16 +151,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="jsonPingPatch"></a>
-# **jsonPingPatch**
+
+## jsonPingPatch
+
 > jsonPingPatch(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -170,6 +181,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -184,16 +196,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="jsonPingPost"></a>
-# **jsonPingPost**
+
+## jsonPingPost
+
 > jsonPingPost(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -212,6 +226,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -226,16 +241,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="jsonPingPut"></a>
-# **jsonPingPut**
+
+## jsonPingPut
+
 > jsonPingPut(someObj)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -254,6 +271,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
@@ -268,16 +286,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
-<a name="pingDelete"></a>
-# **pingDelete**
+
+## pingDelete
+
 > pingDelete(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -296,6 +316,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -310,16 +331,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingGet"></a>
-# **pingGet**
+
+## pingGet
+
 > pingGet(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -338,6 +361,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -352,16 +376,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingHead"></a>
-# **pingHead**
+
+## pingHead
+
 > pingHead(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -380,6 +406,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -394,16 +421,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingOptions"></a>
-# **pingOptions**
+
+## pingOptions
+
 > pingOptions(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -422,6 +451,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -436,16 +466,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingPatch"></a>
-# **pingPatch**
+
+## pingPatch
+
 > pingPatch(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -464,6 +496,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -478,16 +511,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingPost"></a>
-# **pingPost**
+
+## pingPost
+
 > pingPost(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -506,6 +541,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -520,16 +556,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="pingPut"></a>
-# **pingPut**
+
+## pingPut
+
 > pingPut(custom)
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import fr.jmini.openapi.openapitools.resttemplate.ApiException;
@@ -548,6 +586,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **custom** | **String**|  | [optional]
@@ -562,6 +601,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

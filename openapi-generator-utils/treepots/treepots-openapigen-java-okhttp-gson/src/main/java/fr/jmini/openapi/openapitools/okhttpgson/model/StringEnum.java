@@ -50,13 +50,13 @@ public enum StringEnum {
     return String.valueOf(value);
   }
 
-  public static StringEnum fromValue(String text) {
+  public static StringEnum fromValue(String value) {
     for (StringEnum b : StringEnum.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<StringEnum> {
@@ -68,7 +68,7 @@ public enum StringEnum {
     @Override
     public StringEnum read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return StringEnum.fromValue(String.valueOf(value));
+      return StringEnum.fromValue(value);
     }
   }
 }

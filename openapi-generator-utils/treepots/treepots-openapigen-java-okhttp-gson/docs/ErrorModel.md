@@ -1,7 +1,9 @@
 
+
 # ErrorModel
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **statusCode** | **Integer** | http status code |  [optional]

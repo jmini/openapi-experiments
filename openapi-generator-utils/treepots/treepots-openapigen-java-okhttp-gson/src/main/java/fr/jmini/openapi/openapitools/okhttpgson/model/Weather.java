@@ -64,13 +64,13 @@ public class Weather {
       return String.valueOf(value);
     }
 
-    public static TypeEnum fromValue(String text) {
+    public static TypeEnum fromValue(Integer value) {
       for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -82,7 +82,7 @@ public class Weather {
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
         Integer value = jsonReader.nextInt();
-        return TypeEnum.fromValue(String.valueOf(value));
+        return TypeEnum.fromValue(value);
       }
     }
   }

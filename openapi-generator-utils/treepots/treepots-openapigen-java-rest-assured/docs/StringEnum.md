@@ -1,4 +1,5 @@
 
+
 # StringEnum
 
 ## Enum

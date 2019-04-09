@@ -57,12 +57,11 @@ public class IpsumApi {
     /**
      * Build call for jsonPingDelete
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingDeleteCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingDeleteCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -86,27 +85,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingDeleteValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingDeleteValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingDeleteCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingDeleteCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -129,7 +116,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingDeleteWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingDeleteValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingDeleteValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -143,38 +130,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingDeleteAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingDeleteValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingDeleteValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for jsonPingHead
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingHeadCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingHeadCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -198,27 +165,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingHeadValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingHeadValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingHeadCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingHeadCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -241,7 +196,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingHeadWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingHeadValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingHeadValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -255,38 +210,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingHeadAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingHeadValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingHeadValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for jsonPingOptions
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingOptionsCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingOptionsCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -310,27 +245,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingOptionsValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingOptionsValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingOptionsCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingOptionsCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -353,7 +276,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingOptionsWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingOptionsValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingOptionsValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -367,38 +290,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingOptionsAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingOptionsValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingOptionsValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for jsonPingPatch
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingPatchCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPatchCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -422,27 +325,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingPatchValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPatchValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingPatchCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPatchCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -465,7 +356,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPatchWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingPatchValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingPatchValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -479,38 +370,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingPatchAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingPatchValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPatchValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for jsonPingPost
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingPostCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPostCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -534,27 +405,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingPostValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPostValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingPostCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPostCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -577,7 +436,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPostWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingPostValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingPostValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -591,38 +450,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingPostAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingPostValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPostValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for jsonPingPut
      * @param someObj  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call jsonPingPutCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call jsonPingPutCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = someObj;
 
         // create path and map variables
@@ -646,27 +485,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jsonPingPutValidateBeforeCall(SomeObj someObj, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call jsonPingPutValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = jsonPingPutCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPutCall(someObj, _callback);
         return localVarCall;
 
     }
@@ -689,7 +516,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> jsonPingPutWithHttpInfo(SomeObj someObj) throws ApiException {
-        okhttp3.Call localVarCall = jsonPingPutValidateBeforeCall(someObj, null, null);
+        okhttp3.Call localVarCall = jsonPingPutValidateBeforeCall(someObj, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -703,38 +530,18 @@ public class IpsumApi {
      */
     public okhttp3.Call jsonPingPutAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = jsonPingPutValidateBeforeCall(someObj, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = jsonPingPutValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingDelete
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingDeleteCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingDeleteCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -762,27 +569,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingDeleteValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingDeleteValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingDeleteCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingDeleteCall(custom, _callback);
         return localVarCall;
 
     }
@@ -805,7 +600,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingDeleteWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingDeleteValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingDeleteValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -819,38 +614,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingDeleteAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingDeleteValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingDeleteValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingGet
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingGetCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingGetCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -878,27 +653,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingGetValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingGetValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingGetCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingGetCall(custom, _callback);
         return localVarCall;
 
     }
@@ -921,7 +684,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingGetWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingGetValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingGetValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -935,38 +698,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingGetAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingGetValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingGetValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingHead
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingHeadCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingHeadCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -994,27 +737,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingHeadValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingHeadValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingHeadCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingHeadCall(custom, _callback);
         return localVarCall;
 
     }
@@ -1037,7 +768,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingHeadWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingHeadValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingHeadValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1051,38 +782,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingHeadAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingHeadValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingHeadValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingOptions
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingOptionsCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingOptionsCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1110,27 +821,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "OPTIONS", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingOptionsValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingOptionsValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingOptionsCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingOptionsCall(custom, _callback);
         return localVarCall;
 
     }
@@ -1153,7 +852,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingOptionsWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingOptionsValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingOptionsValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1167,38 +866,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingOptionsAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingOptionsValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingOptionsValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingPatch
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingPatchCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPatchCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1226,27 +905,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingPatchValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPatchValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingPatchCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPatchCall(custom, _callback);
         return localVarCall;
 
     }
@@ -1269,7 +936,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPatchWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingPatchValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingPatchValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1283,38 +950,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingPatchAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingPatchValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPatchValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingPost
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingPostCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPostCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1342,27 +989,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingPostValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPostValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingPostCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPostCall(custom, _callback);
         return localVarCall;
 
     }
@@ -1385,7 +1020,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPostWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingPostValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingPostValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1399,38 +1034,18 @@ public class IpsumApi {
      */
     public okhttp3.Call pingPostAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingPostValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPostValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for pingPut
      * @param custom  (optional)
-     * @param _progressListener Progress listener
-     * @param _progressRequestListener Progress request listener
+     * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call pingPutCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    public okhttp3.Call pingPutCall(String custom, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1458,27 +1073,15 @@ public class IpsumApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        if (_progressListener != null) {
-            localVarApiClient.setHttpClient(localVarApiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), _progressListener))
-                            .build();
-                }
-            }).build());
-        }
-
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _progressRequestListener);
+        return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingPutValidateBeforeCall(String custom, final ProgressResponseBody.ProgressListener _progressListener, final ProgressRequestBody.ProgressRequestListener _progressRequestListener) throws ApiException {
+    private okhttp3.Call pingPutValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = pingPutCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPutCall(custom, _callback);
         return localVarCall;
 
     }
@@ -1501,7 +1104,7 @@ public class IpsumApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> pingPutWithHttpInfo(String custom) throws ApiException {
-        okhttp3.Call localVarCall = pingPutValidateBeforeCall(custom, null, null);
+        okhttp3.Call localVarCall = pingPutValidateBeforeCall(custom, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1515,26 +1118,7 @@ public class IpsumApi {
      */
     public okhttp3.Call pingPutAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
-        ProgressResponseBody.ProgressListener _progressListener = null;
-        ProgressRequestBody.ProgressRequestListener _progressRequestListener = null;
-
-        if (_callback != null) {
-            _progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    _callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            _progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    _callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call localVarCall = pingPutValidateBeforeCall(custom, _progressListener, _progressRequestListener);
+        okhttp3.Call localVarCall = pingPutValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

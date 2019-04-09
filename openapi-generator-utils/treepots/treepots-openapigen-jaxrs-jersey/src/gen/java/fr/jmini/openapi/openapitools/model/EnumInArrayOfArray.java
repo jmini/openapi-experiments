@@ -52,16 +52,16 @@ public class EnumInArrayOfArray   {
     }
 
     @JsonCreator
-    public static P1Enum fromValue(String text) {
+    public static P1Enum fromValue(String value) {
       for (P1Enum b : P1Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
   }
- 
+
   @JsonProperty("p1")
   private List<P1Enum> p1 = null;
 
@@ -88,16 +88,16 @@ public class EnumInArrayOfArray   {
     }
 
     @JsonCreator
-    public static P2Enum fromValue(String text) {
+    public static P2Enum fromValue(String value) {
       for (P2Enum b : P2Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
   }
- 
+
   @JsonProperty("p2")
   private List<List<P2Enum>> p2 = null;
 
@@ -128,16 +128,16 @@ public class EnumInArrayOfArray   {
     }
 
     @JsonCreator
-    public static P3Enum fromValue(String text) {
+    public static P3Enum fromValue(String value) {
       for (P3Enum b : P3Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
   }
- 
+
   @JsonProperty("p3")
   private List<List<List<P3Enum>>> p3 = null;
 
@@ -188,7 +188,7 @@ public class EnumInArrayOfArray   {
    **/
   @JsonProperty("p2")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public List<List<P2Enum>> getP2() {
     return p2;
   }
@@ -216,7 +216,7 @@ public class EnumInArrayOfArray   {
    **/
   @JsonProperty("p3")
   @ApiModelProperty(value = "")
-  @Valid
+  @Valid 
   public List<List<List<P3Enum>>> getP3() {
     return p3;
   }

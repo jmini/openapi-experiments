@@ -28,13 +28,13 @@ public enum EnumWithCustomName {
   }
 
   @JsonCreator
-  public static EnumWithCustomName fromValue(String text) {
+  public static EnumWithCustomName fromValue(Integer value) {
     for (EnumWithCustomName b : EnumWithCustomName.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
   
 }

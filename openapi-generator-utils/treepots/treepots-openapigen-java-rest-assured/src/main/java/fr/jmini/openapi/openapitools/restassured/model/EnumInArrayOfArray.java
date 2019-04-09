@@ -57,13 +57,13 @@ public class EnumInArrayOfArray {
       return String.valueOf(value);
     }
 
-    public static P1Enum fromValue(String text) {
+    public static P1Enum fromValue(String value) {
       for (P1Enum b : P1Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<P1Enum> {
@@ -75,7 +75,7 @@ public class EnumInArrayOfArray {
       @Override
       public P1Enum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return P1Enum.fromValue(String.valueOf(value));
+        return P1Enum.fromValue(value);
       }
     }
   }
@@ -110,13 +110,13 @@ public class EnumInArrayOfArray {
       return String.valueOf(value);
     }
 
-    public static P2Enum fromValue(String text) {
+    public static P2Enum fromValue(String value) {
       for (P2Enum b : P2Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<P2Enum> {
@@ -128,7 +128,7 @@ public class EnumInArrayOfArray {
       @Override
       public P2Enum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return P2Enum.fromValue(String.valueOf(value));
+        return P2Enum.fromValue(value);
       }
     }
   }
@@ -167,13 +167,13 @@ public class EnumInArrayOfArray {
       return String.valueOf(value);
     }
 
-    public static P3Enum fromValue(String text) {
+    public static P3Enum fromValue(String value) {
       for (P3Enum b : P3Enum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(value)) {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<P3Enum> {
@@ -185,7 +185,7 @@ public class EnumInArrayOfArray {
       @Override
       public P3Enum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return P3Enum.fromValue(String.valueOf(value));
+        return P3Enum.fromValue(value);
       }
     }
   }

@@ -49,13 +49,13 @@ public enum LongEnumWithCustomName {
   }
 
   @JsonCreator
-  public static LongEnumWithCustomName fromValue(String text) {
+  public static LongEnumWithCustomName fromValue(Long value) {
     for (LongEnumWithCustomName b : LongEnumWithCustomName.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 }
 

@@ -48,13 +48,13 @@ public enum EnumWithCustomName {
     return String.valueOf(value);
   }
 
-  public static EnumWithCustomName fromValue(String text) {
+  public static EnumWithCustomName fromValue(Integer value) {
     for (EnumWithCustomName b : EnumWithCustomName.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<EnumWithCustomName> {
@@ -66,7 +66,7 @@ public enum EnumWithCustomName {
     @Override
     public EnumWithCustomName read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return EnumWithCustomName.fromValue(String.valueOf(value));
+      return EnumWithCustomName.fromValue(value);
     }
   }
 }

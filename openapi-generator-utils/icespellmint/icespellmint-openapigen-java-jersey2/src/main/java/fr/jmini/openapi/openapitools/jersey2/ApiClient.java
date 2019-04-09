@@ -182,6 +182,20 @@ public class ApiClient {
   }
 
   /**
+   * Helper method to set bearer token for the first Bearer authentication.
+   * @param bearerToken Bearer token
+   */
+  public void setBearerToken(String bearerToken) {
+    for (Authentication auth : authentications.values()) {
+      if (auth instanceof HttpBearerAuth) {
+        ((HttpBearerAuth) auth).setBearerToken(bearerToken);
+        return;
+      }
+    }
+    throw new RuntimeException("No Bearer authentication configured!");
+  }
+
+  /**
    * Set the User-Agent header's value (by adding to the default header map).
    * @param userAgent Http user agent
    * @return API client

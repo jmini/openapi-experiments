@@ -59,6 +59,7 @@ import java.util.TimeZone;
 
 import fr.jmini.openapi.openapitools.webclient.auth.Authentication;
 import fr.jmini.openapi.openapitools.webclient.auth.HttpBasicAuth;
+import fr.jmini.openapi.openapitools.webclient.auth.HttpBearerAuth;
 import fr.jmini.openapi.openapitools.webclient.auth.ApiKeyAuth;
 
 
@@ -174,6 +175,20 @@ public class ApiClient {
      */
     public Authentication getAuthentication(String authName) {
         return authentications.get(authName);
+    }
+
+    /**
+     * Helper method to set access token for the first Bearer authentication.
+     * @param bearerToken Bearer token
+     */
+    public void setBearerToken(String bearerToken) {
+        for (Authentication auth : authentications.values()) {
+            if (auth instanceof HttpBearerAuth) {
+                ((HttpBearerAuth) auth).setBearerToken(bearerToken);
+                return;
+            }
+        }
+        throw new RuntimeException("No Bearer authentication configured!");
     }
 
     /**

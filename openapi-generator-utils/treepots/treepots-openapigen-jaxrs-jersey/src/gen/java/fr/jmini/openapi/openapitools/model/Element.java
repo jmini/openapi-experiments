@@ -65,8 +65,7 @@ public class Element   {
    **/
   @JsonProperty("type")
   @ApiModelProperty(required = true, value = "")
-    @NotNull
-
+  @NotNull 
   public String getType() {
     return type;
   }

@@ -1,7 +1,9 @@
 
+
 # LongModel
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **long1** | **Long** |  |  [optional]

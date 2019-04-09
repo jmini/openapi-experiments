@@ -28,13 +28,13 @@ public enum EnumWithCustomName {
         return String.valueOf(value);
     }
 
-    public static EnumWithCustomName fromValue(String v) {
+    public static EnumWithCustomName fromValue(Integer value) {
         for (EnumWithCustomName b : EnumWithCustomName.values()) {
-            if (String.valueOf(b.value).equals(v)) {
+            if (b.value.equals(value)) {
                 return b;
             }
         }
-        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 }
 

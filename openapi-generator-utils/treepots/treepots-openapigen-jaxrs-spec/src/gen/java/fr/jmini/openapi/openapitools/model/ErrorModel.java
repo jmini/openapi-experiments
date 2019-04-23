@@ -83,9 +83,9 @@ public class ErrorModel   {
       return false;
     }
     ErrorModel errorModel = (ErrorModel) o;
-    return Objects.equals(statusCode, errorModel.statusCode) &&
-        Objects.equals(statusDescription, errorModel.statusDescription) &&
-        Objects.equals(errorMessage, errorModel.errorMessage);
+    return Objects.equals(this.statusCode, errorModel.statusCode) &&
+        Objects.equals(this.statusDescription, errorModel.statusDescription) &&
+        Objects.equals(this.errorMessage, errorModel.errorMessage);
   }
 
   @Override

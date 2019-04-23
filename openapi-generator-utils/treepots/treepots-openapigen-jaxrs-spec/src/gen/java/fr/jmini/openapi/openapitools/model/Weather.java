@@ -77,7 +77,7 @@ public enum TypeEnum {
       return false;
     }
     Weather weather = (Weather) o;
-    return Objects.equals(type, weather.type);
+    return Objects.equals(this.type, weather.type);
   }
 
   @Override

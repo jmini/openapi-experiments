@@ -12,7 +12,6 @@ import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
 
-
 public class Order   {
   
   private Long id;

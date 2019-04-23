@@ -65,8 +65,8 @@ public class Body1   {
       return false;
     }
     Body1 body1 = (Body1) o;
-    return Objects.equals(additionalMetadata, body1.additionalMetadata) &&
-        Objects.equals(file, body1.file);
+    return Objects.equals(this.additionalMetadata, body1.additionalMetadata) &&
+        Objects.equals(this.file, body1.file);
   }
 
   @Override

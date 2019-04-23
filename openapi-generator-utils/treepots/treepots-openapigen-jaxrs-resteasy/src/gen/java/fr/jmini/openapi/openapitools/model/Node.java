@@ -13,7 +13,6 @@ import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
 
-
 public class Node extends Element  {
   
   private List<String> childrenIds = new ArrayList<String>();

@@ -16,7 +16,6 @@ import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 
-
 public class Node extends Element  {
   
   private List<String> childrenIds = null;

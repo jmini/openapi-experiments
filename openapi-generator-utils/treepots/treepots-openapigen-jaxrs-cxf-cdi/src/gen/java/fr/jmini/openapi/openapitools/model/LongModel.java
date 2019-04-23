@@ -13,7 +13,6 @@ import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 
-
 public class LongModel   {
   
   private Long long1;

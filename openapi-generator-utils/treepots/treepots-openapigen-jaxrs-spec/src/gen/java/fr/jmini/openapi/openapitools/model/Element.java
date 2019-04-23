@@ -13,6 +13,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = Node.class, name = "Node"),
+  @JsonSubTypes.Type(value = Leave.class, name = "Leave"),
+})
 
 
 public class Element   {
@@ -65,8 +70,8 @@ public class Element   {
       return false;
     }
     Element element = (Element) o;
-    return Objects.equals(id, element.id) &&
-        Objects.equals(type, element.type);
+    return Objects.equals(this.id, element.id) &&
+        Objects.equals(this.type, element.type);
   }
 
   @Override

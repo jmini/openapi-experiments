@@ -159,13 +159,13 @@ public class ObjWithEnums   {
       return false;
     }
     ObjWithEnums objWithEnums = (ObjWithEnums) o;
-    return Objects.equals(iprop, objWithEnums.iprop) &&
-        Objects.equals(lprop, objWithEnums.lprop) &&
-        Objects.equals(sprop, objWithEnums.sprop) &&
-        Objects.equals(iprop2, objWithEnums.iprop2) &&
-        Objects.equals(lprop2, objWithEnums.lprop2) &&
-        Objects.equals(sprop2, objWithEnums.sprop2) &&
-        Objects.equals(custom, objWithEnums.custom);
+    return Objects.equals(this.iprop, objWithEnums.iprop) &&
+        Objects.equals(this.lprop, objWithEnums.lprop) &&
+        Objects.equals(this.sprop, objWithEnums.sprop) &&
+        Objects.equals(this.iprop2, objWithEnums.iprop2) &&
+        Objects.equals(this.lprop2, objWithEnums.lprop2) &&
+        Objects.equals(this.sprop2, objWithEnums.sprop2) &&
+        Objects.equals(this.custom, objWithEnums.custom);
   }
 
   @Override

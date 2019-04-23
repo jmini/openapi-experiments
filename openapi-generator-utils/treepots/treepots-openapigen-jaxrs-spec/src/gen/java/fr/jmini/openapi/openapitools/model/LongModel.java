@@ -62,8 +62,8 @@ public class LongModel   {
       return false;
     }
     LongModel longModel = (LongModel) o;
-    return Objects.equals(long1, longModel.long1) &&
-        Objects.equals(long2, longModel.long2);
+    return Objects.equals(this.long1, longModel.long1) &&
+        Objects.equals(this.long2, longModel.long2);
   }
 
   @Override

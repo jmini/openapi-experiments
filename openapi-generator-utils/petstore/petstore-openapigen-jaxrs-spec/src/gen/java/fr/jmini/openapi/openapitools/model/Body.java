@@ -64,8 +64,8 @@ public class Body   {
       return false;
     }
     Body body = (Body) o;
-    return Objects.equals(name, body.name) &&
-        Objects.equals(status, body.status);
+    return Objects.equals(this.name, body.name) &&
+        Objects.equals(this.status, body.status);
   }
 
   @Override

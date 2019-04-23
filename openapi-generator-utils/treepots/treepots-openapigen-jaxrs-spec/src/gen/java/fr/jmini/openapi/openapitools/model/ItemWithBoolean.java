@@ -80,9 +80,9 @@ public class ItemWithBoolean   {
       return false;
     }
     ItemWithBoolean itemWithBoolean = (ItemWithBoolean) o;
-    return Objects.equals(id, itemWithBoolean.id) &&
-        Objects.equals(active, itemWithBoolean.active) &&
-        Objects.equals(name, itemWithBoolean.name);
+    return Objects.equals(this.id, itemWithBoolean.id) &&
+        Objects.equals(this.active, itemWithBoolean.active) &&
+        Objects.equals(this.name, itemWithBoolean.name);
   }
 
   @Override

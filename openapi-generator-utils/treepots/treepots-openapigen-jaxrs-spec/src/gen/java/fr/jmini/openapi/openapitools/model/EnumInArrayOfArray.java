@@ -181,9 +181,9 @@ public enum P3Enum {
       return false;
     }
     EnumInArrayOfArray enumInArrayOfArray = (EnumInArrayOfArray) o;
-    return Objects.equals(p1, enumInArrayOfArray.p1) &&
-        Objects.equals(p2, enumInArrayOfArray.p2) &&
-        Objects.equals(p3, enumInArrayOfArray.p3);
+    return Objects.equals(this.p1, enumInArrayOfArray.p1) &&
+        Objects.equals(this.p2, enumInArrayOfArray.p2) &&
+        Objects.equals(this.p3, enumInArrayOfArray.p3);
   }
 
   @Override

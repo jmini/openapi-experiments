@@ -45,12 +45,13 @@ public class Leave extends Element  {
       return false;
     }
     Leave leave = (Leave) o;
-    return Objects.equals(value, leave.value);
+    return Objects.equals(this.value, leave.value) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hash(value, super.hashCode());
   }
 
   @Override

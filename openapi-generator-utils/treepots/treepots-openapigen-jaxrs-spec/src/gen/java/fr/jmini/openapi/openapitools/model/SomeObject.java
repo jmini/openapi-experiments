@@ -80,9 +80,9 @@ public class SomeObject   {
       return false;
     }
     SomeObject someObject = (SomeObject) o;
-    return Objects.equals(id, someObject.id) &&
-        Objects.equals(firstName, someObject.firstName) &&
-        Objects.equals(lastName, someObject.lastName);
+    return Objects.equals(this.id, someObject.id) &&
+        Objects.equals(this.firstName, someObject.firstName) &&
+        Objects.equals(this.lastName, someObject.lastName);
   }
 
   @Override

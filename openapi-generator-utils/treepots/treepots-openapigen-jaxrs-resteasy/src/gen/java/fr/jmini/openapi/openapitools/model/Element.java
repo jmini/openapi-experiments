@@ -11,7 +11,11 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = Node.class, name = "Node"),
+  @JsonSubTypes.Type(value = Leave.class, name = "Leave"),
+})
 
 public class Element   {
   

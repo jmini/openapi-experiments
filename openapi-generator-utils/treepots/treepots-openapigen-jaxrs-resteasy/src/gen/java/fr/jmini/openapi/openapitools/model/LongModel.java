@@ -10,7 +10,6 @@ import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
 
-
 public class LongModel   {
   
   private Long long1;

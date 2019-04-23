@@ -77,7 +77,7 @@ public enum StatusEnum {
       return false;
     }
     Task task = (Task) o;
-    return Objects.equals(status, task.status);
+    return Objects.equals(this.status, task.status);
   }
 
   @Override

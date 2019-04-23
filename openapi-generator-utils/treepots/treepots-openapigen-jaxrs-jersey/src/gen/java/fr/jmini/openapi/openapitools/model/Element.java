@@ -26,6 +26,11 @@ import javax.validation.Valid;
 /**
  * Element
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = Node.class, name = "Node"),
+  @JsonSubTypes.Type(value = Leave.class, name = "Leave"),
+})
 
 public class Element   {
   @JsonProperty("id")

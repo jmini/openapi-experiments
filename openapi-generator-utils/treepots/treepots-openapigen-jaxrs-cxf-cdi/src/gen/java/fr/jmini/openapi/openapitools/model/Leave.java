@@ -14,7 +14,6 @@ import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 
-
 public class Leave extends Element  {
   
   private String value;

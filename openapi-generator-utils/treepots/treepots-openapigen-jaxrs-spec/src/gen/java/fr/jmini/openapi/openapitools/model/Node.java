@@ -47,12 +47,13 @@ public class Node extends Element  {
       return false;
     }
     Node node = (Node) o;
-    return Objects.equals(childrenIds, node.childrenIds);
+    return Objects.equals(this.childrenIds, node.childrenIds) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(childrenIds);
+    return Objects.hash(childrenIds, super.hashCode());
   }
 
   @Override

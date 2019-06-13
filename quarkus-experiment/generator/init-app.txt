@@ -1,0 +1,15 @@
+mvn io.quarkus:quarkus-maven-plugin:0.16.1:create \
+    -DprojectGroupId=fr.jmini.openapi \
+    -DprojectArtifactId=quarkus-app \
+    -DclassName="fr.jmini.openapi.GreetingResource" \
+    -Dpath="/hello"
+
+./mvnw quarkus:add-extension -Dextensions="resteasy-jsonb"
+
+./mvnw quarkus:add-extension -Dextensions="smallrye-openapi"
+
+[INFO] ========================================================================================
+[INFO] Your new application has been created in /Users/jbr/Git/openapi-experiments/quarkus-experiment/app/.
+[INFO] Navigate into this directory and launch your application with mvn compile quarkus:dev
+[INFO] Your application will be accessible on http://localhost:8080
+[INFO] ========================================================================================

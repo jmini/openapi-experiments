@@ -17,12 +17,22 @@
   </pluginRepositories>
   -->
 
+  <!-- Uncomment the next section in order to fetch the plugin from the sonatype snapshots repository -->
+  <!--
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  -->
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.openapitools</groupId>
         <artifactId>openapi-generator-maven-plugin</artifactId>
-        <version>4.0.0-beta3</version>
+        <version>4.0.0</version>
         <executions>
           <execution>
             <id>generate-client-code</id>

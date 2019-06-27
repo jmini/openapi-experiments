@@ -30,6 +30,8 @@ public class RunOpenAPIGeneratorForQuarkusMain {
                     .filter(Files::isRegularFile) //
                     .filter(p -> !".project".equals(p.getFileName()
                             .toString())
+                            && !"pom.xml".equals(p.getFileName()
+                                    .toString())
                             && !".openapi-generator-ignore".equals(p.getFileName()
                                     .toString())
                             && !".classpath".equals(p.getFileName()

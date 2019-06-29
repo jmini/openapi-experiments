@@ -1,6 +1,7 @@
 package fr.jmini.openapi.openapitools.model;
 
 import fr.jmini.openapi.openapitools.model.Element;
+import fr.jmini.openapi.openapitools.model.LeaveAllOf;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 

@@ -13,11 +13,13 @@ Int2Enum : fr.jmini.openapi.openapitools.model.Int2Enum
 IntEnum : fr.jmini.openapi.openapitools.model.IntEnum
 ItemWithBoolean : fr.jmini.openapi.openapitools.model.ItemWithBoolean
 Leave : fr.jmini.openapi.openapitools.model.Leave
+LeaveAllOf : fr.jmini.openapi.openapitools.model.LeaveAllOf
 Long2Enum : fr.jmini.openapi.openapitools.model.Long2Enum
 LongEnum : fr.jmini.openapi.openapitools.model.LongEnum
 LongEnumWithCustomName : fr.jmini.openapi.openapitools.model.LongEnumWithCustomName
 LongModel : fr.jmini.openapi.openapitools.model.LongModel
 Node : fr.jmini.openapi.openapitools.model.Node
+NodeAllOf : fr.jmini.openapi.openapitools.model.NodeAllOf
 ObjWithEnums : fr.jmini.openapi.openapitools.model.ObjWithEnums
 SomeObject : fr.jmini.openapi.openapitools.model.SomeObject
 String2Enum : fr.jmini.openapi.openapitools.model.String2Enum

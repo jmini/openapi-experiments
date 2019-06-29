@@ -32,5 +32,5 @@ public interface Pull708Api  {
     @io.swagger.annotations.ApiOperation(value = "", notes = "", response = Void.class, tags={ "lorem", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Void.class) })
-    public Response op708( @QueryParam("bar") String bar,@Context SecurityContext securityContext);
+    public Response op708( @DefaultValue("foobar") @QueryParam("bar") String bar,@Context SecurityContext securityContext);
 }

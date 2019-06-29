@@ -39,6 +39,8 @@ paths:
       summary: Add a new pet to the store
       tags:
       - pet
+      x-contentType: application/json
+      x-accepts: application/json
       x-tags:
       - tag: pet
     put:
@@ -70,6 +72,8 @@ paths:
       summary: Update an existing pet
       tags:
       - pet
+      x-contentType: application/json
+      x-accepts: application/json
       x-tags:
       - tag: pet
   /pet/findByStatus:
@@ -123,6 +127,7 @@ paths:
       summary: Finds Pets by status
       tags:
       - pet
+      x-accepts: application/json
       x-tags:
       - tag: pet
   /pet/findByTags:
@@ -166,6 +171,7 @@ paths:
       summary: Finds Pets by tags
       tags:
       - pet
+      x-accepts: application/json
       x-tags:
       - tag: pet
   /pet/{petId}:
@@ -199,6 +205,7 @@ paths:
       summary: Deletes a pet
       tags:
       - pet
+      x-accepts: application/json
       x-tags:
       - tag: pet
     get:
@@ -239,6 +246,7 @@ paths:
       summary: Find pet by ID
       tags:
       - pet
+      x-accepts: application/json
       x-tags:
       - tag: pet
     post:
@@ -268,6 +276,8 @@ paths:
       summary: Updates a pet in the store with form data
       tags:
       - pet
+      x-contentType: application/x-www-form-urlencoded
+      x-accepts: application/json
       x-tags:
       - tag: pet
   /pet/{petId}/uploadImage:
@@ -299,6 +309,8 @@ paths:
       summary: uploads an image
       tags:
       - pet
+      x-contentType: multipart/form-data
+      x-accepts: application/json
       x-tags:
       - tag: pet
   /store/inventory:
@@ -326,6 +338,7 @@ paths:
       summary: Returns pet inventories by status
       tags:
       - store
+      x-accepts: application/json
       x-tags:
       - tag: store
   /store/order:
@@ -354,6 +367,8 @@ paths:
       summary: Place an order for a pet
       tags:
       - store
+      x-contentType: '*/*'
+      x-accepts: application/json
       x-tags:
       - tag: store
   /store/order/{orderId}:
@@ -380,6 +395,7 @@ paths:
       summary: Delete purchase order by ID
       tags:
       - store
+      x-accepts: application/json
       x-tags:
       - tag: store
     get:
@@ -414,6 +430,7 @@ paths:
       summary: Find purchase order by ID
       tags:
       - store
+      x-accepts: application/json
       x-tags:
       - tag: store
   /user:
@@ -434,6 +451,8 @@ paths:
       summary: Create user
       tags:
       - user
+      x-contentType: '*/*'
+      x-accepts: application/json
       x-tags:
       - tag: user
   /user/createWithArray:
@@ -455,6 +474,8 @@ paths:
       summary: Creates list of users with given input array
       tags:
       - user
+      x-contentType: '*/*'
+      x-accepts: application/json
       x-tags:
       - tag: user
   /user/createWithList:
@@ -476,6 +497,8 @@ paths:
       summary: Creates list of users with given input array
       tags:
       - user
+      x-contentType: '*/*'
+      x-accepts: application/json
       x-tags:
       - tag: user
   /user/login:
@@ -514,6 +537,7 @@ paths:
       summary: Logs user into the system
       tags:
       - user
+      x-accepts: application/json
       x-tags:
       - tag: user
   /user/logout:
@@ -526,6 +550,7 @@ paths:
       summary: Logs out current logged in user session
       tags:
       - user
+      x-accepts: application/json
       x-tags:
       - tag: user
   /user/{username}:
@@ -551,6 +576,7 @@ paths:
       summary: Delete user
       tags:
       - user
+      x-accepts: application/json
       x-tags:
       - tag: user
     get:
@@ -583,6 +609,7 @@ paths:
       summary: Get user by user name
       tags:
       - user
+      x-accepts: application/json
       x-tags:
       - tag: user
     put:
@@ -614,6 +641,8 @@ paths:
       summary: Updated user
       tags:
       - user
+      x-contentType: '*/*'
+      x-accepts: application/json
       x-tags:
       - tag: user
 components:

@@ -68,7 +68,7 @@ public interface LoremApi  {
     @ApiOperation(value = "", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation") })
-    public void op708(@QueryParam("bar") @DefaultValue("foobar") String bar);
+    public void op708(@QueryParam("bar") @DefaultValue("foobar")String bar);
 
     @GET
     @Path("/pull75")

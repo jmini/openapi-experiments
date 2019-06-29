@@ -19,6 +19,7 @@ paths:
       summary: Update an existing pet
       tags:
       - lorem
+      x-accepts: application/json
       x-tags:
       - tag: lorem
   /issue7754:
@@ -34,6 +35,7 @@ paths:
       summary: Codegen
       tags:
       - lorem
+      x-accepts: application/json
       x-tags:
       - tag: lorem
   /pull66:
@@ -49,6 +51,8 @@ paths:
           description: Ok
       tags:
       - lorem
+      x-contentType: application/json
+      x-accepts: application/json
       x-tags:
       - tag: lorem
   /pull75:
@@ -63,6 +67,7 @@ paths:
           description: Ok
       tags:
       - lorem
+      x-accepts: application/json
       x-tags:
       - tag: lorem
   /ipsum/issue199:
@@ -83,6 +88,7 @@ paths:
           description: Unexpected error
       tags:
       - ipsum
+      x-accepts: application/json
       x-tags:
       - tag: ipsum
   /pull708:
@@ -102,6 +108,7 @@ paths:
           description: successful operation
       tags:
       - lorem
+      x-accepts: application/json
       x-tags:
       - tag: lorem
   /polymorphic:
@@ -116,6 +123,7 @@ paths:
           description: a pet to be returned
       tags:
       - lorem
+      x-accepts: application/json
       x-tags:
       - tag: lorem
 components:
@@ -370,16 +378,18 @@ components:
     Node:
       allOf:
       - $ref: '#/components/schemas/Element'
-      - properties:
-          childrenIds:
-            items:
-              type: string
-            type: array
-        type: object
+      - $ref: '#/components/schemas/Node_allOf'
     Leave:
       allOf:
       - $ref: '#/components/schemas/Element'
-      - properties:
-          value:
+      - $ref: '#/components/schemas/Leave_allOf'
+    Node_allOf:
+      properties:
+        childrenIds:
+          items:
             type: string
-        type: object
+          type: array
+    Leave_allOf:
+      properties:
+        value:
+          type: string

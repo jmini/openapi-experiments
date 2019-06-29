@@ -40,7 +40,7 @@ public class Pull708Api  {
     @ApiOperation(value = "", notes = "", response = Void.class, tags={ "lorem" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Void.class) })
-    public Response op708(@ApiParam(value = "", defaultValue="foobar") @DefaultValue("foobar") @QueryParam("bar") String bar) {
+    public Response op708(@ApiParam(value = "", defaultValue="foobar") @DefaultValue("foobar")  @QueryParam("bar") String bar) {
         return delegate.op708(bar, securityContext);
     }
 }

@@ -929,13 +929,15 @@ ul.nav-tabs {
   "allOf" : [ {
     "$ref" : "#/components/schemas/Element"
   }, {
-    "type" : "object",
-    "properties" : {
-      "value" : {
-        "type" : "string"
-      }
-    }
+    "$ref" : "#/components/schemas/Leave_allOf"
   } ]
+};
+    defs["Leave_allOf"] = {
+  "properties" : {
+    "value" : {
+      "type" : "string"
+    }
+  }
 };
     defs["Long2Enum"] = {
   "type" : "integer",
@@ -971,16 +973,18 @@ ul.nav-tabs {
   "allOf" : [ {
     "$ref" : "#/components/schemas/Element"
   }, {
-    "type" : "object",
-    "properties" : {
-      "childrenIds" : {
-        "type" : "array",
-        "items" : {
-          "type" : "string"
-        }
+    "$ref" : "#/components/schemas/Node_allOf"
+  } ]
+};
+    defs["Node_allOf"] = {
+  "properties" : {
+    "childrenIds" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
       }
     }
-  } ]
+  }
 };
     defs["ObjWithEnums"] = {
   "type" : "object",

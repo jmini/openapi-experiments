@@ -79,7 +79,7 @@ api.createUsersWithArrayInput().execute(r -> r.prettyPeek());
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**List&lt;User&gt;**](List.md)| List of user object | [optional]
+ **user** | [**List&lt;User&gt;**](User.md)| List of user object | [optional]
 
 ### Return type
 
@@ -118,7 +118,7 @@ api.createUsersWithListInput().execute(r -> r.prettyPeek());
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**List&lt;User&gt;**](List.md)| List of user object | [optional]
+ **user** | [**List&lt;User&gt;**](User.md)| List of user object | [optional]
 
 ### Return type
 

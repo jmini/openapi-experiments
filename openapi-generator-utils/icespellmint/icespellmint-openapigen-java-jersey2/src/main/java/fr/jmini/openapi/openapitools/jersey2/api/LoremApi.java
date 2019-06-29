@@ -38,6 +38,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyDelete() throws ApiException {
 
@@ -47,7 +52,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyDeleteWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -82,6 +93,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyGet() throws ApiException {
 
@@ -91,7 +107,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyGetWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -126,6 +148,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyHead() throws ApiException {
 
@@ -135,7 +162,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyHeadWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -170,6 +203,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyOptions() throws ApiException {
 
@@ -179,7 +217,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyOptionsWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -214,6 +258,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyPatch() throws ApiException {
 
@@ -223,7 +272,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyPatchWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -258,6 +313,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyPost() throws ApiException {
 
@@ -267,7 +327,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyPostWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();
@@ -302,6 +368,11 @@ public class LoremApi {
    * 
    * 
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void emptyPut() throws ApiException {
 
@@ -311,7 +382,13 @@ public class LoremApi {
   /**
    * 
    * 
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> emptyPutWithHttpInfo() throws ApiException {
     Object localVarPostBody = new Object();

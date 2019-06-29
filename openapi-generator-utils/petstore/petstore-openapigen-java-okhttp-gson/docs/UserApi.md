@@ -25,17 +25,29 @@ This can only be done by the logged in user.
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-User user = new User(); // User | Created user object
-try {
-    apiInstance.createUser(user);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#createUser");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    User user = new User(); // User | Created user object
+    try {
+      apiInstance.createUser(user);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#createUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -58,6 +70,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | successful operation |  -  |
+
 <a name="createUsersWithArrayInput"></a>
 # **createUsersWithArrayInput**
 > createUsersWithArrayInput(user)
@@ -67,17 +84,29 @@ Creates list of users with given input array
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-List<User> user = Arrays.asList(null); // List<User> | List of user object
-try {
-    apiInstance.createUsersWithArrayInput(user);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#createUsersWithArrayInput");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    List<User> user = Arrays.asList(null); // List<User> | List of user object
+    try {
+      apiInstance.createUsersWithArrayInput(user);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#createUsersWithArrayInput");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -85,7 +114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**List&lt;User&gt;**](List.md)| List of user object | [optional]
+ **user** | [**List&lt;User&gt;**](User.md)| List of user object | [optional]
 
 ### Return type
 
@@ -99,6 +128,11 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | successful operation |  -  |
 
 <a name="createUsersWithListInput"></a>
 # **createUsersWithListInput**
@@ -109,17 +143,29 @@ Creates list of users with given input array
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-List<User> user = Arrays.asList(null); // List<User> | List of user object
-try {
-    apiInstance.createUsersWithListInput(user);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#createUsersWithListInput");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    List<User> user = Arrays.asList(null); // List<User> | List of user object
+    try {
+      apiInstance.createUsersWithListInput(user);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#createUsersWithListInput");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -127,7 +173,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**List&lt;User&gt;**](List.md)| List of user object | [optional]
+ **user** | [**List&lt;User&gt;**](User.md)| List of user object | [optional]
 
 ### Return type
 
@@ -141,6 +187,11 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | successful operation |  -  |
 
 <a name="deleteUser"></a>
 # **deleteUser**
@@ -153,17 +204,29 @@ This can only be done by the logged in user.
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-String username = "username_example"; // String | The name that needs to be deleted
-try {
-    apiInstance.deleteUser(username);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#deleteUser");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    String username = "username_example"; // String | The name that needs to be deleted
+    try {
+      apiInstance.deleteUser(username);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#deleteUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -186,6 +249,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Invalid username supplied |  -  |
+**404** | User not found |  -  |
+
 <a name="getUserByName"></a>
 # **getUserByName**
 > User getUserByName(username)
@@ -195,18 +264,30 @@ Get user by user name
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-String username = "username_example"; // String | The name that needs to be fetched. Use user1 for testing. 
-try {
-    User result = apiInstance.getUserByName(username);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#getUserByName");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    String username = "username_example"; // String | The name that needs to be fetched. Use user1 for testing. 
+    try {
+      User result = apiInstance.getUserByName(username);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#getUserByName");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -229,6 +310,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**400** | Invalid username supplied |  -  |
+**404** | User not found |  -  |
+
 <a name="loginUser"></a>
 # **loginUser**
 > String loginUser(username, password)
@@ -238,19 +326,31 @@ Logs user into the system
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-String username = "username_example"; // String | The user name for login
-String password = "password_example"; // String | The password for login in clear text
-try {
-    String result = apiInstance.loginUser(username, password);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#loginUser");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    String username = "username_example"; // String | The user name for login
+    String password = "password_example"; // String | The password for login in clear text
+    try {
+      String result = apiInstance.loginUser(username, password);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#loginUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -274,6 +374,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**400** | Invalid username/password supplied |  -  |
+
 <a name="logoutUser"></a>
 # **logoutUser**
 > logoutUser()
@@ -283,16 +389,28 @@ Logs out current logged in user session
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-try {
-    apiInstance.logoutUser();
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#logoutUser");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    try {
+      apiInstance.logoutUser();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#logoutUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -312,6 +430,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | successful operation |  -  |
+
 <a name="updateUser"></a>
 # **updateUser**
 > updateUser(username, user)
@@ -323,18 +446,30 @@ This can only be done by the logged in user.
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.UserApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
 
-UserApi apiInstance = new UserApi();
-String username = "username_example"; // String | name that need to be deleted
-User user = new User(); // User | Updated user object
-try {
-    apiInstance.updateUser(username, user);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UserApi#updateUser");
-    e.printStackTrace();
+    UserApi apiInstance = new UserApi(defaultClient);
+    String username = "username_example"; // String | name that need to be deleted
+    User user = new User(); // User | Updated user object
+    try {
+      apiInstance.updateUser(username, user);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserApi#updateUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -357,4 +492,10 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Invalid user supplied |  -  |
+**404** | User not found |  -  |
 

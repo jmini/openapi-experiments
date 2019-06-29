@@ -80,7 +80,7 @@ public class PetApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Invalid status value", response = Void.class) })
-    public Response findPetsByStatus(@ApiParam(value = "Status values that need to be considered for filter", allowableValues="available, pending, sold", defaultValue="new ArrayList<String>()") @DefaultValue("new ArrayList<String>()") @QueryParam("status") List<String> status) {
+    public Response findPetsByStatus(@ApiParam(value = "Status values that need to be considered for filter")  @QueryParam("status") List<String> status) {
         return delegate.findPetsByStatus(status, securityContext);
     }
 
@@ -97,7 +97,7 @@ public class PetApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class) })
-    public Response findPetsByTags(@ApiParam(value = "Tags to filter by", defaultValue="new ArrayList<String>()") @DefaultValue("new ArrayList<String>()") @QueryParam("tags") List<String> tags) {
+    public Response findPetsByTags(@ApiParam(value = "Tags to filter by")  @QueryParam("tags") List<String> tags) {
         return delegate.findPetsByTags(tags, securityContext);
     }
 

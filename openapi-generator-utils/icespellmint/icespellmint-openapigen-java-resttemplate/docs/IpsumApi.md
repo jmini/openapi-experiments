@@ -30,17 +30,29 @@ Method | HTTP request | Description
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingDelete(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingDelete");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingDelete(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -63,6 +75,11 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## jsonPingHead
@@ -75,17 +92,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingHead(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingHead");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingHead(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingHead");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -108,6 +137,11 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## jsonPingOptions
@@ -120,17 +154,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingOptions(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingOptions");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingOptions(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingOptions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -153,6 +199,11 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## jsonPingPatch
@@ -165,17 +216,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingPatch(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingPatch");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingPatch(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingPatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -198,6 +261,11 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## jsonPingPost
@@ -210,17 +278,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingPost(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingPost");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingPost(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -243,6 +323,11 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## jsonPingPut
@@ -255,17 +340,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-SomeObj someObj = new SomeObj(); // SomeObj | 
-try {
-    apiInstance.jsonPingPut(someObj);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#jsonPingPut");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingPut(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -289,6 +386,11 @@ No authorization required
 - **Content-Type**: application/json
 - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
 
 ## pingDelete
 
@@ -300,17 +402,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingDelete(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingDelete");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingDelete(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -333,6 +447,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingGet
@@ -345,17 +464,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingGet(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingGet");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingGet(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -378,6 +509,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingHead
@@ -390,17 +526,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingHead(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingHead");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingHead(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingHead");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -423,6 +571,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingOptions
@@ -435,17 +588,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingOptions(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingOptions");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingOptions(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingOptions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -468,6 +633,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingPatch
@@ -480,17 +650,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingPatch(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingPatch");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingPatch(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingPatch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -513,6 +695,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingPost
@@ -525,17 +712,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingPost(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingPost");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingPost(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -558,6 +757,11 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 
 ## pingPut
@@ -570,17 +774,29 @@ No authorization required
 
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.resttemplate.ApiException;
-//import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
 
-IpsumApi apiInstance = new IpsumApi();
-String custom = "custom_example"; // String | 
-try {
-    apiInstance.pingPut(custom);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IpsumApi#pingPut");
-    e.printStackTrace();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingPut(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -603,4 +819,9 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

@@ -71,27 +71,30 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import fr.jmini.openapi.openapitools.okhttpgson.*;
-import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
-import fr.jmini.openapi.openapitools.okhttpgson.model.*;
+// Import classes:
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
 import fr.jmini.openapi.openapitools.okhttpgson.api.IpsumApi;
 
-import java.io.File;
-import java.util.*;
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-public class IpsumApiExample {
-
-    public static void main(String[] args) {
-        
-        IpsumApi apiInstance = new IpsumApi();
-        try {
-            SomeObject result = apiInstance.op199();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling IpsumApi#op199");
-            e.printStackTrace();
-        }
+    IpsumApi apiInstance = new IpsumApi(defaultClient);
+    try {
+      SomeObject result = apiInstance.op199();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling IpsumApi#op199");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 
 ```
@@ -122,11 +125,13 @@ Class | Method | HTTP request | Description
  - [IntEnum](docs/IntEnum.md)
  - [ItemWithBoolean](docs/ItemWithBoolean.md)
  - [Leave](docs/Leave.md)
+ - [LeaveAllOf](docs/LeaveAllOf.md)
  - [Long2Enum](docs/Long2Enum.md)
  - [LongEnum](docs/LongEnum.md)
  - [LongEnumWithCustomName](docs/LongEnumWithCustomName.md)
  - [LongModel](docs/LongModel.md)
  - [Node](docs/Node.md)
+ - [NodeAllOf](docs/NodeAllOf.md)
  - [ObjWithEnums](docs/ObjWithEnums.md)
  - [SomeObject](docs/SomeObject.md)
  - [String2Enum](docs/String2Enum.md)

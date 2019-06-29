@@ -3,6 +3,7 @@ package fr.jmini.openapi.openapitools.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fr.jmini.openapi.openapitools.model.Element;
+import fr.jmini.openapi.openapitools.model.NodeAllOf;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;

@@ -40,6 +40,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingDelete(SomeObj someObj) throws ApiException {
 
@@ -50,7 +55,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingDeleteWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -86,6 +97,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingHead(SomeObj someObj) throws ApiException {
 
@@ -96,7 +112,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingHeadWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -132,6 +154,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingOptions(SomeObj someObj) throws ApiException {
 
@@ -142,7 +169,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingOptionsWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -178,6 +211,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingPatch(SomeObj someObj) throws ApiException {
 
@@ -188,7 +226,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingPatchWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -224,6 +268,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingPost(SomeObj someObj) throws ApiException {
 
@@ -234,7 +283,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingPostWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -270,6 +325,11 @@ public class IpsumApi {
    * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void jsonPingPut(SomeObj someObj) throws ApiException {
 
@@ -280,7 +340,13 @@ public class IpsumApi {
    * 
    * 
    * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> jsonPingPutWithHttpInfo(SomeObj someObj) throws ApiException {
     Object localVarPostBody = someObj;
@@ -316,6 +382,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingDelete(String custom) throws ApiException {
 
@@ -326,7 +397,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingDeleteWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -363,6 +440,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingGet(String custom) throws ApiException {
 
@@ -373,7 +455,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingGetWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -410,6 +498,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingHead(String custom) throws ApiException {
 
@@ -420,7 +513,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingHeadWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -457,6 +556,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingOptions(String custom) throws ApiException {
 
@@ -467,7 +571,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingOptionsWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -504,6 +614,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingPatch(String custom) throws ApiException {
 
@@ -514,7 +629,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingPatchWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -551,6 +672,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingPost(String custom) throws ApiException {
 
@@ -561,7 +687,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingPostWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();
@@ -598,6 +730,11 @@ public class IpsumApi {
    * 
    * @param custom  (optional)
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public void pingPut(String custom) throws ApiException {
 
@@ -608,7 +745,13 @@ public class IpsumApi {
    * 
    * 
    * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
    */
   public ApiResponse<Void> pingPutWithHttpInfo(String custom) throws ApiException {
     Object localVarPostBody = new Object();

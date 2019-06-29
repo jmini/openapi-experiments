@@ -80,7 +80,7 @@ public class PetApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid status value", response = Void.class) })
-    public Response findPetsByStatus(  @DefaultValue("new ArrayList<String>()") @QueryParam("status") List<String> status,@Context SecurityContext securityContext)
+    public Response findPetsByStatus(  @QueryParam("status") List<String> status,@Context SecurityContext securityContext)
     throws NotFoundException {
         return service.findPetsByStatus(status,securityContext);
     }
@@ -98,7 +98,7 @@ public class PetApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid tag value", response = Void.class) })
-    public Response findPetsByTags(  @DefaultValue("new ArrayList<String>()") @QueryParam("tags") List<String> tags,@Context SecurityContext securityContext)
+    public Response findPetsByTags(  @QueryParam("tags") List<String> tags,@Context SecurityContext securityContext)
     throws NotFoundException {
         return service.findPetsByTags(tags,securityContext);
     }

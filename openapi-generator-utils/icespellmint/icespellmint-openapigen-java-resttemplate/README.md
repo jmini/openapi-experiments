@@ -77,19 +77,21 @@ import fr.jmini.openapi.openapitools.resttemplate.auth.*;
 import fr.jmini.openapi.openapitools.resttemplate.model.*;
 import fr.jmini.openapi.openapitools.resttemplate.api.IpsumApi;
 
-import java.io.File;
-import java.util.*;
-
 public class IpsumApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
         
-        IpsumApi apiInstance = new IpsumApi();
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
         SomeObj someObj = new SomeObj(); // SomeObj | 
         try {
             apiInstance.jsonPingDelete(someObj);
         } catch (ApiException e) {
             System.err.println("Exception when calling IpsumApi#jsonPingDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
             e.printStackTrace();
         }
     }

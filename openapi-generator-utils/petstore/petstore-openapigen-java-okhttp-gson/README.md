@@ -71,32 +71,35 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import fr.jmini.openapi.openapitools.okhttpgson.*;
+// Import classes:
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.*;
-import fr.jmini.openapi.openapitools.okhttpgson.model.*;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
 import fr.jmini.openapi.openapitools.okhttpgson.api.PetApi;
 
-import java.io.File;
-import java.util.*;
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://petstore.swagger.io/v2");
+    
+    // Configure OAuth2 access token for authorization: petstore_auth
+    OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
+    petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
 
-public class PetApiExample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
-        // Configure OAuth2 access token for authorization: petstore_auth
-        OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
-        petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
-
-        PetApi apiInstance = new PetApi();
-        Pet pet = new Pet(); // Pet | Pet object that needs to be added to the store
-        try {
-            apiInstance.addPet(pet);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PetApi#addPet");
-            e.printStackTrace();
-        }
+    PetApi apiInstance = new PetApi(defaultClient);
+    Pet pet = new Pet(); // Pet | Pet object that needs to be added to the store
+    try {
+      apiInstance.addPet(pet);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PetApi#addPet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 
 ```

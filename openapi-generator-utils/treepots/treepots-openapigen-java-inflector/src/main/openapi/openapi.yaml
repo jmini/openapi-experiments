@@ -364,16 +364,18 @@ components:
     Node:
       allOf:
       - $ref: '#/components/schemas/Element'
-      - properties:
-          childrenIds:
-            items:
-              type: string
-            type: array
-        type: object
+      - $ref: '#/components/schemas/Node_allOf'
     Leave:
       allOf:
       - $ref: '#/components/schemas/Element'
-      - properties:
-          value:
+      - $ref: '#/components/schemas/Leave_allOf'
+    Node_allOf:
+      properties:
+        childrenIds:
+          items:
             type: string
-        type: object
+          type: array
+    Leave_allOf:
+      properties:
+        value:
+          type: string

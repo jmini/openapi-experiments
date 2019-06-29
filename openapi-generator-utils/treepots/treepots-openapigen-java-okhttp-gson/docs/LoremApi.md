@@ -21,17 +21,29 @@ Update an existing pet
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-try {
-    ItemWithBoolean result = apiInstance.getCase1();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#getCase1");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    try {
+      ItemWithBoolean result = apiInstance.getCase1();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#getCase1");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -51,6 +63,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
 <a name="getPolymorphic"></a>
 # **getPolymorphic**
 > SomeObject getPolymorphic()
@@ -60,17 +77,29 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-try {
-    SomeObject result = apiInstance.getPolymorphic();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#getPolymorphic");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    try {
+      SomeObject result = apiInstance.getPolymorphic();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#getPolymorphic");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -90,6 +119,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | a pet to be returned |  -  |
+
 <a name="issue7754"></a>
 # **issue7754**
 > LongModel issue7754()
@@ -99,17 +133,29 @@ Codegen
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-try {
-    LongModel result = apiInstance.issue7754();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#issue7754");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    try {
+      LongModel result = apiInstance.issue7754();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#issue7754");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -129,6 +175,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
 <a name="op708"></a>
 # **op708**
 > op708(bar)
@@ -138,17 +189,29 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-String bar = "\"foobar\""; // String | 
-try {
-    apiInstance.op708(bar);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#op708");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    String bar = "\"foobar\""; // String | 
+    try {
+      apiInstance.op708(bar);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#op708");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -171,6 +234,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | successful operation |  -  |
+
 <a name="op75"></a>
 # **op75**
 > ObjWithEnums op75()
@@ -180,17 +248,29 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-try {
-    ObjWithEnums result = apiInstance.op75();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#op75");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    try {
+      ObjWithEnums result = apiInstance.op75();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#op75");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -210,6 +290,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
 <a name="pull66"></a>
 # **pull66**
 > pull66(enumInArrayOfArray)
@@ -219,17 +304,29 @@ No authorization required
 ### Example
 ```java
 // Import classes:
-//import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
-//import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
 
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api.company.xyz/v2");
 
-LoremApi apiInstance = new LoremApi();
-EnumInArrayOfArray enumInArrayOfArray = new EnumInArrayOfArray(); // EnumInArrayOfArray | 
-try {
-    apiInstance.pull66(enumInArrayOfArray);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoremApi#pull66");
-    e.printStackTrace();
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    EnumInArrayOfArray enumInArrayOfArray = new EnumInArrayOfArray(); // EnumInArrayOfArray | 
+    try {
+      apiInstance.pull66(enumInArrayOfArray);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#pull66");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -251,4 +348,9 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
 

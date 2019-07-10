@@ -5,7 +5,6 @@ import io.swagger.v3.parser.OpenAPIV3Parser;
 import io.swagger.v3.parser.core.models.ParseOptions;
 
 import org.openapitools.codegen.ClientOptInput;
-import org.openapitools.codegen.ClientOpts;
 import org.openapitools.codegen.CodegenConfig;
 import org.openapitools.codegen.DefaultGenerator;
 import org.openapitools.codegen.languages.AbstractJavaCodegen;
@@ -175,10 +174,7 @@ public class RunOpenapitoolsCodegenMain {
 		options.setResolve(true);
 		final OpenAPI openAPI = openApiParser.read(folder + "/" + inputSpecName, null, options);
 
-		final ClientOptInput opts = new ClientOptInput();
-		opts.setConfig(config);
-		opts.setOpenAPI(openAPI);
-		opts.setOpts(new ClientOpts());
+		final ClientOptInput opts = new ClientOptInput().config(config).openAPI(openAPI);
 		new DefaultGenerator().opts(opts).generate();
 	}
 

@@ -47,6 +47,7 @@ import java.util.regex.Pattern;
 
 import fr.jmini.openapi.openapitools.okhttpgson.auth.Authentication;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.HttpBasicAuth;
+import fr.jmini.openapi.openapitools.okhttpgson.auth.HttpBearerAuth;
 import fr.jmini.openapi.openapitools.okhttpgson.auth.ApiKeyAuth;
 
 public class ApiClient {

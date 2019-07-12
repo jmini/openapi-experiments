@@ -36,6 +36,9 @@ public class ApiClient {
         return new ApiClient(config);
     }
 
+    public DolorApi dolor() {
+        return DolorApi.dolor(config.baseReqSpec.get());
+    }
     public IpsumApi ipsum() {
         return IpsumApi.ipsum(config.baseReqSpec.get());
     }

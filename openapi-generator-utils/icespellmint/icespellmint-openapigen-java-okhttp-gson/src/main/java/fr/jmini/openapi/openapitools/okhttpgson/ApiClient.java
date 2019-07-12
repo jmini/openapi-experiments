@@ -80,6 +80,8 @@ public class ApiClient {
         init();
 
         // Setup authentications (key: authentication name, value: authentication).
+        authentications.put("bearerAuth", new HttpBearerAuth("bearer"));
+        authentications.put("httpBasic", new HttpBasicAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }

@@ -41,7 +41,15 @@ public class ApiClient {
   public ApiClient(String[] authNames) {
     this();
     for(String authName : authNames) {
-      throw new RuntimeException("auth name \"" + authName + "\" not found in available auth names");
+      RequestInterceptor auth;
+      if ("bearerAuth".equals(authName)) {
+        auth = new HttpBearerAuth("bearer");
+      } else if ("httpBasic".equals(authName)) {
+        auth = new HttpBasicAuth();
+      } else {
+        throw new RuntimeException("auth name \"" + authName + "\" not found in available auth names");
+      }
+      addAuthorization(authName, auth);
     }
   }
 

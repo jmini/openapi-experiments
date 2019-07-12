@@ -84,6 +84,10 @@ public class ApiClient {
 
     // Builder pattern to get API instances for this client.
     
+    public DolorApi dolorApi() {
+        return new DolorApi(this);
+    }
+    
     public IpsumApi ipsumApi() {
         return new IpsumApi(this);
     }

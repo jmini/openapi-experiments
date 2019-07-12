@@ -75,20 +75,24 @@ Please follow the [installation](#installation) instruction and execute the foll
 import fr.jmini.openapi.openapitools.resteasy.*;
 import fr.jmini.openapi.openapitools.resteasy.auth.*;
 import fr.jmini.openapi.openapitools.resteasy.model.*;
-import fr.jmini.openapi.openapitools.resteasy.api.IpsumApi;
+import fr.jmini.openapi.openapitools.resteasy.api.DolorApi;
 
-public class IpsumApiExample {
+public class DolorApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8090");
         
-        IpsumApi apiInstance = new IpsumApi(defaultClient);
-        SomeObj someObj = new SomeObj(); // SomeObj | 
+        // Configure HTTP basic authorization: httpBasic
+        HttpBasicAuth httpBasic = (HttpBasicAuth) defaultClient.getAuthentication("httpBasic");
+        httpBasic.setUsername("YOUR USERNAME");
+        httpBasic.setPassword("YOUR PASSWORD");
+
+        DolorApi apiInstance = new DolorApi(defaultClient);
         try {
-            apiInstance.jsonPingDelete(someObj);
+            apiInstance.dolorBasicSec();
         } catch (ApiException e) {
-            System.err.println("Exception when calling IpsumApi#jsonPingDelete");
+            System.err.println("Exception when calling DolorApi#dolorBasicSec");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -105,6 +109,8 @@ All URIs are relative to *http://localhost:8090*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DolorApi* | [**dolorBasicSec**](docs/DolorApi.md#dolorBasicSec) | **POST** /dolor/basicSecurity | 
+*DolorApi* | [**dolorBearerSec**](docs/DolorApi.md#dolorBearerSec) | **POST** /dolor/bearerSecurity | 
 *IpsumApi* | [**jsonPingDelete**](docs/IpsumApi.md#jsonPingDelete) | **DELETE** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingHead**](docs/IpsumApi.md#jsonPingHead) | **HEAD** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingOptions**](docs/IpsumApi.md#jsonPingOptions) | **OPTIONS** /ipsum/jsonPing | 
@@ -134,8 +140,17 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### bearerAuth
+
+
+- **Type**: HTTP basic authentication
+
+### httpBasic
+
+
+- **Type**: HTTP basic authentication
+
 
 ## Recommendation
 

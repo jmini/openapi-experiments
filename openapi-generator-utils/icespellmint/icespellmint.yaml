@@ -220,6 +220,26 @@ paths:
       responses:
         '200':
           description: OK
+  /dolor/basicSecurity:
+    post:
+      tags:
+        - dolor
+      operationId: dolorBasicSec
+      responses:
+        '200':
+          description: OK
+      security:
+        - httpBasic: []
+  /dolor/bearerSecurity:
+    post:
+      tags:
+        - dolor
+      operationId: dolorBearerSec
+      responses:
+        '200':
+          description: OK
+      security:
+        - bearerAuth: []
 components:
   schemas:
     SomeObj:
@@ -230,3 +250,11 @@ components:
           format: int64
         name:
           type: string
+  securitySchemes:
+    httpBasic:
+      scheme: basic
+      type: http
+    bearerAuth:
+      scheme: bearer
+      bearerFormat: token
+      type: http

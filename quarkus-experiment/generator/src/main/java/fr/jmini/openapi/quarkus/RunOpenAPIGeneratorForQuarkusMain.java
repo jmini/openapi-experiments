@@ -5,7 +5,6 @@ import io.swagger.v3.parser.OpenAPIV3Parser;
 import io.swagger.v3.parser.core.models.ParseOptions;
 
 import org.openapitools.codegen.ClientOptInput;
-import org.openapitools.codegen.ClientOpts;
 import org.openapitools.codegen.DefaultGenerator;
 import org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen;
 
@@ -30,8 +29,6 @@ public class RunOpenAPIGeneratorForQuarkusMain {
                     .filter(Files::isRegularFile) //
                     .filter(p -> !".project".equals(p.getFileName()
                             .toString())
-                            && !"pom.xml".equals(p.getFileName()
-                                    .toString())
                             && !".openapi-generator-ignore".equals(p.getFileName()
                                     .toString())
                             && !".classpath".equals(p.getFileName()
@@ -49,6 +46,7 @@ public class RunOpenAPIGeneratorForQuarkusMain {
         config.setHideGenerationTimestamp(true);
         config.setOutputDir(outputDirPath.toFile()
                 .getCanonicalPath());
+        config.setLibrary(JavaJAXRSSpecServerCodegen.QUARKUS_LIBRARY);
 
         final OpenAPIV3Parser openApiParser = new OpenAPIV3Parser();
         final ParseOptions options = new ParseOptions();
@@ -59,7 +57,6 @@ public class RunOpenAPIGeneratorForQuarkusMain {
         final ClientOptInput opts = new ClientOptInput();
         opts.setConfig(config);
         opts.setOpenAPI(openAPI);
-        opts.setOpts(new ClientOpts());
         new DefaultGenerator().opts(opts)
                 .generate();
     }

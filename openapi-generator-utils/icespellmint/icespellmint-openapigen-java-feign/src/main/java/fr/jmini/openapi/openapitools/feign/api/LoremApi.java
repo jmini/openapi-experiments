@@ -1,14 +1,8 @@
 package fr.jmini.openapi.openapitools.feign.api;
 
+import feign.Headers;
+import feign.RequestLine;
 import fr.jmini.openapi.openapitools.feign.ApiClient;
-import fr.jmini.openapi.openapitools.feign.EncodingUtils;
-
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import feign.*;
 
 
 public interface LoremApi extends ApiClient.Api {

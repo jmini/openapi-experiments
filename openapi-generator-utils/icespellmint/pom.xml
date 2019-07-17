@@ -15,6 +15,9 @@
         <module>icespellmint-openapigen-java-resteasy</module>
         <module>icespellmint-openapigen-java-resttemplate</module>
         <module>icespellmint-openapigen-java-webclient</module>
+
+        <module>icespellmint-test-suite</module>
+        <module>java-rest-client-tck</module>
     </modules>
 </project>
 

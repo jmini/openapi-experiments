@@ -1,13 +1,9 @@
 package fr.jmini.openapi.openapitools.feign.api;
 
-import fr.jmini.openapi.openapitools.feign.ApiClient;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import fr.jmini.openapi.openapitools.feign.ApiClient;
 
 /**
  * API tests for DolorApi

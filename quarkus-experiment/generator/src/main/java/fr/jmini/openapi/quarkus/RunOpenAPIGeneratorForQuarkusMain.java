@@ -21,7 +21,7 @@ public class RunOpenAPIGeneratorForQuarkusMain {
     }
 
     private static void convert(String inputSpecName) throws IOException {
-        final String outputDir = "../app-thorntail";
+        final String outputDir = "../app-openliberty";
         Path outputDirPath = Paths.get(outputDir);
 
         if (Files.exists(outputDirPath)) {
@@ -46,7 +46,7 @@ public class RunOpenAPIGeneratorForQuarkusMain {
         config.setHideGenerationTimestamp(true);
         config.setOutputDir(outputDirPath.toFile()
                 .getCanonicalPath());
-        config.setLibrary(JavaJAXRSSpecServerCodegen.THORNTAIL_LIBRARY);
+        config.setLibrary(JavaJAXRSSpecServerCodegen.OPEN_LIBERTY_LIBRARY);
 
         final OpenAPIV3Parser openApiParser = new OpenAPIV3Parser();
         final ParseOptions options = new ParseOptions();

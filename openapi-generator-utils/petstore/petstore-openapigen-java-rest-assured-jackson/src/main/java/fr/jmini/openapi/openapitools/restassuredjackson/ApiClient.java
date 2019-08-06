@@ -21,7 +21,6 @@ import java.util.function.Supplier;
 
 import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
-import static fr.jmini.openapi.openapitools.restassuredjackson.GsonObjectMapper.gson;
 
 public class ApiClient {
     public static final String BASE_URI = "http://petstore.swagger.io/v2";
@@ -49,7 +48,7 @@ public class ApiClient {
     public static class Config {
         private Supplier<RequestSpecBuilder> reqSpecSupplier = () -> new RequestSpecBuilder()
                 .setBaseUri(BASE_URI)
-                .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())));
+                ;
 
         /**
          * Use common specification for all operations

@@ -56,7 +56,7 @@ public class ApiClient {
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
-T
+
     private Map<String, Authentication> authentications;
 
     private DateFormat dateFormat;

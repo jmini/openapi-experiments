@@ -13,7 +13,6 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
-import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.Pet;
 
@@ -33,8 +32,6 @@ import java.lang.reflect.Type;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import fr.jmini.openapi.openapitools.restassuredjackson.JSON;
-
 import static io.restassured.http.Method.*;
 
 @Api(value = "Pet")
@@ -327,8 +324,8 @@ public class PetApi {
          * @return List&lt;Pet&gt;
          */
         public List<Pet> executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<List<Pet>>(){}.getType();
-            return execute(handler).as(type);
+            return java.util.Arrays.asList(execute(handler).as(Pet[].class));
+            
         }
 
         public static final String STATUS_QUERY = "status";
@@ -401,8 +398,8 @@ public class PetApi {
          * @return List&lt;Pet&gt;
          */
         public List<Pet> executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<List<Pet>>(){}.getType();
-            return execute(handler).as(type);
+            return java.util.Arrays.asList(execute(handler).as(Pet[].class));
+            
         }
 
         public static final String TAGS_QUERY = "tags";
@@ -473,8 +470,9 @@ public class PetApi {
          * @return Pet
          */
         public Pet executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<Pet>(){}.getType();
-            return execute(handler).as(type);
+            
+            return execute(handler).as(Pet.class);
+            
         }
 
         public static final String PET_ID_PATH = "petId";

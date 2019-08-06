@@ -13,7 +13,6 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
-import com.google.gson.reflect.TypeToken;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.User;
 
 import java.util.ArrayList;
@@ -32,8 +31,6 @@ import java.lang.reflect.Type;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import fr.jmini.openapi.openapitools.restassuredjackson.JSON;
-
 import static io.restassured.http.Method.*;
 
 @Api(value = "User")
@@ -432,8 +429,9 @@ public class UserApi {
          * @return User
          */
         public User executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<User>(){}.getType();
-            return execute(handler).as(type);
+            
+            return execute(handler).as(User.class);
+            
         }
 
         public static final String USERNAME_PATH = "username";
@@ -505,8 +503,9 @@ public class UserApi {
          * @return String
          */
         public String executeAs(Function<Response, Response> handler) {
-            Type type = new TypeToken<String>(){}.getType();
-            return execute(handler).as(type);
+            
+            return execute(handler).as(String.class);
+            
         }
 
         public static final String USERNAME_QUERY = "username";

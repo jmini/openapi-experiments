@@ -29,8 +29,6 @@ import java.util.List;
 import java.util.Map;
 import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
-import static fr.jmini.openapi.openapitools.restassuredjackson.GsonObjectMapper.gson;
-
 /**
  * API tests for PetApi
  */
@@ -42,7 +40,7 @@ public class PetApiTest {
     @Before
     public void createApi() {
         api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
-                () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
+                () -> new RequestSpecBuilder()
                         .addFilter(new ErrorLoggingFilter())
                         .setBaseUri("http://petstore.swagger.io/v2"))).pet();
     }

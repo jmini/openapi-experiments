@@ -100,6 +100,7 @@ public class Weather {
    * Get type
    * @return type
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public TypeEnum getType() {
     return type;

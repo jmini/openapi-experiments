@@ -28,7 +28,8 @@ import javax.validation.Valid;
  */
 
 public class Leave extends Element  {
-  @JsonProperty("value")
+  public static final String JSON_PROPERTY_VALUE = "value";
+  @JsonProperty(JSON_PROPERTY_VALUE)
   private String value;
 
   public Leave value(String value) {

@@ -48,6 +48,7 @@ public class RunOpenapitoolsCodegenMain {
 
 		convertJava("petstore.json", JavaClientCodegen.OKHTTP_GSON);
 		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED);
+		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED_JACKSON);
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");
 		convertJaxrsCxfClient("petstore.json");

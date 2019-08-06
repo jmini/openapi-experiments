@@ -40,14 +40,23 @@ import static io.restassured.http.Method.*;
 @Api(value = "Ipsum")
 public class IpsumApi {
 
-    private RequestSpecBuilder reqSpec;
+    private Supplier<RequestSpecBuilder> reqSpecSupplier;
+    private Consumer<RequestSpecBuilder> reqSpecCustomizer;
 
-    private IpsumApi(RequestSpecBuilder reqSpec) {
-        this.reqSpec = reqSpec;
+    private IpsumApi(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        this.reqSpecSupplier = reqSpecSupplier;
     }
 
-    public static IpsumApi ipsum(RequestSpecBuilder reqSpec) {
-        return new IpsumApi(reqSpec);
+    public static IpsumApi ipsum(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        return new IpsumApi(reqSpecSupplier);
+    }
+
+    private RequestSpecBuilder createReqSpec() {
+        RequestSpecBuilder reqSpec = reqSpecSupplier.get();
+        if(reqSpecCustomizer != null) {
+            reqSpecCustomizer.accept(reqSpec);
+        }
+        return reqSpec;
     }
 
 
@@ -59,16 +68,16 @@ public class IpsumApi {
             @ApiResponse(code = 200, message = "a pet to be returned") ,
             @ApiResponse(code = 0, message = "Unexpected error")  })
     public Op199Oper op199() {
-        return new Op199Oper(reqSpec);
+        return new Op199Oper(createReqSpec());
     }
 
     /**
-     * Customise request specification
-     * @param consumer consumer
+     * Customize request specification
+     * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
      * @return api
      */
-    public IpsumApi reqSpec(Consumer<RequestSpecBuilder> consumer) {
-        consumer.accept(reqSpec);
+    public IpsumApi reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+        this.reqSpecCustomizer = reqSpecCustomizer;
         return this;
     }
 
@@ -113,22 +122,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public Op199Oper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public Op199Oper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public Op199Oper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public Op199Oper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }

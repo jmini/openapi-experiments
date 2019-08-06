@@ -50,6 +50,7 @@ public class SomeObject {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Integer getId() {
     return id;
@@ -68,6 +69,7 @@ public class SomeObject {
    * Get firstName
    * @return firstName
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getFirstName() {
     return firstName;
@@ -86,6 +88,7 @@ public class SomeObject {
    * Get lastName
    * @return lastName
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getLastName() {
     return lastName;

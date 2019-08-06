@@ -26,7 +26,8 @@ import javax.validation.Valid;
  */
 
 public class LeaveAllOf   {
-  @JsonProperty("value")
+  public static final String JSON_PROPERTY_VALUE = "value";
+  @JsonProperty(JSON_PROPERTY_VALUE)
   private String value;
 
   public LeaveAllOf value(String value) {

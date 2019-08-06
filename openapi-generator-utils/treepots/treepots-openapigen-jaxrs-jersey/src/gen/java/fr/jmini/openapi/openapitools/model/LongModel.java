@@ -26,10 +26,12 @@ import javax.validation.Valid;
  */
 
 public class LongModel   {
-  @JsonProperty("Long1")
+  public static final String JSON_PROPERTY_LONG1 = "Long1";
+  @JsonProperty(JSON_PROPERTY_LONG1)
   private Long long1;
 
-  @JsonProperty("Long2")
+  public static final String JSON_PROPERTY_LONG2 = "Long2";
+  @JsonProperty(JSON_PROPERTY_LONG2)
   private Long long2;
 
   public LongModel long1(Long long1) {

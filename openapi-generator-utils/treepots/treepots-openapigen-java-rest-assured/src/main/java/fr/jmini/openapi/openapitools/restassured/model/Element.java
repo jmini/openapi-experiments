@@ -50,6 +50,7 @@ public class Element {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getId() {
     return id;

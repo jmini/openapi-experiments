@@ -47,6 +47,7 @@ public class Body1 {
    * Additional data to pass to server
    * @return additionalMetadata
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Additional data to pass to server")
   public String getAdditionalMetadata() {
     return additionalMetadata;
@@ -65,6 +66,7 @@ public class Body1 {
    * file to upload
    * @return file
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "file to upload")
   public File getFile() {
     return file;

@@ -42,6 +42,7 @@ public class LeaveAllOf {
    * Get value
    * @return value
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getValue() {
     return value;

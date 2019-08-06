@@ -26,10 +26,12 @@ import io.swagger.annotations.ApiModelProperty;
  */
 
 public class SomeObj {
-  @JsonProperty("id")
+  public static final String JSON_PROPERTY_ID = "id";
+  @JsonProperty(JSON_PROPERTY_ID)
   private Long id;
 
-  @JsonProperty("name")
+  public static final String JSON_PROPERTY_NAME = "name";
+  @JsonProperty(JSON_PROPERTY_NAME)
   private String name;
 
   public SomeObj id(Long id) {
@@ -41,6 +43,7 @@ public class SomeObj {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Long getId() {
     return id;
@@ -59,6 +62,7 @@ public class SomeObj {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getName() {
     return name;

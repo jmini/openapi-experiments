@@ -38,14 +38,23 @@ import static io.restassured.http.Method.*;
 @Api(value = "Lorem")
 public class LoremApi {
 
-    private RequestSpecBuilder reqSpec;
+    private Supplier<RequestSpecBuilder> reqSpecSupplier;
+    private Consumer<RequestSpecBuilder> reqSpecCustomizer;
 
-    private LoremApi(RequestSpecBuilder reqSpec) {
-        this.reqSpec = reqSpec;
+    private LoremApi(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        this.reqSpecSupplier = reqSpecSupplier;
     }
 
-    public static LoremApi lorem(RequestSpecBuilder reqSpec) {
-        return new LoremApi(reqSpec);
+    public static LoremApi lorem(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        return new LoremApi(reqSpecSupplier);
+    }
+
+    private RequestSpecBuilder createReqSpec() {
+        RequestSpecBuilder reqSpec = reqSpecSupplier.get();
+        if(reqSpecCustomizer != null) {
+            reqSpecCustomizer.accept(reqSpec);
+        }
+        return reqSpec;
     }
 
 
@@ -56,7 +65,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyDeleteOper emptyDelete() {
-        return new EmptyDeleteOper(reqSpec);
+        return new EmptyDeleteOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -66,7 +75,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyGetOper emptyGet() {
-        return new EmptyGetOper(reqSpec);
+        return new EmptyGetOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -76,7 +85,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyHeadOper emptyHead() {
-        return new EmptyHeadOper(reqSpec);
+        return new EmptyHeadOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -86,7 +95,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyOptionsOper emptyOptions() {
-        return new EmptyOptionsOper(reqSpec);
+        return new EmptyOptionsOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -96,7 +105,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyPatchOper emptyPatch() {
-        return new EmptyPatchOper(reqSpec);
+        return new EmptyPatchOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -106,7 +115,7 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyPostOper emptyPost() {
-        return new EmptyPostOper(reqSpec);
+        return new EmptyPostOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -116,16 +125,16 @@ public class LoremApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 201, message = "OK")  })
     public EmptyPutOper emptyPut() {
-        return new EmptyPutOper(reqSpec);
+        return new EmptyPutOper(createReqSpec());
     }
 
     /**
-     * Customise request specification
-     * @param consumer consumer
+     * Customize request specification
+     * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
      * @return api
      */
-    public LoremApi reqSpec(Consumer<RequestSpecBuilder> consumer) {
-        consumer.accept(reqSpec);
+    public LoremApi reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+        this.reqSpecCustomizer = reqSpecCustomizer;
         return this;
     }
 
@@ -159,22 +168,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyDeleteOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyDeleteOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyDeleteOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyDeleteOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -208,22 +217,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyGetOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyGetOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyGetOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyGetOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -257,22 +266,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyHeadOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyHeadOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyHeadOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyHeadOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -306,22 +315,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyOptionsOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyOptionsOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyOptionsOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyOptionsOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -355,22 +364,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyPatchOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyPatchOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyPatchOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyPatchOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -404,22 +413,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyPostOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyPostOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyPostOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyPostOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -453,22 +462,22 @@ public class LoremApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public EmptyPutOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public EmptyPutOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public EmptyPutOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public EmptyPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }

@@ -64,7 +64,8 @@ public class Task   {
     }
   }
 
-  @JsonProperty("status")
+  public static final String JSON_PROPERTY_STATUS = "status";
+  @JsonProperty(JSON_PROPERTY_STATUS)
   private StatusEnum status;
 
   public Task status(StatusEnum status) {

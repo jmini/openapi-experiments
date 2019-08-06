@@ -33,25 +33,32 @@ import javax.validation.Valid;
  */
 
 public class ObjWithEnums   {
-  @JsonProperty("IProp")
+  public static final String JSON_PROPERTY_IPROP = "IProp";
+  @JsonProperty(JSON_PROPERTY_IPROP)
   private IntEnum iprop;
 
-  @JsonProperty("LProp")
+  public static final String JSON_PROPERTY_LPROP = "LProp";
+  @JsonProperty(JSON_PROPERTY_LPROP)
   private LongEnum lprop;
 
-  @JsonProperty("SProp")
+  public static final String JSON_PROPERTY_SPROP = "SProp";
+  @JsonProperty(JSON_PROPERTY_SPROP)
   private StringEnum sprop;
 
-  @JsonProperty("IProp2")
+  public static final String JSON_PROPERTY_IPROP2 = "IProp2";
+  @JsonProperty(JSON_PROPERTY_IPROP2)
   private Int2Enum iprop2 = Int2Enum.NUMBER_2;
 
-  @JsonProperty("LProp2")
+  public static final String JSON_PROPERTY_LPROP2 = "LProp2";
+  @JsonProperty(JSON_PROPERTY_LPROP2)
   private Long2Enum lprop2 = Long2Enum.NUMBER_30;
 
-  @JsonProperty("SProp2")
+  public static final String JSON_PROPERTY_SPROP2 = "SProp2";
+  @JsonProperty(JSON_PROPERTY_SPROP2)
   private String2Enum sprop2 = String2Enum.B;
 
-  @JsonProperty("Custom")
+  public static final String JSON_PROPERTY_CUSTOM = "Custom";
+  @JsonProperty(JSON_PROPERTY_CUSTOM)
   private Enum2WithCustomName custom = Enum2WithCustomName.BAR;
 
   public ObjWithEnums iprop(IntEnum iprop) {

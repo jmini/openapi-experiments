@@ -69,7 +69,8 @@ public class Weather   {
     }
   }
 
-  @JsonProperty("type")
+  public static final String JSON_PROPERTY_TYPE = "type";
+  @JsonProperty(JSON_PROPERTY_TYPE)
   private TypeEnum type;
 
   public Weather type(TypeEnum type) {

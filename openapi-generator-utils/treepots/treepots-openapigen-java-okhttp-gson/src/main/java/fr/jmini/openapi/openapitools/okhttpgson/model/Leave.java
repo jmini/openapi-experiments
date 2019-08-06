@@ -44,6 +44,7 @@ public class Leave extends Element {
    * Get value
    * @return value
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getValue() {
     return value;

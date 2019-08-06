@@ -37,17 +37,17 @@ public class ApiClient {
     }
 
     public PetApi pet() {
-        return PetApi.pet(config.baseReqSpec.get());
+        return PetApi.pet(config.reqSpecSupplier);
     }
     public StoreApi store() {
-        return StoreApi.store(config.baseReqSpec.get());
+        return StoreApi.store(config.reqSpecSupplier);
     }
     public UserApi user() {
-        return UserApi.user(config.baseReqSpec.get());
+        return UserApi.user(config.reqSpecSupplier);
     }
 
     public static class Config {
-        private Supplier<RequestSpecBuilder> baseReqSpec = () -> new RequestSpecBuilder()
+        private Supplier<RequestSpecBuilder> reqSpecSupplier = () -> new RequestSpecBuilder()
                 .setBaseUri(BASE_URI)
                 .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())));
 
@@ -57,7 +57,7 @@ public class ApiClient {
          * @return configuration
          */
         public Config reqSpecSupplier(Supplier<RequestSpecBuilder> supplier) {
-            this.baseReqSpec = supplier;
+            this.reqSpecSupplier = supplier;
             return this;
         }
 

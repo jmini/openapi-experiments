@@ -220,6 +220,192 @@ paths:
       responses:
         '200':
           description: OK
+  /ipsum/hello/{name}:
+    parameters:
+      - name: name
+        required: true
+        in: path
+        schema:
+          type: string
+    get:
+      tags:
+        - ipsum
+      operationId: helloGet
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+        - ipsum
+      operationId: helloPost
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+        - ipsum
+      operationId: helloPut
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+        - ipsum
+      operationId: helloDelete
+      responses:
+        '200':
+          description: OK
+    options:
+      tags:
+        - ipsum
+      operationId: helloOptions
+      responses:
+        '200':
+          description: OK
+    head:
+      tags:
+        - ipsum
+      operationId: helloHead
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+        - ipsum
+      operationId: helloPatch
+      responses:
+        '200':
+          description: OK
+    trace:
+      tags:
+        - ipsum
+      operationId: helloTrace
+      responses:
+        '200':
+          description: OK
+  /etiam/getString:
+    get:
+      tags:
+        - etiam
+      operationId: getString
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+  /etiam/getStringList:
+    get:
+      tags:
+        - etiam
+      operationId: getStringList
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type : string
+  /etiam/getStringMap:
+    get:
+      tags:
+        - etiam
+      operationId: getStringMap
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+  /etiam/getInt:
+    get:
+      tags:
+        - etiam
+      operationId: getInt
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+  /etiam/getIntList:
+    get:
+      tags:
+        - etiam
+      operationId: getIntList
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+  /etiam/getIntMap:
+    get:
+      tags:
+        - etiam
+      operationId: getIntMap
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+                  format: int32
+  /etiam/getSomeObj:
+    get:
+      tags:
+        - etiam
+      operationId: getSomeObj
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SomeObj'
+  /etiam/getSomeObjList:
+    get:
+      tags:
+        - etiam
+      operationId: getSomeObjList
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SomeObj'
+  /etiam/getSomeObjMap:
+    get:
+      tags:
+        - etiam
+      operationId: getSomeObjMap
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/SomeObj'
   /dolor/basicSecurity:
     post:
       tags:
@@ -258,3 +444,16 @@ components:
       scheme: bearer
       bearerFormat: token
       type: http
+tags:
+    -
+        name: lorem
+        description: test for simple calls (without any parameter or return values)
+    -
+        name: ipsum
+        description: test for calls with inputs (parameters, request body, ...)
+    -
+        name: etiam
+        description: test for calls with return values
+    -
+        name: dolor
+        description: test for calls with auth methods

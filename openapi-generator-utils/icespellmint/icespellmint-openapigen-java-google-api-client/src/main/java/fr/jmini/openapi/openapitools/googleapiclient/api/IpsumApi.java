@@ -42,6 +42,510 @@ public class IpsumApi {
 
   /**
     * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloDelete(String name) throws IOException {
+        helloDeleteForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloDelete(String name, Map<String, Object> params) throws IOException {
+        helloDeleteForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloDeleteForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloDelete");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloDeleteForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloDelete");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloGet(String name) throws IOException {
+        helloGetForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloGet(String name, Map<String, Object> params) throws IOException {
+        helloGetForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloGetForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloGet");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloGetForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloGet");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloHead(String name) throws IOException {
+        helloHeadForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloHead(String name, Map<String, Object> params) throws IOException {
+        helloHeadForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloHeadForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloHead");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloHeadForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloHead");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloOptions(String name) throws IOException {
+        helloOptionsForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloOptions(String name, Map<String, Object> params) throws IOException {
+        helloOptionsForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloOptionsForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloOptions");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloOptionsForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloOptions");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPatch(String name) throws IOException {
+        helloPatchForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPatch(String name, Map<String, Object> params) throws IOException {
+        helloPatchForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloPatchForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPatch");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloPatchForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPatch");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPost(String name) throws IOException {
+        helloPostForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPost(String name, Map<String, Object> params) throws IOException {
+        helloPostForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloPostForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPost");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloPostForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPost");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPut(String name) throws IOException {
+        helloPutForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloPut(String name, Map<String, Object> params) throws IOException {
+        helloPutForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloPutForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPut");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloPutForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloPut");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String url = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(url);
+
+        HttpContent content = apiClient.new JacksonJsonHttpContent(null);
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
     * @param someObj The someObj parameter
     * @throws IOException if an error occurs while attempting to invoke the API
     **/

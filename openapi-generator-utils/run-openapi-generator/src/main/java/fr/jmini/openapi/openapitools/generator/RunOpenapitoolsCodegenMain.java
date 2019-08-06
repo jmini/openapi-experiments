@@ -66,6 +66,7 @@ public class RunOpenapitoolsCodegenMain {
 		convertJava("icespellmint.yaml", JavaClientCodegen.JERSEY2);
 		convertJava("icespellmint.yaml", JavaClientCodegen.OKHTTP_GSON);
 		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED);
+		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED_JACKSON);
 		convertJava("icespellmint.yaml", JavaClientCodegen.RESTEASY);
 		convertJava("icespellmint.yaml", JavaClientCodegen.RESTTEMPLATE);
 		convertJava("icespellmint.yaml", JavaClientCodegen.WEBCLIENT);

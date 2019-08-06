@@ -8,6 +8,7 @@
     <modules>
         <module>petstore-openapigen-java-okhttp-gson</module>
         <module>petstore-openapigen-java-rest-assured</module>
+        <module>petstore-openapigen-java-rest-assured-jackson</module>
         <module>petstore-openapigen-java-inflector</module>
         <module>petstore-openapigen-jaxrs-cxf</module>
         <module>petstore-openapigen-jaxrs-cxf-cdi</module>

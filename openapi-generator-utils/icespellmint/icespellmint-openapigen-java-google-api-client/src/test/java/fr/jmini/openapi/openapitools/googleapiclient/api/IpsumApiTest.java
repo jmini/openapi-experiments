@@ -41,6 +41,118 @@ public class IpsumApiTest {
      *          if the Api call fails
      */
     @Test
+    public void helloDeleteTest() throws IOException {
+        String name = null;
+        api.helloDelete(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloGetTest() throws IOException {
+        String name = null;
+        api.helloGet(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloHeadTest() throws IOException {
+        String name = null;
+        api.helloHead(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloOptionsTest() throws IOException {
+        String name = null;
+        api.helloOptions(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPatchTest() throws IOException {
+        String name = null;
+        api.helloPatch(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPostTest() throws IOException {
+        String name = null;
+        api.helloPost(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPutTest() throws IOException {
+        String name = null;
+        api.helloPut(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws IOException
+     *          if the Api call fails
+     */
+    @Test
     public void jsonPingDeleteTest() throws IOException {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj);

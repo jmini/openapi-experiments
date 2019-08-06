@@ -60,6 +60,76 @@ public class IpsumApi {
 
     @ApiOperation(value = "",
             notes = "",
+            nickname = "helloDelete",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloDeleteOper helloDelete() {
+        return new HelloDeleteOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloGet",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloGetOper helloGet() {
+        return new HelloGetOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloHead",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloHeadOper helloHead() {
+        return new HelloHeadOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloOptions",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloOptionsOper helloOptions() {
+        return new HelloOptionsOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloPatch",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloPatchOper helloPatch() {
+        return new HelloPatchOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloPost",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloPostOper helloPost() {
+        return new HelloPostOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "helloPut",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloPutOper helloPut() {
+        return new HelloPutOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
             nickname = "jsonPingDelete",
             tags = { "ipsum" })
     @ApiResponses(value = { 
@@ -198,6 +268,433 @@ public class IpsumApi {
         return this;
     }
 
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloDeleteOper {
+
+        public static final Method REQ_METHOD = DELETE;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloDeleteOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * DELETE /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloDeleteOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloDeleteOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloDeleteOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloGetOper {
+
+        public static final Method REQ_METHOD = GET;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloGetOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * GET /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloGetOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloGetOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloGetOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloHeadOper {
+
+        public static final Method REQ_METHOD = HEAD;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloHeadOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * HEAD /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloHeadOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloHeadOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloHeadOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloOptionsOper {
+
+        public static final Method REQ_METHOD = OPTIONS;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloOptionsOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * OPTIONS /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloOptionsOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloOptionsOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloOptionsOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloPatchOper {
+
+        public static final Method REQ_METHOD = PATCH;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloPatchOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * PATCH /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloPatchOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloPatchOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloPatchOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloPostOper {
+
+        public static final Method REQ_METHOD = POST;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloPostOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * POST /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloPostOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloPostOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloPostOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #namePath  (required)
+     */
+    public static class HelloPutOper {
+
+        public static final Method REQ_METHOD = PUT;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloPutOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * PUT /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloPutOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloPutOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
     /**
      * 
      * 

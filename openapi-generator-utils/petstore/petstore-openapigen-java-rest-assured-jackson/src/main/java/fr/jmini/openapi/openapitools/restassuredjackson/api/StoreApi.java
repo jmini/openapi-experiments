@@ -13,30 +13,25 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
-import static io.restassured.http.Method.DELETE;
-import static io.restassured.http.Method.GET;
-import static io.restassured.http.Method.POST;
+import fr.jmini.openapi.openapitools.restassuredjackson.model.Order;
 
-import com.fasterxml.jackson.databind.type.TypeFactory;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 
 import java.lang.reflect.Type;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import fr.jmini.openapi.openapitools.restassuredjackson.model.Order;
+import static io.restassured.http.Method.*;
 
 @Api(value = "Store")
 public class StoreApi {
@@ -212,9 +207,8 @@ public class StoreApi {
          * @return Map&lt;String, Integer&gt;
          */
         public Map<String, Integer> executeAs(Function<Response, Response> handler) {
-            Type type = TypeFactory.defaultInstance().constructMapLikeType(LinkedHashMap.class, String.class, Integer.class);
             //Integer
-            return execute(handler).as(type);
+            return execute(handler).as(Map.class);
             
         }
 

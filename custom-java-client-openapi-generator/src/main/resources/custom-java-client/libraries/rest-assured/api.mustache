@@ -26,16 +26,26 @@ import {{invokerPackage}}.JSON;
 
 import static io.restassured.http.Method.*;
 
+//XXX
 public class {{classname}} {
 
-    private RequestSpecBuilder reqSpec;
+    private Supplier<RequestSpecBuilder> reqSpecSupplier;
+    private Consumer<RequestSpecBuilder> reqSpecCustomizer;
 
-    private {{classname}}(RequestSpecBuilder reqSpec) {
-        this.reqSpec = reqSpec;
+    private {{classname}}(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        this.reqSpecSupplier = reqSpecSupplier;
     }
 
-    public static {{classname}} {{classVarName}}(RequestSpecBuilder reqSpec) {
-        return new {{classname}}(reqSpec);
+    public static {{classname}} {{classVarName}}(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        return new {{classname}}(reqSpecSupplier);
+    }
+
+    private RequestSpecBuilder createReqSpec() {
+        RequestSpecBuilder reqSpec = reqSpecSupplier.get();
+        if(reqSpecCustomizer != null) {
+            reqSpecCustomizer.accept(reqSpec);
+        }
+        return reqSpec;
     }
 
 {{#operations}}
@@ -45,18 +55,18 @@ public class {{classname}} {
     @Deprecated
     {{/isDeprecated}}
     public {{operationIdCamelCase}}Oper {{operationId}}() {
-        return new {{operationIdCamelCase}}Oper(reqSpec);
+        return new {{operationIdCamelCase}}Oper(createReqSpec());
     }
 {{/operation}}
 {{/operations}}
 
     /**
-     * Customise request specification
+     * Customize request specification
      * @param consumer consumer
      * @return api
      */
-    public {{classname}} reqSpec(Consumer<RequestSpecBuilder> consumer) {
-        consumer.accept(reqSpec);
+    public {{classname}} reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+        this.reqSpecCustomizer = reqSpecCustomizer;
         return this;
     }
 

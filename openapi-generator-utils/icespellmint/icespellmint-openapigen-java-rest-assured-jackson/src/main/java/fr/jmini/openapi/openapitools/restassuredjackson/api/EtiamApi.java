@@ -13,6 +13,7 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.SomeObj;
 
 import java.util.ArrayList;
@@ -192,9 +193,8 @@ public class EtiamApi {
          * @return Integer
          */
         public Integer executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(Integer.class);
-            
+            Type type = Integer.class;
+            return execute(handler).as(type);
         }
 
         /**
@@ -253,8 +253,8 @@ public class EtiamApi {
          * @return List&lt;Integer&gt;
          */
         public List<Integer> executeAs(Function<Response, Response> handler) {
-            return java.util.Arrays.asList(execute(handler).as(Integer[].class));
-            
+            Type type = TypeFactory.defaultInstance().constructCollectionLikeType(java.util.ArrayList.class, Integer.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -313,9 +313,8 @@ public class EtiamApi {
          * @return Map&lt;String, Integer&gt;
          */
         public Map<String, Integer> executeAs(Function<Response, Response> handler) {
-            //Integer
-            return execute(handler).as(Map.class);
-            
+            Type type = TypeFactory.defaultInstance().constructMapLikeType(java.util.LinkedHashMap.class, String.class, Integer.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -374,9 +373,8 @@ public class EtiamApi {
          * @return SomeObj
          */
         public SomeObj executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(SomeObj.class);
-            
+            Type type = SomeObj.class;
+            return execute(handler).as(type);
         }
 
         /**
@@ -435,8 +433,8 @@ public class EtiamApi {
          * @return List&lt;SomeObj&gt;
          */
         public List<SomeObj> executeAs(Function<Response, Response> handler) {
-            return java.util.Arrays.asList(execute(handler).as(SomeObj[].class));
-            
+            Type type = TypeFactory.defaultInstance().constructCollectionLikeType(java.util.ArrayList.class, SomeObj.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -495,9 +493,8 @@ public class EtiamApi {
          * @return Map&lt;String, SomeObj&gt;
          */
         public Map<String, SomeObj> executeAs(Function<Response, Response> handler) {
-            //SomeObj
-            return execute(handler).as(Map.class);
-            
+            Type type = TypeFactory.defaultInstance().constructMapLikeType(java.util.LinkedHashMap.class, String.class, SomeObj.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -556,9 +553,8 @@ public class EtiamApi {
          * @return String
          */
         public String executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(String.class);
-            
+            Type type = String.class;
+            return execute(handler).as(type);
         }
 
         /**
@@ -617,8 +613,8 @@ public class EtiamApi {
          * @return List&lt;String&gt;
          */
         public List<String> executeAs(Function<Response, Response> handler) {
-            return java.util.Arrays.asList(execute(handler).as(String[].class));
-            
+            Type type = TypeFactory.defaultInstance().constructCollectionLikeType(java.util.ArrayList.class, String.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -677,9 +673,8 @@ public class EtiamApi {
          * @return Map&lt;String, String&gt;
          */
         public Map<String, String> executeAs(Function<Response, Response> handler) {
-            //String
-            return execute(handler).as(Map.class);
-            
+            Type type = TypeFactory.defaultInstance().constructMapLikeType(java.util.LinkedHashMap.class, String.class, String.class);
+            return execute(handler).as(type);
         }
 
         /**

@@ -1,16 +1,16 @@
 package fr.jmini.openapi.openapitools.feign;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
+import org.threeten.bp.*;
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.threetenbp.ThreeTenModule;
-
-import org.threeten.bp.Instant;
-import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.ZonedDateTime;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import feign.Feign;
 import feign.RequestInterceptor;
@@ -18,9 +18,7 @@ import feign.form.FormEncoder;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import feign.slf4j.Slf4jLogger;
-import fr.jmini.openapi.openapitools.feign.auth.ApiKeyAuth;
-import fr.jmini.openapi.openapitools.feign.auth.HttpBasicAuth;
-import fr.jmini.openapi.openapitools.feign.auth.HttpBearerAuth;
+import fr.jmini.openapi.openapitools.feign.auth.*;
 
 
 public class ApiClient {

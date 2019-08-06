@@ -13,6 +13,7 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.Order;
 
 import java.util.ArrayList;
@@ -207,9 +208,8 @@ public class StoreApi {
          * @return Map&lt;String, Integer&gt;
          */
         public Map<String, Integer> executeAs(Function<Response, Response> handler) {
-            //Integer
-            return execute(handler).as(Map.class);
-            
+            Type type = TypeFactory.defaultInstance().constructMapLikeType(java.util.LinkedHashMap.class, String.class, Integer.class);
+            return execute(handler).as(type);
         }
 
         /**
@@ -269,9 +269,8 @@ public class StoreApi {
          * @return Order
          */
         public Order executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(Order.class);
-            
+            Type type = Order.class;
+            return execute(handler).as(type);
         }
 
         public static final String ORDER_ID_PATH = "orderId";
@@ -343,9 +342,8 @@ public class StoreApi {
          * @return Order
          */
         public Order executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(Order.class);
-            
+            Type type = Order.class;
+            return execute(handler).as(type);
         }
 
          /**

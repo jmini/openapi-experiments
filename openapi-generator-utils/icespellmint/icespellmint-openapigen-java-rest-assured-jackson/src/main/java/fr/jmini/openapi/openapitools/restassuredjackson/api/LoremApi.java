@@ -13,6 +13,7 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;

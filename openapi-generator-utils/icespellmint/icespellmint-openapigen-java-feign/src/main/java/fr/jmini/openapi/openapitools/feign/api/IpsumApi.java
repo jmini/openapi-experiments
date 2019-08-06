@@ -1,15 +1,15 @@
 package fr.jmini.openapi.openapitools.feign.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import feign.Headers;
-import feign.Param;
-import feign.QueryMap;
-import feign.RequestLine;
 import fr.jmini.openapi.openapitools.feign.ApiClient;
 import fr.jmini.openapi.openapitools.feign.EncodingUtils;
+
 import fr.jmini.openapi.openapitools.feign.model.SomeObj;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import feign.*;
 
 
 public interface IpsumApi extends ApiClient.Api {

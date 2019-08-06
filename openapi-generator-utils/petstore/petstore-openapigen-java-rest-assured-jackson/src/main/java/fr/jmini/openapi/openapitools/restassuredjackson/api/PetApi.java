@@ -13,6 +13,7 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import java.io.File;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.Pet;
 
@@ -324,8 +325,8 @@ public class PetApi {
          * @return List&lt;Pet&gt;
          */
         public List<Pet> executeAs(Function<Response, Response> handler) {
-            return java.util.Arrays.asList(execute(handler).as(Pet[].class));
-            
+            Type type = TypeFactory.defaultInstance().constructCollectionLikeType(java.util.ArrayList.class, Pet.class);
+            return execute(handler).as(type);
         }
 
         public static final String STATUS_QUERY = "status";
@@ -398,8 +399,8 @@ public class PetApi {
          * @return List&lt;Pet&gt;
          */
         public List<Pet> executeAs(Function<Response, Response> handler) {
-            return java.util.Arrays.asList(execute(handler).as(Pet[].class));
-            
+            Type type = TypeFactory.defaultInstance().constructCollectionLikeType(java.util.ArrayList.class, Pet.class);
+            return execute(handler).as(type);
         }
 
         public static final String TAGS_QUERY = "tags";
@@ -470,9 +471,8 @@ public class PetApi {
          * @return Pet
          */
         public Pet executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(Pet.class);
-            
+            Type type = Pet.class;
+            return execute(handler).as(type);
         }
 
         public static final String PET_ID_PATH = "petId";

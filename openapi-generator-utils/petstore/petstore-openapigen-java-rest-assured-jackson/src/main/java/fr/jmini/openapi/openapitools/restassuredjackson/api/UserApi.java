@@ -13,6 +13,7 @@
 
 package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import fr.jmini.openapi.openapitools.restassuredjackson.model.User;
 
 import java.util.ArrayList;
@@ -429,9 +430,8 @@ public class UserApi {
          * @return User
          */
         public User executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(User.class);
-            
+            Type type = User.class;
+            return execute(handler).as(type);
         }
 
         public static final String USERNAME_PATH = "username";
@@ -503,9 +503,8 @@ public class UserApi {
          * @return String
          */
         public String executeAs(Function<Response, Response> handler) {
-            
-            return execute(handler).as(String.class);
-            
+            Type type = String.class;
+            return execute(handler).as(type);
         }
 
         public static final String USERNAME_QUERY = "username";

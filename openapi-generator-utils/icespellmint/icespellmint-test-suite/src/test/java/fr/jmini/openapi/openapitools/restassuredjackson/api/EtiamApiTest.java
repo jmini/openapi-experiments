@@ -11,11 +11,7 @@
  */
 
 
-package fr.jmini.openapi.openapitools.restassured;
-
-import static fr.jmini.openapi.openapitools.restassured.GsonObjectMapper.gson;
-import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
-import static io.restassured.config.RestAssuredConfig.config;
+package fr.jmini.openapi.openapitools.restassuredjackson.api;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.ErrorLoggingFilter;
@@ -23,8 +19,9 @@ import io.restassured.filter.log.ErrorLoggingFilter;
 import java.util.List;
 import java.util.Map;
 
-import fr.jmini.openapi.openapitools.restassured.api.EtiamApi;
-import fr.jmini.openapi.openapitools.restassured.model.SomeObj;
+import fr.jmini.openapi.openapitools.restassured.ApiUtil;
+import fr.jmini.openapi.openapitools.restassuredjackson.ApiClient;
+import fr.jmini.openapi.openapitools.restassuredjackson.model.SomeObj;
 import fr.jmini.rest.client.tck.AbstractEtiamApiTest;
 /**
  * API tests for EtiamApi
@@ -37,9 +34,8 @@ public class EtiamApiTest extends AbstractEtiamApiTest<SomeObj> {
     protected void initEtiamApi(String basePath) {
         api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
                 () -> new RequestSpecBuilder()
-                        .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri(basePath))).etiam();        
+                        .setBaseUri(basePath))).etiam();
     }
 
     @Override

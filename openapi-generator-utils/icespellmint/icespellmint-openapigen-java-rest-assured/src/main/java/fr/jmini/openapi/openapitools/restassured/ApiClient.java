@@ -39,6 +39,9 @@ public class ApiClient {
     public DolorApi dolor() {
         return DolorApi.dolor(config.reqSpecSupplier);
     }
+    public EtiamApi etiam() {
+        return EtiamApi.etiam(config.reqSpecSupplier);
+    }
     public IpsumApi ipsum() {
         return IpsumApi.ipsum(config.reqSpecSupplier);
     }

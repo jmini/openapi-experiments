@@ -40,6 +40,118 @@ public class IpsumApiTest {
      *          if the Api call fails
      */
     @Test
+    public void helloDeleteTest() {
+        String name = null;
+        api.helloDelete(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloGetTest() {
+        String name = null;
+        api.helloGet(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloHeadTest() {
+        String name = null;
+        api.helloHead(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloOptionsTest() {
+        String name = null;
+        api.helloOptions(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPatchTest() {
+        String name = null;
+        api.helloPatch(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPostTest() {
+        String name = null;
+        api.helloPost(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void helloPutTest() {
+        String name = null;
+        api.helloPut(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
     public void jsonPingDeleteTest() {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj);

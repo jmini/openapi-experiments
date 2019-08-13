@@ -50,6 +50,90 @@ public class IpsumApiTest {
      * OK
      */
     @Test
+    public void shouldSee200AfterHelloDelete() {
+        String name = null;
+        api.helloDelete()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloGet() {
+        String name = null;
+        api.helloGet()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloHead() {
+        String name = null;
+        api.helloHead()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloOptions() {
+        String name = null;
+        api.helloOptions()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloPatch() {
+        String name = null;
+        api.helloPatch()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloPost() {
+        String name = null;
+        api.helloPost()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterHelloPut() {
+        String name = null;
+        api.helloPut()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
     public void shouldSee200AfterJsonPingDelete() {
         SomeObj someObj = null;
         api.jsonPingDelete().execute(r -> r.prettyPeek());

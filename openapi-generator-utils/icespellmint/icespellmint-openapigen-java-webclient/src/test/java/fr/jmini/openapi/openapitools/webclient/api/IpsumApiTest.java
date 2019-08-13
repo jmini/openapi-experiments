@@ -37,6 +37,97 @@ public class IpsumApiTest {
      * 
      */
     @Test
+    public void helloDeleteTest()  {
+        String name = null;
+        api.helloDelete(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloGetTest()  {
+        String name = null;
+        api.helloGet(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloHeadTest()  {
+        String name = null;
+        api.helloHead(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloOptionsTest()  {
+        String name = null;
+        api.helloOptions(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloPatchTest()  {
+        String name = null;
+        api.helloPatch(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloPostTest()  {
+        String name = null;
+        api.helloPost(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void helloPutTest()  {
+        String name = null;
+        api.helloPut(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
     public void jsonPingDeleteTest()  {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj).block();

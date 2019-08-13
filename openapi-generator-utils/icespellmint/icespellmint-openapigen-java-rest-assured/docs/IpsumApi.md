@@ -4,6 +4,13 @@ All URIs are relative to *http://localhost:8090*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**helloDelete**](IpsumApi.md#helloDelete) | **DELETE** /ipsum/hello/{name} | 
+[**helloGet**](IpsumApi.md#helloGet) | **GET** /ipsum/hello/{name} | 
+[**helloHead**](IpsumApi.md#helloHead) | **HEAD** /ipsum/hello/{name} | 
+[**helloOptions**](IpsumApi.md#helloOptions) | **OPTIONS** /ipsum/hello/{name} | 
+[**helloPatch**](IpsumApi.md#helloPatch) | **PATCH** /ipsum/hello/{name} | 
+[**helloPost**](IpsumApi.md#helloPost) | **POST** /ipsum/hello/{name} | 
+[**helloPut**](IpsumApi.md#helloPut) | **PUT** /ipsum/hello/{name} | 
 [**jsonPingDelete**](IpsumApi.md#jsonPingDelete) | **DELETE** /ipsum/jsonPing | 
 [**jsonPingHead**](IpsumApi.md#jsonPingHead) | **HEAD** /ipsum/jsonPing | 
 [**jsonPingOptions**](IpsumApi.md#jsonPingOptions) | **OPTIONS** /ipsum/jsonPing | 
@@ -18,6 +25,286 @@ Method | HTTP request | Description
 [**pingPost**](IpsumApi.md#pingPost) | **POST** /ipsum/ping | 
 [**pingPut**](IpsumApi.md#pingPut) | **PUT** /ipsum/ping | 
 
+
+<a name="helloDelete"></a>
+# **helloDelete**
+> helloDelete(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloDelete()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloGet"></a>
+# **helloGet**
+> helloGet(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloGet()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloHead"></a>
+# **helloHead**
+> helloHead(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloHead()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloOptions"></a>
+# **helloOptions**
+> helloOptions(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloOptions()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloPatch"></a>
+# **helloPatch**
+> helloPatch(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloPatch()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloPost"></a>
+# **helloPost**
+> helloPost(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloPost()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="helloPut"></a>
+# **helloPut**
+> helloPut(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloPut()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="jsonPingDelete"></a>
 # **jsonPingDelete**

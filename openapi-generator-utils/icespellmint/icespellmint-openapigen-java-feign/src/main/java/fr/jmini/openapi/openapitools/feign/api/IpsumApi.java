@@ -18,6 +18,83 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param name  (required)
+   */
+  @RequestLine("DELETE /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloDelete(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("GET /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloGet(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("HEAD /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloHead(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("OPTIONS /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloOptions(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("PATCH /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloPatch(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("POST /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloPost(@Param("name") String name);
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   */
+  @RequestLine("PUT /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloPut(@Param("name") String name);
+
+  /**
+   * 
+   * 
    * @param someObj  (optional)
    */
   @RequestLine("DELETE /ipsum/jsonPing")

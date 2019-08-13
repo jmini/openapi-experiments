@@ -88,6 +88,10 @@ public class ApiClient {
         return new DolorApi(this);
     }
     
+    public EtiamApi etiamApi() {
+        return new EtiamApi(this);
+    }
+    
     public IpsumApi ipsumApi() {
         return new IpsumApi(this);
     }

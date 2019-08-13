@@ -54,6 +54,7 @@ public class Node extends Element {
    * Get childrenIds
    * @return childrenIds
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public List<String> getChildrenIds() {
     return childrenIds;

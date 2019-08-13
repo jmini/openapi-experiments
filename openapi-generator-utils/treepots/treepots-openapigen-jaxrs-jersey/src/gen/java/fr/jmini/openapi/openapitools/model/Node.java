@@ -30,7 +30,8 @@ import javax.validation.Valid;
  */
 
 public class Node extends Element  {
-  @JsonProperty("childrenIds")
+  public static final String JSON_PROPERTY_CHILDREN_IDS = "childrenIds";
+  @JsonProperty(JSON_PROPERTY_CHILDREN_IDS)
   private List<String> childrenIds = null;
 
   public Node childrenIds(List<String> childrenIds) {

@@ -26,13 +26,16 @@ import javax.validation.Valid;
  */
 
 public class ItemWithBoolean   {
-  @JsonProperty("id")
+  public static final String JSON_PROPERTY_ID = "id";
+  @JsonProperty(JSON_PROPERTY_ID)
   private Integer id;
 
-  @JsonProperty("active")
+  public static final String JSON_PROPERTY_ACTIVE = "active";
+  @JsonProperty(JSON_PROPERTY_ACTIVE)
   private Boolean active;
 
-  @JsonProperty("name")
+  public static final String JSON_PROPERTY_NAME = "name";
+  @JsonProperty(JSON_PROPERTY_NAME)
   private String name;
 
   public ItemWithBoolean id(Integer id) {

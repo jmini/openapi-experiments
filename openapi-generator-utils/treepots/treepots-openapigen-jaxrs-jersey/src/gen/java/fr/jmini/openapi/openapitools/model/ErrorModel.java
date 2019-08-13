@@ -26,13 +26,16 @@ import javax.validation.Valid;
  */
 
 public class ErrorModel   {
-  @JsonProperty("statusCode")
+  public static final String JSON_PROPERTY_STATUS_CODE = "statusCode";
+  @JsonProperty(JSON_PROPERTY_STATUS_CODE)
   private Integer statusCode;
 
-  @JsonProperty("statusDescription")
+  public static final String JSON_PROPERTY_STATUS_DESCRIPTION = "statusDescription";
+  @JsonProperty(JSON_PROPERTY_STATUS_DESCRIPTION)
   private String statusDescription;
 
-  @JsonProperty("errorMessage")
+  public static final String JSON_PROPERTY_ERROR_MESSAGE = "errorMessage";
+  @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   private String errorMessage;
 
   public ErrorModel statusCode(Integer statusCode) {

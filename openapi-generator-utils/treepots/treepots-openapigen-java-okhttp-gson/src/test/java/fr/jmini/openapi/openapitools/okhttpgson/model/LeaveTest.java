@@ -58,4 +58,12 @@ public class LeaveTest {
         // TODO: test type
     }
 
+    /**
+     * Test the property 'value'
+     */
+    @Test
+    public void valueTest() {
+        // TODO: test value
+    }
+
 }

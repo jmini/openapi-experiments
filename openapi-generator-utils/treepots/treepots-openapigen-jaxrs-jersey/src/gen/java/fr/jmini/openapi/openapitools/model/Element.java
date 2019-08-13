@@ -33,10 +33,12 @@ import javax.validation.Valid;
 })
 
 public class Element   {
-  @JsonProperty("id")
+  public static final String JSON_PROPERTY_ID = "id";
+  @JsonProperty(JSON_PROPERTY_ID)
   private String id;
 
-  @JsonProperty("type")
+  public static final String JSON_PROPERTY_TYPE = "type";
+  @JsonProperty(JSON_PROPERTY_TYPE)
   private String type;
 
   public Element id(String id) {

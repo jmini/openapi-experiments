@@ -4,6 +4,7 @@ import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -54,7 +55,7 @@ public class LoremApi {
     public void emptyDelete() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/deleteEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/deleteEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -79,7 +80,7 @@ public class LoremApi {
     public void emptyGet() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/getEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/getEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -104,7 +105,7 @@ public class LoremApi {
     public void emptyHead() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/headEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/headEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -129,7 +130,7 @@ public class LoremApi {
     public void emptyOptions() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/optionsEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/optionsEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -154,7 +155,7 @@ public class LoremApi {
     public void emptyPatch() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/patchEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/patchEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -179,7 +180,7 @@ public class LoremApi {
     public void emptyPost() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/postEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/postEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -204,7 +205,7 @@ public class LoremApi {
     public void emptyPut() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/putEmpty").build().toUriString();
+        String path = apiClient.expandPath("/lorem/putEmpty", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

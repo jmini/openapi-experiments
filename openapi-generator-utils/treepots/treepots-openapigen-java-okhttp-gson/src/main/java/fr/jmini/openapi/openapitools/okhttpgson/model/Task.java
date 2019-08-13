@@ -95,6 +95,7 @@ public class Task {
    * Get status
    * @return status
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public StatusEnum getStatus() {
     return status;

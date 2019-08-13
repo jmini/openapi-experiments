@@ -211,6 +211,7 @@ public class EnumInArrayOfArray {
    * Get p1
    * @return p1
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public List<P1Enum> getP1() {
     return p1;
@@ -237,6 +238,7 @@ public class EnumInArrayOfArray {
    * Get p2
    * @return p2
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public List<List<P2Enum>> getP2() {
     return p2;
@@ -263,6 +265,7 @@ public class EnumInArrayOfArray {
    * Get p3
    * @return p3
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public List<List<List<P3Enum>>> getP3() {
     return p3;

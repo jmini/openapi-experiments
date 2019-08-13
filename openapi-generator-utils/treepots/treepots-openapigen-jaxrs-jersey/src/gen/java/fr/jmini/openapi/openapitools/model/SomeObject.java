@@ -26,13 +26,16 @@ import javax.validation.Valid;
  */
 
 public class SomeObject   {
-  @JsonProperty("id")
+  public static final String JSON_PROPERTY_ID = "id";
+  @JsonProperty(JSON_PROPERTY_ID)
   private Integer id;
 
-  @JsonProperty("firstName")
+  public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
+  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   private String firstName;
 
-  @JsonProperty("lastName")
+  public static final String JSON_PROPERTY_LAST_NAME = "lastName";
+  @JsonProperty(JSON_PROPERTY_LAST_NAME)
   private String lastName;
 
   public SomeObject id(Integer id) {

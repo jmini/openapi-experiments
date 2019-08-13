@@ -73,6 +73,7 @@ public class ObjWithEnums {
    * Get iprop
    * @return iprop
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public IntEnum getIprop() {
     return iprop;
@@ -91,6 +92,7 @@ public class ObjWithEnums {
    * Get lprop
    * @return lprop
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public LongEnum getLprop() {
     return lprop;
@@ -109,6 +111,7 @@ public class ObjWithEnums {
    * Get sprop
    * @return sprop
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public StringEnum getSprop() {
     return sprop;
@@ -127,6 +130,7 @@ public class ObjWithEnums {
    * Get iprop2
    * @return iprop2
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Int2Enum getIprop2() {
     return iprop2;
@@ -145,6 +149,7 @@ public class ObjWithEnums {
    * Get lprop2
    * @return lprop2
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Long2Enum getLprop2() {
     return lprop2;
@@ -163,6 +168,7 @@ public class ObjWithEnums {
    * Get sprop2
    * @return sprop2
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String2Enum getSprop2() {
     return sprop2;
@@ -181,6 +187,7 @@ public class ObjWithEnums {
    * Get custom
    * @return custom
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Enum2WithCustomName getCustom() {
     return custom;

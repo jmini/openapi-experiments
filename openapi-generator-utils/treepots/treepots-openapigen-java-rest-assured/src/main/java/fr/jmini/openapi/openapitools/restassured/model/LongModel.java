@@ -46,6 +46,7 @@ public class LongModel {
    * Get long1
    * @return long1
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Long getLong1() {
     return long1;
@@ -64,6 +65,7 @@ public class LongModel {
    * Get long2
    * @return long2
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Long getLong2() {
     return long2;

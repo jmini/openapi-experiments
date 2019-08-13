@@ -27,10 +27,12 @@ import javax.validation.Valid;
  */
 
 public class Body1   {
-  @JsonProperty("additionalMetadata")
+  public static final String JSON_PROPERTY_ADDITIONAL_METADATA = "additionalMetadata";
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_METADATA)
   private String additionalMetadata;
 
-  @JsonProperty("file")
+  public static final String JSON_PROPERTY_FILE = "file";
+  @JsonProperty(JSON_PROPERTY_FILE)
   private File file;
 
   public Body1 additionalMetadata(String additionalMetadata) {

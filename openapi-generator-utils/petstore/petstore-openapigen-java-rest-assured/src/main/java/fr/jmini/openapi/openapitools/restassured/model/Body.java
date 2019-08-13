@@ -46,6 +46,7 @@ public class Body {
    * Updated name of the pet
    * @return name
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Updated name of the pet")
   public String getName() {
     return name;
@@ -64,6 +65,7 @@ public class Body {
    * Updated status of the pet
    * @return status
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "Updated status of the pet")
   public String getStatus() {
     return status;

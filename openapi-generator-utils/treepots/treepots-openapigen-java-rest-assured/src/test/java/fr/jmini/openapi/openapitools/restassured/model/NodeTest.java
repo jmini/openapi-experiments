@@ -60,4 +60,12 @@ public class NodeTest {
         // TODO: test type
     }
 
+    /**
+     * Test the property 'childrenIds'
+     */
+    @Test
+    public void childrenIdsTest() {
+        // TODO: test childrenIds
+    }
+
 }

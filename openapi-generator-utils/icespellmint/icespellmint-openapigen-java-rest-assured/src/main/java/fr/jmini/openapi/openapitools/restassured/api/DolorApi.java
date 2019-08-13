@@ -38,14 +38,23 @@ import static io.restassured.http.Method.*;
 @Api(value = "Dolor")
 public class DolorApi {
 
-    private RequestSpecBuilder reqSpec;
+    private Supplier<RequestSpecBuilder> reqSpecSupplier;
+    private Consumer<RequestSpecBuilder> reqSpecCustomizer;
 
-    private DolorApi(RequestSpecBuilder reqSpec) {
-        this.reqSpec = reqSpec;
+    private DolorApi(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        this.reqSpecSupplier = reqSpecSupplier;
     }
 
-    public static DolorApi dolor(RequestSpecBuilder reqSpec) {
-        return new DolorApi(reqSpec);
+    public static DolorApi dolor(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        return new DolorApi(reqSpecSupplier);
+    }
+
+    private RequestSpecBuilder createReqSpec() {
+        RequestSpecBuilder reqSpec = reqSpecSupplier.get();
+        if(reqSpecCustomizer != null) {
+            reqSpecCustomizer.accept(reqSpec);
+        }
+        return reqSpec;
     }
 
 
@@ -56,7 +65,7 @@ public class DolorApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public DolorBasicSecOper dolorBasicSec() {
-        return new DolorBasicSecOper(reqSpec);
+        return new DolorBasicSecOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -66,16 +75,16 @@ public class DolorApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public DolorBearerSecOper dolorBearerSec() {
-        return new DolorBearerSecOper(reqSpec);
+        return new DolorBearerSecOper(createReqSpec());
     }
 
     /**
-     * Customise request specification
-     * @param consumer consumer
+     * Customize request specification
+     * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
      * @return api
      */
-    public DolorApi reqSpec(Consumer<RequestSpecBuilder> consumer) {
-        consumer.accept(reqSpec);
+    public DolorApi reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+        this.reqSpecCustomizer = reqSpecCustomizer;
         return this;
     }
 
@@ -109,22 +118,22 @@ public class DolorApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public DolorBasicSecOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public DolorBasicSecOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public DolorBasicSecOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public DolorBasicSecOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -158,22 +167,22 @@ public class DolorApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public DolorBearerSecOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public DolorBearerSecOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public DolorBearerSecOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public DolorBearerSecOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }

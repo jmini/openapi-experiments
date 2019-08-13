@@ -37,17 +37,17 @@ public class ApiClient {
     }
 
     public DolorApi dolor() {
-        return DolorApi.dolor(config.baseReqSpec.get());
+        return DolorApi.dolor(config.reqSpecSupplier);
     }
     public IpsumApi ipsum() {
-        return IpsumApi.ipsum(config.baseReqSpec.get());
+        return IpsumApi.ipsum(config.reqSpecSupplier);
     }
     public LoremApi lorem() {
-        return LoremApi.lorem(config.baseReqSpec.get());
+        return LoremApi.lorem(config.reqSpecSupplier);
     }
 
     public static class Config {
-        private Supplier<RequestSpecBuilder> baseReqSpec = () -> new RequestSpecBuilder()
+        private Supplier<RequestSpecBuilder> reqSpecSupplier = () -> new RequestSpecBuilder()
                 .setBaseUri(BASE_URI)
                 .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())));
 
@@ -57,7 +57,7 @@ public class ApiClient {
          * @return configuration
          */
         public Config reqSpecSupplier(Supplier<RequestSpecBuilder> supplier) {
-            this.baseReqSpec = supplier;
+            this.reqSpecSupplier = supplier;
             return this;
         }
 

@@ -50,6 +50,7 @@ public class ItemWithBoolean {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Integer getId() {
     return id;
@@ -68,6 +69,7 @@ public class ItemWithBoolean {
    * Get active
    * @return active
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public Boolean getActive() {
     return active;
@@ -86,6 +88,7 @@ public class ItemWithBoolean {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getName() {
     return name;

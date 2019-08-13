@@ -39,14 +39,23 @@ import static io.restassured.http.Method.*;
 @Api(value = "Ipsum")
 public class IpsumApi {
 
-    private RequestSpecBuilder reqSpec;
+    private Supplier<RequestSpecBuilder> reqSpecSupplier;
+    private Consumer<RequestSpecBuilder> reqSpecCustomizer;
 
-    private IpsumApi(RequestSpecBuilder reqSpec) {
-        this.reqSpec = reqSpec;
+    private IpsumApi(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        this.reqSpecSupplier = reqSpecSupplier;
     }
 
-    public static IpsumApi ipsum(RequestSpecBuilder reqSpec) {
-        return new IpsumApi(reqSpec);
+    public static IpsumApi ipsum(Supplier<RequestSpecBuilder> reqSpecSupplier) {
+        return new IpsumApi(reqSpecSupplier);
+    }
+
+    private RequestSpecBuilder createReqSpec() {
+        RequestSpecBuilder reqSpec = reqSpecSupplier.get();
+        if(reqSpecCustomizer != null) {
+            reqSpecCustomizer.accept(reqSpec);
+        }
+        return reqSpec;
     }
 
 
@@ -57,7 +66,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingDeleteOper jsonPingDelete() {
-        return new JsonPingDeleteOper(reqSpec);
+        return new JsonPingDeleteOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -67,7 +76,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingHeadOper jsonPingHead() {
-        return new JsonPingHeadOper(reqSpec);
+        return new JsonPingHeadOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -77,7 +86,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingOptionsOper jsonPingOptions() {
-        return new JsonPingOptionsOper(reqSpec);
+        return new JsonPingOptionsOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -87,7 +96,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPatchOper jsonPingPatch() {
-        return new JsonPingPatchOper(reqSpec);
+        return new JsonPingPatchOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -97,7 +106,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPostOper jsonPingPost() {
-        return new JsonPingPostOper(reqSpec);
+        return new JsonPingPostOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -107,7 +116,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPutOper jsonPingPut() {
-        return new JsonPingPutOper(reqSpec);
+        return new JsonPingPutOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -117,7 +126,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingDeleteOper pingDelete() {
-        return new PingDeleteOper(reqSpec);
+        return new PingDeleteOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -127,7 +136,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingGetOper pingGet() {
-        return new PingGetOper(reqSpec);
+        return new PingGetOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -137,7 +146,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingHeadOper pingHead() {
-        return new PingHeadOper(reqSpec);
+        return new PingHeadOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -147,7 +156,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingOptionsOper pingOptions() {
-        return new PingOptionsOper(reqSpec);
+        return new PingOptionsOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -157,7 +166,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingPatchOper pingPatch() {
-        return new PingPatchOper(reqSpec);
+        return new PingPatchOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -167,7 +176,7 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingPostOper pingPost() {
-        return new PingPostOper(reqSpec);
+        return new PingPostOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -177,16 +186,16 @@ public class IpsumApi {
     @ApiResponses(value = { 
             @ApiResponse(code = 200, message = "OK")  })
     public PingPutOper pingPut() {
-        return new PingPutOper(reqSpec);
+        return new PingPutOper(createReqSpec());
     }
 
     /**
-     * Customise request specification
-     * @param consumer consumer
+     * Customize request specification
+     * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
      * @return api
      */
-    public IpsumApi reqSpec(Consumer<RequestSpecBuilder> consumer) {
-        consumer.accept(reqSpec);
+    public IpsumApi reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+        this.reqSpecCustomizer = reqSpecCustomizer;
         return this;
     }
 
@@ -231,22 +240,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingDeleteOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingDeleteOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingDeleteOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingDeleteOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -291,22 +300,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingHeadOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingHeadOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingHeadOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingHeadOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -351,22 +360,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingOptionsOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingOptionsOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingOptionsOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingOptionsOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -411,22 +420,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingPatchOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingPatchOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingPatchOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingPatchOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -471,22 +480,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingPostOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingPostOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingPostOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingPostOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -531,22 +540,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public JsonPingPutOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public JsonPingPutOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public JsonPingPutOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public JsonPingPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -592,22 +601,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingDeleteOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingDeleteOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingDeleteOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingDeleteOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -653,22 +662,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingGetOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingGetOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingGetOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingGetOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -714,22 +723,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingHeadOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingHeadOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingHeadOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingHeadOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -775,22 +784,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingOptionsOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingOptionsOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingOptionsOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingOptionsOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -836,22 +845,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingPatchOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingPatchOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingPatchOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingPatchOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -897,22 +906,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingPostOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingPostOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingPostOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingPostOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }
@@ -958,22 +967,22 @@ public class IpsumApi {
         }
 
         /**
-         * Customise request specification
-         * @param consumer consumer
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
          * @return operation
          */
-        public PingPutOper reqSpec(Consumer<RequestSpecBuilder> consumer) {
-            consumer.accept(reqSpec);
+        public PingPutOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
             return this;
         }
 
         /**
-         * Customise response specification
-         * @param consumer consumer
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
          * @return operation
          */
-        public PingPutOper respSpec(Consumer<ResponseSpecBuilder> consumer) {
-            consumer.accept(respSpec);
+        public PingPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
             return this;
         }
     }

@@ -50,6 +50,7 @@ public class ErrorModel {
    * http status code
    * @return statusCode
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "http status code")
   public Integer getStatusCode() {
     return statusCode;
@@ -68,6 +69,7 @@ public class ErrorModel {
    * http status reason phrase
    * @return statusDescription
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "http status reason phrase")
   public String getStatusDescription() {
     return statusDescription;
@@ -86,6 +88,7 @@ public class ErrorModel {
    * error description
    * @return errorMessage
   **/
+  @javax.annotation.Nullable
   @ApiModelProperty(value = "error description")
   public String getErrorMessage() {
     return errorMessage;

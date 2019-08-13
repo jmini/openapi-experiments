@@ -62,7 +62,8 @@ public class EnumInArrayOfArray   {
     }
   }
 
-  @JsonProperty("p1")
+  public static final String JSON_PROPERTY_P1 = "p1";
+  @JsonProperty(JSON_PROPERTY_P1)
   private List<P1Enum> p1 = null;
 
   /**
@@ -98,7 +99,8 @@ public class EnumInArrayOfArray   {
     }
   }
 
-  @JsonProperty("p2")
+  public static final String JSON_PROPERTY_P2 = "p2";
+  @JsonProperty(JSON_PROPERTY_P2)
   private List<List<P2Enum>> p2 = null;
 
   /**
@@ -138,7 +140,8 @@ public class EnumInArrayOfArray   {
     }
   }
 
-  @JsonProperty("p3")
+  public static final String JSON_PROPERTY_P3 = "p3";
+  @JsonProperty(JSON_PROPERTY_P3)
   private List<List<List<P3Enum>>> p3 = null;
 
   public EnumInArrayOfArray p1(List<P1Enum> p1) {

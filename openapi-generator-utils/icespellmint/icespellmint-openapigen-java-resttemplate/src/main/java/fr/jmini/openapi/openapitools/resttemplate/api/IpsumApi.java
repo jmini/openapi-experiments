@@ -5,6 +5,7 @@ import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
 import fr.jmini.openapi.openapitools.resttemplate.model.SomeObj;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -56,7 +57,7 @@ public class IpsumApi {
     public void jsonPingDelete(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -84,7 +85,7 @@ public class IpsumApi {
     public void jsonPingHead(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -112,7 +113,7 @@ public class IpsumApi {
     public void jsonPingOptions(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -140,7 +141,7 @@ public class IpsumApi {
     public void jsonPingPatch(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -168,7 +169,7 @@ public class IpsumApi {
     public void jsonPingPost(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -196,7 +197,7 @@ public class IpsumApi {
     public void jsonPingPut(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -224,7 +225,7 @@ public class IpsumApi {
     public void pingDelete(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -252,7 +253,7 @@ public class IpsumApi {
     public void pingGet(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -280,7 +281,7 @@ public class IpsumApi {
     public void pingHead(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -308,7 +309,7 @@ public class IpsumApi {
     public void pingOptions(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -336,7 +337,7 @@ public class IpsumApi {
     public void pingPatch(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -364,7 +365,7 @@ public class IpsumApi {
     public void pingPost(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -392,7 +393,7 @@ public class IpsumApi {
     public void pingPut(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

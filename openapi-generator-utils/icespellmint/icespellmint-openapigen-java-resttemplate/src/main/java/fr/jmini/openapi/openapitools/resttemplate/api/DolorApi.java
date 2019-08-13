@@ -4,6 +4,7 @@ import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -54,7 +55,7 @@ public class DolorApi {
     public void dolorBasicSec() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/dolor/basicSecurity").build().toUriString();
+        String path = apiClient.expandPath("/dolor/basicSecurity", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -79,7 +80,7 @@ public class DolorApi {
     public void dolorBearerSec() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/dolor/bearerSecurity").build().toUriString();
+        String path = apiClient.expandPath("/dolor/bearerSecurity", Collections.<String, Object>emptyMap());
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

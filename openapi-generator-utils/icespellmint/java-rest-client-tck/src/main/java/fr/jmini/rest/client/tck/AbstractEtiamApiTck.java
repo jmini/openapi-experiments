@@ -41,10 +41,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetInt42() throws Exception {
         String path = "/etiam/getInt";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
-                        .withPath(path)
+                .withPath(path)
+                .withMethod(method)
         )
         .respond(
                 HttpResponse.response()
@@ -56,7 +58,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         Integer response = performGetIntCall();
         mockServer.verify(
                 HttpRequest.request()
-                    .withPath(path),
+                .withPath(path)
+                .withMethod(method),
             VerificationTimes.once()
         );
 
@@ -68,10 +71,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetIntList369() throws Exception {
         String path = "/etiam/getIntList";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -83,7 +88,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         List<Integer> response = performGetIntListCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -95,10 +101,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetIntMap12() throws Exception {
         String path = "/etiam/getIntMap";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -110,7 +118,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         Map<String, Integer> response = performGetIntMapCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -125,10 +134,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetStringHelloWorld() throws Exception {
         String path = "/etiam/getString";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -140,7 +151,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         String response = performGetStringCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -152,10 +164,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetStringListLoremIpsum() throws Exception {
         String path = "/etiam/getStringList";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -167,7 +181,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         List<String> response = performGetStringListCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -179,10 +194,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetStringMap12() throws Exception {
         String path = "/etiam/getStringMap";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -194,7 +211,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         Map<String, String> response = performGetStringMapCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -209,10 +227,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetSomeObjHelloWorld() throws Exception {
         String path = "/etiam/getSomeObj";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -224,7 +244,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         SO response = performGetSomeObjCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -236,10 +257,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetSomeObjListLoremIpsum() throws Exception {
         String path = "/etiam/getSomeObjList";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -251,7 +274,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         List<SO> response = performGetSomeObjListCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         
@@ -267,10 +291,12 @@ public abstract class AbstractEtiamApiTck<SO> {
     @Test
     public void testGetSomeObjMap12() throws Exception {
         String path = "/etiam/getSomeObjMap";
+        String method = "GET";
         mockServer
         .when(
                 HttpRequest.request()
                 .withPath(path)
+                .withMethod(method)
                 )
         .respond(
                 HttpResponse.response()
@@ -282,7 +308,8 @@ public abstract class AbstractEtiamApiTck<SO> {
         Map<String, SO> response = performGetSomeObjMapCall();
         mockServer.verify(
                 HttpRequest.request()
-                .withPath(path),
+                .withPath(path)
+                .withMethod(method),
                 VerificationTimes.once()
                 );
         

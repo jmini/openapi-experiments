@@ -39,7 +39,7 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
                 () -> new RequestSpecBuilder()
                         .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri(basePath))).etiam();        
+                        .setBaseUri(basePath))).etiam();
     }
 
     @Override

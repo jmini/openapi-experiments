@@ -209,7 +209,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyPost() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/postEmpty".replaceAll("\\{format\\}","json");

@@ -57,6 +57,15 @@ public class ApiUtil {
   public static <T> Function<Response, T> expectNullHandler() {
     return createHandlerForEmptyResponseWithCustomStatusCode(HttpStatus.SC_OK);
   }
+  
+  /**
+   * Handler that can be used for Operation that returns {@value HttpStatus#SC_CREATED}.
+   *
+   * @return a function that can be used in execute(Function&lt;Response, Object&gt;) method
+   */
+  public static <T> Function<Response, T> expectCreatedHandler() {
+      return createHandlerForEmptyResponseWithCustomStatusCode(HttpStatus.SC_CREATED);
+  }
 
   /**
    * Handler that can be used for Operation that returns {@value HttpStatus#SC_NO_CONTENT}.

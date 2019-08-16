@@ -1,15 +1,18 @@
 package fr.jmini.openapi.openapitools.jersey2.api;
 
+import fr.jmini.openapi.openapitools.jersey2.ApiException;
+import fr.jmini.openapi.openapitools.jersey2.ApiClient;
+import fr.jmini.openapi.openapitools.jersey2.ApiResponse;
+import fr.jmini.openapi.openapitools.jersey2.Configuration;
+import fr.jmini.openapi.openapitools.jersey2.Pair;
+
+import javax.ws.rs.core.GenericType;
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import fr.jmini.openapi.openapitools.jersey2.ApiClient;
-import fr.jmini.openapi.openapitools.jersey2.ApiException;
-import fr.jmini.openapi.openapitools.jersey2.ApiResponse;
-import fr.jmini.openapi.openapitools.jersey2.Configuration;
-import fr.jmini.openapi.openapitools.jersey2.Pair;
 
 
 public class LoremApi {

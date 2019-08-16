@@ -63,6 +63,6 @@ public class LoremApiTckTest extends AbstractLoremApiTck {
 
     @Override
     protected void performEmptyTraceCall() throws Exception {
-        throw new UnsupportedOperationException("trace is not implemented yet");
+        api.emptyTrace().execute(ApiUtil.expectCreatedHandler());
     }
 }

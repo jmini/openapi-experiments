@@ -3,7 +3,6 @@ package fr.jmini.rest.client.tck;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.mockserver.integration.ClientAndServer;
 import org.mockserver.model.HttpRequest;
@@ -216,7 +215,6 @@ public abstract class AbstractLoremApiTck {
     protected abstract void performEmptyPatchCall() throws Exception;
     
     @Test
-    @Ignore //TODO ignored until https://github.com/OpenAPITools/openapi-generator/issues/3647 is solved.
     public void testEmptyTrace() throws Exception {
         String path = "/lorem/traceEmpty";
         String method = "TRACE";

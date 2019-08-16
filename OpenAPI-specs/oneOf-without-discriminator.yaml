@@ -1,0 +1,65 @@
+openapi: 3.0.1
+info:
+  title: ping test
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8000/'
+paths:
+  /ping:
+    post:
+      operationId: ping
+      requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+components:
+  schemas:
+    Person:
+      type: object
+      required:
+        - lastName
+        - description
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        age:
+          type: integer
+          format: int32
+        description:
+          $ref: "#/components/schemas/Description"
+    Description:
+      oneOf:
+        - $ref: "#/components/schemas/SimpleDescription"
+        - $ref: "#/components/schemas/ComplexDescription"
+    SimpleDescription:
+      type: object
+      properties:
+        title:
+          type: string
+        text:
+          type: string
+    ComplexDescription:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        shortReference:
+          type: string
+        acmeId:
+          type: integer
+          format: int32
+        description:
+          type: string
+        details:
+          type: string

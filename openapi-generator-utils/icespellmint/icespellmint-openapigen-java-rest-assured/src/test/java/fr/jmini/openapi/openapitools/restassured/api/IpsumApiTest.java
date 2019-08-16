@@ -134,6 +134,18 @@ public class IpsumApiTest {
      * OK
      */
     @Test
+    public void shouldSee200AfterHelloTrace() {
+        String name = null;
+        api.helloTrace()
+                .namePath(name).execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
     public void shouldSee200AfterJsonPingDelete() {
         SomeObj someObj = null;
         api.jsonPingDelete().execute(r -> r.prettyPeek());
@@ -192,6 +204,17 @@ public class IpsumApiTest {
     public void shouldSee200AfterJsonPingPut() {
         SomeObj someObj = null;
         api.jsonPingPut().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterJsonPingTrace() {
+        SomeObj someObj = null;
+        api.jsonPingTrace().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 
@@ -269,6 +292,17 @@ public class IpsumApiTest {
     public void shouldSee200AfterPingPut() {
         String custom = null;
         api.pingPut().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee200AfterPingTrace() {
+        String custom = null;
+        api.pingTrace().execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

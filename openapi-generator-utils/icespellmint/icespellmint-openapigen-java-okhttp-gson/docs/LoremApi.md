@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**emptyPatch**](LoremApi.md#emptyPatch) | **PATCH** /lorem/patchEmpty | 
 [**emptyPost**](LoremApi.md#emptyPost) | **POST** /lorem/postEmpty | 
 [**emptyPut**](LoremApi.md#emptyPut) | **PUT** /lorem/putEmpty | 
+[**emptyTrace**](LoremApi.md#emptyTrace) | **TRACE** /lorem/traceEmpty | 
 
 
 <a name="emptyDelete"></a>
@@ -368,6 +369,61 @@ public class Example {
       apiInstance.emptyPut();
     } catch (ApiException e) {
       System.err.println("Exception when calling LoremApi#emptyPut");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | OK |  -  |
+
+<a name="emptyTrace"></a>
+# **emptyTrace**
+> emptyTrace()
+
+
+
+### Example
+```java
+// Import classes:
+import fr.jmini.openapi.openapitools.okhttpgson.ApiClient;
+import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
+import fr.jmini.openapi.openapitools.okhttpgson.Configuration;
+import fr.jmini.openapi.openapitools.okhttpgson.models.*;
+import fr.jmini.openapi.openapitools.okhttpgson.api.LoremApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:8090");
+
+    LoremApi apiInstance = new LoremApi(defaultClient);
+    try {
+      apiInstance.emptyTrace();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LoremApi#emptyTrace");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

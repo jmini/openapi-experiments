@@ -60,8 +60,8 @@ public class DolorApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/dolor/basicSecurity");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -89,8 +89,8 @@ public class DolorApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -118,8 +118,8 @@ public class DolorApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/dolor/bearerSecurity");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -147,8 +147,8 @@ public class DolorApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();

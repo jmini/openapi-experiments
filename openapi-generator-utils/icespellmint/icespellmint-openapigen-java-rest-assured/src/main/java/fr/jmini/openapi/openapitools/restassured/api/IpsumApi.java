@@ -131,6 +131,16 @@ public class IpsumApi {
 
     @ApiOperation(value = "",
             notes = "",
+            nickname = "helloTrace",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public HelloTraceOper helloTrace() {
+        return new HelloTraceOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
             nickname = "jsonPingDelete",
             tags = { "ipsum" })
     @ApiResponses(value = { 
@@ -187,6 +197,16 @@ public class IpsumApi {
             @ApiResponse(code = 200, message = "OK")  })
     public JsonPingPutOper jsonPingPut() {
         return new JsonPingPutOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "jsonPingTrace",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public JsonPingTraceOper jsonPingTrace() {
+        return new JsonPingTraceOper(createReqSpec());
     }
 
     @ApiOperation(value = "",
@@ -257,6 +277,16 @@ public class IpsumApi {
             @ApiResponse(code = 200, message = "OK")  })
     public PingPutOper pingPut() {
         return new PingPutOper(createReqSpec());
+    }
+
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "pingTrace",
+            tags = { "ipsum" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 200, message = "OK")  })
+    public PingTraceOper pingTrace() {
+        return new PingTraceOper(createReqSpec());
     }
 
     /**
@@ -700,6 +730,67 @@ public class IpsumApi {
      * 
      * 
      *
+     * @see #namePath  (required)
+     */
+    public static class HelloTraceOper {
+
+        public static final Method REQ_METHOD = TRACE;
+        public static final String REQ_URI = "/ipsum/hello/{name}";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public HelloTraceOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * TRACE /ipsum/hello/{name}
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String NAME_PATH = "name";
+
+        /**
+         * @param name (String)  (required)
+         * @return operation
+         */
+        public HelloTraceOper namePath(Object name) {
+            reqSpec.addPathParam(NAME_PATH, name);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public HelloTraceOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public HelloTraceOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
      * @see #body  (optional)
      */
     public static class JsonPingDeleteOper {
@@ -1052,6 +1143,66 @@ public class IpsumApi {
          * @return operation
          */
         public JsonPingPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #body  (optional)
+     */
+    public static class JsonPingTraceOper {
+
+        public static final Method REQ_METHOD = TRACE;
+        public static final String REQ_URI = "/ipsum/jsonPing";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public JsonPingTraceOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setContentType("application/json");
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * TRACE /ipsum/jsonPing
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+         /**
+         * @param someObj (SomeObj)  (optional)
+         * @return operation
+         */
+        public JsonPingTraceOper body(SomeObj someObj) {
+            reqSpec.setBody(someObj);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public JsonPingTraceOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public JsonPingTraceOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
             respSpecCustomizer.accept(respSpec);
             return this;
         }
@@ -1479,6 +1630,67 @@ public class IpsumApi {
          * @return operation
          */
         public PingPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     * @see #customQuery  (optional)
+     */
+    public static class PingTraceOper {
+
+        public static final Method REQ_METHOD = TRACE;
+        public static final String REQ_URI = "/ipsum/ping";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public PingTraceOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * TRACE /ipsum/ping
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        public static final String CUSTOM_QUERY = "custom";
+
+        /**
+         * @param custom (String)  (optional)
+         * @return operation
+         */
+        public PingTraceOper customQuery(Object... custom) {
+            reqSpec.addQueryParam(CUSTOM_QUERY, custom);
+            return this;
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public PingTraceOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public PingTraceOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
             respSpecCustomizer.accept(respSpec);
             return this;
         }

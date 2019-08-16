@@ -135,4 +135,19 @@ public class LoremApiTest {
         // TODO: test validations
     }
     
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void emptyTraceTest() {
+        api.emptyTrace();
+
+        // TODO: test validations
+    }
+    
 }

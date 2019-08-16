@@ -69,8 +69,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -104,8 +104,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -141,8 +141,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -176,8 +176,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -213,8 +213,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -248,8 +248,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -285,8 +285,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -320,8 +320,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -357,8 +357,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -392,8 +392,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -429,8 +429,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -464,8 +464,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -501,8 +501,8 @@ public class IpsumApi {
         uriVariables.put("name", name);
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
@@ -536,11 +536,83 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.buildFromMap(uriVariables).toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloTrace(String name) throws IOException {
+        helloTraceForHttpResponse(name);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param name The name parameter
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void helloTrace(String name, Map<String, Object> params) throws IOException {
+        helloTraceForHttpResponse(name, params);
+    }
+
+    public HttpResponse helloTraceForHttpResponse(String name) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloTrace");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
+    }
+
+    public HttpResponse helloTraceForHttpResponse(String name, Map<String, Object> params) throws IOException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new IllegalArgumentException("Missing the required parameter 'name' when calling helloTrace");
+        }
+        // create a map of path variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/hello/{name}");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String localVarUrl = uriBuilder.buildFromMap(uriVariables).toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
     }
 
 
@@ -566,8 +638,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -577,8 +649,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -608,8 +680,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -638,8 +710,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -649,8 +721,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -680,8 +752,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -710,8 +782,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -721,8 +793,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -752,8 +824,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -782,8 +854,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -793,8 +865,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -824,8 +896,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -854,8 +926,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -865,8 +937,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -896,8 +968,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -926,8 +998,8 @@ public class IpsumApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
@@ -937,8 +1009,8 @@ public class IpsumApi {
           
               UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
 
-              String url = uriBuilder.build().toString();
-              GenericUrl genericUrl = new GenericUrl(url);
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
               HttpContent content = someObj == null ?
                 apiClient.new JacksonJsonHttpContent(null) :
@@ -968,11 +1040,83 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(someObj);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param someObj The someObj parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void jsonPingTrace(SomeObj someObj) throws IOException {
+        jsonPingTraceForHttpResponse(someObj);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void jsonPingTrace(SomeObj someObj, Map<String, Object> params) throws IOException {
+        jsonPingTraceForHttpResponse(someObj, params);
+    }
+
+    public HttpResponse jsonPingTraceForHttpResponse(SomeObj someObj) throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
+    }
+
+      public HttpResponse jsonPingTraceForHttpResponse(java.io.InputStream someObj, String mediaType) throws IOException {
+          
+              UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
+
+              String localVarUrl = uriBuilder.build().toString();
+              GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+              HttpContent content = someObj == null ?
+                apiClient.new JacksonJsonHttpContent(null) :
+                new InputStreamContent(mediaType == null ? Json.MEDIA_TYPE : mediaType, someObj);
+              return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
+      }
+
+    public HttpResponse jsonPingTraceForHttpResponse(SomeObj someObj, Map<String, Object> params) throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/jsonPing");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
     }
 
 
@@ -1009,8 +1153,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -1038,8 +1182,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -1079,8 +1223,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -1108,8 +1252,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -1149,8 +1293,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -1178,8 +1322,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -1219,8 +1363,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -1248,8 +1392,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -1289,8 +1433,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -1318,8 +1462,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -1359,8 +1503,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -1388,8 +1532,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -1429,8 +1573,8 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
@@ -1458,11 +1602,81 @@ public class IpsumApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>200</b> - OK
+    * @param custom The custom parameter
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void pingTrace(String custom) throws IOException {
+        pingTraceForHttpResponse(custom);
+    }
+
+  /**
+    * <p><b>200</b> - OK
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void pingTrace(Map<String, Object> params) throws IOException {
+        pingTraceForHttpResponse(params);
+    }
+
+    public HttpResponse pingTraceForHttpResponse(String custom) throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/ping");
+        if (custom != null) {
+            String key = "custom";
+            Object value = custom;
+            if (value instanceof Collection) {
+                uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+            } else if (value instanceof Object[]) {
+                uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+            } else {
+                uriBuilder = uriBuilder.queryParam(key, value);
+            }
+        }
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
+    }
+
+    public HttpResponse pingTraceForHttpResponse(Map<String, Object> params) throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/ipsum/ping");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
     }
 
 

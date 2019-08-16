@@ -219,4 +219,29 @@ public class LoremApi {
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
         return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
+    /**
+     * 
+     * 
+     * <p><b>201</b> - OK
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> emptyTrace() throws RestClientException {
+        Object postBody = null;
+        
+        String path = UriComponentsBuilder.fromPath("/lorem/traceEmpty").build().toUriString();
+        
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] accepts = { };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] {  };
+
+        ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
+        return apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    }
 }

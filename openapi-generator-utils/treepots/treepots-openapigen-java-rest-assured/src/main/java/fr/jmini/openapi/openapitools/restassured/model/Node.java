@@ -35,7 +35,7 @@ import java.util.List;
 public class Node extends Element {
   public static final String SERIALIZED_NAME_CHILDREN_IDS = "childrenIds";
   @SerializedName(SERIALIZED_NAME_CHILDREN_IDS)
-  private List<String> childrenIds = new ArrayList<String>();
+  private List<String> childrenIds = null;
 
   public Node childrenIds(List<String> childrenIds) {
     this.childrenIds = childrenIds;

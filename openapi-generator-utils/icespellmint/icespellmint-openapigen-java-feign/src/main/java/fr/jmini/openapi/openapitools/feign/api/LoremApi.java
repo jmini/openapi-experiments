@@ -83,4 +83,14 @@ public interface LoremApi extends ApiClient.Api {
     "Accept: application/json",
   })
   void emptyPut();
+
+  /**
+   * 
+   * 
+   */
+  @RequestLine("TRACE /lorem/traceEmpty")
+  @Headers({
+    "Accept: application/json",
+  })
+  void emptyTrace();
 }

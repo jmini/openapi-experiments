@@ -60,8 +60,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/deleteEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -89,8 +89,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.DELETE, genericUrl, content).execute();
@@ -118,8 +118,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/getEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -147,8 +147,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
@@ -176,8 +176,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/headEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -205,8 +205,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.HEAD, genericUrl, content).execute();
@@ -234,8 +234,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/optionsEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -263,8 +263,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = null;
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.OPTIONS, genericUrl, content).execute();
@@ -292,8 +292,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/patchEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -321,8 +321,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PATCH, genericUrl, content).execute();
@@ -350,8 +350,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/postEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -379,8 +379,8 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.POST, genericUrl, content).execute();
@@ -408,8 +408,8 @@ public class LoremApi {
         
         UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/putEmpty");
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
@@ -437,11 +437,69 @@ public class LoremApi {
             }
         }
 
-        String url = uriBuilder.build().toString();
-        GenericUrl genericUrl = new GenericUrl(url);
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
 
         HttpContent content = apiClient.new JacksonJsonHttpContent(null);
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.PUT, genericUrl, content).execute();
+    }
+
+
+  /**
+    * <p><b>201</b> - OK
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void emptyTrace() throws IOException {
+        emptyTraceForHttpResponse();
+    }
+
+  /**
+    * <p><b>201</b> - OK
+    * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public void emptyTrace(Map<String, Object> params) throws IOException {
+        emptyTraceForHttpResponse(params);
+    }
+
+    public HttpResponse emptyTraceForHttpResponse() throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/traceEmpty");
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
+    }
+
+    public HttpResponse emptyTraceForHttpResponse(Map<String, Object> params) throws IOException {
+        
+        UriBuilder uriBuilder = UriBuilder.fromUri(apiClient.getBasePath() + "/lorem/traceEmpty");
+
+        // Copy the params argument if present, to allow passing in immutable maps
+        Map<String, Object> allParams = params == null ? new HashMap<String, Object>() : new HashMap<String, Object>(params);
+
+        for (Map.Entry<String, Object> entry: allParams.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (key != null && value != null) {
+                if (value instanceof Collection) {
+                    uriBuilder = uriBuilder.queryParam(key, ((Collection) value).toArray());
+                } else if (value instanceof Object[]) {
+                    uriBuilder = uriBuilder.queryParam(key, (Object[]) value);
+                } else {
+                    uriBuilder = uriBuilder.queryParam(key, value);
+                }
+            }
+        }
+
+        String localVarUrl = uriBuilder.build().toString();
+        GenericUrl genericUrl = new GenericUrl(localVarUrl);
+
+        HttpContent content = null;
+        return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.TRACE, genericUrl, content).execute();
     }
 
 

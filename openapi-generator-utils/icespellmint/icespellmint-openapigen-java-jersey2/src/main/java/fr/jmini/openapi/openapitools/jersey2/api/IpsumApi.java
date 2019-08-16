@@ -479,6 +479,69 @@ public class IpsumApi {
   /**
    * 
    * 
+   * @param name  (required)
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public void helloTrace(String name) throws ApiException {
+
+    helloTraceWithHttpInfo(name);
+  }
+
+  /**
+   * 
+   * 
+   * @param name  (required)
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Void> helloTraceWithHttpInfo(String name) throws ApiException {
+    Object localVarPostBody = new Object();
+    
+    // verify the required parameter 'name' is set
+    if (name == null) {
+      throw new ApiException(400, "Missing the required parameter 'name' when calling helloTrace");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/ipsum/hello/{name}"
+      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+
+    return apiClient.invokeAPI(localVarPath, "TRACE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
+  /**
+   * 
+   * 
    * @param someObj  (optional)
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -817,6 +880,63 @@ public class IpsumApi {
 
 
     return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
+  /**
+   * 
+   * 
+   * @param someObj  (optional)
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public void jsonPingTrace(SomeObj someObj) throws ApiException {
+
+    jsonPingTraceWithHttpInfo(someObj);
+  }
+
+  /**
+   * 
+   * 
+   * @param someObj  (optional)
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Void> jsonPingTraceWithHttpInfo(SomeObj someObj) throws ApiException {
+    Object localVarPostBody = someObj;
+    
+    // create path and map variables
+    String localVarPath = "/ipsum/jsonPing";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+
+    return apiClient.invokeAPI(localVarPath, "TRACE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
   /**
    * 
@@ -1223,5 +1343,63 @@ public class IpsumApi {
 
 
     return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
+  /**
+   * 
+   * 
+   * @param custom  (optional)
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public void pingTrace(String custom) throws ApiException {
+
+    pingTraceWithHttpInfo(custom);
+  }
+
+  /**
+   * 
+   * 
+   * @param custom  (optional)
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<Void> pingTraceWithHttpInfo(String custom) throws ApiException {
+    Object localVarPostBody = new Object();
+    
+    // create path and map variables
+    String localVarPath = "/ipsum/ping";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom", custom));
+
+    
+    
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+
+    return apiClient.invokeAPI(localVarPath, "TRACE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
 }

@@ -11,12 +11,14 @@ Method | HTTP request | Description
 [**helloPatch**](IpsumApi.md#helloPatch) | **PATCH** /ipsum/hello/{name} | 
 [**helloPost**](IpsumApi.md#helloPost) | **POST** /ipsum/hello/{name} | 
 [**helloPut**](IpsumApi.md#helloPut) | **PUT** /ipsum/hello/{name} | 
+[**helloTrace**](IpsumApi.md#helloTrace) | **TRACE** /ipsum/hello/{name} | 
 [**jsonPingDelete**](IpsumApi.md#jsonPingDelete) | **DELETE** /ipsum/jsonPing | 
 [**jsonPingHead**](IpsumApi.md#jsonPingHead) | **HEAD** /ipsum/jsonPing | 
 [**jsonPingOptions**](IpsumApi.md#jsonPingOptions) | **OPTIONS** /ipsum/jsonPing | 
 [**jsonPingPatch**](IpsumApi.md#jsonPingPatch) | **PATCH** /ipsum/jsonPing | 
 [**jsonPingPost**](IpsumApi.md#jsonPingPost) | **POST** /ipsum/jsonPing | 
 [**jsonPingPut**](IpsumApi.md#jsonPingPut) | **PUT** /ipsum/jsonPing | 
+[**jsonPingTrace**](IpsumApi.md#jsonPingTrace) | **TRACE** /ipsum/jsonPing | 
 [**pingDelete**](IpsumApi.md#pingDelete) | **DELETE** /ipsum/ping | 
 [**pingGet**](IpsumApi.md#pingGet) | **GET** /ipsum/ping | 
 [**pingHead**](IpsumApi.md#pingHead) | **HEAD** /ipsum/ping | 
@@ -24,6 +26,7 @@ Method | HTTP request | Description
 [**pingPatch**](IpsumApi.md#pingPatch) | **PATCH** /ipsum/ping | 
 [**pingPost**](IpsumApi.md#pingPost) | **POST** /ipsum/ping | 
 [**pingPut**](IpsumApi.md#pingPut) | **PUT** /ipsum/ping | 
+[**pingTrace**](IpsumApi.md#pingTrace) | **TRACE** /ipsum/ping | 
 
 
 
@@ -461,6 +464,68 @@ No authorization required
 | **200** | OK |  -  |
 
 
+## helloTrace
+
+> helloTrace(name)
+
+
+
+### Example
+
+```java
+// Import classes:
+import fr.jmini.openapi.openapitools.jersey2.ApiClient;
+import fr.jmini.openapi.openapitools.jersey2.ApiException;
+import fr.jmini.openapi.openapitools.jersey2.Configuration;
+import fr.jmini.openapi.openapitools.jersey2.models.*;
+import fr.jmini.openapi.openapitools.jersey2.api.IpsumApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
+
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String name = "name_example"; // String | 
+        try {
+            apiInstance.helloTrace(name);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#helloTrace");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
 ## jsonPingDelete
 
 > jsonPingDelete(someObj)
@@ -798,6 +863,68 @@ public class Example {
             apiInstance.jsonPingPut(someObj);
         } catch (ApiException e) {
             System.err.println("Exception when calling IpsumApi#jsonPingPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## jsonPingTrace
+
+> jsonPingTrace(someObj)
+
+
+
+### Example
+
+```java
+// Import classes:
+import fr.jmini.openapi.openapitools.jersey2.ApiClient;
+import fr.jmini.openapi.openapitools.jersey2.ApiException;
+import fr.jmini.openapi.openapitools.jersey2.Configuration;
+import fr.jmini.openapi.openapitools.jersey2.models.*;
+import fr.jmini.openapi.openapitools.jersey2.api.IpsumApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
+
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        SomeObj someObj = new SomeObj(); // SomeObj | 
+        try {
+            apiInstance.jsonPingTrace(someObj);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#jsonPingTrace");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1232,6 +1359,68 @@ public class Example {
             apiInstance.pingPut(custom);
         } catch (ApiException e) {
             System.err.println("Exception when calling IpsumApi#pingPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **custom** | **String**|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## pingTrace
+
+> pingTrace(custom)
+
+
+
+### Example
+
+```java
+// Import classes:
+import fr.jmini.openapi.openapitools.jersey2.ApiClient;
+import fr.jmini.openapi.openapitools.jersey2.ApiException;
+import fr.jmini.openapi.openapitools.jersey2.Configuration;
+import fr.jmini.openapi.openapitools.jersey2.models.*;
+import fr.jmini.openapi.openapitools.jersey2.api.IpsumApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
+
+        IpsumApi apiInstance = new IpsumApi(defaultClient);
+        String custom = "custom_example"; // String | 
+        try {
+            apiInstance.pingTrace(custom);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IpsumApi#pingTrace");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

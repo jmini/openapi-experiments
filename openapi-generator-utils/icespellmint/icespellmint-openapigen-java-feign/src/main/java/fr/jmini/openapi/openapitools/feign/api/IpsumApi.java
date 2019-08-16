@@ -95,6 +95,17 @@ public interface IpsumApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param name  (required)
+   */
+  @RequestLine("TRACE /ipsum/hello/{name}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void helloTrace(@Param("name") String name);
+
+  /**
+   * 
+   * 
    * @param someObj  (optional)
    */
   @RequestLine("DELETE /ipsum/jsonPing")
@@ -163,6 +174,18 @@ public interface IpsumApi extends ApiClient.Api {
     "Accept: application/json",
   })
   void jsonPingPut(SomeObj someObj);
+
+  /**
+   * 
+   * 
+   * @param someObj  (optional)
+   */
+  @RequestLine("TRACE /ipsum/jsonPing")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  void jsonPingTrace(SomeObj someObj);
 
   /**
    * 
@@ -453,6 +476,48 @@ public interface IpsumApi extends ApiClient.Api {
    */
   public static class PingPutQueryParams extends HashMap<String, Object> {
     public PingPutQueryParams custom(final String value) {
+      put("custom", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * 
+   * 
+   * @param custom  (optional)
+   */
+  @RequestLine("TRACE /ipsum/ping?custom={custom}")
+  @Headers({
+    "Accept: application/json",
+  })
+  void pingTrace(@Param("custom") String custom);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>pingTrace</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PingTraceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>custom -  (optional)</li>
+   *   </ul>
+   */
+  @RequestLine("TRACE /ipsum/ping?custom={custom}")
+  @Headers({
+  "Accept: application/json",
+  })
+  void pingTrace(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>pingTrace</code> method in a fluent style.
+   */
+  public static class PingTraceQueryParams extends HashMap<String, Object> {
+    public PingTraceQueryParams custom(final String value) {
       put("custom", EncodingUtils.encode(value));
       return this;
     }

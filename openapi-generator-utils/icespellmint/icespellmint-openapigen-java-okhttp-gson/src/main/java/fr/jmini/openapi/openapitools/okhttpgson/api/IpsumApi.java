@@ -797,6 +797,112 @@ public class IpsumApi {
         return localVarCall;
     }
     /**
+     * Build call for helloTrace
+     * @param name  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call helloTraceCall(String name, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/ipsum/hello/{name}"
+            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "TRACE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call helloTraceValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling helloTrace(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = helloTraceCall(name, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public void helloTrace(String name) throws ApiException {
+        helloTraceWithHttpInfo(name);
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> helloTraceWithHttpInfo(String name) throws ApiException {
+        okhttp3.Call localVarCall = helloTraceValidateBeforeCall(name, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param name  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call helloTraceAsync(String name, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = helloTraceValidateBeforeCall(name, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for jsonPingDelete
      * @param someObj  (optional)
      * @param _callback Callback for upload/download progress
@@ -1393,6 +1499,106 @@ public class IpsumApi {
     public okhttp3.Call jsonPingPutAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jsonPingPutValidateBeforeCall(someObj, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for jsonPingTrace
+     * @param someObj  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jsonPingTraceCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = someObj;
+
+        // create path and map variables
+        String localVarPath = "/ipsum/jsonPing";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "TRACE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call jsonPingTraceValidateBeforeCall(SomeObj someObj, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = jsonPingTraceCall(someObj, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param someObj  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public void jsonPingTrace(SomeObj someObj) throws ApiException {
+        jsonPingTraceWithHttpInfo(someObj);
+    }
+
+    /**
+     * 
+     * 
+     * @param someObj  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> jsonPingTraceWithHttpInfo(SomeObj someObj) throws ApiException {
+        okhttp3.Call localVarCall = jsonPingTraceValidateBeforeCall(someObj, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param someObj  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call jsonPingTraceAsync(SomeObj someObj, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = jsonPingTraceValidateBeforeCall(someObj, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -2121,6 +2327,110 @@ public class IpsumApi {
     public okhttp3.Call pingPutAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = pingPutValidateBeforeCall(custom, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for pingTrace
+     * @param custom  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call pingTraceCall(String custom, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/ipsum/ping";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (custom != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("custom", custom));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "TRACE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call pingTraceValidateBeforeCall(String custom, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = pingTraceCall(custom, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param custom  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public void pingTrace(String custom) throws ApiException {
+        pingTraceWithHttpInfo(custom);
+    }
+
+    /**
+     * 
+     * 
+     * @param custom  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> pingTraceWithHttpInfo(String custom) throws ApiException {
+        okhttp3.Call localVarCall = pingTraceValidateBeforeCall(custom, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param custom  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call pingTraceAsync(String custom, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = pingTraceValidateBeforeCall(custom, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

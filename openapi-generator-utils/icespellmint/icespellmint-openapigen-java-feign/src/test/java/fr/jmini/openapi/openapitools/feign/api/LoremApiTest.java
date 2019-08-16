@@ -113,4 +113,17 @@ public class LoremApiTest {
     }
 
     
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void emptyTraceTest() {
+        // api.emptyTrace();
+
+        // TODO: test validations
+    }
+
+    
 }

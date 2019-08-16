@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**emptyPatch**](LoremApi.md#emptyPatch) | **PATCH** /lorem/patchEmpty | 
 [**emptyPost**](LoremApi.md#emptyPost) | **POST** /lorem/postEmpty | 
 [**emptyPut**](LoremApi.md#emptyPut) | **PUT** /lorem/putEmpty | 
+[**emptyTrace**](LoremApi.md#emptyTrace) | **TRACE** /lorem/traceEmpty | 
 
 
 
@@ -388,6 +389,64 @@ public class Example {
             apiInstance.emptyPut();
         } catch (ApiException e) {
             System.err.println("Exception when calling LoremApi#emptyPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | OK |  -  |
+
+
+## emptyTrace
+
+> emptyTrace()
+
+
+
+### Example
+
+```java
+// Import classes:
+import fr.jmini.openapi.openapitools.resttemplate.ApiClient;
+import fr.jmini.openapi.openapitools.resttemplate.ApiException;
+import fr.jmini.openapi.openapitools.resttemplate.Configuration;
+import fr.jmini.openapi.openapitools.resttemplate.models.*;
+import fr.jmini.openapi.openapitools.resttemplate.api.LoremApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8090");
+
+        LoremApi apiInstance = new LoremApi(defaultClient);
+        try {
+            apiInstance.emptyTrace();
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LoremApi#emptyTrace");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

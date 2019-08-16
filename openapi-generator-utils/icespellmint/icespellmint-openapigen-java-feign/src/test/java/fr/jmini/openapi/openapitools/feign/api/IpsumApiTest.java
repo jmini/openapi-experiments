@@ -127,6 +127,20 @@ public class IpsumApiTest {
      * 
      */
     @Test
+    public void helloTraceTest() {
+        String name = null;
+        // api.helloTrace(name);
+
+        // TODO: test validations
+    }
+
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
     public void jsonPingDeleteTest() {
         SomeObj someObj = null;
         // api.jsonPingDelete(someObj);
@@ -200,6 +214,20 @@ public class IpsumApiTest {
     public void jsonPingPutTest() {
         SomeObj someObj = null;
         // api.jsonPingPut(someObj);
+
+        // TODO: test validations
+    }
+
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void jsonPingTraceTest() {
+        SomeObj someObj = null;
+        // api.jsonPingTrace(someObj);
 
         // TODO: test validations
     }
@@ -411,6 +439,36 @@ public class IpsumApiTest {
         IpsumApi.PingPutQueryParams queryParams = new IpsumApi.PingPutQueryParams()
             .custom(null);
         // api.pingPut(queryParams);
+
+    // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void pingTraceTest() {
+        String custom = null;
+        // api.pingTrace(custom);
+
+        // TODO: test validations
+    }
+
+    /**
+     * 
+     *
+     * 
+     *
+     * This tests the overload of the method that uses a Map for query parameters instead of
+     * listing them out individually.
+     */
+    @Test
+    public void pingTraceTestQueryMap() {
+        IpsumApi.PingTraceQueryParams queryParams = new IpsumApi.PingTraceQueryParams()
+            .custom(null);
+        // api.pingTrace(queryParams);
 
     // TODO: test validations
     }

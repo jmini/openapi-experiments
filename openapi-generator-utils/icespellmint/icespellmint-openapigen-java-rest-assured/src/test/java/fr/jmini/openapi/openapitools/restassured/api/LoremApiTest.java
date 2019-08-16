@@ -114,4 +114,14 @@ public class LoremApiTest {
         // TODO: test validations
     }
 
+
+    /**
+     * OK
+     */
+    @Test
+    public void shouldSee201AfterEmptyTrace() {
+        api.emptyTrace().execute(r -> r.prettyPeek());
+        // TODO: test validations
+    }
+
 }

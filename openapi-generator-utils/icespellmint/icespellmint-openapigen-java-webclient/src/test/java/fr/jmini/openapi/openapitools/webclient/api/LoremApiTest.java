@@ -114,4 +114,16 @@ public class LoremApiTest {
         // TODO: test validations
     }
     
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void emptyTraceTest()  {
+        api.emptyTrace().block();
+
+        // TODO: test validations
+    }
+    
 }

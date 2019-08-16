@@ -11,12 +11,14 @@ Method | HTTP request | Description
 [**helloPatch**](IpsumApi.md#helloPatch) | **PATCH** /ipsum/hello/{name} | 
 [**helloPost**](IpsumApi.md#helloPost) | **POST** /ipsum/hello/{name} | 
 [**helloPut**](IpsumApi.md#helloPut) | **PUT** /ipsum/hello/{name} | 
+[**helloTrace**](IpsumApi.md#helloTrace) | **TRACE** /ipsum/hello/{name} | 
 [**jsonPingDelete**](IpsumApi.md#jsonPingDelete) | **DELETE** /ipsum/jsonPing | 
 [**jsonPingHead**](IpsumApi.md#jsonPingHead) | **HEAD** /ipsum/jsonPing | 
 [**jsonPingOptions**](IpsumApi.md#jsonPingOptions) | **OPTIONS** /ipsum/jsonPing | 
 [**jsonPingPatch**](IpsumApi.md#jsonPingPatch) | **PATCH** /ipsum/jsonPing | 
 [**jsonPingPost**](IpsumApi.md#jsonPingPost) | **POST** /ipsum/jsonPing | 
 [**jsonPingPut**](IpsumApi.md#jsonPingPut) | **PUT** /ipsum/jsonPing | 
+[**jsonPingTrace**](IpsumApi.md#jsonPingTrace) | **TRACE** /ipsum/jsonPing | 
 [**pingDelete**](IpsumApi.md#pingDelete) | **DELETE** /ipsum/ping | 
 [**pingGet**](IpsumApi.md#pingGet) | **GET** /ipsum/ping | 
 [**pingHead**](IpsumApi.md#pingHead) | **HEAD** /ipsum/ping | 
@@ -24,6 +26,7 @@ Method | HTTP request | Description
 [**pingPatch**](IpsumApi.md#pingPatch) | **PATCH** /ipsum/ping | 
 [**pingPost**](IpsumApi.md#pingPost) | **POST** /ipsum/ping | 
 [**pingPut**](IpsumApi.md#pingPut) | **PUT** /ipsum/ping | 
+[**pingTrace**](IpsumApi.md#pingTrace) | **TRACE** /ipsum/ping | 
 
 
 <a name="helloDelete"></a>
@@ -306,6 +309,46 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="helloTrace"></a>
+# **helloTrace**
+> helloTrace(name)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.helloTrace()
+    .namePath(name).execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="jsonPingDelete"></a>
 # **jsonPingDelete**
 > jsonPingDelete(someObj)
@@ -519,6 +562,45 @@ IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                         .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.jsonPingPut().execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **someObj** | [**SomeObj**](SomeObj.md)|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+<a name="jsonPingTrace"></a>
+# **jsonPingTrace**
+> jsonPingTrace(someObj)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.jsonPingTrace().execute(r -> r.prettyPeek());
 ```
 
 ### Parameters
@@ -792,6 +874,45 @@ IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
                         .setBaseUri("http://localhost:8090"))).ipsum();
 
 api.pingPut().execute(r -> r.prettyPeek());
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **custom** | **String**|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="pingTrace"></a>
+# **pingTrace**
+> pingTrace(custom)
+
+
+
+### Example
+```java
+// Import classes:
+//import fr.jmini.openapi.openapitools.restassured.ApiClient;
+//import io.restassured.builder.RequestSpecBuilder;
+//import io.restassured.filter.log.ErrorLoggingFilter;
+
+IpsumApi api = ApiClient.api(ApiClient.Config.apiConfig().withReqSpecSupplier(
+                () -> new RequestSpecBuilder()
+                        .setBaseUri("http://localhost:8090"))).ipsum();
+
+api.pingTrace().execute(r -> r.prettyPeek());
 ```
 
 ### Parameters

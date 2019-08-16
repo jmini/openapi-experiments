@@ -725,4 +725,100 @@ public class LoremApi {
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
+    /**
+     * Build call for emptyTrace
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call emptyTraceCall(final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/lorem/traceEmpty";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "TRACE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call emptyTraceValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = emptyTraceCall(_callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * 
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public void emptyTrace() throws ApiException {
+        emptyTraceWithHttpInfo();
+    }
+
+    /**
+     * 
+     * 
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> emptyTraceWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = emptyTraceValidateBeforeCall(null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call emptyTraceAsync(final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = emptyTraceValidateBeforeCall(_callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
 }

@@ -128,6 +128,19 @@ public class IpsumApiTest {
      * 
      */
     @Test
+    public void helloTraceTest()  {
+        String name = null;
+        api.helloTrace(name).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
     public void jsonPingDeleteTest()  {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj).block();
@@ -196,6 +209,19 @@ public class IpsumApiTest {
     public void jsonPingPutTest()  {
         SomeObj someObj = null;
         api.jsonPingPut(someObj).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void jsonPingTraceTest()  {
+        SomeObj someObj = null;
+        api.jsonPingTrace(someObj).block();
 
         // TODO: test validations
     }
@@ -287,6 +313,19 @@ public class IpsumApiTest {
     public void pingPutTest()  {
         String custom = null;
         api.pingPut(custom).block();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     */
+    @Test
+    public void pingTraceTest()  {
+        String custom = null;
+        api.pingTrace(custom).block();
 
         // TODO: test validations
     }

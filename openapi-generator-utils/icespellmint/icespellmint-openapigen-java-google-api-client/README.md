@@ -127,12 +127,14 @@ Class | Method | HTTP request | Description
 *IpsumApi* | [**helloPatch**](docs/IpsumApi.md#helloPatch) | **PATCH** /ipsum/hello/{name} | 
 *IpsumApi* | [**helloPost**](docs/IpsumApi.md#helloPost) | **POST** /ipsum/hello/{name} | 
 *IpsumApi* | [**helloPut**](docs/IpsumApi.md#helloPut) | **PUT** /ipsum/hello/{name} | 
+*IpsumApi* | [**helloTrace**](docs/IpsumApi.md#helloTrace) | **TRACE** /ipsum/hello/{name} | 
 *IpsumApi* | [**jsonPingDelete**](docs/IpsumApi.md#jsonPingDelete) | **DELETE** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingHead**](docs/IpsumApi.md#jsonPingHead) | **HEAD** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingOptions**](docs/IpsumApi.md#jsonPingOptions) | **OPTIONS** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingPatch**](docs/IpsumApi.md#jsonPingPatch) | **PATCH** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingPost**](docs/IpsumApi.md#jsonPingPost) | **POST** /ipsum/jsonPing | 
 *IpsumApi* | [**jsonPingPut**](docs/IpsumApi.md#jsonPingPut) | **PUT** /ipsum/jsonPing | 
+*IpsumApi* | [**jsonPingTrace**](docs/IpsumApi.md#jsonPingTrace) | **TRACE** /ipsum/jsonPing | 
 *IpsumApi* | [**pingDelete**](docs/IpsumApi.md#pingDelete) | **DELETE** /ipsum/ping | 
 *IpsumApi* | [**pingGet**](docs/IpsumApi.md#pingGet) | **GET** /ipsum/ping | 
 *IpsumApi* | [**pingHead**](docs/IpsumApi.md#pingHead) | **HEAD** /ipsum/ping | 
@@ -140,6 +142,7 @@ Class | Method | HTTP request | Description
 *IpsumApi* | [**pingPatch**](docs/IpsumApi.md#pingPatch) | **PATCH** /ipsum/ping | 
 *IpsumApi* | [**pingPost**](docs/IpsumApi.md#pingPost) | **POST** /ipsum/ping | 
 *IpsumApi* | [**pingPut**](docs/IpsumApi.md#pingPut) | **PUT** /ipsum/ping | 
+*IpsumApi* | [**pingTrace**](docs/IpsumApi.md#pingTrace) | **TRACE** /ipsum/ping | 
 *LoremApi* | [**emptyDelete**](docs/LoremApi.md#emptyDelete) | **DELETE** /lorem/deleteEmpty | 
 *LoremApi* | [**emptyGet**](docs/LoremApi.md#emptyGet) | **GET** /lorem/getEmpty | 
 *LoremApi* | [**emptyHead**](docs/LoremApi.md#emptyHead) | **HEAD** /lorem/headEmpty | 
@@ -147,6 +150,7 @@ Class | Method | HTTP request | Description
 *LoremApi* | [**emptyPatch**](docs/LoremApi.md#emptyPatch) | **PATCH** /lorem/patchEmpty | 
 *LoremApi* | [**emptyPost**](docs/LoremApi.md#emptyPost) | **POST** /lorem/postEmpty | 
 *LoremApi* | [**emptyPut**](docs/LoremApi.md#emptyPut) | **PUT** /lorem/putEmpty | 
+*LoremApi* | [**emptyTrace**](docs/LoremApi.md#emptyTrace) | **TRACE** /lorem/traceEmpty | 
 
 
 ## Documentation for Models

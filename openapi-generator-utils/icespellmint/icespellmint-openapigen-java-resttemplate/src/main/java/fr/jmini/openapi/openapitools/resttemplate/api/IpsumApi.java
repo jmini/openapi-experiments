@@ -289,6 +289,40 @@ public class IpsumApi {
      * 
      * 
      * <p><b>200</b> - OK
+     * @param name The name parameter
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public void helloTrace(String name) throws RestClientException {
+        Object postBody = null;
+        
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'name' when calling helloTrace");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("name", name);
+        String path = apiClient.expandPath("/ipsum/hello/{name}", uriVariables);
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] accepts = { };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] {  };
+
+        ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
+        apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * 
+     * 
+     * <p><b>200</b> - OK
      * @param someObj The someObj parameter
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
@@ -452,6 +486,34 @@ public class IpsumApi {
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
         apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * 
+     * 
+     * <p><b>200</b> - OK
+     * @param someObj The someObj parameter
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public void jsonPingTrace(SomeObj someObj) throws RestClientException {
+        Object postBody = someObj;
+        
+        String path = apiClient.expandPath("/ipsum/jsonPing", Collections.<String, Object>emptyMap());
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] accepts = { };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { 
+            "application/json"
+        };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] {  };
+
+        ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
+        apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -648,5 +710,33 @@ public class IpsumApi {
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
         apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    }
+    /**
+     * 
+     * 
+     * <p><b>200</b> - OK
+     * @param custom The custom parameter
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public void pingTrace(String custom) throws RestClientException {
+        Object postBody = null;
+        
+        String path = apiClient.expandPath("/ipsum/ping", Collections.<String, Object>emptyMap());
+
+        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders headerParams = new HttpHeaders();
+        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+
+        queryParams.putAll(apiClient.parameterToMultiValueMap(null, "custom", custom));
+
+        final String[] accepts = { };
+        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
+        final String[] contentTypes = { };
+        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
+
+        String[] authNames = new String[] {  };
+
+        ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
+        apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

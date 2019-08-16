@@ -128,6 +128,16 @@ public class LoremApi {
         return new EmptyPutOper(createReqSpec());
     }
 
+    @ApiOperation(value = "",
+            notes = "",
+            nickname = "emptyTrace",
+            tags = { "lorem" })
+    @ApiResponses(value = { 
+            @ApiResponse(code = 201, message = "OK")  })
+    public EmptyTraceOper emptyTrace() {
+        return new EmptyTraceOper(createReqSpec());
+    }
+
     /**
      * Customize request specification
      * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
@@ -477,6 +487,55 @@ public class LoremApi {
          * @return operation
          */
         public EmptyPutOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
+            respSpecCustomizer.accept(respSpec);
+            return this;
+        }
+    }
+    /**
+     * 
+     * 
+     *
+     */
+    public static class EmptyTraceOper {
+
+        public static final Method REQ_METHOD = TRACE;
+        public static final String REQ_URI = "/lorem/traceEmpty";
+
+        private RequestSpecBuilder reqSpec;
+        private ResponseSpecBuilder respSpec;
+
+        public EmptyTraceOper(RequestSpecBuilder reqSpec) {
+            this.reqSpec = reqSpec;
+            reqSpec.setAccept("application/json");
+            this.respSpec = new ResponseSpecBuilder();
+        }
+
+        /**
+         * TRACE /lorem/traceEmpty
+         * @param handler handler
+         * @param <T> type
+         * @return type
+         */
+        public <T> T execute(Function<Response, T> handler) {
+            return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
+        }
+
+        /**
+         * Customize request specification
+         * @param reqSpecCustomizer consumer to modify the RequestSpecBuilder
+         * @return operation
+         */
+        public EmptyTraceOper reqSpec(Consumer<RequestSpecBuilder> reqSpecCustomizer) {
+            reqSpecCustomizer.accept(reqSpec);
+            return this;
+        }
+
+        /**
+         * Customize response specification
+         * @param respSpecCustomizer consumer to modify the ResponseSpecBuilder
+         * @return operation
+         */
+        public EmptyTraceOper respSpec(Consumer<ResponseSpecBuilder> respSpecCustomizer) {
             respSpecCustomizer.accept(respSpec);
             return this;
         }

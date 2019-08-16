@@ -271,4 +271,38 @@ public class LoremApi {
 
     apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
+  /**
+   * 
+   * 
+   * @throws ApiException if fails to make API call
+   */
+  public void emptyTrace() throws ApiException {
+    Object localVarPostBody = new Object();
+    
+    // create path and map variables
+    String localVarPath = "/lorem/traceEmpty".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+
+    apiClient.invokeAPI(localVarPath, "TRACE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
 }

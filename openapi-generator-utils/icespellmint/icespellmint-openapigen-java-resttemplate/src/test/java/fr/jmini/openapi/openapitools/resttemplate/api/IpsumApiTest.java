@@ -152,6 +152,22 @@ public class IpsumApiTest {
      *          if the Api call fails
      */
     @Test
+    public void helloTraceTest() {
+        String name = null;
+        api.helloTrace(name);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
     public void jsonPingDeleteTest() {
         SomeObj someObj = null;
         api.jsonPingDelete(someObj);
@@ -235,6 +251,22 @@ public class IpsumApiTest {
     public void jsonPingPutTest() {
         SomeObj someObj = null;
         api.jsonPingPut(someObj);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void jsonPingTraceTest() {
+        SomeObj someObj = null;
+        api.jsonPingTrace(someObj);
 
         // TODO: test validations
     }
@@ -347,6 +379,22 @@ public class IpsumApiTest {
     public void pingPutTest() {
         String custom = null;
         api.pingPut(custom);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void pingTraceTest() {
+        String custom = null;
+        api.pingTrace(custom);
 
         // TODO: test validations
     }

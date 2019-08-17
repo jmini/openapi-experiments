@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.webclient.api;
 
 import org.junit.Test;
@@ -29,29 +28,30 @@ public class DolorApiTest {
 
     private final DolorApi api = new DolorApi();
 
-    
     /**
      * 
      *
      * 
      */
     @Test
-    public void dolorBasicSecTest()  {
-        api.dolorBasicSec().block();
+    public void dolorBasicSecTest() {
+        api.dolorBasicSec()
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void dolorBearerSecTest()  {
-        api.dolorBearerSec().block();
+    public void dolorBearerSecTest() {
+        api.dolorBearerSec()
+            .block();
 
         // TODO: test validations
     }
-    
+
 }

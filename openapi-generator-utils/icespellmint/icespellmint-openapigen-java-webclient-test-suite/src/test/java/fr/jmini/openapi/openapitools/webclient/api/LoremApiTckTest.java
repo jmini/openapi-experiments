@@ -19,41 +19,49 @@ public class LoremApiTckTest extends AbstractLoremApiTck {
 
     @Override
     protected void performEmptyGetCall() throws Exception {
-        api.emptyGet().block();
+        api.emptyGet()
+            .block();
     }
 
     @Override
     protected void performEmptyPostCall() throws Exception {
-        api.emptyPost().block();
+        api.emptyPost()
+            .block();
     }
 
     @Override
     protected void performEmptyPutCall() throws Exception {
-        api.emptyPut().block();
+        api.emptyPut()
+            .block();
     }
 
     @Override
     protected void performEmptyDeleteCall() throws Exception {
-        api.emptyDelete().block();
+        api.emptyDelete()
+            .block();
     }
 
     @Override
     protected void performEmptyOptionsCall() throws Exception {
-        api.emptyOptions().block();
+        api.emptyOptions()
+            .block();
     }
 
     @Override
     protected void performEmptyHeadCall() throws Exception {
-        api.emptyHead().block();
+        api.emptyHead()
+            .block();
     }
 
     @Override
     protected void performEmptyPatchCall() throws Exception {
-        api.emptyPatch().block();
+        api.emptyPatch()
+            .block();
     }
 
     @Override
     protected void performEmptyTraceCall() throws Exception {
-        api.emptyTrace().block();
+        api.emptyTrace()
+            .block();
     }
 }

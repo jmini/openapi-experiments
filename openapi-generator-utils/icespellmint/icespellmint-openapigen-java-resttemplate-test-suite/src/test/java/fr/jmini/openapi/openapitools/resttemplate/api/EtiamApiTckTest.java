@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.resttemplate.api;
 
 import java.util.List;
@@ -86,6 +85,7 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
 
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

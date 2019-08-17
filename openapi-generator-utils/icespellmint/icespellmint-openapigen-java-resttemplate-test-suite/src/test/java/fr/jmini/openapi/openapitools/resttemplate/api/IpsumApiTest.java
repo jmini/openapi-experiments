@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.resttemplate.api;
 
 import fr.jmini.openapi.openapitools.resttemplate.model.SomeObj;
@@ -30,14 +29,13 @@ public class IpsumApiTest {
 
     private final IpsumApi api = new IpsumApi();
 
-    
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloDeleteTest() {
@@ -46,14 +44,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloGetTest() {
@@ -62,14 +60,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloHeadTest() {
@@ -78,14 +76,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloOptionsTest() {
@@ -94,14 +92,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloPatchTest() {
@@ -110,14 +108,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloPostTest() {
@@ -126,14 +124,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void helloPutTest() {
@@ -142,14 +140,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingDeleteTest() {
@@ -158,14 +156,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingHeadTest() {
@@ -174,14 +172,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingOptionsTest() {
@@ -190,14 +188,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingPatchTest() {
@@ -206,14 +204,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingPostTest() {
@@ -222,14 +220,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void jsonPingPutTest() {
@@ -238,14 +236,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingDeleteTest() {
@@ -254,14 +252,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingGetTest() {
@@ -270,14 +268,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingHeadTest() {
@@ -286,14 +284,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingOptionsTest() {
@@ -302,14 +300,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingPatchTest() {
@@ -318,14 +316,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingPostTest() {
@@ -334,14 +332,14 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void pingPutTest() {
@@ -350,5 +348,5 @@ public class IpsumApiTest {
 
         // TODO: test validations
     }
-    
+
 }

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.webclient.api;
 
 import fr.jmini.openapi.openapitools.webclient.model.SomeObj;
@@ -30,265 +29,284 @@ public class IpsumApiTest {
 
     private final IpsumApi api = new IpsumApi();
 
-    
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloDeleteTest()  {
+    public void helloDeleteTest() {
         String name = null;
-        api.helloDelete(name).block();
+        api.helloDelete(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloGetTest()  {
+    public void helloGetTest() {
         String name = null;
-        api.helloGet(name).block();
+        api.helloGet(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloHeadTest()  {
+    public void helloHeadTest() {
         String name = null;
-        api.helloHead(name).block();
+        api.helloHead(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloOptionsTest()  {
+    public void helloOptionsTest() {
         String name = null;
-        api.helloOptions(name).block();
+        api.helloOptions(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloPatchTest()  {
+    public void helloPatchTest() {
         String name = null;
-        api.helloPatch(name).block();
+        api.helloPatch(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloPostTest()  {
+    public void helloPostTest() {
         String name = null;
-        api.helloPost(name).block();
+        api.helloPost(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void helloPutTest()  {
+    public void helloPutTest() {
         String name = null;
-        api.helloPut(name).block();
+        api.helloPut(name)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingDeleteTest()  {
+    public void jsonPingDeleteTest() {
         SomeObj someObj = null;
-        api.jsonPingDelete(someObj).block();
+        api.jsonPingDelete(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingHeadTest()  {
+    public void jsonPingHeadTest() {
         SomeObj someObj = null;
-        api.jsonPingHead(someObj).block();
+        api.jsonPingHead(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingOptionsTest()  {
+    public void jsonPingOptionsTest() {
         SomeObj someObj = null;
-        api.jsonPingOptions(someObj).block();
+        api.jsonPingOptions(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingPatchTest()  {
+    public void jsonPingPatchTest() {
         SomeObj someObj = null;
-        api.jsonPingPatch(someObj).block();
+        api.jsonPingPatch(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingPostTest()  {
+    public void jsonPingPostTest() {
         SomeObj someObj = null;
-        api.jsonPingPost(someObj).block();
+        api.jsonPingPost(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void jsonPingPutTest()  {
+    public void jsonPingPutTest() {
         SomeObj someObj = null;
-        api.jsonPingPut(someObj).block();
+        api.jsonPingPut(someObj)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingDeleteTest()  {
+    public void pingDeleteTest() {
         String custom = null;
-        api.pingDelete(custom).block();
+        api.pingDelete(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingGetTest()  {
+    public void pingGetTest() {
         String custom = null;
-        api.pingGet(custom).block();
+        api.pingGet(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingHeadTest()  {
+    public void pingHeadTest() {
         String custom = null;
-        api.pingHead(custom).block();
+        api.pingHead(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingOptionsTest()  {
+    public void pingOptionsTest() {
         String custom = null;
-        api.pingOptions(custom).block();
+        api.pingOptions(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingPatchTest()  {
+    public void pingPatchTest() {
         String custom = null;
-        api.pingPatch(custom).block();
+        api.pingPatch(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingPostTest()  {
+    public void pingPostTest() {
         String custom = null;
-        api.pingPost(custom).block();
+        api.pingPost(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      */
     @Test
-    public void pingPutTest()  {
+    public void pingPutTest() {
         String custom = null;
-        api.pingPut(custom).block();
+        api.pingPut(custom)
+            .block();
 
         // TODO: test validations
     }
-    
+
 }

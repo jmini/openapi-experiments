@@ -57,44 +57,45 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
     protected void performPingTraceCall(String customQueryParameterValue) throws Exception {
         api.pingTrace(customQueryParameterValue);
     }
-    
+
     @Override
     protected void performJsonPingPostCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingPost(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingPutCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingPut(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingDeleteCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingDelete(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingOptionsCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingOptions(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingHeadCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingHead(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingPatchCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingPatch(requestBodyValue);
     }
-    
+
     @Override
     protected void performJsonPingTraceCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingTrace(requestBodyValue);
     }
-    
+
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

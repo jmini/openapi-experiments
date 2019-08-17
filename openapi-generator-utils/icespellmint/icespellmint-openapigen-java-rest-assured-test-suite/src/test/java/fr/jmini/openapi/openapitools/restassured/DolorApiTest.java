@@ -11,8 +11,6 @@
  */
 package fr.jmini.openapi.openapitools.restassured;
 
-
-
 import static fr.jmini.openapi.openapitools.restassured.GsonObjectMapper.gson;
 import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
@@ -37,10 +35,15 @@ public class DolorApiTest {
 
     @Before
     public void createApi() {
-        api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
-                () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
+        api = ApiClient.api(
+            ApiClient.Config.apiConfig()
+                .reqSpecSupplier(
+                    () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri("http://localhost:8090"))).dolor();
+                        .setBaseUri("http://localhost:8090")
+                )
+        )
+            .dolor();
     }
 
     /**
@@ -48,17 +51,18 @@ public class DolorApiTest {
      */
     @Test
     public void shouldSee200AfterDolorBasicSec() {
-        api.dolorBasicSec().execute(r -> r.prettyPeek());
+        api.dolorBasicSec()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
      */
     @Test
     public void shouldSee200AfterDolorBearerSec() {
-        api.dolorBearerSec().execute(r -> r.prettyPeek());
+        api.dolorBearerSec()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

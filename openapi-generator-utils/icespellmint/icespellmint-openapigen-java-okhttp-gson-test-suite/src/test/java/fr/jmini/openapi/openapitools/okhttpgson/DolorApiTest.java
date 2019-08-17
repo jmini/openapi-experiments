@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.okhttpgson;
 
 import fr.jmini.openapi.openapitools.okhttpgson.ApiException;
@@ -32,14 +31,13 @@ public class DolorApiTest {
 
     private final DolorApi api = new DolorApi();
 
-    
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void dolorBasicSecTest() throws ApiException {
@@ -47,14 +45,14 @@ public class DolorApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * 
      *
      * 
      *
      * @throws ApiException
-     *          if the Api call fails
+     *             if the Api call fails
      */
     @Test
     public void dolorBearerSecTest() throws ApiException {
@@ -62,5 +60,5 @@ public class DolorApiTest {
 
         // TODO: test validations
     }
-    
+
 }

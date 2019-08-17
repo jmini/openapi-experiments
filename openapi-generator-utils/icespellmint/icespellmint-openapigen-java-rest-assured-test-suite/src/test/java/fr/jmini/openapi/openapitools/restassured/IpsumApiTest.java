@@ -11,9 +11,6 @@ package fr.jmini.openapi.openapitools.restassured;
  * Do not edit the class manually.
  */
 
-
-
-
 import fr.jmini.openapi.openapitools.restassured.model.SomeObj;
 import fr.jmini.openapi.openapitools.restassured.ApiClient;
 import fr.jmini.openapi.openapitools.restassured.api.IpsumApi;
@@ -41,10 +38,15 @@ public class IpsumApiTest {
 
     @Before
     public void createApi() {
-        api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
-                () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
+        api = ApiClient.api(
+            ApiClient.Config.apiConfig()
+                .reqSpecSupplier(
+                    () -> new RequestSpecBuilder().setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri("http://localhost:8090"))).ipsum();
+                        .setBaseUri("http://localhost:8090")
+                )
+        )
+            .ipsum();
     }
 
     /**
@@ -53,10 +55,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingDelete() {
         SomeObj someObj = null;
-        api.jsonPingDelete().execute(r -> r.prettyPeek());
+        api.jsonPingDelete()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -64,10 +66,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingHead() {
         SomeObj someObj = null;
-        api.jsonPingHead().execute(r -> r.prettyPeek());
+        api.jsonPingHead()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -75,10 +77,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingOptions() {
         SomeObj someObj = null;
-        api.jsonPingOptions().execute(r -> r.prettyPeek());
+        api.jsonPingOptions()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -86,10 +88,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingPatch() {
         SomeObj someObj = null;
-        api.jsonPingPatch().execute(r -> r.prettyPeek());
+        api.jsonPingPatch()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -97,10 +99,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingPost() {
         SomeObj someObj = null;
-        api.jsonPingPost().execute(r -> r.prettyPeek());
+        api.jsonPingPost()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -108,10 +110,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterJsonPingPut() {
         SomeObj someObj = null;
-        api.jsonPingPut().execute(r -> r.prettyPeek());
+        api.jsonPingPut()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -119,10 +121,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingDelete() {
         String custom = null;
-        api.pingDelete().execute(r -> r.prettyPeek());
+        api.pingDelete()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -130,10 +132,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingGet() {
         String custom = null;
-        api.pingGet().execute(r -> r.prettyPeek());
+        api.pingGet()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -141,10 +143,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingHead() {
         String custom = null;
-        api.pingHead().execute(r -> r.prettyPeek());
+        api.pingHead()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -152,10 +154,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingOptions() {
         String custom = null;
-        api.pingOptions().execute(r -> r.prettyPeek());
+        api.pingOptions()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -163,10 +165,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingPatch() {
         String custom = null;
-        api.pingPatch().execute(r -> r.prettyPeek());
+        api.pingPatch()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -174,10 +176,10 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingPost() {
         String custom = null;
-        api.pingPost().execute(r -> r.prettyPeek());
+        api.pingPost()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
-
 
     /**
      * OK
@@ -185,7 +187,8 @@ public class IpsumApiTest {
     @Test
     public void shouldSee200AfterPingPut() {
         String custom = null;
-        api.pingPut().execute(r -> r.prettyPeek());
+        api.pingPut()
+            .execute(r -> r.prettyPeek());
         // TODO: test validations
     }
 

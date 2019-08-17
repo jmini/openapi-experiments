@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.restassured;
 
 import static fr.jmini.openapi.openapitools.restassured.GsonObjectMapper.gson;
@@ -26,6 +25,7 @@ import java.util.Map;
 import fr.jmini.openapi.openapitools.restassured.api.EtiamApi;
 import fr.jmini.openapi.openapitools.restassured.model.SomeObj;
 import fr.jmini.rest.client.tck.AbstractEtiamApiTck;
+
 /**
  * API tests for EtiamApi
  */
@@ -35,60 +35,75 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
 
     @Override
     protected void initEtiamApi(String basePath) {
-        api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
-                () -> new RequestSpecBuilder()
+        api = ApiClient.api(
+            ApiClient.Config.apiConfig()
+                .reqSpecSupplier(
+                    () -> new RequestSpecBuilder()
                         .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri(basePath))).etiam();
+                        .setBaseUri(basePath)
+                )
+        )
+            .etiam();
     }
 
     @Override
     protected Integer performGetIntCall() throws Exception {
-        return api.getInt().executeAs(ApiUtil.expectOkHandler());
+        return api.getInt()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected List<Integer> performGetIntListCall() throws Exception {
-        return api.getIntList().executeAs(ApiUtil.expectOkHandler());
+        return api.getIntList()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected Map<String, Integer> performGetIntMapCall() throws Exception {
-        return api.getIntMap().executeAs(ApiUtil.expectOkHandler());
+        return api.getIntMap()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected String performGetStringCall() throws Exception {
-        return api.getString().executeAs(ApiUtil.expectOkHandler());
+        return api.getString()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected List<String> performGetStringListCall() throws Exception {
-        return api.getStringList().executeAs(ApiUtil.expectOkHandler());
+        return api.getStringList()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected Map<String, String> performGetStringMapCall() throws Exception {
-        return api.getStringMap().executeAs(ApiUtil.expectOkHandler());
+        return api.getStringMap()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected SomeObj performGetSomeObjCall() throws Exception {
-        return api.getSomeObj().executeAs(ApiUtil.expectOkHandler());
+        return api.getSomeObj()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected List<SomeObj> performGetSomeObjListCall() throws Exception {
-        return api.getSomeObjList().executeAs(ApiUtil.expectOkHandler());
+        return api.getSomeObjList()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected Map<String, SomeObj> performGetSomeObjMapCall() throws Exception {
-        return api.getSomeObjMap().executeAs(ApiUtil.expectOkHandler());
+        return api.getSomeObjMap()
+            .executeAs(ApiUtil.expectOkHandler());
     }
 
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

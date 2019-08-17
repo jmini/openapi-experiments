@@ -23,10 +23,9 @@ public abstract class AbstractLoremApiTck {
         mockServer.stop();
     }
 
-
     @Before
     public void createApi() {
-        String basePath =  "http://localhost:" + mockServer.getLocalPort();
+        String basePath = "http://localhost:" + mockServer.getLocalPort();
         initLoremApi(basePath);
     }
 
@@ -62,47 +61,47 @@ public abstract class AbstractLoremApiTck {
     public void testEmptyPut() throws Exception {
         runEmptyTest("/lorem/putEmpty", "PUT", this::performEmptyPutCall);
     }
-    
+
     @Test
     public void testEmptyDelete() throws Exception {
         runEmptyTest("/lorem/deleteEmpty", "DELETE", this::performEmptyDeleteCall);
     }
-    
+
     @Test
     public void testEmptyOptions() throws Exception {
         runEmptyTest("/lorem/optionsEmpty", "OPTIONS", this::performEmptyOptionsCall);
     }
-    
+
     @Test
     public void testEmptyHead() throws Exception {
         runEmptyTest("/lorem/headEmpty", "HEAD", this::performEmptyHeadCall);
     }
-    
+
     @Test
     public void testEmptyPatch() throws Exception {
         runEmptyTest("/lorem/patchEmpty", "PATCH", this::performEmptyPatchCall);
     }
-    
+
     @Test
     public void testEmptyTrace() throws Exception {
         runEmptyTest("/lorem/traceEmpty", "TRACE", this::performEmptyTraceCall);
     }
-    
+
     private void runEmptyTest(String path, String method, NoReturnValueCallable performCall) throws Exception, AssertionError {
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-        )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                        .withStatusCode(201)
-        );
+                    .withStatusCode(201)
+            );
 
         performEmptyGetCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
             VerificationTimes.once()

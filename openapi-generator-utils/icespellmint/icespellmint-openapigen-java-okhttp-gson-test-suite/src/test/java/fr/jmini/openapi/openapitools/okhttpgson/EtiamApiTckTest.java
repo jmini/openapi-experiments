@@ -68,6 +68,7 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
 
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

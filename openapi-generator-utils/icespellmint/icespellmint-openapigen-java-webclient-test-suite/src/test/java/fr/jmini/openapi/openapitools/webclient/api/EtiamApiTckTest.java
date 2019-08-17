@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.webclient.api;
 
 import java.util.List;
@@ -46,51 +45,64 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
 
     @Override
     protected Integer performGetIntCall() throws Exception {
-        return api.getInt().block();
+        return api.getInt()
+            .block();
     }
 
     @Override
     protected List<Integer> performGetIntListCall() throws Exception {
-        return api.getIntList().collectList().block();
+        return api.getIntList()
+            .collectList()
+            .block();
     }
 
     @Override
     protected Map<String, Integer> performGetIntMapCall() throws Exception {
-        return api.getIntMap().block();
+        return api.getIntMap()
+            .block();
     }
 
     @Override
     protected String performGetStringCall() throws Exception {
-        return api.getString().block();
+        return api.getString()
+            .block();
     }
 
     @Override
     protected List<String> performGetStringListCall() throws Exception {
-        return api.getStringList().collectList().block();
+        return api.getStringList()
+            .collectList()
+            .block();
     }
 
     @Override
     protected Map<String, String> performGetStringMapCall() throws Exception {
-        return api.getStringMap().block();
+        return api.getStringMap()
+            .block();
     }
 
     @Override
     protected SomeObj performGetSomeObjCall() throws Exception {
-        return api.getSomeObj().block();
+        return api.getSomeObj()
+            .block();
     }
 
     @Override
     protected List<SomeObj> performGetSomeObjListCall() throws Exception {
-        return api.getSomeObjList().collectList().block();
+        return api.getSomeObjList()
+            .collectList()
+            .block();
     }
 
     @Override
     protected Map<String, SomeObj> performGetSomeObjMapCall() throws Exception {
-        return api.getSomeObjMap().block();
+        return api.getSomeObjMap()
+            .block();
     }
 
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

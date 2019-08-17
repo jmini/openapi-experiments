@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package fr.jmini.openapi.openapitools.resteasy.api;
 
 import java.util.List;
@@ -19,7 +18,6 @@ import java.util.Map;
 import fr.jmini.openapi.openapitools.resteasy.ApiClient;
 import fr.jmini.openapi.openapitools.resteasy.model.SomeObj;
 import fr.jmini.rest.client.tck.AbstractEtiamApiTck;
-
 
 /**
  * API tests for EtiamApi
@@ -87,6 +85,7 @@ public class EtiamApiTckTest extends AbstractEtiamApiTck<SomeObj> {
 
     @Override
     protected SomeObj createSomeObject(Long id, String name) {
-        return new SomeObj().id(id).name(name);
+        return new SomeObj().id(id)
+            .name(name);
     }
 }

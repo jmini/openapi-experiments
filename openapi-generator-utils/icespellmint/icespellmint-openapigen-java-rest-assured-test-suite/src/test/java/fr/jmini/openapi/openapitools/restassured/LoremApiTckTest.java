@@ -19,50 +19,63 @@ public class LoremApiTckTest extends AbstractLoremApiTck {
 
     @Override
     protected void initLoremApi(String basePath) {
-        api = ApiClient.api(ApiClient.Config.apiConfig().reqSpecSupplier(
-                () -> new RequestSpecBuilder()
+        api = ApiClient.api(
+            ApiClient.Config.apiConfig()
+                .reqSpecSupplier(
+                    () -> new RequestSpecBuilder()
                         .setConfig(config().objectMapperConfig(objectMapperConfig().defaultObjectMapper(gson())))
                         .addFilter(new ErrorLoggingFilter())
-                        .setBaseUri(basePath))).lorem();
+                        .setBaseUri(basePath)
+                )
+        )
+            .lorem();
     }
 
     @Override
     protected void performEmptyGetCall() throws Exception {
-        api.emptyGet().execute(ApiUtil.expectCreatedHandler());
+        api.emptyGet()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyPostCall() throws Exception {
-        api.emptyPost().execute(ApiUtil.expectCreatedHandler());
+        api.emptyPost()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyPutCall() throws Exception {
-        api.emptyPut().execute(ApiUtil.expectCreatedHandler());
+        api.emptyPut()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyDeleteCall() throws Exception {
-        api.emptyDelete().execute(ApiUtil.expectCreatedHandler());
+        api.emptyDelete()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyOptionsCall() throws Exception {
-        api.emptyOptions().execute(ApiUtil.expectCreatedHandler());
+        api.emptyOptions()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyHeadCall() throws Exception {
-        api.emptyHead().execute(ApiUtil.expectCreatedHandler());
+        api.emptyHead()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyPatchCall() throws Exception {
-        api.emptyPatch().execute(ApiUtil.expectCreatedHandler());
+        api.emptyPatch()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 
     @Override
     protected void performEmptyTraceCall() throws Exception {
-        api.emptyTrace().execute(ApiUtil.expectCreatedHandler());
+        api.emptyTrace()
+            .execute(ApiUtil.expectCreatedHandler());
     }
 }

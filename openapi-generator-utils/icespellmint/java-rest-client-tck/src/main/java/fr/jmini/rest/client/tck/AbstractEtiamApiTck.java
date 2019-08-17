@@ -29,10 +29,9 @@ public abstract class AbstractEtiamApiTck<SO> {
         mockServer.stop();
     }
 
-
     @Before
     public void createApi() {
-        String basePath =  "http://localhost:" + mockServer.getLocalPort();
+        String basePath = "http://localhost:" + mockServer.getLocalPort();
         initEtiamApi(basePath);
     }
 
@@ -63,27 +62,29 @@ public abstract class AbstractEtiamApiTck<SO> {
         String path = "/etiam/getInt";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-        )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                        .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                        .withStatusCode(200)
-                        .withBody("42")
-        );
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("42")
+            );
 
         Integer response = performGetIntCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
             VerificationTimes.once()
         );
 
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo(42);
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .isEqualTo(42);
     }
 
     @Test
@@ -91,55 +92,58 @@ public abstract class AbstractEtiamApiTck<SO> {
         String path = "/etiam/getIntList";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("[3, 6, 9]")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("[3, 6, 9]")
+            );
+
         List<Integer> response = performGetIntListCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").containsExactly(3, 6, 9);
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .containsExactly(3, 6, 9);
     }
-    
+
     @Test
     public void testGetIntMap12() throws Exception {
         String path = "/etiam/getIntMap";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("{\"one\": 1, \"two\": 2}")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("{\"one\": 1, \"two\": 2}")
+            );
+
         Map<String, Integer> response = performGetIntMapCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'")
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
             .hasSize(2)
             .containsEntry("one", 1)
             .containsEntry("two", 2);
@@ -150,177 +154,187 @@ public abstract class AbstractEtiamApiTck<SO> {
         String path = "/etiam/getString";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("\"Hello world\"")
-                );
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("\"Hello world\"")
+            );
 
         String response = performGetStringCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo("Hello world");
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .isEqualTo("Hello world");
     }
-    
+
     @Test
     public void testGetStringListLoremIpsum() throws Exception {
         String path = "/etiam/getStringList";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("[\"lorem\", \"ipsum\", \"lorem ipsum\"]")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("[\"lorem\", \"ipsum\", \"lorem ipsum\"]")
+            );
+
         List<String> response = performGetStringListCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").containsExactly("lorem", "ipsum", "lorem ipsum");
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .containsExactly("lorem", "ipsum", "lorem ipsum");
     }
-    
+
     @Test
     public void testGetStringMap12() throws Exception {
         String path = "/etiam/getStringMap";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("{\"one\": \"1\", \"two\": \"2\"}")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("{\"one\": \"1\", \"two\": \"2\"}")
+            );
+
         Map<String, String> response = performGetStringMapCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'")
-        .hasSize(2)
-        .containsEntry("one", "1")
-        .containsEntry("two", "2");
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .hasSize(2)
+            .containsEntry("one", "1")
+            .containsEntry("two", "2");
     }
-    
+
     @Test
     public void testGetSomeObjHelloWorld() throws Exception {
         String path = "/etiam/getSomeObj";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("{\"id\": \"26\", \"name\": \"test\"}")
-                );
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("{\"id\": \"26\", \"name\": \"test\"}")
+            );
 
         SO response = performGetSomeObjCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo(createSomeObject(26L, "test"));
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .isEqualTo(createSomeObject(26L, "test"));
     }
-    
+
     @Test
     public void testGetSomeObjListLoremIpsum() throws Exception {
         String path = "/etiam/getSomeObjList";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("[{\"id\": \"3\", \"name\": \"name3\"}, {\"id\": \"6\", \"name\": \"name6\"}, {\"id\": \"9\", \"name\": \"name9\"}]")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("[{\"id\": \"3\", \"name\": \"name3\"}, {\"id\": \"6\", \"name\": \"name6\"}, {\"id\": \"9\", \"name\": \"name9\"}]")
+            );
+
         List<SO> response = performGetSomeObjListCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'").containsExactly(
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .containsExactly(
                 createSomeObject(3L, "name3"),
                 createSomeObject(6L, "name6"),
                 createSomeObject(9L, "name9")
-                );
+            );
     }
-    
+
     @Test
     public void testGetSomeObjMap12() throws Exception {
         String path = "/etiam/getSomeObjMap";
         String method = "GET";
         mockServer
-        .when(
+            .when(
                 HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
                 HttpResponse.response()
-                .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
-                .withStatusCode(200)
-                .withBody("{\"one\": " + "{\"id\": \"11\", \"name\": \"lorem\"}" + ", \"two\": " + "{\"id\": \"22\", \"name\": \"ipsum\"}" + "}")
-                );
-        
+                    .withHeader(HttpHeaderNames.CONTENT_TYPE.toString(), "application/json")
+                    .withStatusCode(200)
+                    .withBody("{\"one\": " + "{\"id\": \"11\", \"name\": \"lorem\"}" + ", \"two\": " + "{\"id\": \"22\", \"name\": \"ipsum\"}" + "}")
+            );
+
         Map<String, SO> response = performGetSomeObjMapCall();
         mockServer.verify(
-                HttpRequest.request()
+            HttpRequest.request()
                 .withPath(path)
                 .withMethod(method),
-                VerificationTimes.once()
-                );
-        
-        Assertions.assertThat(response).describedAs("response for '" + path + "'")
-        .hasSize(2)
-        .containsEntry("one", createSomeObject(11L, "lorem"))
-        .containsEntry("two", createSomeObject(22L, "ipsum"));
+            VerificationTimes.once()
+        );
+
+        Assertions.assertThat(response)
+            .describedAs("response for '" + path + "'")
+            .hasSize(2)
+            .containsEntry("one", createSomeObject(11L, "lorem"))
+            .containsEntry("two", createSomeObject(22L, "ipsum"));
     }
 
 }

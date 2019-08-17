@@ -38,6 +38,26 @@ public abstract class AbstractEtiamApiTck<SO> {
 
     protected abstract void initEtiamApi(String basePath);
 
+    protected abstract Integer performGetIntCall() throws Exception;
+
+    protected abstract List<Integer> performGetIntListCall() throws Exception;
+
+    protected abstract Map<String, Integer> performGetIntMapCall() throws Exception;
+
+    protected abstract String performGetStringCall() throws Exception;
+
+    protected abstract List<String> performGetStringListCall() throws Exception;
+
+    protected abstract Map<String, String> performGetStringMapCall() throws Exception;
+
+    protected abstract SO performGetSomeObjCall() throws Exception;
+
+    protected abstract List<SO> performGetSomeObjListCall() throws Exception;
+
+    protected abstract Map<String, SO> performGetSomeObjMapCall() throws Exception;
+
+    protected abstract SO createSomeObject(Long id, String name);
+
     @Test
     public void testGetInt42() throws Exception {
         String path = "/etiam/getInt";
@@ -66,8 +86,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo(42);
     }
 
-    protected abstract Integer performGetIntCall() throws Exception;
-    
     @Test
     public void testGetIntList369() throws Exception {
         String path = "/etiam/getIntList";
@@ -95,8 +113,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         
         Assertions.assertThat(response).describedAs("response for '" + path + "'").containsExactly(3, 6, 9);
     }
-    
-    protected abstract List<Integer> performGetIntListCall() throws Exception;
     
     @Test
     public void testGetIntMap12() throws Exception {
@@ -129,8 +145,6 @@ public abstract class AbstractEtiamApiTck<SO> {
             .containsEntry("two", 2);
     }
 
-    protected abstract Map<String, Integer> performGetIntMapCall() throws Exception;
-
     @Test
     public void testGetStringHelloWorld() throws Exception {
         String path = "/etiam/getString";
@@ -159,8 +173,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo("Hello world");
     }
     
-    protected abstract String performGetStringCall() throws Exception;
-    
     @Test
     public void testGetStringListLoremIpsum() throws Exception {
         String path = "/etiam/getStringList";
@@ -188,8 +200,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         
         Assertions.assertThat(response).describedAs("response for '" + path + "'").containsExactly("lorem", "ipsum", "lorem ipsum");
     }
-    
-    protected abstract List<String> performGetStringListCall() throws Exception;
     
     @Test
     public void testGetStringMap12() throws Exception {
@@ -222,8 +232,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         .containsEntry("two", "2");
     }
     
-    protected abstract Map<String, String> performGetStringMapCall() throws Exception;
-    
     @Test
     public void testGetSomeObjHelloWorld() throws Exception {
         String path = "/etiam/getSomeObj";
@@ -251,8 +259,6 @@ public abstract class AbstractEtiamApiTck<SO> {
         
         Assertions.assertThat(response).describedAs("response for '" + path + "'").isEqualTo(createSomeObject(26L, "test"));
     }
-    
-    protected abstract SO performGetSomeObjCall() throws Exception;
     
     @Test
     public void testGetSomeObjListLoremIpsum() throws Exception {
@@ -286,8 +292,6 @@ public abstract class AbstractEtiamApiTck<SO> {
                 );
     }
     
-    protected abstract List<SO> performGetSomeObjListCall() throws Exception;
-    
     @Test
     public void testGetSomeObjMap12() throws Exception {
         String path = "/etiam/getSomeObjMap";
@@ -318,9 +322,5 @@ public abstract class AbstractEtiamApiTck<SO> {
         .containsEntry("one", createSomeObject(11L, "lorem"))
         .containsEntry("two", createSomeObject(22L, "ipsum"));
     }
-    
-    protected abstract Map<String, SO> performGetSomeObjMapCall() throws Exception;
-    
-    protected abstract SO createSomeObject(Long id, String name);
 
 }

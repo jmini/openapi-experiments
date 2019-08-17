@@ -32,10 +32,63 @@ public abstract class AbstractLoremApiTck {
 
     protected abstract void initLoremApi(String basePath);
 
+    protected abstract void performEmptyGetCall() throws Exception;
+
+    protected abstract void performEmptyPostCall() throws Exception;
+
+    protected abstract void performEmptyPutCall() throws Exception;
+
+    protected abstract void performEmptyDeleteCall() throws Exception;
+
+    protected abstract void performEmptyOptionsCall() throws Exception;
+
+    protected abstract void performEmptyHeadCall() throws Exception;
+
+    protected abstract void performEmptyPatchCall() throws Exception;
+
+    protected abstract void performEmptyTraceCall() throws Exception;
+
     @Test
     public void testEmptyGet() throws Exception {
-        String path = "/lorem/getEmpty";
-        String method = "GET";
+        runEmptyTest("/lorem/getEmpty", "GET", this::performEmptyGetCall);
+    }
+
+    @Test
+    public void testEmptyPost() throws Exception {
+        runEmptyTest("/lorem/postEmpty", "POST", this::performEmptyPostCall);
+    }
+
+    @Test
+    public void testEmptyPut() throws Exception {
+        runEmptyTest("/lorem/putEmpty", "PUT", this::performEmptyPutCall);
+    }
+    
+    @Test
+    public void testEmptyDelete() throws Exception {
+        runEmptyTest("/lorem/deleteEmpty", "DELETE", this::performEmptyDeleteCall);
+    }
+    
+    @Test
+    public void testEmptyOptions() throws Exception {
+        runEmptyTest("/lorem/optionsEmpty", "OPTIONS", this::performEmptyOptionsCall);
+    }
+    
+    @Test
+    public void testEmptyHead() throws Exception {
+        runEmptyTest("/lorem/headEmpty", "HEAD", this::performEmptyHeadCall);
+    }
+    
+    @Test
+    public void testEmptyPatch() throws Exception {
+        runEmptyTest("/lorem/patchEmpty", "PATCH", this::performEmptyPatchCall);
+    }
+    
+    @Test
+    public void testEmptyTrace() throws Exception {
+        runEmptyTest("/lorem/traceEmpty", "TRACE", this::performEmptyTraceCall);
+    }
+    
+    private void runEmptyTest(String path, String method, NoReturnValueCallable performCall) throws Exception, AssertionError {
         mockServer
         .when(
                 HttpRequest.request()
@@ -55,190 +108,5 @@ public abstract class AbstractLoremApiTck {
             VerificationTimes.once()
         );
     }
-
-    protected abstract void performEmptyGetCall() throws Exception;
-
-    @Test
-    public void testEmptyPost() throws Exception {
-        String path = "/lorem/postEmpty";
-        String method = "POST";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyPostCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-
-    protected abstract void performEmptyPostCall() throws Exception;
-    
-    @Test
-    public void testEmptyPut() throws Exception {
-        String path = "/lorem/putEmpty";
-        String method = "PUT";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyPutCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyPutCall() throws Exception;
-    
-    @Test
-    public void testEmptyDelete() throws Exception {
-        String path = "/lorem/deleteEmpty";
-        String method = "DELETE";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyDeleteCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyDeleteCall() throws Exception;
-    
-    @Test
-    public void testEmptyOptions() throws Exception {
-        String path = "/lorem/optionsEmpty";
-        String method = "OPTIONS";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyOptionsCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyOptionsCall() throws Exception;
-    
-    @Test
-    public void testEmptyHead() throws Exception {
-        String path = "/lorem/headEmpty";
-        String method = "HEAD";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyHeadCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyHeadCall() throws Exception;
-    
-    @Test
-    public void testEmptyPatch() throws Exception {
-        String path = "/lorem/patchEmpty";
-        String method = "PATCH";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyPatchCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyPatchCall() throws Exception;
-    
-    @Test
-    public void testEmptyTrace() throws Exception {
-        String path = "/lorem/traceEmpty";
-        String method = "TRACE";
-        mockServer
-        .when(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method)
-                )
-        .respond(
-                HttpResponse.response()
-                .withStatusCode(201)
-                );
-        
-        performEmptyTraceCall();
-        mockServer.verify(
-                HttpRequest.request()
-                .withPath(path)
-                .withMethod(method),
-                VerificationTimes.once()
-                );
-    }
-    
-    protected abstract void performEmptyTraceCall() throws Exception;
-
 
 }

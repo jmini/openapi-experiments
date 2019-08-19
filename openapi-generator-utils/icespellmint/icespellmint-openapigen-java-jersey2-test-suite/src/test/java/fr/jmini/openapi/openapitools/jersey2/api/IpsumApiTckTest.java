@@ -71,26 +71,6 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
         // TODO test PUT with no request-body is not working
     }
 
-    @Override
-    public void testPingOptionsFoo() throws Exception {
-        // TODO test OPTIONS not working
-    }
-
-    @Override
-    public void testPingOptionsFooAndBar() throws Exception {
-        // TODO test OPTIONS is not working
-    }
-
-    @Override
-    public void testJsonPingOptionsSomeObj() throws Exception {
-        // TODO test OPTIONS is not working
-    }
-
-    @Override
-    public void testHelloOptionsJohn() throws Exception {
-        // TODO test OPTIONS is not working
-    }
-
     private IpsumApi api;
 
     @Override

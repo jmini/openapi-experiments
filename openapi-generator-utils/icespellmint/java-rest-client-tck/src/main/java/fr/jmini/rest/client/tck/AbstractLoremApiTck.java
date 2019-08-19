@@ -99,7 +99,7 @@ public abstract class AbstractLoremApiTck {
                     .withStatusCode(201)
             );
 
-        performEmptyGetCall();
+        performCall.call();
         mockServer.verify(
             HttpRequest.request()
                 .withPath(path)

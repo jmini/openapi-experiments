@@ -91,7 +91,9 @@ public class Weather {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private TypeEnum type;
 
+
   public Weather type(TypeEnum type) {
+    
     this.type = type;
     return this;
   }
@@ -102,9 +104,12 @@ public class Weather {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public TypeEnum getType() {
     return type;
   }
+
+
 
   public void setType(TypeEnum type) {
     this.type = type;

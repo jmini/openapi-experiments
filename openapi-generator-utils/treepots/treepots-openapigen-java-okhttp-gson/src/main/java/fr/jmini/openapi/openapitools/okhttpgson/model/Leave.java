@@ -35,7 +35,9 @@ public class Leave extends Element {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
+
   public Leave value(String value) {
+    
     this.value = value;
     return this;
   }
@@ -46,9 +48,12 @@ public class Leave extends Element {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getValue() {
     return value;
   }
+
+
 
   public void setValue(String value) {
     this.value = value;

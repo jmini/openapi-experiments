@@ -21,7 +21,7 @@ public class Pet  {
   private Long id;
 
   @ApiModelProperty(value = "")
-  private Category category = null;
+  private Category category;
 
   @ApiModelProperty(example = "doggie", required = true, value = "")
   private String name;

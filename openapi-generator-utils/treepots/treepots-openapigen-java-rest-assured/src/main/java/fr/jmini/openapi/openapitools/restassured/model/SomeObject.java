@@ -41,7 +41,9 @@ public class SomeObject {
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
+
   public SomeObject id(Integer id) {
+    
     this.id = id;
     return this;
   }
@@ -52,15 +54,20 @@ public class SomeObject {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Integer getId() {
     return id;
   }
+
+
 
   public void setId(Integer id) {
     this.id = id;
   }
 
+
   public SomeObject firstName(String firstName) {
+    
     this.firstName = firstName;
     return this;
   }
@@ -71,15 +78,20 @@ public class SomeObject {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getFirstName() {
     return firstName;
   }
+
+
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
 
+
   public SomeObject lastName(String lastName) {
+    
     this.lastName = lastName;
     return this;
   }
@@ -90,9 +102,12 @@ public class SomeObject {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getLastName() {
     return lastName;
   }
+
+
 
   public void setLastName(String lastName) {
     this.lastName = lastName;

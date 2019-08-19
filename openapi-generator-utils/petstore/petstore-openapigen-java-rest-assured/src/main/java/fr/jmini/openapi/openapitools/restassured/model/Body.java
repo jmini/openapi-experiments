@@ -37,7 +37,9 @@ public class Body {
   @SerializedName(SERIALIZED_NAME_STATUS)
   private String status;
 
+
   public Body name(String name) {
+    
     this.name = name;
     return this;
   }
@@ -48,15 +50,20 @@ public class Body {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Updated name of the pet")
+
   public String getName() {
     return name;
   }
+
+
 
   public void setName(String name) {
     this.name = name;
   }
 
+
   public Body status(String status) {
+    
     this.status = status;
     return this;
   }
@@ -67,9 +74,12 @@ public class Body {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Updated status of the pet")
+
   public String getStatus() {
     return status;
   }
+
+
 
   public void setStatus(String status) {
     this.status = status;

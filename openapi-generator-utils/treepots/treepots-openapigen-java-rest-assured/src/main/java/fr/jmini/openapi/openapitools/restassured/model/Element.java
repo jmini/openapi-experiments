@@ -41,7 +41,9 @@ public class Element {
   public Element() {
     this.type = this.getClass().getSimpleName();
   }
+
   public Element id(String id) {
+    
     this.id = id;
     return this;
   }
@@ -52,15 +54,20 @@ public class Element {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getId() {
     return id;
   }
+
+
 
   public void setId(String id) {
     this.id = id;
   }
 
+
   public Element type(String type) {
+    
     this.type = type;
     return this;
   }
@@ -70,9 +77,12 @@ public class Element {
    * @return type
   **/
   @ApiModelProperty(required = true, value = "")
+
   public String getType() {
     return type;
   }
+
+
 
   public void setType(String type) {
     this.type = type;

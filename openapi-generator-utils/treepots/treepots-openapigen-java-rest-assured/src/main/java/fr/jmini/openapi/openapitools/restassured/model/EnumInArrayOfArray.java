@@ -194,7 +194,9 @@ public class EnumInArrayOfArray {
   @SerializedName(SERIALIZED_NAME_P3)
   private List<List<List<P3Enum>>> p3 = null;
 
+
   public EnumInArrayOfArray p1(List<P1Enum> p1) {
+    
     this.p1 = p1;
     return this;
   }
@@ -213,15 +215,20 @@ public class EnumInArrayOfArray {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<P1Enum> getP1() {
     return p1;
   }
+
+
 
   public void setP1(List<P1Enum> p1) {
     this.p1 = p1;
   }
 
+
   public EnumInArrayOfArray p2(List<List<P2Enum>> p2) {
+    
     this.p2 = p2;
     return this;
   }
@@ -240,15 +247,20 @@ public class EnumInArrayOfArray {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<List<P2Enum>> getP2() {
     return p2;
   }
+
+
 
   public void setP2(List<List<P2Enum>> p2) {
     this.p2 = p2;
   }
 
+
   public EnumInArrayOfArray p3(List<List<List<P3Enum>>> p3) {
+    
     this.p3 = p3;
     return this;
   }
@@ -267,9 +279,12 @@ public class EnumInArrayOfArray {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<List<List<P3Enum>>> getP3() {
     return p3;
   }
+
+
 
   public void setP3(List<List<List<P3Enum>>> p3) {
     this.p3 = p3;

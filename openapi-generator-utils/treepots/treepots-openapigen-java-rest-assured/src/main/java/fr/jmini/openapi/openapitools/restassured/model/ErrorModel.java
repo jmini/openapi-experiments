@@ -41,7 +41,9 @@ public class ErrorModel {
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
   private String errorMessage;
 
+
   public ErrorModel statusCode(Integer statusCode) {
+    
     this.statusCode = statusCode;
     return this;
   }
@@ -52,15 +54,20 @@ public class ErrorModel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "http status code")
+
   public Integer getStatusCode() {
     return statusCode;
   }
+
+
 
   public void setStatusCode(Integer statusCode) {
     this.statusCode = statusCode;
   }
 
+
   public ErrorModel statusDescription(String statusDescription) {
+    
     this.statusDescription = statusDescription;
     return this;
   }
@@ -71,15 +78,20 @@ public class ErrorModel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "http status reason phrase")
+
   public String getStatusDescription() {
     return statusDescription;
   }
+
+
 
   public void setStatusDescription(String statusDescription) {
     this.statusDescription = statusDescription;
   }
 
+
   public ErrorModel errorMessage(String errorMessage) {
+    
     this.errorMessage = errorMessage;
     return this;
   }
@@ -90,9 +102,12 @@ public class ErrorModel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "error description")
+
   public String getErrorMessage() {
     return errorMessage;
   }
+
+
 
   public void setErrorMessage(String errorMessage) {
     this.errorMessage = errorMessage;

@@ -41,7 +41,9 @@ public class ItemWithBoolean {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+
   public ItemWithBoolean id(Integer id) {
+    
     this.id = id;
     return this;
   }
@@ -52,15 +54,20 @@ public class ItemWithBoolean {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Integer getId() {
     return id;
   }
+
+
 
   public void setId(Integer id) {
     this.id = id;
   }
 
+
   public ItemWithBoolean active(Boolean active) {
+    
     this.active = active;
     return this;
   }
@@ -71,15 +78,20 @@ public class ItemWithBoolean {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Boolean getActive() {
     return active;
   }
+
+
 
   public void setActive(Boolean active) {
     this.active = active;
   }
 
+
   public ItemWithBoolean name(String name) {
+    
     this.name = name;
     return this;
   }
@@ -90,9 +102,12 @@ public class ItemWithBoolean {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getName() {
     return name;
   }
+
+
 
   public void setName(String name) {
     this.name = name;

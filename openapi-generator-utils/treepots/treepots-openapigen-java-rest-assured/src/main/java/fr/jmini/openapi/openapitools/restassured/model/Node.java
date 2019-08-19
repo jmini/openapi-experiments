@@ -37,7 +37,9 @@ public class Node extends Element {
   @SerializedName(SERIALIZED_NAME_CHILDREN_IDS)
   private List<String> childrenIds = null;
 
+
   public Node childrenIds(List<String> childrenIds) {
+    
     this.childrenIds = childrenIds;
     return this;
   }
@@ -56,9 +58,12 @@ public class Node extends Element {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public List<String> getChildrenIds() {
     return childrenIds;
   }
+
+
 
   public void setChildrenIds(List<String> childrenIds) {
     this.childrenIds = childrenIds;

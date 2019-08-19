@@ -86,7 +86,9 @@ public class Task {
   @SerializedName(SERIALIZED_NAME_STATUS)
   private StatusEnum status;
 
+
   public Task status(StatusEnum status) {
+    
     this.status = status;
     return this;
   }
@@ -97,9 +99,12 @@ public class Task {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public StatusEnum getStatus() {
     return status;
   }
+
+
 
   public void setStatus(StatusEnum status) {
     this.status = status;

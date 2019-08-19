@@ -38,7 +38,9 @@ public class Body1 {
   @SerializedName(SERIALIZED_NAME_FILE)
   private File file;
 
+
   public Body1 additionalMetadata(String additionalMetadata) {
+    
     this.additionalMetadata = additionalMetadata;
     return this;
   }
@@ -49,15 +51,20 @@ public class Body1 {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Additional data to pass to server")
+
   public String getAdditionalMetadata() {
     return additionalMetadata;
   }
+
+
 
   public void setAdditionalMetadata(String additionalMetadata) {
     this.additionalMetadata = additionalMetadata;
   }
 
+
   public Body1 file(File file) {
+    
     this.file = file;
     return this;
   }
@@ -68,9 +75,12 @@ public class Body1 {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "file to upload")
+
   public File getFile() {
     return file;
   }
+
+
 
   public void setFile(File file) {
     this.file = file;

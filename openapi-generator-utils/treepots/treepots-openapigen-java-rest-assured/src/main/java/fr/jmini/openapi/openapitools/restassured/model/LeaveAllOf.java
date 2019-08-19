@@ -33,7 +33,9 @@ public class LeaveAllOf {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
+
   public LeaveAllOf value(String value) {
+    
     this.value = value;
     return this;
   }
@@ -44,9 +46,12 @@ public class LeaveAllOf {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String getValue() {
     return value;
   }
+
+
 
   public void setValue(String value) {
     this.value = value;

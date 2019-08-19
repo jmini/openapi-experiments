@@ -21,7 +21,7 @@ public class Pet   {
   
   private Long id;
 
-  private Category category = null;
+  private Category category;
 
   private String name;
 

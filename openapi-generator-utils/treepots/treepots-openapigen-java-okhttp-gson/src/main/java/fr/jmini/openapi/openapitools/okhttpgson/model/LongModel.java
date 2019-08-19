@@ -37,7 +37,9 @@ public class LongModel {
   @SerializedName(SERIALIZED_NAME_LONG2)
   private Long long2;
 
+
   public LongModel long1(Long long1) {
+    
     this.long1 = long1;
     return this;
   }
@@ -48,15 +50,20 @@ public class LongModel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Long getLong1() {
     return long1;
   }
+
+
 
   public void setLong1(Long long1) {
     this.long1 = long1;
   }
 
+
   public LongModel long2(Long long2) {
+    
     this.long2 = long2;
     return this;
   }
@@ -67,9 +74,12 @@ public class LongModel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Long getLong2() {
     return long2;
   }
+
+
 
   public void setLong2(Long long2) {
     this.long2 = long2;

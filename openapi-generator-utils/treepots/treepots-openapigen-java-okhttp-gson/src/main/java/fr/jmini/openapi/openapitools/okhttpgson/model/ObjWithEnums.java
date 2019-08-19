@@ -64,7 +64,9 @@ public class ObjWithEnums {
   @SerializedName(SERIALIZED_NAME_CUSTOM)
   private Enum2WithCustomName custom = Enum2WithCustomName.BAR;
 
+
   public ObjWithEnums iprop(IntEnum iprop) {
+    
     this.iprop = iprop;
     return this;
   }
@@ -75,15 +77,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public IntEnum getIprop() {
     return iprop;
   }
+
+
 
   public void setIprop(IntEnum iprop) {
     this.iprop = iprop;
   }
 
+
   public ObjWithEnums lprop(LongEnum lprop) {
+    
     this.lprop = lprop;
     return this;
   }
@@ -94,15 +101,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public LongEnum getLprop() {
     return lprop;
   }
+
+
 
   public void setLprop(LongEnum lprop) {
     this.lprop = lprop;
   }
 
+
   public ObjWithEnums sprop(StringEnum sprop) {
+    
     this.sprop = sprop;
     return this;
   }
@@ -113,15 +125,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public StringEnum getSprop() {
     return sprop;
   }
+
+
 
   public void setSprop(StringEnum sprop) {
     this.sprop = sprop;
   }
 
+
   public ObjWithEnums iprop2(Int2Enum iprop2) {
+    
     this.iprop2 = iprop2;
     return this;
   }
@@ -132,15 +149,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Int2Enum getIprop2() {
     return iprop2;
   }
+
+
 
   public void setIprop2(Int2Enum iprop2) {
     this.iprop2 = iprop2;
   }
 
+
   public ObjWithEnums lprop2(Long2Enum lprop2) {
+    
     this.lprop2 = lprop2;
     return this;
   }
@@ -151,15 +173,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Long2Enum getLprop2() {
     return lprop2;
   }
+
+
 
   public void setLprop2(Long2Enum lprop2) {
     this.lprop2 = lprop2;
   }
 
+
   public ObjWithEnums sprop2(String2Enum sprop2) {
+    
     this.sprop2 = sprop2;
     return this;
   }
@@ -170,15 +197,20 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public String2Enum getSprop2() {
     return sprop2;
   }
+
+
 
   public void setSprop2(String2Enum sprop2) {
     this.sprop2 = sprop2;
   }
 
+
   public ObjWithEnums custom(Enum2WithCustomName custom) {
+    
     this.custom = custom;
     return this;
   }
@@ -189,9 +221,12 @@ public class ObjWithEnums {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+
   public Enum2WithCustomName getCustom() {
     return custom;
   }
+
+
 
   public void setCustom(Enum2WithCustomName custom) {
     this.custom = custom;

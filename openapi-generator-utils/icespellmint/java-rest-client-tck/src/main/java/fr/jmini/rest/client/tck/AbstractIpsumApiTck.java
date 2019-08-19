@@ -15,6 +15,7 @@ public abstract class AbstractIpsumApiTck<SO> {
 
     public static final String IPSUM_PING_PATH = "/ipsum/ping";
     public static final String IPSUM_JSON_PING_PATH = "/ipsum/jsonPing";
+    public static final String IPSUM_HELLO_ROOT_PATH = "/ipsum/hello";
     private static ClientAndServer mockServer;
 
     @BeforeClass
@@ -65,124 +66,180 @@ public abstract class AbstractIpsumApiTck<SO> {
 
     protected abstract void performJsonPingTraceCall(SO requestBodyValue) throws Exception;
 
+    protected abstract void performHelloGetCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloPostCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloPutCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloDeleteCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloOptionsCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloHeadCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloPatchCall(String namePathParameterValue) throws Exception;
+
+    protected abstract void performHelloTraceCall(String namePathParameterValue) throws Exception;
+
     protected abstract SO createSomeObject(Long id, String name);
 
     @Test
     public void testPingGetFoo() throws Exception {
-        runPingGetTest("GET", this::performPingGetCall, "Foo");
+        runPingTest("GET", this::performPingGetCall, "Foo");
     }
 
     @Test
     public void testPingPostFoo() throws Exception {
-        runPingGetTest("POST", this::performPingPostCall, "Foo");
+        runPingTest("POST", this::performPingPostCall, "Foo");
     }
 
     @Test
     public void testPingPutFoo() throws Exception {
-        runPingGetTest("PUT", this::performPingPutCall, "Foo");
+        runPingTest("PUT", this::performPingPutCall, "Foo");
     }
 
     @Test
     public void testPingDeleteFoo() throws Exception {
-        runPingGetTest("DELETE", this::performPingDeleteCall, "Foo");
+        runPingTest("DELETE", this::performPingDeleteCall, "Foo");
     }
 
     @Test
     public void testPingOptionsFoo() throws Exception {
-        runPingGetTest("OPTIONS", this::performPingOptionsCall, "Foo");
+        runPingTest("OPTIONS", this::performPingOptionsCall, "Foo");
     }
 
     @Test
     public void testPingHeadFoo() throws Exception {
-        runPingGetTest("HEAD", this::performPingHeadCall, "Foo");
+        runPingTest("HEAD", this::performPingHeadCall, "Foo");
     }
 
     @Test
     public void testPingPatchFoo() throws Exception {
-        runPingGetTest("PATCH", this::performPingPatchCall, "Foo");
+        runPingTest("PATCH", this::performPingPatchCall, "Foo");
     }
 
     @Test
     public void testPingTraceFoo() throws Exception {
-        runPingGetTest("TRACE", this::performPingTraceCall, "Foo");
+        runPingTest("TRACE", this::performPingTraceCall, "Foo");
     }
 
     @Test
     public void testPingGetFooAndBar() throws Exception {
-        runPingGetTest("GET", this::performPingGetCall, "foo & bar");
+        runPingTest("GET", this::performPingGetCall, "foo & bar");
     }
 
     @Test
     public void testPingPostFooAndBar() throws Exception {
-        runPingGetTest("POST", this::performPingPostCall, "foo & bar");
+        runPingTest("POST", this::performPingPostCall, "foo & bar");
     }
 
     @Test
     public void testPingPutFooAndBar() throws Exception {
-        runPingGetTest("PUT", this::performPingPutCall, "foo & bar");
+        runPingTest("PUT", this::performPingPutCall, "foo & bar");
     }
 
     @Test
     public void testPingDeleteFooAndBar() throws Exception {
-        runPingGetTest("DELETE", this::performPingDeleteCall, "foo & bar");
+        runPingTest("DELETE", this::performPingDeleteCall, "foo & bar");
     }
 
     @Test
     public void testPingOptionsFooAndBar() throws Exception {
-        runPingGetTest("OPTIONS", this::performPingOptionsCall, "foo & bar");
+        runPingTest("OPTIONS", this::performPingOptionsCall, "foo & bar");
     }
 
     @Test
     public void testPingHeadFooAndBar() throws Exception {
-        runPingGetTest("HEAD", this::performPingHeadCall, "foo & bar");
+        runPingTest("HEAD", this::performPingHeadCall, "foo & bar");
     }
 
     @Test
     public void testPingPatchFooAndBar() throws Exception {
-        runPingGetTest("PATCH", this::performPingPatchCall, "foo & bar");
+        runPingTest("PATCH", this::performPingPatchCall, "foo & bar");
     }
 
     @Test
     public void testPingTraceFooAndBar() throws Exception {
-        runPingGetTest("TRACE", this::performPingTraceCall, "foo & bar");
+        runPingTest("TRACE", this::performPingTraceCall, "foo & bar");
     }
 
     @Test
     public void testJsonPingPostSomeObj() throws Exception {
-        runJsonPingGetTest("POST", this::performJsonPingPostCall, 42L, "FOO");
+        runJsonPingTest("POST", this::performJsonPingPostCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingPutSomeObj() throws Exception {
-        runJsonPingGetTest("PUT", this::performJsonPingPutCall, 42L, "FOO");
+        runJsonPingTest("PUT", this::performJsonPingPutCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingDeleteSomeObj() throws Exception {
-        runJsonPingGetTest("DELETE", this::performJsonPingDeleteCall, 42L, "FOO");
+        runJsonPingTest("DELETE", this::performJsonPingDeleteCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingOptionsSomeObj() throws Exception {
-        runJsonPingGetTest("OPTIONS", this::performJsonPingOptionsCall, 42L, "FOO");
+        runJsonPingTest("OPTIONS", this::performJsonPingOptionsCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingHeadSomeObj() throws Exception {
-        runJsonPingGetTest("HEAD", this::performJsonPingHeadCall, 42L, "FOO");
+        runJsonPingTest("HEAD", this::performJsonPingHeadCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingPatchSomeObj() throws Exception {
-        runJsonPingGetTest("PATCH", this::performJsonPingPatchCall, 42L, "FOO");
+        runJsonPingTest("PATCH", this::performJsonPingPatchCall, 42L, "FOO");
     }
 
     @Test
     public void testJsonPingTraceSomeObj() throws Exception {
-        runJsonPingGetTest("TRACE", this::performJsonPingTraceCall, 42L, "FOO");
+        runJsonPingTest("TRACE", this::performJsonPingTraceCall, 42L, "FOO");
     }
 
-    private void runPingGetTest(String method, NoReturnValueOneArgCallable<String> performCall, String customQueryParameterValue) throws Exception {
+    @Test
+    public void testHelloGetJohn() throws Exception {
+        runHelloTest("GET", this::performHelloGetCall, "john");
+    }
+
+    @Test
+    public void testHelloPostJohn() throws Exception {
+        runHelloTest("POST", this::performHelloPostCall, "john");
+    }
+
+    @Test
+    public void testHelloPutJohn() throws Exception {
+        runHelloTest("PUT", this::performHelloPutCall, "john");
+    }
+
+    @Test
+    public void testHelloDeleteJohn() throws Exception {
+        runHelloTest("DELETE", this::performHelloDeleteCall, "john");
+    }
+
+    @Test
+    public void testHelloOptionsJohn() throws Exception {
+        runHelloTest("OPTIONS", this::performHelloOptionsCall, "john");
+    }
+
+    @Test
+    public void testHelloHeadJohn() throws Exception {
+        runHelloTest("HEAD", this::performHelloHeadCall, "john");
+    }
+
+    @Test
+    public void testHelloPatchJohn() throws Exception {
+        runHelloTest("PATCH", this::performHelloPatchCall, "john");
+    }
+
+    @Test
+    public void testHelloTraceJohn() throws Exception {
+        runHelloTest("TRACE", this::performHelloTraceCall, "john");
+    }
+
+    private void runPingTest(String method, NoReturnValueOneArgCallable<String> performCall, String customQueryParameterValue) throws Exception {
         String path = IPSUM_PING_PATH;
         mockServer
             .when(
@@ -205,7 +262,7 @@ public abstract class AbstractIpsumApiTck<SO> {
         );
     }
 
-    private void runJsonPingGetTest(String method, NoReturnValueOneArgCallable<SO> performCall, Long someObjId, String someObjName) throws Exception {
+    private void runJsonPingTest(String method, NoReturnValueOneArgCallable<SO> performCall, Long someObjId, String someObjName) throws Exception {
         String path = IPSUM_JSON_PING_PATH;
         SO requestBody = createSomeObject(someObjId, someObjName);
         mockServer
@@ -233,6 +290,28 @@ public abstract class AbstractIpsumApiTck<SO> {
                         MatchType.STRICT
                     )
                 ),
+            VerificationTimes.once()
+        );
+    }
+
+    private void runHelloTest(String method, NoReturnValueOneArgCallable<String> performCall, String namePathParameterValue) throws Exception {
+        String path = IPSUM_HELLO_ROOT_PATH + "/" + namePathParameterValue;
+        mockServer
+            .when(
+                HttpRequest.request()
+                    .withPath(path)
+                    .withMethod(method)
+            )
+            .respond(
+                HttpResponse.response()
+                    .withStatusCode(201)
+            );
+
+        performCall.call(namePathParameterValue);
+        mockServer.verify(
+            HttpRequest.request()
+                .withPath(path)
+                .withMethod(method),
             VerificationTimes.once()
         );
     }

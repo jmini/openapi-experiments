@@ -56,6 +56,16 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
         // TODO test is not working
     }
 
+    @Override
+    public void testHelloHeadJohn() throws Exception {
+        // TODO test is not working
+    }
+
+    @Override
+    public void testHelloOptionsJohn() throws Exception {
+        // TODO test is not working
+    }
+
     private IpsumApi api;
 
     @Override
@@ -152,6 +162,54 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
     @Override
     protected void performJsonPingTraceCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingTrace(requestBodyValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloGetCall(String namePathParameterValue) throws Exception {
+        api.helloGet(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloPostCall(String namePathParameterValue) throws Exception {
+        api.helloPost(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloPutCall(String namePathParameterValue) throws Exception {
+        api.helloPut(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloDeleteCall(String namePathParameterValue) throws Exception {
+        api.helloDelete(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloOptionsCall(String namePathParameterValue) throws Exception {
+        api.helloOptions(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloHeadCall(String namePathParameterValue) throws Exception {
+        api.helloHead(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloPatchCall(String namePathParameterValue) throws Exception {
+        api.helloPatch(namePathParameterValue)
+            .block();
+    }
+
+    @Override
+    protected void performHelloTraceCall(String namePathParameterValue) throws Exception {
+        api.helloTrace(namePathParameterValue)
             .block();
     }
 

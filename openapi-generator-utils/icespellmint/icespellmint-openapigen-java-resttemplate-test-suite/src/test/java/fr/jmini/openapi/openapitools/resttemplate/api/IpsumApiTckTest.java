@@ -36,6 +36,11 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
         // TODO: PATCH is not supported by java.net.HttpURLConnection
     }
 
+    @Override
+    public void testHelloPatchJohn() throws Exception {
+        // TODO: PATCH is not supported by java.net.HttpURLConnection
+    }
+
     private IpsumApi api;
 
     @Override
@@ -118,6 +123,46 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
     @Override
     protected void performJsonPingTraceCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingTrace(requestBodyValue);
+    }
+
+    @Override
+    protected void performHelloGetCall(String namePathParameterValue) throws Exception {
+        api.helloGet(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloPostCall(String namePathParameterValue) throws Exception {
+        api.helloPost(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloPutCall(String namePathParameterValue) throws Exception {
+        api.helloPut(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloDeleteCall(String namePathParameterValue) throws Exception {
+        api.helloDelete(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloOptionsCall(String namePathParameterValue) throws Exception {
+        api.helloOptions(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloHeadCall(String namePathParameterValue) throws Exception {
+        api.helloHead(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloPatchCall(String namePathParameterValue) throws Exception {
+        api.helloPatch(namePathParameterValue);
+    }
+
+    @Override
+    protected void performHelloTraceCall(String namePathParameterValue) throws Exception {
+        api.helloTrace(namePathParameterValue);
     }
 
     @Override

@@ -46,7 +46,6 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
     @Override
     protected void performPingGetCall(String customQueryParameterValue) throws Exception {
         api.pingGet()
-            .customQuery()
             .customQuery(customQueryParameterValue)
             .execute(ApiUtil.expectCreatedHandler());
     }
@@ -146,6 +145,62 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
     protected void performJsonPingTraceCall(SomeObj requestBodyValue) throws Exception {
         api.jsonPingTrace()
             .body(requestBodyValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloGetCall(String namePathParameterValue) throws Exception {
+        api.helloGet()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloPostCall(String namePathParameterValue) throws Exception {
+        api.helloPost()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloPutCall(String namePathParameterValue) throws Exception {
+        api.helloPut()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloDeleteCall(String namePathParameterValue) throws Exception {
+        api.helloDelete()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloOptionsCall(String namePathParameterValue) throws Exception {
+        api.helloOptions()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloHeadCall(String namePathParameterValue) throws Exception {
+        api.helloHead()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloPatchCall(String namePathParameterValue) throws Exception {
+        api.helloPatch()
+            .namePath(namePathParameterValue)
+            .execute(ApiUtil.expectCreatedHandler());
+    }
+
+    @Override
+    protected void performHelloTraceCall(String namePathParameterValue) throws Exception {
+        api.helloTrace()
+            .namePath(namePathParameterValue)
             .execute(ApiUtil.expectCreatedHandler());
     }
 

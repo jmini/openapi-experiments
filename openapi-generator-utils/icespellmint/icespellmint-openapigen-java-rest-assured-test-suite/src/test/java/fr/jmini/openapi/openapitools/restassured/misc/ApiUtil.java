@@ -6,7 +6,7 @@
  *    distributed under the License is distributed on an "AS IS" BASIS,
  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package fr.jmini.openapi.openapitools.restassured;
+package fr.jmini.openapi.openapitools.restassured.misc;
 
 import io.restassured.response.Response;
 
@@ -52,7 +52,7 @@ public class ApiUtil {
      *
      * @return a function that can be used in execute(Function&lt;Response, Object&gt;) method
      */
-    public static <T> Function<Response, T> expectNullHandler() {
+    public static <T> Function<Response, T> expectOkNoReturnValueHandler() {
         return createHandlerForEmptyResponseWithCustomStatusCode(HttpStatus.SC_OK);
     }
 

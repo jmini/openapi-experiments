@@ -8,6 +8,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.ErrorLoggingFilter;
 
 import fr.jmini.openapi.openapitools.restassured.api.LoremApi;
+import fr.jmini.openapi.openapitools.restassured.misc.ApiUtil;
 import fr.jmini.rest.client.tck.AbstractLoremApiTck;
 
 /**

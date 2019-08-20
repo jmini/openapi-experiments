@@ -17,6 +17,7 @@ import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
 
 import fr.jmini.openapi.openapitools.restassured.api.IpsumApi;
+import fr.jmini.openapi.openapitools.restassured.misc.ApiUtil;
 import fr.jmini.openapi.openapitools.restassured.model.SomeObj;
 import fr.jmini.rest.client.tck.AbstractIpsumApiTck;
 import io.restassured.builder.RequestSpecBuilder;

@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import fr.jmini.openapi.openapitools.restassured.api.EtiamApi;
+import fr.jmini.openapi.openapitools.restassured.misc.ApiUtil;
 import fr.jmini.openapi.openapitools.restassured.model.SomeObj;
 import fr.jmini.rest.client.tck.AbstractEtiamApiTck;
 

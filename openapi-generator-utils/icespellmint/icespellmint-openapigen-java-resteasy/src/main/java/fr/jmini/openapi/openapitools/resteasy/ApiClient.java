@@ -1,10 +1,5 @@
 package fr.jmini.openapi.openapitools.resteasy;
 
-import org.jboss.logging.Logger;
-import org.jboss.resteasy.client.jaxrs.internal.ClientConfiguration;
-import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataOutput;
-import org.jboss.resteasy.spi.ResteasyProviderFactory;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -39,9 +34,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import fr.jmini.openapi.openapitools.resteasy.auth.ApiKeyAuth;
+import org.jboss.logging.Logger;
+import org.jboss.resteasy.client.jaxrs.internal.ClientConfiguration;
+import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataOutput;
+import org.jboss.resteasy.spi.ResteasyProviderFactory;
+
 import fr.jmini.openapi.openapitools.resteasy.auth.Authentication;
 import fr.jmini.openapi.openapitools.resteasy.auth.HttpBasicAuth;
+import fr.jmini.openapi.openapitools.resteasy.auth.ApiKeyAuth;
 
 
 public class ApiClient {

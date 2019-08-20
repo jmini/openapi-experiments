@@ -61,7 +61,7 @@ public class DolorApi {
      </table>
    */
   public ApiResponse<Void> dolorBasicSecWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/dolor/basicSecurity";
@@ -116,7 +116,7 @@ public class DolorApi {
      </table>
    */
   public ApiResponse<Void> dolorBearerSecWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/dolor/bearerSecurity";

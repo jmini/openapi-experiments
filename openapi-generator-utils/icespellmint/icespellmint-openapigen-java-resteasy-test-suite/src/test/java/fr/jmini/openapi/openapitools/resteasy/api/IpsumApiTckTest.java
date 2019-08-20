@@ -23,52 +23,22 @@ public class IpsumApiTckTest extends AbstractIpsumApiTck<SomeObj> {
 
     @Override
     public void testPingPatchFoo() throws Exception {
-        // TODO test PATCH is not working
+        // TODO test-suite is expecting a PATCH, but gets a POST with "X-HTTP-Method-Override"
     }
 
     @Override
     public void testPingPatchFooAndBar() throws Exception {
-        // TODO test PATCH is not working
+        // TODO test-suite is expecting a PATCH, but gets a POST with "X-HTTP-Method-Override"
     }
 
     @Override
     public void testJsonPingPatchSomeObj() throws Exception {
-        // TODO test PATCH is not working
+        // TODO test-suite is expecting a PATCH, but gets a POST with "X-HTTP-Method-Override"
     }
 
     @Override
     public void testHelloPatchJohn() throws Exception {
-        // TODO test PATCH is not working
-    }
-
-    @Override
-    public void testPingPostFoo() throws Exception {
-        // TODO test POST with no request-body is not working
-    }
-
-    @Override
-    public void testPingPostFooAndBar() throws Exception {
-        // TODO test POST with no request-body is not working
-    }
-
-    @Override
-    public void testHelloPostJohn() throws Exception {
-        // TODO test POST with no request-body is not working
-    }
-
-    @Override
-    public void testPingPutFoo() throws Exception {
-        // TODO test PUT with no request-body is not working
-    }
-
-    @Override
-    public void testPingPutFooAndBar() throws Exception {
-        // TODO test PUT with no request-body is not working
-    }
-
-    @Override
-    public void testHelloPutJohn() throws Exception {
-        // TODO test PUT with no request-body is not working
+        // TODO test-suite is expecting a PATCH, but gets a POST with "X-HTTP-Method-Override"
     }
 
     private IpsumApi api;

@@ -64,7 +64,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloDeleteWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -127,7 +127,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloGetWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -190,7 +190,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloHeadWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -253,7 +253,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloOptionsWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -316,7 +316,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloPatchWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -379,7 +379,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloPostWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -442,7 +442,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloPutWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -505,7 +505,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> helloTraceWithHttpInfo(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -967,7 +967,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingDeleteWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1025,7 +1025,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingGetWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1083,7 +1083,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingHeadWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1141,7 +1141,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingOptionsWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1199,7 +1199,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingPatchWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1257,7 +1257,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingPostWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1315,7 +1315,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingPutWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";
@@ -1373,7 +1373,7 @@ public class IpsumApi {
      </table>
    */
   public ApiResponse<Void> pingTraceWithHttpInfo(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping";

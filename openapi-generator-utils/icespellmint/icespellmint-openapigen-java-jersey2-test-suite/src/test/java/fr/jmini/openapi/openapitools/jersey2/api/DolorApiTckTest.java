@@ -21,16 +21,6 @@ import fr.jmini.rest.client.tck.AbstractDolorApiTck;
  */
 public class DolorApiTckTest extends AbstractDolorApiTck {
 
-    @Override
-    public void testBasicAuth() throws Exception {
-        // TODO Test not working
-    }
-
-    @Override
-    public void testBearerAuth() throws Exception {
-        // TODO Test not working
-    }
-
     private DolorApi api;
 
     @Override

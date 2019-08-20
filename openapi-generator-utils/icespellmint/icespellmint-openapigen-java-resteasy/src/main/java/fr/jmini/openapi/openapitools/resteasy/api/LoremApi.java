@@ -39,7 +39,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyDelete() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/deleteEmpty".replaceAll("\\{format\\}","json");
@@ -73,7 +73,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyGet() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/getEmpty".replaceAll("\\{format\\}","json");
@@ -107,7 +107,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyHead() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/headEmpty".replaceAll("\\{format\\}","json");
@@ -141,7 +141,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyOptions() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/optionsEmpty".replaceAll("\\{format\\}","json");
@@ -175,7 +175,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyPatch() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/patchEmpty".replaceAll("\\{format\\}","json");
@@ -209,7 +209,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyPost() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/postEmpty".replaceAll("\\{format\\}","json");
@@ -243,7 +243,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyPut() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/putEmpty".replaceAll("\\{format\\}","json");
@@ -277,7 +277,7 @@ public class LoremApi {
    * @throws ApiException if fails to make API call
    */
   public void emptyTrace() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/traceEmpty".replaceAll("\\{format\\}","json");

@@ -41,7 +41,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public Integer getInt() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getInt".replaceAll("\\{format\\}","json");
@@ -76,7 +76,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public List<Integer> getIntList() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getIntList".replaceAll("\\{format\\}","json");
@@ -111,7 +111,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public Map<String, Integer> getIntMap() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getIntMap".replaceAll("\\{format\\}","json");
@@ -146,7 +146,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public SomeObj getSomeObj() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObj".replaceAll("\\{format\\}","json");
@@ -181,7 +181,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public List<SomeObj> getSomeObjList() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObjList".replaceAll("\\{format\\}","json");
@@ -216,7 +216,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public Map<String, SomeObj> getSomeObjMap() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObjMap".replaceAll("\\{format\\}","json");
@@ -251,7 +251,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public String getString() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getString".replaceAll("\\{format\\}","json");
@@ -286,7 +286,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public List<String> getStringList() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getStringList".replaceAll("\\{format\\}","json");
@@ -321,7 +321,7 @@ public class EtiamApi {
    * @throws ApiException if fails to make API call
    */
   public Map<String, String> getStringMap() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getStringMap".replaceAll("\\{format\\}","json");

@@ -61,7 +61,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyDeleteWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/deleteEmpty";
@@ -116,7 +116,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyGetWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/getEmpty";
@@ -171,7 +171,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyHeadWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/headEmpty";
@@ -226,7 +226,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyOptionsWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/optionsEmpty";
@@ -281,7 +281,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyPatchWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/patchEmpty";
@@ -336,7 +336,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyPostWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/postEmpty";
@@ -391,7 +391,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyPutWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/putEmpty";
@@ -446,7 +446,7 @@ public class LoremApi {
      </table>
    */
   public ApiResponse<Void> emptyTraceWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/lorem/traceEmpty";

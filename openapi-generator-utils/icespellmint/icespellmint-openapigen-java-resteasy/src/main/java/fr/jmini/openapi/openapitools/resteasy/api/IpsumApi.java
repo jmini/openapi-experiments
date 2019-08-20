@@ -41,7 +41,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloDelete(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -82,7 +82,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloGet(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -123,7 +123,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloHead(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -164,7 +164,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloOptions(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -205,7 +205,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloPatch(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -246,7 +246,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloPost(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -287,7 +287,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloPut(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -328,7 +328,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void helloTrace(String name) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // verify the required parameter 'name' is set
     if (name == null) {
@@ -614,7 +614,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingDelete(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -650,7 +650,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingGet(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -686,7 +686,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingHead(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -722,7 +722,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingOptions(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -758,7 +758,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingPatch(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -794,7 +794,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingPost(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -830,7 +830,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingPut(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");
@@ -866,7 +866,7 @@ public class IpsumApi {
    * @throws ApiException if fails to make API call
    */
   public void pingTrace(String custom) throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/ipsum/ping".replaceAll("\\{format\\}","json");

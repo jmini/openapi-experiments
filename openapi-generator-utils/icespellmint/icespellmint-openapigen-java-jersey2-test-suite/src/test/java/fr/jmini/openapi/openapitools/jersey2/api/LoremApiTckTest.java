@@ -10,22 +10,12 @@ public class LoremApiTckTest extends AbstractLoremApiTck {
 
     @Override
     public void testEmptyPatch() throws Exception {
-        // TODO not supported see https://github.com/OpenAPITools/openapi-generator/issues/3276
+        // TODO test-suite is expecting a PATCH, but gets a POST with "X-HTTP-Method-Override"
     }
-    
-    @Override
-    public void testEmptyPost() throws Exception {
-        // TODO not supported see https://github.com/OpenAPITools/openapi-generator/issues/3276
-    }
-    
-    @Override
-    public void testEmptyOptions() throws Exception {
-        // TODO not supported see https://github.com/OpenAPITools/openapi-generator/issues/3276
-    }
-    
+
     @Override
     public void testEmptyPut() throws Exception {
-        // TODO not supported see https://github.com/OpenAPITools/openapi-generator/issues/3276
+        // TODO java.lang.IllegalStateException: Entity must not be null for http method PUT.
     }
 
     private LoremApi api;

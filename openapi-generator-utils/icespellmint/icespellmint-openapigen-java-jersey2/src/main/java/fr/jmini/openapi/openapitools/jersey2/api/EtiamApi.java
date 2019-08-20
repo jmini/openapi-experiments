@@ -62,7 +62,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<Integer> getIntWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getInt";
@@ -117,7 +117,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<List<Integer>> getIntListWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getIntList";
@@ -172,7 +172,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<Map<String, Integer>> getIntMapWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getIntMap";
@@ -227,7 +227,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<SomeObj> getSomeObjWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObj";
@@ -282,7 +282,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<List<SomeObj>> getSomeObjListWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObjList";
@@ -337,7 +337,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<Map<String, SomeObj>> getSomeObjMapWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getSomeObjMap";
@@ -392,7 +392,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<String> getStringWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getString";
@@ -447,7 +447,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<List<String>> getStringListWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getStringList";
@@ -502,7 +502,7 @@ public class EtiamApi {
      </table>
    */
   public ApiResponse<Map<String, String>> getStringMapWithHttpInfo() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/etiam/getStringMap";

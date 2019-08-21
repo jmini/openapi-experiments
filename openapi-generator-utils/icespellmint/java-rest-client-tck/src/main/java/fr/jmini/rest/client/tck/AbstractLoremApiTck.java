@@ -103,7 +103,8 @@ public abstract class AbstractLoremApiTck {
         mockServer.verify(
             HttpRequest.request()
                 .withPath(path)
-                .withMethod(method),
+                .withMethod(method)
+                .withHeader("Content-Length", "0"),
             VerificationTimes.once()
         );
     }

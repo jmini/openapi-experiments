@@ -13,7 +13,6 @@
 package fr.jmini.openapi.openapitools.resteasy.api;
 
 import fr.jmini.openapi.openapitools.resteasy.ApiClient;
-import fr.jmini.openapi.openapitools.resteasy.auth.HttpBearerAuth;
 import fr.jmini.rest.client.tck.AbstractDolorApiTck;
 
 /**
@@ -39,7 +38,8 @@ public class DolorApiTckTest extends AbstractDolorApiTck {
         client.setBasePath(basePath);
         client.setUsername(basicAuthUsername);
         client.setPassword(basicAuthPassword);
-        ((HttpBearerAuth) client.getAuthentication("bearerAuth")).setBearerToken(bearerAuthToken);
+        // TODO uncomemnt when https://github.com/OpenAPITools/openapi-generator/issues/3702 is solved
+        // ((HttpBearerAuth) client.getAuthentication("bearerAuth")).setBearerToken(bearerAuthToken);
         api = new DolorApi(client);
     }
 

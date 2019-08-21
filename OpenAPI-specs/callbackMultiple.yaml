@@ -24,6 +24,7 @@ paths:
         myEvent:
           '{$request.body#/callbackUrl}':
             post:
+              operationId: myEventCallback
               requestBody:
                 required: true
                 content:
@@ -42,6 +43,7 @@ paths:
         otherEvent:
           '{$request.body#/callbackUrl}':
             post:
+              operationId: otherEventCallback
               requestBody:
                 required: true
                 content:

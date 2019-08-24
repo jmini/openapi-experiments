@@ -50,6 +50,7 @@ public abstract class AbstractDolorApiTck {
         String method = "POST";
         String basicAuthHeaderValue = Base64.getEncoder()
             .encodeToString((BASIC_AUTH_USER_NAME + ":" + BASIC_AUTH_PASSWORD).getBytes());
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -75,6 +76,7 @@ public abstract class AbstractDolorApiTck {
     public void testBearerAuth() throws Exception {
         String path = DOLOR_BEARER_SEC_PATH;
         String method = "POST";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()

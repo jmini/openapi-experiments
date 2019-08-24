@@ -1,5 +1,6 @@
 package fr.jmini.rest.client.tck;
 
+import org.assertj.core.api.Assertions;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -241,6 +242,8 @@ public abstract class AbstractIpsumApiTck<SO> {
 
     private void runPingTest(String method, NoReturnValueOneArgCallable<String> performCall, String customQueryParameterValue) throws Exception {
         String path = IPSUM_PING_PATH;
+        mockServer.reset();
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -265,6 +268,7 @@ public abstract class AbstractIpsumApiTck<SO> {
     private void runJsonPingTest(String method, NoReturnValueOneArgCallable<SO> performCall, Long someObjId, String someObjName) throws Exception {
         String path = IPSUM_JSON_PING_PATH;
         SO requestBody = createSomeObject(someObjId, someObjName);
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -296,6 +300,7 @@ public abstract class AbstractIpsumApiTck<SO> {
 
     private void runHelloTest(String method, NoReturnValueOneArgCallable<String> performCall, String namePathParameterValue) throws Exception {
         String path = IPSUM_HELLO_ROOT_PATH + "/" + namePathParameterValue;
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()

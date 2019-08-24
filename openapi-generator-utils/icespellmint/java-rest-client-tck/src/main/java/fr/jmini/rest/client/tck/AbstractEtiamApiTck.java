@@ -1,6 +1,7 @@
 package fr.jmini.rest.client.tck;
 
-import io.netty.handler.codec.http.HttpHeaderNames;
+import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.Assertions;
 import org.junit.AfterClass;
@@ -12,8 +13,7 @@ import org.mockserver.model.HttpRequest;
 import org.mockserver.model.HttpResponse;
 import org.mockserver.verify.VerificationTimes;
 
-import java.util.List;
-import java.util.Map;
+import io.netty.handler.codec.http.HttpHeaderNames;
 
 public abstract class AbstractEtiamApiTck<SO> {
 
@@ -61,6 +61,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetInt42() throws Exception {
         String path = "/etiam/getInt";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -91,6 +92,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetIntList369() throws Exception {
         String path = "/etiam/getIntList";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -121,6 +123,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetIntMap12() throws Exception {
         String path = "/etiam/getIntMap";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -153,6 +156,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetStringHelloWorld() throws Exception {
         String path = "/etiam/getString";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -183,6 +187,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetStringListLoremIpsum() throws Exception {
         String path = "/etiam/getStringList";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -213,6 +218,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetStringMap12() throws Exception {
         String path = "/etiam/getStringMap";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -245,6 +251,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetSomeObjHelloWorld() throws Exception {
         String path = "/etiam/getSomeObj";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -275,6 +282,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetSomeObjListLoremIpsum() throws Exception {
         String path = "/etiam/getSomeObjList";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()
@@ -309,6 +317,7 @@ public abstract class AbstractEtiamApiTck<SO> {
     public void testGetSomeObjMap12() throws Exception {
         String path = "/etiam/getSomeObjMap";
         String method = "GET";
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()

@@ -88,6 +88,7 @@ public abstract class AbstractLoremApiTck {
     }
 
     private void runEmptyTest(String path, String method, NoReturnValueCallable performCall) throws Exception, AssertionError {
+        mockServer.reset();
         mockServer
             .when(
                 HttpRequest.request()

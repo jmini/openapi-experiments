@@ -368,7 +368,7 @@ public class UserApi {
      </table>
      */
     public okhttp3.Call deleteUserCall(String username, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/user/{username}"
@@ -479,7 +479,7 @@ public class UserApi {
      </table>
      */
     public okhttp3.Call getUserByNameCall(String username, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/user/{username}"
@@ -597,7 +597,7 @@ public class UserApi {
      </table>
      */
     public okhttp3.Call loginUserCall(String username, String password, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/user/login";
@@ -714,7 +714,7 @@ public class UserApi {
      </table>
      */
     public okhttp3.Call logoutUserCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/user/logout";

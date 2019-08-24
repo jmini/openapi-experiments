@@ -67,7 +67,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloDeleteCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -173,7 +173,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloGetCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -279,7 +279,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloHeadCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -385,7 +385,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloOptionsCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -491,7 +491,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloPatchCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -597,7 +597,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloPostCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -703,7 +703,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloPutCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -809,7 +809,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call helloTraceCall(String name, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/hello/{name}"
@@ -1615,7 +1615,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingDeleteCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -1719,7 +1719,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingGetCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -1823,7 +1823,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingHeadCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -1927,7 +1927,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingOptionsCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -2031,7 +2031,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingPatchCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -2135,7 +2135,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingPostCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -2239,7 +2239,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingPutCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";
@@ -2343,7 +2343,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call pingTraceCall(String custom, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/ping";

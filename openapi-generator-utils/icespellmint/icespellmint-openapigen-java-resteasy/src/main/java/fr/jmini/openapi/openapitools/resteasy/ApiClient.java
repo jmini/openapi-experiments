@@ -41,6 +41,7 @@ import org.jboss.resteasy.spi.ResteasyProviderFactory;
 
 import fr.jmini.openapi.openapitools.resteasy.auth.Authentication;
 import fr.jmini.openapi.openapitools.resteasy.auth.HttpBasicAuth;
+import fr.jmini.openapi.openapitools.resteasy.auth.HttpBearerAuth;
 import fr.jmini.openapi.openapitools.resteasy.auth.ApiKeyAuth;
 
 
@@ -76,7 +77,7 @@ public class ApiClient {
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
-    authentications.put("bearerAuth", new HttpBasicAuth());
+    authentications.put("bearerAuth", new HttpBearerAuth("bearer"));
     authentications.put("httpBasic", new HttpBasicAuth());
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);
@@ -635,9 +636,9 @@ public class ApiClient {
     } else if ("PUT".equals(method)) {
       response = invocationBuilder.put(entity);
     } else if ("DELETE".equals(method)) {
-      response = invocationBuilder.delete();
+      response = invocationBuilder.method("DELETE", entity);
     } else if ("PATCH".equals(method)) {
-      response = invocationBuilder.header("X-HTTP-Method-Override", "PATCH").post(entity);
+      response = invocationBuilder.method("PATCH", entity);
     } else if ("HEAD".equals(method)) {
       response = invocationBuilder.head();
     } else if ("OPTIONS".equals(method)) {

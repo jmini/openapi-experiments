@@ -68,7 +68,7 @@ public class IpsumApi {
      </table>
      */
     public okhttp3.Call op199Call(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/ipsum/issue199";

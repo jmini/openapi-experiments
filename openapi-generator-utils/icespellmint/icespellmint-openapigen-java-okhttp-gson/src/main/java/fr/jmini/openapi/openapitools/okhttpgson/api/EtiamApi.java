@@ -66,7 +66,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getIntCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getInt";
@@ -166,7 +166,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getIntListCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getIntList";
@@ -266,7 +266,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getIntMapCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getIntMap";
@@ -366,7 +366,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getSomeObjCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getSomeObj";
@@ -466,7 +466,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getSomeObjListCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getSomeObjList";
@@ -566,7 +566,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getSomeObjMapCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getSomeObjMap";
@@ -666,7 +666,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getStringCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getString";
@@ -766,7 +766,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getStringListCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getStringList";
@@ -866,7 +866,7 @@ public class EtiamApi {
      </table>
      */
     public okhttp3.Call getStringMapCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/etiam/getStringMap";

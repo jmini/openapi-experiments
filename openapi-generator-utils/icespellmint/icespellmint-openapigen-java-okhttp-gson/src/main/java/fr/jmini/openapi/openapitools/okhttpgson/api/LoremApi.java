@@ -65,7 +65,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyDeleteCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/deleteEmpty";
@@ -161,7 +161,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyGetCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/getEmpty";
@@ -257,7 +257,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyHeadCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/headEmpty";
@@ -353,7 +353,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyOptionsCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/optionsEmpty";
@@ -449,7 +449,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyPatchCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/patchEmpty";
@@ -545,7 +545,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyPostCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/postEmpty";
@@ -641,7 +641,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyPutCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/putEmpty";
@@ -737,7 +737,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call emptyTraceCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/lorem/traceEmpty";

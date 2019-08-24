@@ -70,7 +70,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call getCase1Call(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/case1";
@@ -170,7 +170,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call getPolymorphicCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/polymorphic";
@@ -270,7 +270,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call issue7754Call(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/issue7754";
@@ -371,7 +371,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call op708Call(String bar, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/pull708";
@@ -474,7 +474,7 @@ public class LoremApi {
      </table>
      */
     public okhttp3.Call op75Call(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/pull75";

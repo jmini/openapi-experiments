@@ -5,6 +5,7 @@ import fr.jmini.openapi.openapitools.googleapiclient.ApiClient;
 import fr.jmini.openapi.openapitools.googleapiclient.model.SomeObj;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.InputStreamContent;

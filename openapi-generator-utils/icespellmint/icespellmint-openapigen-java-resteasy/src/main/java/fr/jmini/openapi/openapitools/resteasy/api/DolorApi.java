@@ -39,7 +39,7 @@ public class DolorApi {
    * @throws ApiException if fails to make API call
    */
   public void dolorBasicSec() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/dolor/basicSecurity".replaceAll("\\{format\\}","json");
@@ -73,7 +73,7 @@ public class DolorApi {
    * @throws ApiException if fails to make API call
    */
   public void dolorBearerSec() throws ApiException {
-    Object localVarPostBody = new Object();
+    Object localVarPostBody = null;
     
     // create path and map variables
     String localVarPath = "/dolor/bearerSecurity".replaceAll("\\{format\\}","json");

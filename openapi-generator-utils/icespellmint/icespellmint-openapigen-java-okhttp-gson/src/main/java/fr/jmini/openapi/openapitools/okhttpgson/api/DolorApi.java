@@ -65,7 +65,7 @@ public class DolorApi {
      </table>
      */
     public okhttp3.Call dolorBasicSecCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/dolor/basicSecurity";
@@ -161,7 +161,7 @@ public class DolorApi {
      </table>
      */
     public okhttp3.Call dolorBearerSecCall(final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = new Object();
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/dolor/bearerSecurity";

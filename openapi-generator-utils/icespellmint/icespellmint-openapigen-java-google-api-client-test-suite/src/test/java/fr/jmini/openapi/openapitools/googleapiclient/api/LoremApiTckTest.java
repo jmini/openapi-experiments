@@ -14,16 +14,6 @@ public class LoremApiTckTest extends AbstractLoremApiTck {
         // see https://github.com/googleapis/google-http-java-client/issues/167
     }
 
-    @Override
-    public void testEmptyPost() throws Exception {
-        // TODO not supported ("Content-Length" : [ "4" ] with body "null" as string) see https://github.com/OpenAPITools/openapi-generator/issues/3276
-    }
-
-    @Override
-    public void testEmptyPut() throws Exception {
-        // TODO not supported ("Content-Length" : [ "4" ] with body "null" as string) see https://github.com/OpenAPITools/openapi-generator/issues/3276
-    }
-
     private LoremApi api;
 
     @Override

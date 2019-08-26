@@ -296,6 +296,24 @@ public abstract class AbstractIpsumApiTck<SO> {
                 ),
             VerificationTimes.once()
         );
+
+        if (method.equals("POST") || method.equals("PATCH") || method.equals("PUT") || method.equals("DELETE")) {
+            // Additional test for Content-Length, see https://github.com/jamesdbloom/mockserver/issues/663:
+            HttpRequest[] recordedRequests = mockServer.retrieveRecordedRequests(
+                HttpRequest.request()
+                    .withPath(path)
+            );
+            Assertions.assertThat(recordedRequests)
+                .describedAs("recorded requests")
+                .hasSize(1);
+            HttpRequest request = recordedRequests[0];
+            Assertions.assertThat(request.getFirstHeader("Content-Length"))
+                .describedAs("request 'Content-Length' header")
+                .isNotEqualTo("0");
+            Assertions.assertThat(request.getBodyAsString())
+                .describedAs("request body")
+                .isNotNull();
+        }
     }
 
     private void runHelloTest(String method, NoReturnValueOneArgCallable<String> performCall, String namePathParameterValue) throws Exception {

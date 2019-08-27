@@ -1,0 +1,496 @@
+openapi: 3.0.1
+info:
+  title: A TODO-Task application
+  description: A simple application to handle tasks.
+  version: 1.0.0
+  license:
+    name: Eclipse Public License 2.0
+    url: 'https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html'
+servers:
+  - url: 'http://localhost:8080/todoapp'
+tags:
+- name: task
+  description: All task related operations
+- name: person
+  description: All person related operations
+- name: callbackRegistration
+  description: All callback registration related operations
+- name: callbacks
+  x-displayName: Callbacks events
+  description: |
+    ## taskModification callback
+    
+    Following request-body is send as POST request on the URL used to register the callback:
+    
+    <SchemaDefinition schemaRef="#/components/schemas/TaskModificationEvent" />
+    
+    ## personModification callback
+    
+    Following request-body is send as POST request on the URL used to register the callback:
+    
+    <SchemaDefinition schemaRef="#/components/schemas/PersonModificationEvent" />
+paths:
+  /task:
+    get:
+      tags:
+      - task
+      summary: Get the list of all tasks
+      operationId: tasksGetAll
+      responses:
+        200:
+          description: List of all tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+      - task
+      summary: Create a new task
+      operationId: tasksCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        200:
+          description: The created task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /task/{taskId}:
+    parameters:
+      - name: taskId
+        in: path
+        description: The id of the task
+        required: true
+        schema:
+          type: string
+        example: e1cb23d0-6cbe-4a29-b586-bfa424bc93fd
+    get:
+      tags:
+      - task
+      summary: Get a single task based on its id
+      operationId: tasksRead
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+      - task
+      summary: Update an existing task
+      operationId: tasksUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        200:
+          description: The updated task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - task
+      summary: Delete an existing task
+      operationId: tasksDelete
+      responses:
+        204:
+          description: Task deleted response
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /person:
+    get:
+      tags:
+      - person
+      summary: Get the list of all persons
+      operationId: personsGetAll
+      responses:
+        200:
+          description: List of all persons
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+      - person
+      summary: Create a new person
+      operationId: personsCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        200:
+          description: The created person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /person/{personId}:
+    parameters:
+      - name: personId
+        in: path
+        description: The id of the person
+        required: true
+        schema:
+          type: string
+        example: 55f1b942-207f-4634-9b85-97847b8c6e82
+    get:
+      tags:
+      - person
+      summary: Get a single person based on its id
+      operationId: personsRead
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+      - person
+      summary: Update an existing person
+      operationId: personsUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        200:
+          description: The updated person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - person
+      summary: Delete an existing person
+      operationId: personsDelete
+      responses:
+        204:
+          description: Person deleted response
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /callback:
+    get:
+      tags:
+      - callbackRegistration
+      summary: Get the list of all callbacks
+      operationId: callbacksGetAll
+      responses:
+        200:
+          description: List of all callbacks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CallbackRegistration'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+      - callbackRegistration
+      summary: Create a new callback
+      operationId: callbacksCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CallbackRegistration'
+      responses:
+        200:
+          description: The created callback
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallbackRegistration'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      callbacks:
+        taskModification:
+          '{$request.body#/callbackUrl}':
+            post:
+              description: An event triggered every time a Task is created,
+                updated or deleted.
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/TaskModificationEvent'
+              responses:
+                200:
+                  description: OK
+        personModification:
+          '{$request.body#/callbackUrl}':
+            post:
+              description: An event triggered every time a Person is created,
+                updated or deleted.
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/PersonModificationEvent'
+              responses:
+                200:
+                  description: OK
+  /callback/{callbackId}:
+    parameters:
+      - name: callbackId
+        in: path
+        description: The id of the callback
+        required: true
+        schema:
+          type: string
+        example: e1cb23d0-6cbe-4a29-b586-bfa424bc93fd
+    get:
+      tags:
+      - callbackRegistration
+      summary: Get a single callback based on its id
+      operationId: callbacksRead
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallbackRegistration'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+      - callbackRegistration
+      summary: Update an existing callback
+      operationId: callbacksUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CallbackRegistration'
+      responses:
+        200:
+          description: The updated callback
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallbackRegistration'
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - callbackRegistration
+      summary: Delete an existing callback
+      operationId: callbacksDelete
+      responses:
+        204:
+          description: Callback deleted response
+        default:
+          description: Generic error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Task:
+      description: Object representing a Task
+      required:
+      - description
+      type: object
+      properties:
+        id:
+          description: id of the taks
+          type: string
+          readOnly: true
+          example: e1cb23d0-6cbe-4a29-b586-bfa424bc93fd
+        description:
+          description: description of the task
+          type: string
+          example: My important task
+        author:
+          $ref: "#/components/schemas/Person"
+        assignee:
+          $ref: "#/components/schemas/Person"
+        completed:
+          description: indicates if a taks is completed or not
+          type: boolean
+    Person:
+      description: Object representing a Person
+      type: object
+      properties:
+        id:
+          description: id of the taks
+          type: string
+          readOnly: true
+          example: 55f1b942-207f-4634-9b85-97847b8c6e82
+        firstName:
+          description: first name of the person
+          type: string
+          example: John
+        lastName:
+          description: last name of the person
+          type: string
+          example: Doe
+    TaskModificationEvent:
+      type: object
+      description: A callback event triggered every time a Task is created,
+                updated or deleted.
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+          description: The time (unix time in millies) when the event was generated.
+        eventType:
+          type: string
+          description: The name of the event
+        action:
+          $ref: '#/components/schemas/EntityModificationAction'
+        entity:
+          $ref: '#/components/schemas/Task'
+    PersonModificationEvent:
+      type: object
+      description: An callback event triggered every time a Person is created,
+                updated or deleted.
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+          description: The time (unix time in millies) when the event was generated.
+        eventType:
+          type: string
+          description: The name of the event
+        action:
+          $ref: '#/components/schemas/EntityModificationAction'
+        entity:
+          $ref: '#/components/schemas/Person'
+    EntityModificationAction:
+      type: string
+      description: Type of modification of an entity
+      enum:
+      - CREATE
+      - UPDATE
+      - DELETE
+    CallbackRegistration:
+      type: object
+      description: Model of a callback registration. Registered callbacks for certain
+        events are stored inside this model.<br>@since 4.3.0
+      properties:
+        id:
+          type: string
+          description: Unique id of the callback registration.
+        name:
+          type: string
+          description: Name of the callback registration.
+        callbackUrl:
+          type: string
+          format: uri
+          example: https://myserver.com/send/callback/here
+        events:
+          type: array
+          description: Events for which the callback endpoint is called. Check the Callback Events for possible values.
+          items:
+            type: string
+    Error:
+      description: Object representing an error
+      type: object
+      properties:
+        code:
+          format: int32
+          description: Error code that identify of the error
+          type: integer
+          example: "1000"
+        message:
+          description: Short description of the error
+          type: string
+          example: Could not perform the task

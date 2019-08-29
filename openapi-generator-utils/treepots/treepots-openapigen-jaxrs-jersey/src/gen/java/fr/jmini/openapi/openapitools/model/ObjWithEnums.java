@@ -25,12 +25,22 @@ import fr.jmini.openapi.openapitools.model.String2Enum;
 import fr.jmini.openapi.openapitools.model.StringEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * ObjWithEnums
  */
+@JsonPropertyOrder({
+  ObjWithEnums.JSON_PROPERTY_IPROP,
+  ObjWithEnums.JSON_PROPERTY_LPROP,
+  ObjWithEnums.JSON_PROPERTY_SPROP,
+  ObjWithEnums.JSON_PROPERTY_IPROP2,
+  ObjWithEnums.JSON_PROPERTY_LPROP2,
+  ObjWithEnums.JSON_PROPERTY_SPROP2,
+  ObjWithEnums.JSON_PROPERTY_CUSTOM
+})
 
 public class ObjWithEnums   {
   public static final String JSON_PROPERTY_IPROP = "IProp";

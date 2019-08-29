@@ -20,12 +20,16 @@ import fr.jmini.openapi.openapitools.model.Element;
 import fr.jmini.openapi.openapitools.model.LeaveAllOf;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * Leave
  */
+@JsonPropertyOrder({
+  Leave.JSON_PROPERTY_VALUE
+})
 
 public class Leave extends Element  {
   public static final String JSON_PROPERTY_VALUE = "value";

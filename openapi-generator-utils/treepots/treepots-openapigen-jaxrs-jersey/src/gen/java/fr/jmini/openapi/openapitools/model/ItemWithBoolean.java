@@ -18,12 +18,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * ItemWithBoolean
  */
+@JsonPropertyOrder({
+  ItemWithBoolean.JSON_PROPERTY_ID,
+  ItemWithBoolean.JSON_PROPERTY_ACTIVE,
+  ItemWithBoolean.JSON_PROPERTY_NAME
+})
 
 public class ItemWithBoolean   {
   public static final String JSON_PROPERTY_ID = "id";

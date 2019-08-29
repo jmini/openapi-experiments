@@ -22,12 +22,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * Node
  */
+@JsonPropertyOrder({
+  Node.JSON_PROPERTY_CHILDREN_IDS
+})
 
 public class Node extends Element  {
   public static final String JSON_PROPERTY_CHILDREN_IDS = "childrenIds";

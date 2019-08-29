@@ -21,10 +21,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * SomeObj
  */
+@JsonPropertyOrder({
+  SomeObj.JSON_PROPERTY_ID,
+  SomeObj.JSON_PROPERTY_NAME
+})
 
 public class SomeObj {
   public static final String JSON_PROPERTY_ID = "id";

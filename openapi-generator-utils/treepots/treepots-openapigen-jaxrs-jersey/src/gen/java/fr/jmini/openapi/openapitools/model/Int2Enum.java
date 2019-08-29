@@ -15,6 +15,7 @@ package fr.jmini.openapi.openapitools.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 

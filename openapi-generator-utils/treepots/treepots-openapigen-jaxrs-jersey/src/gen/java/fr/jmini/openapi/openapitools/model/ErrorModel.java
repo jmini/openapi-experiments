@@ -18,12 +18,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * ErrorModel
  */
+@JsonPropertyOrder({
+  ErrorModel.JSON_PROPERTY_STATUS_CODE,
+  ErrorModel.JSON_PROPERTY_STATUS_DESCRIPTION,
+  ErrorModel.JSON_PROPERTY_ERROR_MESSAGE
+})
 
 public class ErrorModel   {
   public static final String JSON_PROPERTY_STATUS_CODE = "statusCode";

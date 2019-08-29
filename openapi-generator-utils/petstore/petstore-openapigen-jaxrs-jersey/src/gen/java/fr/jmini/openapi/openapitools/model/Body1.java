@@ -19,12 +19,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * Body1
  */
+@JsonPropertyOrder({
+  Body1.JSON_PROPERTY_ADDITIONAL_METADATA,
+  Body1.JSON_PROPERTY_FILE
+})
 
 public class Body1   {
   public static final String JSON_PROPERTY_ADDITIONAL_METADATA = "additionalMetadata";

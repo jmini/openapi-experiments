@@ -18,12 +18,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * LongModel
  */
+@JsonPropertyOrder({
+  LongModel.JSON_PROPERTY_LONG1,
+  LongModel.JSON_PROPERTY_LONG2
+})
 
 public class LongModel   {
   public static final String JSON_PROPERTY_LONG1 = "Long1";

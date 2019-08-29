@@ -21,12 +21,18 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * EnumInArrayOfArray
  */
+@JsonPropertyOrder({
+  EnumInArrayOfArray.JSON_PROPERTY_P1,
+  EnumInArrayOfArray.JSON_PROPERTY_P2,
+  EnumInArrayOfArray.JSON_PROPERTY_P3
+})
 
 public class EnumInArrayOfArray   {
   /**

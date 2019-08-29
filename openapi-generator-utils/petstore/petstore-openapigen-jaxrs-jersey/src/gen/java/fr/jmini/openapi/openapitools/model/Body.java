@@ -18,12 +18,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 /**
  * Body
  */
+@JsonPropertyOrder({
+  Body.JSON_PROPERTY_NAME,
+  Body.JSON_PROPERTY_STATUS
+})
 
 public class Body   {
   public static final String JSON_PROPERTY_NAME = "name";

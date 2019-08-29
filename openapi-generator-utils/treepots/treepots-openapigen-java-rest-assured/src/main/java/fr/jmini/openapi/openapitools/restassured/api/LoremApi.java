@@ -37,7 +37,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import fr.jmini.openapi.openapitools.restassured.JSON;
-
 import static io.restassured.http.Method.*;
 
 @Api(value = "Lorem")

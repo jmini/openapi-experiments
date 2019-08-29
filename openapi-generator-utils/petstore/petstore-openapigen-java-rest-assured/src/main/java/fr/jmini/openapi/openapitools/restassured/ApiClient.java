@@ -23,6 +23,7 @@ import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
 import static fr.jmini.openapi.openapitools.restassured.GsonObjectMapper.gson;
 
+
 public class ApiClient {
     public static final String BASE_URI = "http://petstore.swagger.io/v2";
 

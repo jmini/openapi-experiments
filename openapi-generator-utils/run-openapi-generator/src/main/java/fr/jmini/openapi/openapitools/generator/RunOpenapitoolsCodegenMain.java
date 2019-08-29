@@ -48,6 +48,7 @@ public class RunOpenapitoolsCodegenMain {
 
 		convertJava("petstore.json", JavaClientCodegen.OKHTTP_GSON, null);
 		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED, null);
+		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED, JavaClientCodegen.SERIALIZATION_LIBRARY_JACKSON);
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");
 		convertJaxrsCxfClient("petstore.json");
@@ -65,6 +66,7 @@ public class RunOpenapitoolsCodegenMain {
 		convertJava("icespellmint.yaml", JavaClientCodegen.JERSEY2, null);
 		convertJava("icespellmint.yaml", JavaClientCodegen.OKHTTP_GSON, null);
 		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED, JavaClientCodegen.SERIALIZATION_LIBRARY_JACKSON);
 		convertJava("icespellmint.yaml", JavaClientCodegen.RESTEASY, null);
 		convertJava("icespellmint.yaml", JavaClientCodegen.RESTTEMPLATE, null);
 		convertJava("icespellmint.yaml", JavaClientCodegen.WEBCLIENT, null);

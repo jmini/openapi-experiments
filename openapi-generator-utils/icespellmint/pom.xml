@@ -12,6 +12,7 @@
         <module>icespellmint-openapigen-java-jersey2</module>
         <module>icespellmint-openapigen-java-okhttp-gson</module>
         <module>icespellmint-openapigen-java-rest-assured</module>
+        <module>icespellmint-openapigen-java-rest-assured-jackson</module>
         <module>icespellmint-openapigen-java-resteasy</module>
         <module>icespellmint-openapigen-java-resttemplate</module>
         <module>icespellmint-openapigen-java-webclient</module>
@@ -22,6 +23,7 @@
         <module>icespellmint-openapigen-java-jersey2-test-suite</module>
         <module>icespellmint-openapigen-java-okhttp-gson-test-suite</module>
         <module>icespellmint-openapigen-java-rest-assured-test-suite</module>
+        <module>icespellmint-openapigen-java-rest-assured-jackson-test-suite</module>
         <module>icespellmint-openapigen-java-resteasy-test-suite</module>
         <module>icespellmint-openapigen-java-resttemplate-test-suite</module>
         <module>icespellmint-openapigen-java-webclient-test-suite</module>

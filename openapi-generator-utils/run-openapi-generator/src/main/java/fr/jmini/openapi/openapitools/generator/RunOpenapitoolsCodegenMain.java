@@ -32,8 +32,8 @@ public class RunOpenapitoolsCodegenMain {
 	private static final String PACKAGE_ROOT = "fr.jmini.openapi.openapitools";
 
 	public static void main(String[] args) throws IOException {
-		convertJava("treepots.yaml", JavaClientCodegen.OKHTTP_GSON);
-		convertJava("treepots.yaml", JavaClientCodegen.REST_ASSURED);
+		convertJava("treepots.yaml", JavaClientCodegen.OKHTTP_GSON, null);
+		convertJava("treepots.yaml", JavaClientCodegen.REST_ASSURED, null);
 		convertInflector("treepots.yaml");
 		convertJaxrs("treepots.yaml");
 		convertJaxrsCxfClient("treepots.yaml");
@@ -46,8 +46,8 @@ public class RunOpenapitoolsCodegenMain {
 		convertStaticHtml2("treepots.yaml");
 		convertStaticDoc("treepots.yaml");
 
-		convertJava("petstore.json", JavaClientCodegen.OKHTTP_GSON);
-		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED);
+		convertJava("petstore.json", JavaClientCodegen.OKHTTP_GSON, null);
+		convertJava("petstore.json", JavaClientCodegen.REST_ASSURED, null);
 		convertInflector("petstore.json");
 		convertJaxrs("petstore.json");
 		convertJaxrsCxfClient("petstore.json");
@@ -60,79 +60,82 @@ public class RunOpenapitoolsCodegenMain {
 		convertStaticHtml2("petstore.json");
 		convertStaticDoc("petstore.json");
 
-		convertJava("icespellmint.yaml", JavaClientCodegen.FEIGN);
-		convertJava("icespellmint.yaml", JavaClientCodegen.GOOGLE_API_CLIENT);
-		convertJava("icespellmint.yaml", JavaClientCodegen.JERSEY2);
-		convertJava("icespellmint.yaml", JavaClientCodegen.OKHTTP_GSON);
-		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED);
-		convertJava("icespellmint.yaml", JavaClientCodegen.RESTEASY);
-		convertJava("icespellmint.yaml", JavaClientCodegen.RESTTEMPLATE);
-		convertJava("icespellmint.yaml", JavaClientCodegen.WEBCLIENT);
+		convertJava("icespellmint.yaml", JavaClientCodegen.FEIGN, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.GOOGLE_API_CLIENT, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.JERSEY2, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.OKHTTP_GSON, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.REST_ASSURED, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.RESTEASY, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.RESTTEMPLATE, null);
+		convertJava("icespellmint.yaml", JavaClientCodegen.WEBCLIENT, null);
 	}
 
-	private static void convertJava(String inputSpecName, String library) throws IOException {
+	private static void convertJava(String inputSpecName, String library, String serializationLibrary) throws IOException {
 		JavaClientCodegen config = new org.openapitools.codegen.languages.JavaClientCodegen();
 		config.setLibrary(library);
-		convertAbstractJava(inputSpecName, config, library);
+		if (serializationLibrary != null) {
+			config.setSerializationLibrary(serializationLibrary);
+		}
+		convertAbstractJava(inputSpecName, config, library, serializationLibrary);
 	}
 
 	private static void convertInflector(String inputSpecName) throws IOException {
 		JavaInflectorServerCodegen config = new org.openapitools.codegen.languages.JavaInflectorServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrs(String inputSpecName) throws IOException {
 		JavaJerseyServerCodegen config = new org.openapitools.codegen.languages.JavaJerseyServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsCxfClient(String inputSpecName) throws IOException {
 		JavaCXFClientCodegen config = new org.openapitools.codegen.languages.JavaCXFClientCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsCxfServer(String inputSpecName) throws IOException {
 		JavaCXFServerCodegen config = new org.openapitools.codegen.languages.JavaCXFServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsCxfCdi(String inputSpecName) throws IOException {
 		JavaJAXRSCXFCDIServerCodegen config = new org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsResteasy(String inputSpecName) throws IOException {
 		JavaResteasyServerCodegen config = new org.openapitools.codegen.languages.JavaResteasyServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsResteasyEap(String inputSpecName) throws IOException {
 		JavaResteasyEapServerCodegen config = new org.openapitools.codegen.languages.JavaResteasyEapServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertJaxrsSpec(String inputSpecName) throws IOException {
 		JavaJAXRSSpecServerCodegen config = new org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen();
-		convertAbstractJava(inputSpecName, config, null);
+		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
 	private static void convertStaticHtml(String inputSpecName) throws IOException {
 		StaticHtmlGenerator config = new org.openapitools.codegen.languages.StaticHtmlGenerator();
-		convert(inputSpecName, config, null);
+		convert(inputSpecName, config, null, null);
 	}
 
 	private static void convertStaticHtml2(String inputSpecName) throws IOException {
 		StaticHtml2Generator config = new org.openapitools.codegen.languages.StaticHtml2Generator();
-		convert(inputSpecName, config, null);
+		convert(inputSpecName, config, null, null);
 	}
 
 	private static void convertStaticDoc(String inputSpecName) throws IOException {
 		StaticDocCodegen config = new org.openapitools.codegen.languages.StaticDocCodegen();
-		convert(inputSpecName, config, null);
+		convert(inputSpecName, config, null, null);
 	}
 
-	private static void convertAbstractJava(String inputSpecName, AbstractJavaCodegen config, String library) throws IOException {
-		final String artifactId = toArtifactId(inputSpecName, config, library);
+	private static void convertAbstractJava(String inputSpecName, AbstractJavaCodegen config, String library, String serializationLibrary) throws IOException {
+		final String artifactId = toArtifactId(inputSpecName, config, library, serializationLibrary);
 		config.setArtifactId(artifactId);
 		config.setJava8Mode(true);
 		config.setLibrary(library);
@@ -142,16 +145,19 @@ public class RunOpenapitoolsCodegenMain {
 		} else {
 			packageName = PACKAGE_ROOT;
 		}
+		if (serializationLibrary != null) {
+			packageName = packageName + "." + serializationLibrary.replace("-", "");
+		}
 		config.setInvokerPackage(packageName);
 		config.setApiPackage(packageName + ".api");
 		config.setModelPackage(packageName + ".model");
-		convert(inputSpecName, config, library);
+		convert(inputSpecName, config, library, serializationLibrary);
 	}
 
-	private static void convert(String inputSpecName, CodegenConfig config, String suffix) throws IOException {
+	private static void convert(String inputSpecName, CodegenConfig config, String suffix1, String suffix2) throws IOException {
 		String specNameWithoutExtension = com.google.common.io.Files.getNameWithoutExtension(inputSpecName);
 		final String folder = "../" + specNameWithoutExtension;
-		final String subFolder = toArtifactId(inputSpecName, config, suffix);
+		final String subFolder = toArtifactId(inputSpecName, config, suffix1, suffix2);
 		final String outputDir = folder + "/" + subFolder;
 		Path outputDirPath = Paths.get(outputDir);
 
@@ -178,15 +184,19 @@ public class RunOpenapitoolsCodegenMain {
 		new DefaultGenerator().opts(opts).generate();
 	}
 
-	private static String toArtifactId(String inputSpecName, CodegenConfig config, String suffix) {
+	private static String toArtifactId(String inputSpecName, CodegenConfig config, String... suffixes) {
 		String specNameWithoutExtension = com.google.common.io.Files.getNameWithoutExtension(inputSpecName);
 		StringBuilder sb = new StringBuilder();
 		sb.append(specNameWithoutExtension);
 		sb.append("-openapigen-");
 		sb.append(config.getName());
-		if (suffix != null && suffix.length() > 0) {
-			sb.append("-");
-			sb.append(suffix);
+		if (suffixes != null) {
+			for (String suffix : suffixes) {
+				if (suffix != null && suffix.length() > 0) {
+					sb.append("-");
+					sb.append(suffix);
+				}
+			}
 		}
 		return sb.toString();
 	}

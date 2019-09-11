@@ -74,7 +74,7 @@ public class EnumInArrayOfArray {
 
       @Override
       public P1Enum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return P1Enum.fromValue(value);
       }
     }
@@ -127,7 +127,7 @@ public class EnumInArrayOfArray {
 
       @Override
       public P2Enum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return P2Enum.fromValue(value);
       }
     }
@@ -184,7 +184,7 @@ public class EnumInArrayOfArray {
 
       @Override
       public P3Enum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        String value =  jsonReader.nextString();
         return P3Enum.fromValue(value);
       }
     }

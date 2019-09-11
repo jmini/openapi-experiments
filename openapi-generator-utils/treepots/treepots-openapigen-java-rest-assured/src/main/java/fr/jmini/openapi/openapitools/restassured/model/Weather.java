@@ -81,7 +81,7 @@ public class Weather {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        Integer value = jsonReader.nextInt();
+        Integer value =  jsonReader.nextInt();
         return TypeEnum.fromValue(value);
       }
     }

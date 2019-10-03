@@ -17,6 +17,10 @@
         <module>petstore-openapigen-jaxrs-resteasy</module>
         <module>petstore-openapigen-jaxrs-resteasy-eap</module>
         <module>petstore-openapigen-jaxrs-spec</module>
+        <module>petstore-openapigen-jaxrs-spec-helidon</module>
+        <module>petstore-openapigen-jaxrs-spec-openliberty</module>
+        <module>petstore-openapigen-jaxrs-spec-quarkus</module>
+        <module>petstore-openapigen-jaxrs-spec-thorntail</module>
     </modules>
 </project>
 

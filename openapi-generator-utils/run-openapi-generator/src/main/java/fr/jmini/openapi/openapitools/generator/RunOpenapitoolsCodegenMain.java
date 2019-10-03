@@ -41,7 +41,7 @@ public class RunOpenapitoolsCodegenMain {
 		convertJaxrsCxfCdi("treepots.yaml");
 		convertJaxrsResteasy("treepots.yaml");
 		convertJaxrsResteasyEap("treepots.yaml");
-		convertJaxrsSpec("treepots.yaml");
+		convertJaxrsSpec("treepots.yaml", null);
 		convertStaticHtml("treepots.yaml");
 		convertStaticHtml2("treepots.yaml");
 		convertStaticDoc("treepots.yaml");
@@ -56,7 +56,11 @@ public class RunOpenapitoolsCodegenMain {
 		convertJaxrsCxfCdi("petstore.json");
 		convertJaxrsResteasy("petstore.json");
 		convertJaxrsResteasyEap("petstore.json");
-		convertJaxrsSpec("petstore.json");
+		convertJaxrsSpec("petstore.json", null);
+		convertJaxrsSpec("petstore.json", JavaJAXRSSpecServerCodegen.QUARKUS_LIBRARY);
+		convertJaxrsSpec("petstore.json", JavaJAXRSSpecServerCodegen.THORNTAIL_LIBRARY);
+		convertJaxrsSpec("petstore.json", JavaJAXRSSpecServerCodegen.OPEN_LIBERTY_LIBRARY);
+		convertJaxrsSpec("petstore.json", JavaJAXRSSpecServerCodegen.HELIDON_LIBRARY);
 		convertStaticHtml("petstore.json");
 		convertStaticHtml2("petstore.json");
 		convertStaticDoc("petstore.json");
@@ -116,9 +120,10 @@ public class RunOpenapitoolsCodegenMain {
 		convertAbstractJava(inputSpecName, config, null, null);
 	}
 
-	private static void convertJaxrsSpec(String inputSpecName) throws IOException {
+	private static void convertJaxrsSpec(String inputSpecName, String library) throws IOException {
 		JavaJAXRSSpecServerCodegen config = new org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen();
-		convertAbstractJava(inputSpecName, config, null, null);
+		config.setLibrary(library);
+		convertAbstractJava(inputSpecName, config, library, null);
 	}
 
 	private static void convertStaticHtml(String inputSpecName) throws IOException {

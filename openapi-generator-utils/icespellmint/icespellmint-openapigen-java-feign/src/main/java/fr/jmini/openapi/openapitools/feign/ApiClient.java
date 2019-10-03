@@ -3,8 +3,7 @@ package fr.jmini.openapi.openapitools.feign;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
+
 import org.threeten.bp.*;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;

@@ -41,8 +41,6 @@ public class RunOpenAPIGeneratorForQuarkusMain {
         }
 
         JavaJAXRSSpecServerCodegen config = new org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen();
-        config.additionalProperties()
-                .put(JavaJAXRSSpecServerCodegen.USE_SWAGGER_ANNOTATIONS, "false");
         config.setHideGenerationTimestamp(true);
         config.setOutputDir(outputDirPath.toFile()
                 .getCanonicalPath());

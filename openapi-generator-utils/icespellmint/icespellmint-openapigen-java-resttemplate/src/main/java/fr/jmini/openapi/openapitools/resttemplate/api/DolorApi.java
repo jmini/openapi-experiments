@@ -23,6 +23,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 
 
 @Component("fr.jmini.openapi.openapitools.resttemplate.api.DolorApi")
@@ -53,6 +54,17 @@ public class DolorApi {
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
     public void dolorBasicSec() throws RestClientException {
+        dolorBasicSecWithHttpInfo();
+    }
+
+    /**
+     * 
+     * 
+     * <p><b>200</b> - OK
+     * @return ResponseEntity&lt;Void&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Void> dolorBasicSecWithHttpInfo() throws RestClientException {
         Object postBody = null;
         
         String path = apiClient.expandPath("/dolor/basicSecurity", Collections.<String, Object>emptyMap());
@@ -69,7 +81,7 @@ public class DolorApi {
         String[] authNames = new String[] { "httpBasic" };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -78,6 +90,17 @@ public class DolorApi {
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
     public void dolorBearerSec() throws RestClientException {
+        dolorBearerSecWithHttpInfo();
+    }
+
+    /**
+     * 
+     * 
+     * <p><b>200</b> - OK
+     * @return ResponseEntity&lt;Void&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<Void> dolorBearerSecWithHttpInfo() throws RestClientException {
         Object postBody = null;
         
         String path = apiClient.expandPath("/dolor/bearerSecurity", Collections.<String, Object>emptyMap());
@@ -94,6 +117,6 @@ public class DolorApi {
         String[] authNames = new String[] { "bearerAuth" };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

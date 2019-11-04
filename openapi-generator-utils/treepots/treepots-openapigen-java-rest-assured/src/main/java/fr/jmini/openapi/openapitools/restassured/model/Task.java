@@ -105,7 +105,6 @@ public class Task {
   }
 
 
-
   public void setStatus(StatusEnum status) {
     this.status = status;
   }

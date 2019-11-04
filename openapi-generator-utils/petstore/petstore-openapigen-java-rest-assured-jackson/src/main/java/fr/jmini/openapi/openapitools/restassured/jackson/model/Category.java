@@ -59,7 +59,6 @@ public class Category {
   }
 
 
-
   public void setId(Long id) {
     this.id = id;
   }
@@ -83,7 +82,6 @@ public class Category {
   public String getName() {
     return name;
   }
-
 
 
   public void setName(String name) {

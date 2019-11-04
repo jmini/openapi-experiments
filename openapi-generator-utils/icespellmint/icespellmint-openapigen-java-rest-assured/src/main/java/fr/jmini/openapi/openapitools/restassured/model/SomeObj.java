@@ -56,7 +56,6 @@ public class SomeObj {
   }
 
 
-
   public void setId(Long id) {
     this.id = id;
   }
@@ -78,7 +77,6 @@ public class SomeObj {
   public String getName() {
     return name;
   }
-
 
 
   public void setName(String name) {

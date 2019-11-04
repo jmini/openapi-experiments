@@ -83,7 +83,6 @@ public class ObjWithEnums {
   }
 
 
-
   public void setIprop(IntEnum iprop) {
     this.iprop = iprop;
   }
@@ -105,7 +104,6 @@ public class ObjWithEnums {
   public LongEnum getLprop() {
     return lprop;
   }
-
 
 
   public void setLprop(LongEnum lprop) {
@@ -131,7 +129,6 @@ public class ObjWithEnums {
   }
 
 
-
   public void setSprop(StringEnum sprop) {
     this.sprop = sprop;
   }
@@ -153,7 +150,6 @@ public class ObjWithEnums {
   public Int2Enum getIprop2() {
     return iprop2;
   }
-
 
 
   public void setIprop2(Int2Enum iprop2) {
@@ -179,7 +175,6 @@ public class ObjWithEnums {
   }
 
 
-
   public void setLprop2(Long2Enum lprop2) {
     this.lprop2 = lprop2;
   }
@@ -203,7 +198,6 @@ public class ObjWithEnums {
   }
 
 
-
   public void setSprop2(String2Enum sprop2) {
     this.sprop2 = sprop2;
   }
@@ -225,7 +219,6 @@ public class ObjWithEnums {
   public Enum2WithCustomName getCustom() {
     return custom;
   }
-
 
 
   public void setCustom(Enum2WithCustomName custom) {

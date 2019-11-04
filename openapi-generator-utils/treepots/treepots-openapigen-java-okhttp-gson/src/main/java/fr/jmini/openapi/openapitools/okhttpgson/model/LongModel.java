@@ -56,7 +56,6 @@ public class LongModel {
   }
 
 
-
   public void setLong1(Long long1) {
     this.long1 = long1;
   }
@@ -78,7 +77,6 @@ public class LongModel {
   public Long getLong2() {
     return long2;
   }
-
 
 
   public void setLong2(Long long2) {

@@ -60,7 +60,6 @@ public class SomeObject {
   }
 
 
-
   public void setId(Integer id) {
     this.id = id;
   }
@@ -84,7 +83,6 @@ public class SomeObject {
   }
 
 
-
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
@@ -106,7 +104,6 @@ public class SomeObject {
   public String getLastName() {
     return lastName;
   }
-
 
 
   public void setLastName(String lastName) {

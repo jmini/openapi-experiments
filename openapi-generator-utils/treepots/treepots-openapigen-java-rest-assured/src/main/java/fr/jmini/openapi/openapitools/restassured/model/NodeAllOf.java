@@ -62,7 +62,6 @@ public class NodeAllOf {
   }
 
 
-
   public void setChildrenIds(List<String> childrenIds) {
     this.childrenIds = childrenIds;
   }

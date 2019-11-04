@@ -60,7 +60,6 @@ public class ErrorModel {
   }
 
 
-
   public void setStatusCode(Integer statusCode) {
     this.statusCode = statusCode;
   }
@@ -84,7 +83,6 @@ public class ErrorModel {
   }
 
 
-
   public void setStatusDescription(String statusDescription) {
     this.statusDescription = statusDescription;
   }
@@ -106,7 +104,6 @@ public class ErrorModel {
   public String getErrorMessage() {
     return errorMessage;
   }
-
 
 
   public void setErrorMessage(String errorMessage) {

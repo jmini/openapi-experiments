@@ -57,7 +57,6 @@ public class Body1 {
   }
 
 
-
   public void setAdditionalMetadata(String additionalMetadata) {
     this.additionalMetadata = additionalMetadata;
   }
@@ -79,7 +78,6 @@ public class Body1 {
   public File getFile() {
     return file;
   }
-
 
 
   public void setFile(File file) {

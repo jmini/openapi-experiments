@@ -60,7 +60,6 @@ public class Element {
   }
 
 
-
   public void setId(String id) {
     this.id = id;
   }
@@ -81,7 +80,6 @@ public class Element {
   public String getType() {
     return type;
   }
-
 
 
   public void setType(String type) {

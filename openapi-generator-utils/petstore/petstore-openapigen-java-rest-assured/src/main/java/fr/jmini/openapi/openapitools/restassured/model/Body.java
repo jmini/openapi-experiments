@@ -56,7 +56,6 @@ public class Body {
   }
 
 
-
   public void setName(String name) {
     this.name = name;
   }
@@ -78,7 +77,6 @@ public class Body {
   public String getStatus() {
     return status;
   }
-
 
 
   public void setStatus(String status) {

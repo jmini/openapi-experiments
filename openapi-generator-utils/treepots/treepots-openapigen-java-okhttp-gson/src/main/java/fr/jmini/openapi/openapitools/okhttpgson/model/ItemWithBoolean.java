@@ -60,7 +60,6 @@ public class ItemWithBoolean {
   }
 
 
-
   public void setId(Integer id) {
     this.id = id;
   }
@@ -84,7 +83,6 @@ public class ItemWithBoolean {
   }
 
 
-
   public void setActive(Boolean active) {
     this.active = active;
   }
@@ -106,7 +104,6 @@ public class ItemWithBoolean {
   public String getName() {
     return name;
   }
-
 
 
   public void setName(String name) {

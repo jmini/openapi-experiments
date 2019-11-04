@@ -64,7 +64,6 @@ public class Node extends Element {
   }
 
 
-
   public void setChildrenIds(List<String> childrenIds) {
     this.childrenIds = childrenIds;
   }

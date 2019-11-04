@@ -221,7 +221,6 @@ public class EnumInArrayOfArray {
   }
 
 
-
   public void setP1(List<P1Enum> p1) {
     this.p1 = p1;
   }
@@ -253,7 +252,6 @@ public class EnumInArrayOfArray {
   }
 
 
-
   public void setP2(List<List<P2Enum>> p2) {
     this.p2 = p2;
   }
@@ -283,7 +281,6 @@ public class EnumInArrayOfArray {
   public List<List<List<P3Enum>>> getP3() {
     return p3;
   }
-
 
 
   public void setP3(List<List<List<P3Enum>>> p3) {

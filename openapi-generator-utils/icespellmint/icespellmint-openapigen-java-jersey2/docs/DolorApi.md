@@ -95,10 +95,9 @@ public class Example {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8090");
         
-        // Configure HTTP basic authorization: bearerAuth
-        HttpBasicAuth bearerAuth = (HttpBasicAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setUsername("YOUR USERNAME");
-        bearerAuth.setPassword("YOUR PASSWORD");
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DolorApi apiInstance = new DolorApi(defaultClient);
         try {

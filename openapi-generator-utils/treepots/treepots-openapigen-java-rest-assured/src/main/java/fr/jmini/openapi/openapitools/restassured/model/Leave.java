@@ -54,7 +54,6 @@ public class Leave extends Element {
   }
 
 
-
   public void setValue(String value) {
     this.value = value;
   }

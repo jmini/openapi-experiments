@@ -110,7 +110,6 @@ public class Weather {
   }
 
 
-
   public void setType(TypeEnum type) {
     this.type = type;
   }

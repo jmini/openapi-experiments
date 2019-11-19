@@ -1,16 +1,12 @@
 package fr.jmini.openapitools.openapistylevalidator;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import org.eclipse.microprofile.openapi.models.OpenAPI;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openapitools.openapistylevalidator.OpenApiSpecStyleValidatorEx;
-import org.openapitools.openapistylevalidator.ValidatorParametersEx;
+import org.openapitools.openapistylevalidator.OpenApiSpecStyleValidator;
+import org.openapitools.openapistylevalidator.ValidatorParameters;
 import org.openapitools.openapistylevalidator.styleerror.StyleError;
 
-import java.io.InputStreamReader;
 import java.util.List;
 
 public class CreateOpenAPITest {
@@ -19,8 +15,8 @@ public class CreateOpenAPITest {
     public void validateOpenAPIStyle() throws Exception {
         OpenAPI openAPI = CreateOpenAPI.create();
         
-        OpenApiSpecStyleValidatorEx openApiSpecStyleValidator = new OpenApiSpecStyleValidatorEx(openAPI);
-        ValidatorParametersEx parameters = new ValidatorParametersEx();
+        OpenApiSpecStyleValidator openApiSpecStyleValidator = new OpenApiSpecStyleValidator(openAPI);
+        ValidatorParameters parameters = new ValidatorParameters();
         List<StyleError> errors = openApiSpecStyleValidator.validate(parameters);
         
         for (StyleError styleError : errors) {
@@ -34,11 +30,9 @@ public class CreateOpenAPITest {
     public void validateWithJsonOptionFile() throws Exception {
         OpenAPI openAPI = CreateOpenAPI.create();
         
-        OpenApiSpecStyleValidatorEx openApiSpecStyleValidator = new OpenApiSpecStyleValidatorEx(openAPI);
+        OpenApiSpecStyleValidator openApiSpecStyleValidator = new OpenApiSpecStyleValidator(openAPI);
         
-        Gson gson = new GsonBuilder().create();
-        ValidatorParametersEx parameters = gson.fromJson(new InputStreamReader(getClass().getResourceAsStream("/options.json")), ValidatorParametersEx.class);
-        
+        ValidatorParameters parameters = new ValidatorParameters();
         List<StyleError> errors = openApiSpecStyleValidator.validate(parameters);
         
         for (StyleError styleError : errors) {

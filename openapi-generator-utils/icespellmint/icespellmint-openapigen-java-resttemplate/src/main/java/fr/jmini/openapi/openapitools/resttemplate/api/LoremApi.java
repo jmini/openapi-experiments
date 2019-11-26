@@ -72,7 +72,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -109,7 +109,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -146,7 +146,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -183,7 +183,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -220,7 +220,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -257,7 +257,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -294,7 +294,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
@@ -331,7 +331,7 @@ public class LoremApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, String> cookieParams = new LinkedMultiValueMap<String, String>();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        final MultiValueMap formParams = new LinkedMultiValueMap();
 
         final String[] accepts = { };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);

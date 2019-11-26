@@ -53,7 +53,8 @@ public class DolorApi {
     public Mono<Void> dolorBasicSec() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/dolor/basicSecurity").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -68,7 +69,7 @@ public class DolorApi {
         String[] authNames = new String[] { "httpBasic" };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/dolor/basicSecurity", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -79,7 +80,8 @@ public class DolorApi {
     public Mono<Void> dolorBearerSec() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/dolor/bearerSecurity").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -94,6 +96,6 @@ public class DolorApi {
         String[] authNames = new String[] { "bearerAuth" };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/dolor/bearerSecurity", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
 }

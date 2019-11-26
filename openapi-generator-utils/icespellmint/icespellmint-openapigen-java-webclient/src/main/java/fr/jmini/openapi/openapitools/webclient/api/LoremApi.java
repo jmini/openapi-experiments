@@ -53,7 +53,8 @@ public class LoremApi {
     public Mono<Void> emptyDelete() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/deleteEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -68,7 +69,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.DELETE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/deleteEmpty", HttpMethod.DELETE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -79,7 +80,8 @@ public class LoremApi {
     public Mono<Void> emptyGet() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/getEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -94,7 +96,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/getEmpty", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -105,7 +107,8 @@ public class LoremApi {
     public Mono<Void> emptyHead() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/headEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -120,7 +123,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.HEAD, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/headEmpty", HttpMethod.HEAD, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -131,7 +134,8 @@ public class LoremApi {
     public Mono<Void> emptyOptions() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/optionsEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -146,7 +150,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.OPTIONS, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/optionsEmpty", HttpMethod.OPTIONS, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -157,7 +161,8 @@ public class LoremApi {
     public Mono<Void> emptyPatch() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/patchEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -172,7 +177,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PATCH, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/patchEmpty", HttpMethod.PATCH, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -183,7 +188,8 @@ public class LoremApi {
     public Mono<Void> emptyPost() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/postEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -198,7 +204,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/postEmpty", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -209,7 +215,8 @@ public class LoremApi {
     public Mono<Void> emptyPut() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/putEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -224,7 +231,7 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/putEmpty", HttpMethod.PUT, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -235,7 +242,8 @@ public class LoremApi {
     public Mono<Void> emptyTrace() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/lorem/traceEmpty").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -250,6 +258,6 @@ public class LoremApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/lorem/traceEmpty", HttpMethod.TRACE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
 }

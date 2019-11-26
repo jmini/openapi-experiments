@@ -61,9 +61,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -78,7 +77,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.DELETE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.DELETE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -96,9 +95,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -113,7 +111,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -131,9 +129,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -148,7 +145,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.HEAD, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.HEAD, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -166,9 +163,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -183,7 +179,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.OPTIONS, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.OPTIONS, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -201,9 +197,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -218,7 +213,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PATCH, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.PATCH, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -236,9 +231,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -253,7 +247,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -271,9 +265,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -288,7 +281,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.PUT, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -306,9 +299,8 @@ public class IpsumApi {
         }
         
         // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("name", name);
-        String path = UriComponentsBuilder.fromPath("/ipsum/hello/{name}").buildAndExpand(uriVariables).toUriString();
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
+        pathParams.put("name", name);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -323,7 +315,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/hello/{name}", HttpMethod.TRACE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -335,7 +327,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingDelete(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -352,7 +345,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.DELETE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.DELETE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -364,7 +357,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingHead(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -381,7 +375,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.HEAD, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.HEAD, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -393,7 +387,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingOptions(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -410,7 +405,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.OPTIONS, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.OPTIONS, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -422,7 +417,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingPatch(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -439,7 +435,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PATCH, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.PATCH, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -451,7 +447,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingPost(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -468,7 +465,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -480,7 +477,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingPut(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -497,7 +495,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.PUT, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -509,7 +507,8 @@ public class IpsumApi {
     public Mono<Void> jsonPingTrace(SomeObj someObj) throws RestClientException {
         Object postBody = someObj;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/jsonPing").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -526,7 +525,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/jsonPing", HttpMethod.TRACE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -538,7 +537,8 @@ public class IpsumApi {
     public Mono<Void> pingDelete(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -555,7 +555,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.DELETE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.DELETE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -567,7 +567,8 @@ public class IpsumApi {
     public Mono<Void> pingGet(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -584,7 +585,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -596,7 +597,8 @@ public class IpsumApi {
     public Mono<Void> pingHead(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -613,7 +615,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.HEAD, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.HEAD, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -625,7 +627,8 @@ public class IpsumApi {
     public Mono<Void> pingOptions(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -642,7 +645,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.OPTIONS, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.OPTIONS, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -654,7 +657,8 @@ public class IpsumApi {
     public Mono<Void> pingPatch(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -671,7 +675,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PATCH, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.PATCH, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -683,7 +687,8 @@ public class IpsumApi {
     public Mono<Void> pingPost(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -700,7 +705,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.POST, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -712,7 +717,8 @@ public class IpsumApi {
     public Mono<Void> pingPut(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -729,7 +735,7 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.PUT, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.PUT, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -741,7 +747,8 @@ public class IpsumApi {
     public Mono<Void> pingTrace(String custom) throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/ipsum/ping").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -758,6 +765,6 @@ public class IpsumApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Void> returnType = new ParameterizedTypeReference<Void>() {};
-        return apiClient.invokeAPI(path, HttpMethod.TRACE, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/ipsum/ping", HttpMethod.TRACE, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
 }

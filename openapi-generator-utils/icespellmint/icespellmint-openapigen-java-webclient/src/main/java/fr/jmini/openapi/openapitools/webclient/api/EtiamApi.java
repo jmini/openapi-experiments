@@ -55,7 +55,8 @@ public class EtiamApi {
     public Mono<Integer> getInt() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getInt").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -72,7 +73,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Integer> returnType = new ParameterizedTypeReference<Integer>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getInt", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -84,7 +85,8 @@ public class EtiamApi {
     public Flux<Integer> getIntList() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getIntList").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -101,7 +103,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Integer> returnType = new ParameterizedTypeReference<Integer>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeFluxAPI("/etiam/getIntList", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -113,7 +115,8 @@ public class EtiamApi {
     public Mono<Map<String, Integer>> getIntMap() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getIntMap").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -130,7 +133,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Map<String, Integer>> returnType = new ParameterizedTypeReference<Map<String, Integer>>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getIntMap", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -142,7 +145,8 @@ public class EtiamApi {
     public Mono<SomeObj> getSomeObj() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getSomeObj").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -159,7 +163,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<SomeObj> returnType = new ParameterizedTypeReference<SomeObj>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getSomeObj", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -171,7 +175,8 @@ public class EtiamApi {
     public Flux<SomeObj> getSomeObjList() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getSomeObjList").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -188,7 +193,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<SomeObj> returnType = new ParameterizedTypeReference<SomeObj>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeFluxAPI("/etiam/getSomeObjList", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -200,7 +205,8 @@ public class EtiamApi {
     public Mono<Map<String, SomeObj>> getSomeObjMap() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getSomeObjMap").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -217,7 +223,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Map<String, SomeObj>> returnType = new ParameterizedTypeReference<Map<String, SomeObj>>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getSomeObjMap", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -229,7 +235,8 @@ public class EtiamApi {
     public Mono<String> getString() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getString").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -246,7 +253,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<String> returnType = new ParameterizedTypeReference<String>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getString", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -258,7 +265,8 @@ public class EtiamApi {
     public Flux<String> getStringList() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getStringList").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -275,7 +283,7 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<String> returnType = new ParameterizedTypeReference<String>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeFluxAPI("/etiam/getStringList", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * 
@@ -287,7 +295,8 @@ public class EtiamApi {
     public Mono<Map<String, String>> getStringMap() throws RestClientException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/etiam/getStringMap").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> pathParams = new HashMap<String, Object>();
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -304,6 +313,6 @@ public class EtiamApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<Map<String, String>> returnType = new ParameterizedTypeReference<Map<String, String>>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeAPI("/etiam/getStringMap", HttpMethod.GET, pathParams, queryParams, postBody, headerParams, cookieParams, formParams, accept, contentType, authNames, returnType);
     }
 }

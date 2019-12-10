@@ -55,6 +55,18 @@ public class LoremApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                emptyDelete(),
+                emptyGet(),
+                emptyHead(),
+                emptyOptions(),
+                emptyPatch(),
+                emptyPost(),
+                emptyPut(),
+                emptyTrace()
+        );
+    }
 
     @ApiOperation(value = "",
             notes = "",
@@ -151,7 +163,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyDeleteOper {
+    public static class EmptyDeleteOper implements Oper {
 
         public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/lorem/deleteEmpty";
@@ -171,6 +183,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -200,7 +213,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyGetOper {
+    public static class EmptyGetOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/lorem/getEmpty";
@@ -220,6 +233,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -249,7 +263,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyHeadOper {
+    public static class EmptyHeadOper implements Oper {
 
         public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/lorem/headEmpty";
@@ -269,6 +283,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -298,7 +313,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyOptionsOper {
+    public static class EmptyOptionsOper implements Oper {
 
         public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/lorem/optionsEmpty";
@@ -318,6 +333,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -347,7 +363,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyPatchOper {
+    public static class EmptyPatchOper implements Oper {
 
         public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/lorem/patchEmpty";
@@ -367,6 +383,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -396,7 +413,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyPostOper {
+    public static class EmptyPostOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/lorem/postEmpty";
@@ -416,6 +433,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -445,7 +463,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyPutOper {
+    public static class EmptyPutOper implements Oper {
 
         public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/lorem/putEmpty";
@@ -465,6 +483,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -494,7 +513,7 @@ public class LoremApi {
      * 
      *
      */
-    public static class EmptyTraceOper {
+    public static class EmptyTraceOper implements Oper {
 
         public static final Method REQ_METHOD = TRACE;
         public static final String REQ_URI = "/lorem/traceEmpty";
@@ -514,6 +533,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

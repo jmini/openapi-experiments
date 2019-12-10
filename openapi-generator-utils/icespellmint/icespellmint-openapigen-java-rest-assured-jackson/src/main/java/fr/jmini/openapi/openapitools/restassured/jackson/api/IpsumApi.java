@@ -56,6 +56,33 @@ public class IpsumApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                helloDelete(),
+                helloGet(),
+                helloHead(),
+                helloOptions(),
+                helloPatch(),
+                helloPost(),
+                helloPut(),
+                helloTrace(),
+                jsonPingDelete(),
+                jsonPingHead(),
+                jsonPingOptions(),
+                jsonPingPatch(),
+                jsonPingPost(),
+                jsonPingPut(),
+                jsonPingTrace(),
+                pingDelete(),
+                pingGet(),
+                pingHead(),
+                pingOptions(),
+                pingPatch(),
+                pingPost(),
+                pingPut(),
+                pingTrace()
+        );
+    }
 
     @ApiOperation(value = "",
             notes = "",
@@ -303,7 +330,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloDeleteOper {
+    public static class HelloDeleteOper implements Oper {
 
         public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -323,6 +350,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -364,7 +392,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloGetOper {
+    public static class HelloGetOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -384,6 +412,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -425,7 +454,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloHeadOper {
+    public static class HelloHeadOper implements Oper {
 
         public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -445,6 +474,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -486,7 +516,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloOptionsOper {
+    public static class HelloOptionsOper implements Oper {
 
         public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -506,6 +536,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -547,7 +578,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloPatchOper {
+    public static class HelloPatchOper implements Oper {
 
         public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -567,6 +598,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -608,7 +640,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloPostOper {
+    public static class HelloPostOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -628,6 +660,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -669,7 +702,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloPutOper {
+    public static class HelloPutOper implements Oper {
 
         public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -689,6 +722,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -730,7 +764,7 @@ public class IpsumApi {
      *
      * @see #namePath  (required)
      */
-    public static class HelloTraceOper {
+    public static class HelloTraceOper implements Oper {
 
         public static final Method REQ_METHOD = TRACE;
         public static final String REQ_URI = "/ipsum/hello/{name}";
@@ -750,6 +784,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -791,7 +826,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingDeleteOper {
+    public static class JsonPingDeleteOper implements Oper {
 
         public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -812,6 +847,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -851,7 +887,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingHeadOper {
+    public static class JsonPingHeadOper implements Oper {
 
         public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -872,6 +908,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -911,7 +948,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingOptionsOper {
+    public static class JsonPingOptionsOper implements Oper {
 
         public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -932,6 +969,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -971,7 +1009,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingPatchOper {
+    public static class JsonPingPatchOper implements Oper {
 
         public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -992,6 +1030,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1031,7 +1070,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingPostOper {
+    public static class JsonPingPostOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -1052,6 +1091,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1091,7 +1131,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingPutOper {
+    public static class JsonPingPutOper implements Oper {
 
         public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -1112,6 +1152,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1151,7 +1192,7 @@ public class IpsumApi {
      *
      * @see #body  (optional)
      */
-    public static class JsonPingTraceOper {
+    public static class JsonPingTraceOper implements Oper {
 
         public static final Method REQ_METHOD = TRACE;
         public static final String REQ_URI = "/ipsum/jsonPing";
@@ -1172,6 +1213,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1211,7 +1253,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingDeleteOper {
+    public static class PingDeleteOper implements Oper {
 
         public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1231,6 +1273,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1272,7 +1315,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingGetOper {
+    public static class PingGetOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1292,6 +1335,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1333,7 +1377,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingHeadOper {
+    public static class PingHeadOper implements Oper {
 
         public static final Method REQ_METHOD = HEAD;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1353,6 +1397,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1394,7 +1439,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingOptionsOper {
+    public static class PingOptionsOper implements Oper {
 
         public static final Method REQ_METHOD = OPTIONS;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1414,6 +1459,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1455,7 +1501,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingPatchOper {
+    public static class PingPatchOper implements Oper {
 
         public static final Method REQ_METHOD = PATCH;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1475,6 +1521,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1516,7 +1563,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingPostOper {
+    public static class PingPostOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1536,6 +1583,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1577,7 +1625,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingPutOper {
+    public static class PingPutOper implements Oper {
 
         public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1597,6 +1645,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -1638,7 +1687,7 @@ public class IpsumApi {
      *
      * @see #customQuery  (optional)
      */
-    public static class PingTraceOper {
+    public static class PingTraceOper implements Oper {
 
         public static final Method REQ_METHOD = TRACE;
         public static final String REQ_URI = "/ipsum/ping";
@@ -1658,6 +1707,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

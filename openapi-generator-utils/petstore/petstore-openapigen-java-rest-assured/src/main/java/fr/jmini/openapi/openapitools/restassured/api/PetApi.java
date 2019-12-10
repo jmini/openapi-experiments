@@ -58,6 +58,18 @@ public class PetApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                addPet(),
+                deletePet(),
+                findPetsByStatus(),
+                findPetsByTags(),
+                getPetById(),
+                updatePet(),
+                updatePetWithForm(),
+                uploadFile()
+        );
+    }
 
     @ApiOperation(value = "Add a new pet to the store",
             notes = "",
@@ -162,7 +174,7 @@ public class PetApi {
      *
      * @see #body Pet object that needs to be added to the store (optional)
      */
-    public static class AddPetOper {
+    public static class AddPetOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/pet";
@@ -183,6 +195,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -223,7 +236,7 @@ public class PetApi {
      * @see #petIdPath Pet id to delete (required)
      * @see #apiKeyHeader  (optional)
      */
-    public static class DeletePetOper {
+    public static class DeletePetOper implements Oper {
 
         public static final Method REQ_METHOD = DELETE;
         public static final String REQ_URI = "/pet/{petId}";
@@ -243,6 +256,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -296,7 +310,7 @@ public class PetApi {
      * @see #statusQuery Status values that need to be considered for filter (optional, default to new ArrayList&lt;String&gt;())
      * return List&lt;Pet&gt;
      */
-    public static class FindPetsByStatusOper {
+    public static class FindPetsByStatusOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pet/findByStatus";
@@ -316,6 +330,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -370,7 +385,7 @@ public class PetApi {
      * @deprecated
      */
     @Deprecated
-    public static class FindPetsByTagsOper {
+    public static class FindPetsByTagsOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pet/findByTags";
@@ -390,6 +405,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -442,7 +458,7 @@ public class PetApi {
      * @see #petIdPath ID of pet that needs to be fetched (required)
      * return Pet
      */
-    public static class GetPetByIdOper {
+    public static class GetPetByIdOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pet/{petId}";
@@ -462,6 +478,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -513,7 +530,7 @@ public class PetApi {
      *
      * @see #body Pet object that needs to be added to the store (optional)
      */
-    public static class UpdatePetOper {
+    public static class UpdatePetOper implements Oper {
 
         public static final Method REQ_METHOD = PUT;
         public static final String REQ_URI = "/pet";
@@ -534,6 +551,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -575,7 +593,7 @@ public class PetApi {
      * @see #nameForm Updated name of the pet (optional)
      * @see #statusForm Updated status of the pet (optional)
      */
-    public static class UpdatePetWithFormOper {
+    public static class UpdatePetWithFormOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/pet/{petId}";
@@ -596,6 +614,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -661,7 +680,7 @@ public class PetApi {
      * @see #additionalMetadataForm Additional data to pass to server (optional)
      * @see #fileMultiPart file to upload (optional)
      */
-    public static class UploadFileOper {
+    public static class UploadFileOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/pet/{petId}/uploadImage";
@@ -682,6 +701,7 @@ public class PetApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

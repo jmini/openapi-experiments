@@ -57,6 +57,19 @@ public class EtiamApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                getInt(),
+                getIntList(),
+                getIntMap(),
+                getSomeObj(),
+                getSomeObjList(),
+                getSomeObjMap(),
+                getString(),
+                getStringList(),
+                getStringMap()
+        );
+    }
 
     @ApiOperation(value = "",
             notes = "",
@@ -164,7 +177,7 @@ public class EtiamApi {
      *
      * return Integer
      */
-    public static class GetIntOper {
+    public static class GetIntOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getInt";
@@ -184,6 +197,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -224,7 +238,7 @@ public class EtiamApi {
      *
      * return List&lt;Integer&gt;
      */
-    public static class GetIntListOper {
+    public static class GetIntListOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getIntList";
@@ -244,6 +258,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -284,7 +299,7 @@ public class EtiamApi {
      *
      * return Map&lt;String, Integer&gt;
      */
-    public static class GetIntMapOper {
+    public static class GetIntMapOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getIntMap";
@@ -304,6 +319,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -344,7 +360,7 @@ public class EtiamApi {
      *
      * return SomeObj
      */
-    public static class GetSomeObjOper {
+    public static class GetSomeObjOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getSomeObj";
@@ -364,6 +380,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -404,7 +421,7 @@ public class EtiamApi {
      *
      * return List&lt;SomeObj&gt;
      */
-    public static class GetSomeObjListOper {
+    public static class GetSomeObjListOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getSomeObjList";
@@ -424,6 +441,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -464,7 +482,7 @@ public class EtiamApi {
      *
      * return Map&lt;String, SomeObj&gt;
      */
-    public static class GetSomeObjMapOper {
+    public static class GetSomeObjMapOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getSomeObjMap";
@@ -484,6 +502,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -524,7 +543,7 @@ public class EtiamApi {
      *
      * return String
      */
-    public static class GetStringOper {
+    public static class GetStringOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getString";
@@ -544,6 +563,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -584,7 +604,7 @@ public class EtiamApi {
      *
      * return List&lt;String&gt;
      */
-    public static class GetStringListOper {
+    public static class GetStringListOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getStringList";
@@ -604,6 +624,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -644,7 +665,7 @@ public class EtiamApi {
      *
      * return Map&lt;String, String&gt;
      */
-    public static class GetStringMapOper {
+    public static class GetStringMapOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/etiam/getStringMap";
@@ -664,6 +685,7 @@ public class EtiamApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

@@ -61,6 +61,16 @@ public class LoremApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                getCase1(),
+                getPolymorphic(),
+                issue7754(),
+                op708(),
+                op75(),
+                pull66()
+        );
+    }
 
     @ApiOperation(value = "Update an existing pet",
             notes = "",
@@ -138,7 +148,7 @@ public class LoremApi {
      *
      * return ItemWithBoolean
      */
-    public static class GetCase1Oper {
+    public static class GetCase1Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/case1";
@@ -158,6 +168,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -198,7 +209,7 @@ public class LoremApi {
      *
      * return SomeObject
      */
-    public static class GetPolymorphicOper {
+    public static class GetPolymorphicOper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/polymorphic";
@@ -218,6 +229,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -258,7 +270,7 @@ public class LoremApi {
      *
      * return LongModel
      */
-    public static class Issue7754Oper {
+    public static class Issue7754Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/issue7754";
@@ -278,6 +290,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -318,7 +331,7 @@ public class LoremApi {
      *
      * @see #barQuery  (optional, default to &quot;foobar&quot;)
      */
-    public static class Op708Oper {
+    public static class Op708Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pull708";
@@ -338,6 +351,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -379,7 +393,7 @@ public class LoremApi {
      *
      * return ObjWithEnums
      */
-    public static class Op75Oper {
+    public static class Op75Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pull75";
@@ -399,6 +413,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -439,7 +454,7 @@ public class LoremApi {
      *
      * @see #body  (optional)
      */
-    public static class Pull66Oper {
+    public static class Pull66Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/pull66";
@@ -460,6 +475,7 @@ public class LoremApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

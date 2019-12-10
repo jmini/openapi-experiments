@@ -58,6 +58,11 @@ public class IpsumApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                op199()
+        );
+    }
 
     @ApiOperation(value = "",
             notes = "",
@@ -86,7 +91,7 @@ public class IpsumApi {
      *
      * return SomeObject
      */
-    public static class Op199Oper {
+    public static class Op199Oper implements Oper {
 
         public static final Method REQ_METHOD = GET;
         public static final String REQ_URI = "/ipsum/issue199";
@@ -106,6 +111,7 @@ public class IpsumApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

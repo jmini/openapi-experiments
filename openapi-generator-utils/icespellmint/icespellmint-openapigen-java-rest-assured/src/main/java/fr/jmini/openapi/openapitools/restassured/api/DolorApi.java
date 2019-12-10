@@ -56,6 +56,12 @@ public class DolorApi {
         return reqSpec;
     }
 
+    public List<Oper> getAllOperations() {
+        return Arrays.asList(
+                dolorBasicSec(),
+                dolorBearerSec()
+        );
+    }
 
     @ApiOperation(value = "",
             notes = "",
@@ -92,7 +98,7 @@ public class DolorApi {
      * 
      *
      */
-    public static class DolorBasicSecOper {
+    public static class DolorBasicSecOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/dolor/basicSecurity";
@@ -112,6 +118,7 @@ public class DolorApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }
@@ -141,7 +148,7 @@ public class DolorApi {
      * 
      *
      */
-    public static class DolorBearerSecOper {
+    public static class DolorBearerSecOper implements Oper {
 
         public static final Method REQ_METHOD = POST;
         public static final String REQ_URI = "/dolor/bearerSecurity";
@@ -161,6 +168,7 @@ public class DolorApi {
          * @param <T> type
          * @return type
          */
+        @Override
         public <T> T execute(Function<Response, T> handler) {
             return handler.apply(RestAssured.given().spec(reqSpec.build()).expect().spec(respSpec.build()).when().request(REQ_METHOD, REQ_URI));
         }

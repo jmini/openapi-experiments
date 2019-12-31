@@ -42,6 +42,10 @@
             <configuration>
               <inputSpec>${project.basedir}/../openapi-generator-utils/petstore/petstore.json</inputSpec>
               <generatorName>java</generatorName>
+              <additionalProperties>
+                <additionalProperty>modelNamePrefix=Rest</additionalProperty>
+                <additionalProperty>apiNameSuffix=RestApi</additionalProperty>
+              </additionalProperties>
             </configuration>
           </execution>
         </executions>

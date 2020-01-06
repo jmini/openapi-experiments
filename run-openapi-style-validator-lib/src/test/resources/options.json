@@ -13,7 +13,7 @@
 
     "validateNaming" : true,
     "ignoreHeaderXNaming" : true,
-    "pathNamingStrategy" : "HyphenCase",
-    "parameterNamingStrategy" : "CamelCase",
-    "propertyNamingStrategy" : "CamelCase"
+    "pathNamingConvention" : "HyphenCase",
+    "parameterNamingConvention" : "CamelCase",
+    "propertyNamingConvention" : "CamelCase"
 }

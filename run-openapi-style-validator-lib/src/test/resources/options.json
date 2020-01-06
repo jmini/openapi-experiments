@@ -1,12 +1,12 @@
 {
-    "validateInfoLicense" : true,
-    "validateInfoDescription" : true,
-    "validateInfoContact" : true,
+    "validateInfoLicense" : false,
+    "validateInfoDescription" : false,
+    "validateInfoContact" : false,
 
     "validateOperationOperationId" : true,
-    "validateOperationDescription" : true,
-    "validateOperationTag" : true,
-    "validateOperationSummary" : true,
+    "validateOperationDescription" : false,
+    "validateOperationTag" : false,
+    "validateOperationSummary" : false,
 
     "validateModelPropertiesExample" : true,
     "validateModelNoLocalDef" : true,

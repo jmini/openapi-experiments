@@ -48,7 +48,7 @@ public class EtiamApi {
     **/
     public Integer getInt() throws IOException {
         HttpResponse response = getIntForHttpResponse();
-        TypeReference typeRef = new TypeReference<Integer>() {};
+        TypeReference<Integer> typeRef = new TypeReference<Integer>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -60,7 +60,7 @@ public class EtiamApi {
     **/
     public Integer getInt(Map<String, Object> params) throws IOException {
         HttpResponse response = getIntForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<Integer>() {};
+        TypeReference<Integer> typeRef = new TypeReference<Integer>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -112,7 +112,7 @@ public class EtiamApi {
     **/
     public List<Integer> getIntList() throws IOException {
         HttpResponse response = getIntListForHttpResponse();
-        TypeReference typeRef = new TypeReference<List<Integer>>() {};
+        TypeReference<List<Integer>> typeRef = new TypeReference<List<Integer>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -124,7 +124,7 @@ public class EtiamApi {
     **/
     public List<Integer> getIntList(Map<String, Object> params) throws IOException {
         HttpResponse response = getIntListForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<List<Integer>>() {};
+        TypeReference<List<Integer>> typeRef = new TypeReference<List<Integer>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -176,7 +176,7 @@ public class EtiamApi {
     **/
     public Map<String, Integer> getIntMap() throws IOException {
         HttpResponse response = getIntMapForHttpResponse();
-        TypeReference typeRef = new TypeReference<Map<String, Integer>>() {};
+        TypeReference<Map<String, Integer>> typeRef = new TypeReference<Map<String, Integer>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -188,7 +188,7 @@ public class EtiamApi {
     **/
     public Map<String, Integer> getIntMap(Map<String, Object> params) throws IOException {
         HttpResponse response = getIntMapForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<Map<String, Integer>>() {};
+        TypeReference<Map<String, Integer>> typeRef = new TypeReference<Map<String, Integer>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -240,7 +240,7 @@ public class EtiamApi {
     **/
     public SomeObj getSomeObj() throws IOException {
         HttpResponse response = getSomeObjForHttpResponse();
-        TypeReference typeRef = new TypeReference<SomeObj>() {};
+        TypeReference<SomeObj> typeRef = new TypeReference<SomeObj>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -252,7 +252,7 @@ public class EtiamApi {
     **/
     public SomeObj getSomeObj(Map<String, Object> params) throws IOException {
         HttpResponse response = getSomeObjForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<SomeObj>() {};
+        TypeReference<SomeObj> typeRef = new TypeReference<SomeObj>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -304,7 +304,7 @@ public class EtiamApi {
     **/
     public List<SomeObj> getSomeObjList() throws IOException {
         HttpResponse response = getSomeObjListForHttpResponse();
-        TypeReference typeRef = new TypeReference<List<SomeObj>>() {};
+        TypeReference<List<SomeObj>> typeRef = new TypeReference<List<SomeObj>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -316,7 +316,7 @@ public class EtiamApi {
     **/
     public List<SomeObj> getSomeObjList(Map<String, Object> params) throws IOException {
         HttpResponse response = getSomeObjListForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<List<SomeObj>>() {};
+        TypeReference<List<SomeObj>> typeRef = new TypeReference<List<SomeObj>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -368,7 +368,7 @@ public class EtiamApi {
     **/
     public Map<String, SomeObj> getSomeObjMap() throws IOException {
         HttpResponse response = getSomeObjMapForHttpResponse();
-        TypeReference typeRef = new TypeReference<Map<String, SomeObj>>() {};
+        TypeReference<Map<String, SomeObj>> typeRef = new TypeReference<Map<String, SomeObj>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -380,7 +380,7 @@ public class EtiamApi {
     **/
     public Map<String, SomeObj> getSomeObjMap(Map<String, Object> params) throws IOException {
         HttpResponse response = getSomeObjMapForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<Map<String, SomeObj>>() {};
+        TypeReference<Map<String, SomeObj>> typeRef = new TypeReference<Map<String, SomeObj>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -432,7 +432,7 @@ public class EtiamApi {
     **/
     public String getString() throws IOException {
         HttpResponse response = getStringForHttpResponse();
-        TypeReference typeRef = new TypeReference<String>() {};
+        TypeReference<String> typeRef = new TypeReference<String>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -444,7 +444,7 @@ public class EtiamApi {
     **/
     public String getString(Map<String, Object> params) throws IOException {
         HttpResponse response = getStringForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<String>() {};
+        TypeReference<String> typeRef = new TypeReference<String>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -496,7 +496,7 @@ public class EtiamApi {
     **/
     public List<String> getStringList() throws IOException {
         HttpResponse response = getStringListForHttpResponse();
-        TypeReference typeRef = new TypeReference<List<String>>() {};
+        TypeReference<List<String>> typeRef = new TypeReference<List<String>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -508,7 +508,7 @@ public class EtiamApi {
     **/
     public List<String> getStringList(Map<String, Object> params) throws IOException {
         HttpResponse response = getStringListForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<List<String>>() {};
+        TypeReference<List<String>> typeRef = new TypeReference<List<String>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -560,7 +560,7 @@ public class EtiamApi {
     **/
     public Map<String, String> getStringMap() throws IOException {
         HttpResponse response = getStringMapForHttpResponse();
-        TypeReference typeRef = new TypeReference<Map<String, String>>() {};
+        TypeReference<Map<String, String>> typeRef = new TypeReference<Map<String, String>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -572,7 +572,7 @@ public class EtiamApi {
     **/
     public Map<String, String> getStringMap(Map<String, Object> params) throws IOException {
         HttpResponse response = getStringMapForHttpResponse(params);
-        TypeReference typeRef = new TypeReference<Map<String, String>>() {};
+        TypeReference<Map<String, String>> typeRef = new TypeReference<Map<String, String>>() {};
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
